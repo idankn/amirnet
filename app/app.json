@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "אמירנט",
+    "slug": "amirnet",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "amirnet",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#F8F3F8",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "co.il.amirnet.app"
+    },
+    "android": {
+      "package": "co.il.amirnet.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#F8F3F8",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-localization",
+        {
+          "supportedLocales": ["he", "en"],
+          "supportsRTL": true,
+          "forcesRTL": true
+        }
+      ]
+    ]
+  }
+}
