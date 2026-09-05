@@ -8,7 +8,7 @@ import {
   type ReactNode,
 } from 'react';
 
-import { supabase } from './supabase';
+import { isConfigured, supabase } from './supabase';
 
 export type Tier = 'free' | 'member';
 
@@ -64,8 +64,17 @@ function friendlyError(message: string): string {
   if (m.includes('email') && m.includes('invalid')) {
     return 'כתובת האימייל אינה תקינה';
   }
+  if (m.includes('rate limit')) {
+    return 'נשלחו יותר מדי הודעות אימות. צריך להמתין כשעה ולנסות שוב';
+  }
   if (m.includes('network') || m.includes('fetch')) {
-    return 'אין חיבור לאינטרנט';
+    // Don't claim the user has no internet — a misconfigured or unreachable
+    // server produces exactly the same failure, and telling someone to check
+    // their wifi when the server URL is missing sends them hunting in the
+    // wrong place entirely.
+    return isConfigured
+      ? 'לא הצלחנו להגיע לשרת. כדאי לבדוק את החיבור ולנסות שוב'
+      : 'האפליקציה לא מוגדרת מול השרת (חסר EXPO_PUBLIC_SUPABASE_URL)';
   }
   return message;
 }
