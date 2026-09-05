@@ -1,282 +1,446 @@
-[
-  {
-    "id": "sc-1",
-    "type": "sentence_completion",
-    "prompt": "The new drainage system was designed to ______ the damage caused by seasonal flooding in low-lying areas.",
-    "options": [
-      "postpone",
-      "exaggerate",
-      "mitigate",
-      "document"
-    ],
-    "correctIndex": 2,
-    "explanation": "A drainage system acts on the flooding itself, so the verb has to mean reducing the harm — that is 'mitigate'. 'Document' and 'exaggerate' describe how damage is reported rather than prevented, and nothing in the sentence suggests the damage is being delayed rather than lessened.",
-    "difficulty": 3
-  },
-  {
-    "id": "sc-2",
-    "type": "sentence_completion",
-    "prompt": "Many small businesses remain ______ to invest in new equipment while interest rates stay high.",
-    "options": [
-      "eligible",
-      "obliged",
-      "reluctant",
-      "entitled"
-    ],
-    "correctIndex": 2,
-    "explanation": "High interest rates make borrowing costly, which explains unwillingness rather than permission or duty. 'Eligible' and 'entitled' describe a right to invest, and 'obliged' describes a requirement to — none of which the second clause would account for.",
-    "difficulty": 2
-  },
-  {
-    "id": "sc-3",
-    "type": "sentence_completion",
-    "prompt": "Repeated delays in publishing the results began to ______ public confidence in the agency's independence.",
-    "options": [
-      "inherit",
-      "postpone",
-      "broadcast",
-      "undermine"
-    ],
-    "correctIndex": 3,
-    "explanation": "Confidence is the thing being damaged by the delays, and 'undermine' is the verb for weakening it gradually. 'Broadcast' and 'inherit' take confidence as an object in a way that makes no sense here, and you postpone an event, not a state of trust.",
-    "difficulty": 3
-  },
-  {
-    "id": "sc-4",
-    "type": "sentence_completion",
-    "prompt": "The investigators dismissed the first theory but considered the second explanation entirely ______.",
-    "options": [
-      "voluntary",
-      "alphabetical",
-      "plausible",
-      "audible"
-    ],
-    "correctIndex": 2,
-    "explanation": "'But' sets the second explanation against a dismissed one, so the missing word must be positive about its credibility, which is what 'plausible' means. The other three describe properties an explanation can technically have but that would not contrast with being dismissed.",
-    "difficulty": 4
-  },
-  {
-    "id": "sc-5",
-    "type": "sentence_completion",
-    "prompt": "Given how quickly the glacier has retreated, some loss of coastal habitat now seems ______.",
-    "options": [
-      "affordable",
-      "artificial",
-      "optional",
-      "inevitable"
-    ],
-    "correctIndex": 3,
-    "explanation": "The opening clause gives a reason to expect the loss, so the word must express that it cannot be avoided. 'Optional' says the opposite, and neither 'affordable' nor 'artificial' is something the rate of glacial retreat would establish.",
-    "difficulty": 3
-  },
-  {
-    "id": "sc-6",
-    "type": "sentence_completion",
-    "prompt": "Regulators promised to ______ every claim the company had made about the safety of its batteries.",
-    "options": [
-      "memorize",
-      "scrutinize",
-      "translate",
-      "publicize"
-    ],
-    "correctIndex": 1,
-    "explanation": "Regulators examine claims closely, which is what 'scrutinize' means. 'Publicize' would mean spreading the company's claims rather than testing them, and translating or memorizing them is not a regulatory act.",
-    "difficulty": 4
-  },
-  {
-    "id": "sc-7",
-    "type": "sentence_completion",
-    "prompt": "The subsidy was introduced as an ______ for farmers to switch to less water-intensive crops.",
-    "options": [
-      "incentive",
-      "exception",
-      "apology",
-      "obstacle"
-    ],
-    "correctIndex": 0,
-    "explanation": "A subsidy is money offered to encourage a change, so it functions as an 'incentive'. 'Obstacle' reverses the effect, and neither an apology nor an exception is something you would introduce 'for farmers to switch'.",
-    "difficulty": 3
-  },
-  {
-    "id": "sc-8",
-    "type": "sentence_completion",
-    "prompt": "If the symptoms ______ for more than a week, patients are advised to contact the clinic again.",
-    "options": [
-      "evaporate",
-      "subside",
-      "conclude",
-      "persist"
-    ],
-    "correctIndex": 3,
-    "explanation": "Contacting the clinic again makes sense only if the symptoms continue, which is what 'persist' means. 'Subside' and 'conclude' describe symptoms going away, which would remove the reason to call, and symptoms do not evaporate.",
-    "difficulty": 3
-  },
-  {
-    "id": "sc-9",
-    "type": "sentence_completion",
-    "prompt": "The contract's wording was so ______ that both sides claimed it supported their position.",
-    "options": [
-      "formal",
-      "concise",
-      "legible",
-      "ambiguous"
-    ],
-    "correctIndex": 3,
-    "explanation": "Two sides can each claim support only if the wording admits more than one reading, which is what 'ambiguous' means. Being brief, readable or formal would not by itself allow opposing interpretations.",
-    "difficulty": 4
-  },
-  {
-    "id": "sc-10",
-    "type": "sentence_completion",
-    "prompt": "Without regular maintenance, even well-built bridges will slowly ______ under constant traffic and weather.",
-    "options": [
-      "illuminate",
-      "negotiate",
-      "accumulate",
-      "deteriorate"
-    ],
-    "correctIndex": 3,
-    "explanation": "Lack of maintenance under constant stress causes gradual decline, which 'deteriorate' names. The other three are intransitive-looking verbs that fit the slot grammatically but describe things bridges do not do under traffic and weather.",
-    "difficulty": 4
-  },
-  {
-    "id": "sc-11",
-    "type": "sentence_completion",
-    "prompt": "After three failed prototypes, the team finally produced a design that seemed commercially ______.",
-    "options": [
-      "edible",
-      "silent",
-      "fictional",
-      "viable"
-    ],
-    "correctIndex": 3,
-    "explanation": "'Commercially' points at whether the design could succeed as a product, and 'viable' is the adjective for that. The others are adjectives a design could in principle carry, but none of them is something 'commercially' would modify meaningfully.",
-    "difficulty": 3
-  },
-  {
-    "id": "sc-12",
-    "type": "sentence_completion",
-    "prompt": "Although the drug showed promise in early trials, its effect on long-term survival proved ______.",
-    "options": [
-      "mandatory",
-      "widespread",
-      "affordable",
-      "negligible"
-    ],
-    "correctIndex": 3,
-    "explanation": "'Although' signals that the early promise was not borne out, so the effect must have been too small to matter, which is 'negligible'. 'Widespread' would describe reach rather than size and would not contrast with the promise, and an effect is not mandatory or affordable.",
-    "difficulty": 4
-  },
-  {
-    "id": "rs-1",
-    "type": "restatement",
-    "prompt": "Because the factory upgraded its filters last year, emissions in the surrounding valley have fallen sharply since then.",
-    "options": [
-      "Residents of the area pressured the plant into cutting the pollution it had produced for years.",
-      "The air in that area has become considerably cleaner as a result of equipment the plant installed twelve months ago.",
-      "The plant is scheduled to upgrade its filtering equipment next year, which should reduce local pollution.",
-      "The factory installed new filters because pollution in the surrounding area had already begun to drop."
-    ],
-    "correctIndex": 1,
-    "explanation": "The source says the upgrade came first and caused the drop. The first wrong option reverses that order, making the drop the reason for the upgrade. The second moves the upgrade into the future when it has already happened. The third makes residents the cause, which the source never mentions.",
-    "difficulty": 3
-  },
-  {
-    "id": "rs-2",
-    "type": "restatement",
-    "prompt": "Unless the museum secures additional funding, it will be forced to close its two smallest galleries by December.",
-    "options": [
-      "Donors have decided to withdraw support for the museum's two smallest galleries before December.",
-      "The museum closed its two smallest galleries in December after failing to raise enough money.",
-      "The museum will close its two smallest galleries by December, even if it secures additional funding.",
-      "Shutting the pair of minor exhibition rooms before the end of the year can only be avoided if more money is found."
-    ],
-    "correctIndex": 3,
-    "explanation": "The source makes the closure conditional on funding not arriving. The first wrong option removes the condition, making closure happen regardless. The second reports the closure as already complete. The third turns the museum into the object of a donor decision, when the source only describes what the museum itself will be forced to do.",
-    "difficulty": 4
-  },
-  {
-    "id": "rs-3",
-    "type": "restatement",
-    "prompt": "The council approved the housing plan only after developers agreed to fund a new access road.",
-    "options": [
-      "The council is expected to approve the housing plan once developers begin building the access road.",
-      "Approval for the residential scheme depended on the builders committing to pay for additional infrastructure.",
-      "The council agreed to pay for a new access road so that developers would approve the housing plan.",
-      "Developers agreed to fund a new access road only after the council had approved the housing plan."
-    ],
-    "correctIndex": 1,
-    "explanation": "In the source the developers' commitment came first and made approval possible. The first wrong option puts approval first, reversing what depended on what. The second swaps who pays and who approves. The third presents the approval as still pending when the source says it has happened.",
-    "difficulty": 3
-  },
-  {
-    "id": "rs-4",
-    "type": "restatement",
-    "prompt": "Although sales rose sharply in the final quarter, the company still ended the year with a loss.",
-    "options": [
-      "Sales are expected to rise sharply next quarter, which should move the company out of loss.",
-      "Because sales rose sharply in the final quarter, the company managed to end the year profitably.",
-      "The company's competitors saw sales rise sharply in the final quarter while it recorded a loss.",
-      "A strong closing three months were not enough to prevent the firm finishing twelve months in deficit."
-    ],
-    "correctIndex": 3,
-    "explanation": "The source concedes a good quarter but reports a bad year. The first wrong option turns the concession into a cause and the loss into a profit. The second moves the rise into the future. The third attributes the rise to competitors rather than to the company itself.",
-    "difficulty": 3
-  },
-  {
-    "id": "rs-5",
-    "type": "restatement",
-    "prompt": "Residents were warned that the bridge would remain closed until engineers completed a full structural survey.",
-    "options": [
-      "The crossing will not reopen before specialists have finished checking whether it is sound.",
-      "Residents demanded that engineers close the bridge until a full structural survey was carried out.",
-      "The bridge reopened as soon as engineers had begun their structural survey.",
-      "Engineers will carry out a structural survey only after the bridge has been reopened to traffic."
-    ],
-    "correctIndex": 0,
-    "explanation": "The source makes reopening wait for a completed survey. The first wrong option has the bridge open when the survey merely started. The second puts the survey after reopening, reversing the dependency. The third makes residents the ones demanding closure, when they were only warned of it.",
-    "difficulty": 4
-  },
-  {
-    "id": "rs-6",
-    "type": "restatement",
-    "prompt": "The policy succeeded in rural districts but had almost no measurable effect in the larger cities.",
-    "options": [
-      "The policy worked well in the largest cities but achieved little in rural districts.",
-      "Rural districts adopted the policy while the larger cities rejected it outright.",
-      "The policy is expected to succeed in rural districts before it reaches the larger cities.",
-      "What worked in the countryside made hardly any difference in major urban centres."
-    ],
-    "correctIndex": 3,
-    "explanation": "The source pairs rural success with urban ineffectiveness. The first wrong option swaps which side each outcome belongs to. The second replaces a difference in effect with a difference in whether the policy was adopted at all. The third turns a reported result into a forecast.",
-    "difficulty": 3
-  },
-  {
-    "id": "rs-7",
-    "type": "restatement",
-    "prompt": "Unless attendance improves substantially over the summer, the festival organisers say that next year's event may be cancelled.",
-    "options": [
-      "The festival will be cancelled next year even if attendance improves substantially over the summer.",
-      "Scrapping the following year's gathering can be avoided only by a marked rise in visitor numbers.",
-      "Visitors have told the organisers that they will not attend next year's festival unless it improves.",
-      "The organisers cancelled this year's festival after attendance failed to improve over the summer."
-    ],
-    "correctIndex": 1,
-    "explanation": "The source makes cancellation conditional on attendance staying low. The first wrong option removes the condition so cancellation happens regardless. The second reports a cancellation that has already occurred. The third swaps who is issuing the warning, making visitors rather than organisers the ones setting a condition.",
-    "difficulty": 4
-  },
-  {
-    "id": "rs-8",
-    "type": "restatement",
-    "prompt": "The law was intended to protect tenants, but landlords found several ways to work around it.",
-    "options": [
-      "The law will be introduced to protect tenants, though landlords are already preparing ways around it.",
-      "Although drafted to shield renters, the legislation left property owners with a number of loopholes.",
-      "The law was intended to protect landlords, but tenants found several ways to work around it.",
-      "Because landlords found ways around the law, it was later rewritten to protect tenants."
-    ],
-    "correctIndex": 1,
-    "explanation": "The source names tenants as the intended beneficiaries and landlords as the ones evading. The first wrong option swaps those two roles. The second makes the evasion the reason the law exists rather than a response to it. The third presents the law as not yet in force.",
-    "difficulty": 3
-  }
-]
+{
+  "passages": [
+    {
+      "id": "p-1",
+      "topic": "science",
+      "body": "Cities are consistently warmer than the countryside around them, a phenomenon researchers call the urban heat island effect. The cause is largely structural: asphalt and concrete absorb solar radiation during the day and release it slowly after dark, while the vertical surfaces of tall buildings trap heat that would otherwise escape upward. Vegetation, which cools the air through evaporation, is scarce in dense districts. The result is a temperature gap that can reach five degrees Celsius on a still summer night. For much of the twentieth century this was treated as a curiosity rather than a problem. That changed as heat waves grew more frequent and their death tolls became harder to ignore. Studies of the 2003 European heat wave found that urban residents died at markedly higher rates than rural ones, and that the difference persisted even after accounting for age and income. Municipal responses have tended toward the visible: planting trees, painting roofs white, adding parks. These measures work, but their effect is local and modest. A white roof cools the building beneath it far more than the street outside. Some researchers argue that meaningful change requires rethinking how cities are zoned and built, a far slower and more contentious undertaking than planting a row of trees."
+    },
+    {
+      "id": "p-2",
+      "topic": "history",
+      "body": "Before the railways, time in Britain was a local matter. Each town set its clocks by the sun, so noon in Bristol fell roughly ten minutes after noon in London. For most purposes the discrepancy was invisible; a farmer had no reason to care what hour it was two hundred miles away. Railway timetables made the difference impossible to ignore. A train leaving London at nine and arriving in Bristol at eleven was, by Bristol's clocks, arriving at ten fifty. Companies began publishing schedules in London time and instructing stations to adopt it, a practice that spread along the lines themselves. By 1855 most public clocks in Britain showed a single standard time, though the change was not universally welcomed: some towns kept two minute hands on their clock faces, one for railway time and one for their own. The legal recognition of standard time came later, and almost accidentally. In 1858 a court in Dorchester dismissed a case because the defendant had arrived at the courthouse at the correct local time but after the hour set by railway time. The resulting confusion prompted Parliament to act, though it took until 1880 for a statute to define what time it legally was."
+    }
+  ],
+  "questions": [
+    {
+      "id": "sc-1",
+      "type": "sentence_completion",
+      "prompt": "The new drainage system was designed to ______ the damage caused by seasonal flooding in low-lying areas.",
+      "options": [
+        "postpone",
+        "exaggerate",
+        "mitigate",
+        "document"
+      ],
+      "correctIndex": 2,
+      "explanation": "A drainage system acts on the flooding itself, so the verb has to mean reducing the harm — that is 'mitigate'. 'Document' and 'exaggerate' describe how damage is reported rather than prevented, and nothing in the sentence suggests the damage is being delayed rather than lessened.",
+      "difficulty": 3
+    },
+    {
+      "id": "sc-2",
+      "type": "sentence_completion",
+      "prompt": "Many small businesses remain ______ to invest in new equipment while interest rates stay high.",
+      "options": [
+        "eligible",
+        "obliged",
+        "reluctant",
+        "entitled"
+      ],
+      "correctIndex": 2,
+      "explanation": "High interest rates make borrowing costly, which explains unwillingness rather than permission or duty. 'Eligible' and 'entitled' describe a right to invest, and 'obliged' describes a requirement to — none of which the second clause would account for.",
+      "difficulty": 2
+    },
+    {
+      "id": "sc-3",
+      "type": "sentence_completion",
+      "prompt": "Repeated delays in publishing the results began to ______ public confidence in the agency's independence.",
+      "options": [
+        "inherit",
+        "postpone",
+        "broadcast",
+        "undermine"
+      ],
+      "correctIndex": 3,
+      "explanation": "Confidence is the thing being damaged by the delays, and 'undermine' is the verb for weakening it gradually. 'Broadcast' and 'inherit' take confidence as an object in a way that makes no sense here, and you postpone an event, not a state of trust.",
+      "difficulty": 3
+    },
+    {
+      "id": "sc-4",
+      "type": "sentence_completion",
+      "prompt": "The investigators dismissed the first theory but considered the second explanation entirely ______.",
+      "options": [
+        "voluntary",
+        "alphabetical",
+        "plausible",
+        "audible"
+      ],
+      "correctIndex": 2,
+      "explanation": "'But' sets the second explanation against a dismissed one, so the missing word must be positive about its credibility, which is what 'plausible' means. The other three describe properties an explanation can technically have but that would not contrast with being dismissed.",
+      "difficulty": 4
+    },
+    {
+      "id": "sc-5",
+      "type": "sentence_completion",
+      "prompt": "Given how quickly the glacier has retreated, some loss of coastal habitat now seems ______.",
+      "options": [
+        "affordable",
+        "artificial",
+        "optional",
+        "inevitable"
+      ],
+      "correctIndex": 3,
+      "explanation": "The opening clause gives a reason to expect the loss, so the word must express that it cannot be avoided. 'Optional' says the opposite, and neither 'affordable' nor 'artificial' is something the rate of glacial retreat would establish.",
+      "difficulty": 3
+    },
+    {
+      "id": "sc-6",
+      "type": "sentence_completion",
+      "prompt": "Regulators promised to ______ every claim the company had made about the safety of its batteries.",
+      "options": [
+        "memorize",
+        "scrutinize",
+        "translate",
+        "publicize"
+      ],
+      "correctIndex": 1,
+      "explanation": "Regulators examine claims closely, which is what 'scrutinize' means. 'Publicize' would mean spreading the company's claims rather than testing them, and translating or memorizing them is not a regulatory act.",
+      "difficulty": 4
+    },
+    {
+      "id": "sc-7",
+      "type": "sentence_completion",
+      "prompt": "The subsidy was introduced as an ______ for farmers to switch to less water-intensive crops.",
+      "options": [
+        "incentive",
+        "exception",
+        "apology",
+        "obstacle"
+      ],
+      "correctIndex": 0,
+      "explanation": "A subsidy is money offered to encourage a change, so it functions as an 'incentive'. 'Obstacle' reverses the effect, and neither an apology nor an exception is something you would introduce 'for farmers to switch'.",
+      "difficulty": 3
+    },
+    {
+      "id": "sc-8",
+      "type": "sentence_completion",
+      "prompt": "If the symptoms ______ for more than a week, patients are advised to contact the clinic again.",
+      "options": [
+        "evaporate",
+        "subside",
+        "conclude",
+        "persist"
+      ],
+      "correctIndex": 3,
+      "explanation": "Contacting the clinic again makes sense only if the symptoms continue, which is what 'persist' means. 'Subside' and 'conclude' describe symptoms going away, which would remove the reason to call, and symptoms do not evaporate.",
+      "difficulty": 3
+    },
+    {
+      "id": "sc-9",
+      "type": "sentence_completion",
+      "prompt": "The contract's wording was so ______ that both sides claimed it supported their position.",
+      "options": [
+        "formal",
+        "concise",
+        "legible",
+        "ambiguous"
+      ],
+      "correctIndex": 3,
+      "explanation": "Two sides can each claim support only if the wording admits more than one reading, which is what 'ambiguous' means. Being brief, readable or formal would not by itself allow opposing interpretations.",
+      "difficulty": 4
+    },
+    {
+      "id": "sc-10",
+      "type": "sentence_completion",
+      "prompt": "Without regular maintenance, even well-built bridges will slowly ______ under constant traffic and weather.",
+      "options": [
+        "illuminate",
+        "negotiate",
+        "accumulate",
+        "deteriorate"
+      ],
+      "correctIndex": 3,
+      "explanation": "Lack of maintenance under constant stress causes gradual decline, which 'deteriorate' names. The other three are intransitive-looking verbs that fit the slot grammatically but describe things bridges do not do under traffic and weather.",
+      "difficulty": 4
+    },
+    {
+      "id": "sc-11",
+      "type": "sentence_completion",
+      "prompt": "After three failed prototypes, the team finally produced a design that seemed commercially ______.",
+      "options": [
+        "edible",
+        "silent",
+        "fictional",
+        "viable"
+      ],
+      "correctIndex": 3,
+      "explanation": "'Commercially' points at whether the design could succeed as a product, and 'viable' is the adjective for that. The others are adjectives a design could in principle carry, but none of them is something 'commercially' would modify meaningfully.",
+      "difficulty": 3
+    },
+    {
+      "id": "sc-12",
+      "type": "sentence_completion",
+      "prompt": "Although the drug showed promise in early trials, its effect on long-term survival proved ______.",
+      "options": [
+        "mandatory",
+        "widespread",
+        "affordable",
+        "negligible"
+      ],
+      "correctIndex": 3,
+      "explanation": "'Although' signals that the early promise was not borne out, so the effect must have been too small to matter, which is 'negligible'. 'Widespread' would describe reach rather than size and would not contrast with the promise, and an effect is not mandatory or affordable.",
+      "difficulty": 4
+    },
+    {
+      "id": "rs-1",
+      "type": "restatement",
+      "prompt": "Because the factory upgraded its filters last year, emissions in the surrounding valley have fallen sharply since then.",
+      "options": [
+        "Residents of the area pressured the plant into cutting the pollution it had produced for years.",
+        "The air in that area has become considerably cleaner as a result of equipment the plant installed twelve months ago.",
+        "The plant is scheduled to upgrade its filtering equipment next year, which should reduce local pollution.",
+        "The factory installed new filters because pollution in the surrounding area had already begun to drop."
+      ],
+      "correctIndex": 1,
+      "explanation": "The source says the upgrade came first and caused the drop. The first wrong option reverses that order, making the drop the reason for the upgrade. The second moves the upgrade into the future when it has already happened. The third makes residents the cause, which the source never mentions.",
+      "difficulty": 3
+    },
+    {
+      "id": "rs-2",
+      "type": "restatement",
+      "prompt": "Unless the museum secures additional funding, it will be forced to close its two smallest galleries by December.",
+      "options": [
+        "Donors have decided to withdraw support for the museum's two smallest galleries before December.",
+        "The museum closed its two smallest galleries in December after failing to raise enough money.",
+        "The museum will close its two smallest galleries by December, even if it secures additional funding.",
+        "Shutting the pair of minor exhibition rooms before the end of the year can only be avoided if more money is found."
+      ],
+      "correctIndex": 3,
+      "explanation": "The source makes the closure conditional on funding not arriving. The first wrong option removes the condition, making closure happen regardless. The second reports the closure as already complete. The third turns the museum into the object of a donor decision, when the source only describes what the museum itself will be forced to do.",
+      "difficulty": 4
+    },
+    {
+      "id": "rs-3",
+      "type": "restatement",
+      "prompt": "The council approved the housing plan only after developers agreed to fund a new access road.",
+      "options": [
+        "The council is expected to approve the housing plan once developers begin building the access road.",
+        "Approval for the residential scheme depended on the builders committing to pay for additional infrastructure.",
+        "The council agreed to pay for a new access road so that developers would approve the housing plan.",
+        "Developers agreed to fund a new access road only after the council had approved the housing plan."
+      ],
+      "correctIndex": 1,
+      "explanation": "In the source the developers' commitment came first and made approval possible. The first wrong option puts approval first, reversing what depended on what. The second swaps who pays and who approves. The third presents the approval as still pending when the source says it has happened.",
+      "difficulty": 3
+    },
+    {
+      "id": "rs-4",
+      "type": "restatement",
+      "prompt": "Although sales rose sharply in the final quarter, the company still ended the year with a loss.",
+      "options": [
+        "Sales are expected to rise sharply next quarter, which should move the company out of loss.",
+        "Because sales rose sharply in the final quarter, the company managed to end the year profitably.",
+        "The company's competitors saw sales rise sharply in the final quarter while it recorded a loss.",
+        "A strong closing three months were not enough to prevent the firm finishing twelve months in deficit."
+      ],
+      "correctIndex": 3,
+      "explanation": "The source concedes a good quarter but reports a bad year. The first wrong option turns the concession into a cause and the loss into a profit. The second moves the rise into the future. The third attributes the rise to competitors rather than to the company itself.",
+      "difficulty": 3
+    },
+    {
+      "id": "rs-5",
+      "type": "restatement",
+      "prompt": "Residents were warned that the bridge would remain closed until engineers completed a full structural survey.",
+      "options": [
+        "The crossing will not reopen before specialists have finished checking whether it is sound.",
+        "Residents demanded that engineers close the bridge until a full structural survey was carried out.",
+        "The bridge reopened as soon as engineers had begun their structural survey.",
+        "Engineers will carry out a structural survey only after the bridge has been reopened to traffic."
+      ],
+      "correctIndex": 0,
+      "explanation": "The source makes reopening wait for a completed survey. The first wrong option has the bridge open when the survey merely started. The second puts the survey after reopening, reversing the dependency. The third makes residents the ones demanding closure, when they were only warned of it.",
+      "difficulty": 4
+    },
+    {
+      "id": "rs-6",
+      "type": "restatement",
+      "prompt": "The policy succeeded in rural districts but had almost no measurable effect in the larger cities.",
+      "options": [
+        "The policy worked well in the largest cities but achieved little in rural districts.",
+        "Rural districts adopted the policy while the larger cities rejected it outright.",
+        "The policy is expected to succeed in rural districts before it reaches the larger cities.",
+        "What worked in the countryside made hardly any difference in major urban centres."
+      ],
+      "correctIndex": 3,
+      "explanation": "The source pairs rural success with urban ineffectiveness. The first wrong option swaps which side each outcome belongs to. The second replaces a difference in effect with a difference in whether the policy was adopted at all. The third turns a reported result into a forecast.",
+      "difficulty": 3
+    },
+    {
+      "id": "rs-7",
+      "type": "restatement",
+      "prompt": "Unless attendance improves substantially over the summer, the festival organisers say that next year's event may be cancelled.",
+      "options": [
+        "The festival will be cancelled next year even if attendance improves substantially over the summer.",
+        "Scrapping the following year's gathering can be avoided only by a marked rise in visitor numbers.",
+        "Visitors have told the organisers that they will not attend next year's festival unless it improves.",
+        "The organisers cancelled this year's festival after attendance failed to improve over the summer."
+      ],
+      "correctIndex": 1,
+      "explanation": "The source makes cancellation conditional on attendance staying low. The first wrong option removes the condition so cancellation happens regardless. The second reports a cancellation that has already occurred. The third swaps who is issuing the warning, making visitors rather than organisers the ones setting a condition.",
+      "difficulty": 4
+    },
+    {
+      "id": "rs-8",
+      "type": "restatement",
+      "prompt": "The law was intended to protect tenants, but landlords found several ways to work around it.",
+      "options": [
+        "The law will be introduced to protect tenants, though landlords are already preparing ways around it.",
+        "Although drafted to shield renters, the legislation left property owners with a number of loopholes.",
+        "The law was intended to protect landlords, but tenants found several ways to work around it.",
+        "Because landlords found ways around the law, it was later rewritten to protect tenants."
+      ],
+      "correctIndex": 1,
+      "explanation": "The source names tenants as the intended beneficiaries and landlords as the ones evading. The first wrong option swaps those two roles. The second makes the evasion the reason the law exists rather than a response to it. The third presents the law as not yet in force.",
+      "difficulty": 3
+    },
+    {
+      "id": "rd-1-1",
+      "type": "reading",
+      "prompt": "The passage is mainly concerned with",
+      "options": [
+        "why cities retain heat and why the common responses to it achieve less than they appear to",
+        "the history of zoning law in European cities",
+        "the medical consequences of the 2003 European heat wave",
+        "techniques for measuring temperature differences between cities and countryside"
+      ],
+      "correctIndex": 0,
+      "explanation": "The passage first explains the structural causes of urban heat, then argues that visible municipal measures are modest in effect. The heat wave and zoning are mentioned in service of that argument rather than as the subject, and no measurement technique is described anywhere.",
+      "difficulty": 3,
+      "passageId": "p-1"
+    },
+    {
+      "id": "rd-1-2",
+      "type": "reading",
+      "prompt": "According to the passage, vegetation cools the surrounding air by",
+      "options": [
+        "blocking wind at street level",
+        "evaporation",
+        "reflecting solar radiation back upward",
+        "absorbing carbon from the atmosphere"
+      ],
+      "correctIndex": 1,
+      "explanation": "The passage states directly that vegetation cools the air through evaporation. Reflection is what a white roof does, and neither wind nor carbon absorption is mentioned in connection with cooling.",
+      "difficulty": 2,
+      "passageId": "p-1"
+    },
+    {
+      "id": "rd-1-3",
+      "type": "reading",
+      "prompt": "The passage suggests that the 2003 heat wave findings were significant because they",
+      "options": [
+        "demonstrated that white roofs reduce mortality",
+        "were the first measurements of urban temperatures ever taken",
+        "led Parliament to change how cities are zoned",
+        "showed the temperature gap had consequences that could not be explained by who happened to live where"
+      ],
+      "correctIndex": 3,
+      "explanation": "The detail that the difference persisted after accounting for age and income is what rules out the alternative explanation that city populations simply differ from rural ones. The passage never claims the study was a first, never links roofs to mortality, and describes zoning reform as something researchers argue for rather than something achieved.",
+      "difficulty": 4,
+      "passageId": "p-1"
+    },
+    {
+      "id": "rd-1-4",
+      "type": "reading",
+      "prompt": "As used in the last sentence, \"contentious\" most nearly means",
+      "options": [
+        "technically complex",
+        "expensive to carry out",
+        "likely to provoke disagreement",
+        "poorly understood"
+      ],
+      "correctIndex": 2,
+      "explanation": "The word describes rethinking how cities are zoned and built, set against the ease of planting trees — the contrast is about political friction, not cost or difficulty. The sentence already supplies \"slower\" for the practical objection, so the second word must carry something else.",
+      "difficulty": 4,
+      "passageId": "p-1"
+    },
+    {
+      "id": "rd-1-5",
+      "type": "reading",
+      "prompt": "The author mentions painting roofs white primarily in order to",
+      "options": [
+        "give an example of a measure whose benefits are narrower than they first appear",
+        "recommend it as the most effective municipal response available",
+        "contrast its success with the failure of tree planting",
+        "explain the physical process by which solar radiation is reflected"
+      ],
+      "correctIndex": 0,
+      "explanation": "The white roof appears in a paragraph arguing that visible measures are local and modest, and the following sentence limits its benefit to the building beneath it. The author groups it with tree planting rather than against it, and never explains the physics of reflection.",
+      "difficulty": 3,
+      "passageId": "p-1"
+    },
+    {
+      "id": "rd-2-1",
+      "type": "reading",
+      "prompt": "The passage is primarily concerned with",
+      "options": [
+        "a legal dispute over the scheduling of court appearances",
+        "the engineering difficulties of building railway lines across Britain",
+        "how a commercial necessity produced a national standard that the law only later confirmed",
+        "the reasons Bristol and London developed at different rates"
+      ],
+      "correctIndex": 2,
+      "explanation": "The passage traces standard time from a railway convenience to an 1880 statute, with the law arriving last. The Dorchester case is one step in that sequence rather than the subject, and neither engineering nor regional development is discussed.",
+      "difficulty": 3,
+      "passageId": "p-2"
+    },
+    {
+      "id": "rd-2-2",
+      "type": "reading",
+      "prompt": "According to the passage, by 1855",
+      "options": [
+        "Parliament had defined standard time by statute",
+        "railway companies had abandoned local time entirely",
+        "most public clocks in Britain displayed a single standard time",
+        "every town in Britain had adopted two minute hands"
+      ],
+      "correctIndex": 2,
+      "explanation": "The passage gives 1855 as the point when most public clocks showed one standard time. The statute came in 1880, and the two minute hands were something only some towns did.",
+      "difficulty": 2,
+      "passageId": "p-2"
+    },
+    {
+      "id": "rd-2-3",
+      "type": "reading",
+      "prompt": "The detail about clock faces with two minute hands suggests that some towns",
+      "options": [
+        "profited from selling modified clocks to travellers",
+        "were required by Parliament to display both times",
+        "accepted the practical need for railway time without giving up their own",
+        "found railway time to be frequently inaccurate"
+      ],
+      "correctIndex": 2,
+      "explanation": "Keeping both hands shows a town using railway time while preserving local time, which is what the passage means by the change not being universally welcomed. Parliament had not yet acted at that point, and nothing suggests railway time was unreliable or commercially exploited.",
+      "difficulty": 4,
+      "passageId": "p-2"
+    },
+    {
+      "id": "rd-2-4",
+      "type": "reading",
+      "prompt": "As used in the third sentence, \"discrepancy\" most nearly means",
+      "options": [
+        "delay",
+        "complaint",
+        "measurement",
+        "difference"
+      ],
+      "correctIndex": 3,
+      "explanation": "The word refers back to the ten-minute gap between noon in Bristol and noon in London, which is a difference rather than a delay — neither town was late. No complaint or act of measuring is described.",
+      "difficulty": 3,
+      "passageId": "p-2"
+    },
+    {
+      "id": "rd-2-5",
+      "type": "reading",
+      "prompt": "The author describes the 1858 Dorchester case primarily to",
+      "options": [
+        "illustrate how unreliable railway schedules had become",
+        "criticize the court for dismissing the case",
+        "explain the specific wording Parliament adopted in 1880",
+        "show that legal recognition trailed a change that had already taken hold in practice"
+      ],
+      "correctIndex": 3,
+      "explanation": "The case is introduced immediately after the claim that legal recognition came later and almost accidentally, and it demonstrates law catching up to established practice. The author passes no judgement on the court and never quotes the statute.",
+      "difficulty": 4,
+      "passageId": "p-2"
+    }
+  ]
+}

@@ -96,6 +96,61 @@ class RestatementItem(BaseModel):
     difficulty_est: int = Field(ge=1, le=5, description="Estimated difficulty, 1 to 5.")
 
 
+READING_QUESTION_KINDS = (
+    "main_idea",
+    "detail",
+    "inference",
+    "word_in_context",
+    "authors_purpose",
+)
+
+
+class ReadingQuestion(BaseModel):
+    """One question hanging off a reading passage."""
+
+    kind: Literal[
+        "main_idea", "detail", "inference", "word_in_context", "authors_purpose"
+    ] = Field(
+        description=(
+            "Which of the five required question types this is. A passage carries "
+            "exactly one of each."
+        )
+    )
+    prompt: str = Field(description="The question stem.")
+    correct_answer: str = Field(description="The correct option.")
+    distractors: list[str] = Field(
+        min_length=config.N_DISTRACTORS,
+        max_length=config.N_DISTRACTORS,
+        description=(
+            "Three wrong options. At least one must require having read the whole "
+            "passage to rule out — an option refutable from a single sentence is "
+            "too cheap."
+        ),
+    )
+    explanation: str = Field(description="Two or three sentences, in English.")
+    difficulty_est: int = Field(ge=1, le=5)
+
+
+class ReadingItem(BaseModel):
+    """A passage plus its five questions."""
+
+    topic: str = Field(
+        description="science / economics / society / psychology / history"
+    )
+    body: str = Field(
+        description=(
+            f"A {config.READING_MIN_WORDS}–{config.READING_MAX_WORDS} word "
+            "mock-academic passage. Neutral register, no named real people, no "
+            "current events, no culture-specific references."
+        )
+    )
+    questions: list[ReadingQuestion] = Field(
+        min_length=5,
+        max_length=5,
+        description="Exactly five questions, one of each kind, in the order listed.",
+    )
+
+
 class SentenceCompletionBatch(BaseModel):
     items: list[SentenceCompletionItem]
 

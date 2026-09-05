@@ -25,10 +25,10 @@ SHUFFLE_SEED = 20260905
 
 def _entry(qid: str, qtype: str, prompt: str, correct: str,
            distractors: list[str], explanation: str, difficulty: int,
-           rng: random.Random) -> dict:
+           rng: random.Random, passage_id: str | None = None) -> dict:
     options = [correct, *distractors]
     rng.shuffle(options)
-    return {
+    entry = {
         "id": qid,
         "type": qtype,
         "prompt": prompt,
@@ -37,45 +37,86 @@ def _entry(qid: str, qtype: str, prompt: str, correct: str,
         "explanation": explanation,
         "difficulty": difficulty,
     }
+    if passage_id:
+        entry["passageId"] = passage_id
+    return entry
 
 
-def from_gold(rng: random.Random) -> list[dict]:
-    out = []
-    for item in gold.load("sentence_completion"):
-        out.append(_entry(
-            f"sc-{len(out) + 1}", "sentence_completion", item.sentence,
+def from_gold(rng: random.Random) -> tuple[list[dict], list[dict]]:
+    passages: list[dict] = []
+    questions: list[dict] = []
+
+    for i, item in enumerate(gold.load("sentence_completion"), 1):
+        questions.append(_entry(
+            f"sc-{i}", "sentence_completion", item.sentence,
             item.correct_answer, list(item.distractors), item.explanation,
             item.difficulty_est, rng,
         ))
-    n_sc = len(out)
-    for item in gold.load("restatement"):
-        out.append(_entry(
-            f"rs-{len(out) - n_sc + 1}", "restatement", item.source_sentence,
+
+    for i, item in enumerate(gold.load("restatement"), 1):
+        questions.append(_entry(
+            f"rs-{i}", "restatement", item.source_sentence,
             item.correct_answer, [d.text for d in item.distractors],
             item.explanation, item.difficulty_est, rng,
         ))
-    return out
+
+    for p, item in enumerate(gold.load("reading"), 1):
+        passage_id = f"p-{p}"
+        passages.append({
+            "id": passage_id,
+            "topic": item.topic,
+            "body": item.body,
+        })
+        for q, question in enumerate(item.questions, 1):
+            questions.append(_entry(
+                f"rd-{p}-{q}", "reading", question.prompt,
+                question.correct_answer, list(question.distractors),
+                question.explanation, question.difficulty_est, rng,
+                passage_id=passage_id,
+            ))
+
+    return passages, questions
 
 
-def from_db(rng: random.Random) -> list[dict]:
+def from_db(rng: random.Random) -> tuple[list[dict], list[dict]]:
     conn = db.connect()
     rows = conn.execute(
         """
         SELECT * FROM questions
          WHERE status IN ('validated', 'live')
-         ORDER BY type, id
+         ORDER BY type, passage_id, id
         """
     ).fetchall()
 
-    out = []
+    passages: list[dict] = []
+    seen_passages: set[int] = set()
+    questions: list[dict] = []
+
     for row in rows:
+        passage_id = None
+        if row["passage_id"] is not None:
+            passage_id = f"p-{row['passage_id']}"
+            if row["passage_id"] not in seen_passages:
+                seen_passages.add(row["passage_id"])
+                p = conn.execute(
+                    "SELECT * FROM passages WHERE id = ?", (row["passage_id"],)
+                ).fetchone()
+                if p is not None:
+                    passages.append({
+                        "id": passage_id,
+                        "topic": p["topic"] or "",
+                        "body": p["body"],
+                    })
+
         distractors = [d["text"] for d in db.get_distractors(conn, row["id"])]
-        out.append(_entry(
+        questions.append(_entry(
             f"q-{row['id']}", row["type"], row["prompt"], row["correct_answer"],
-            distractors, row["explanation"] or "", row["difficulty_est"] or 3, rng,
+            distractors, row["explanation"] or "", row["difficulty_est"] or 3,
+            rng, passage_id=passage_id,
         ))
+
     conn.close()
-    return out
+    return passages, questions
 
 
 def main() -> None:
@@ -85,14 +126,15 @@ def main() -> None:
     args = parser.parse_args()
 
     rng = random.Random(SHUFFLE_SEED)
-    questions = from_db(rng) if args.from_db else from_gold(rng)
+    passages, questions = from_db(rng) if args.from_db else from_gold(rng)
 
     if not questions:
         raise SystemExit("Nothing to export.")
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(
-        json.dumps(questions, ensure_ascii=False, indent=2) + "\n",
+        json.dumps({"passages": passages, "questions": questions},
+                   ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
 
@@ -101,7 +143,8 @@ def main() -> None:
         by_type[q["type"]] = by_type.get(q["type"], 0) + 1
 
     source = "bank" if args.from_db else "gold set"
-    print(f"Exported {len(questions)} questions from the {source} to {OUT_PATH}")
+    print(f"Exported {len(questions)} questions "
+          f"and {len(passages)} passages from the {source} to {OUT_PATH}")
     for qtype, n in sorted(by_type.items()):
         print(f"  {qtype:<22} {n:>4}")
 

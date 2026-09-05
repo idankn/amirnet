@@ -13,11 +13,18 @@ from pathlib import Path
 from pydantic import ValidationError
 
 from . import config
-from .schemas import RestatementItem, SentenceCompletionItem
+from .schemas import ReadingItem, RestatementItem, SentenceCompletionItem
 
 ITEM_MODELS = {
     "sentence_completion": SentenceCompletionItem,
     "restatement": RestatementItem,
+    "reading": ReadingItem,
+}
+
+# A reading example is a whole passage plus five questions — four of them in one
+# prompt is a lot of tokens for little added signal, so few-shot fewer.
+EXAMPLES_PER_REQUEST = {
+    "reading": 2,
 }
 
 
@@ -65,14 +72,16 @@ def load(qtype: str) -> list[SentenceCompletionItem | RestatementItem]:
 
 def sample(
     qtype: str,
-    n: int = config.GOLD_EXAMPLES_PER_REQUEST,
+    n: int | None = None,
     rng: random.Random | None = None,
-) -> list[SentenceCompletionItem | RestatementItem]:
+) -> list[SentenceCompletionItem | RestatementItem | ReadingItem]:
     """Pick examples to few-shot one generation request.
 
     Sampled fresh per request rather than fixed, so a whole run isn't anchored
     on the same four sentences — that shows up as repetitive output.
     """
+    if n is None:
+        n = EXAMPLES_PER_REQUEST.get(qtype, config.GOLD_EXAMPLES_PER_REQUEST)
     items = load(qtype)
     picker = rng or random
     return picker.sample(items, min(n, len(items)))

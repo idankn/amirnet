@@ -33,6 +33,11 @@ SENTENCE_COMPLETION_MAX_WORDS = 20
 RESTATEMENT_MIN_WORDS = 15
 RESTATEMENT_MAX_WORDS = 25
 
+# Reading: 180–220 word passage, 5 questions hanging off it.
+READING_MIN_WORDS = 180
+READING_MAX_WORDS = 220
+READING_QUESTIONS_PER_PASSAGE = 5
+
 # Every question is 1 correct answer + 3 distractors.
 N_DISTRACTORS = 3
 

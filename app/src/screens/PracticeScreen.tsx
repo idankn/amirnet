@@ -3,33 +3,57 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { AnswerOption } from '../components/AnswerOption';
 import { colors, english, hebrew, radii, spacing, type } from '../theme';
-import { TYPE_LABELS, type Question } from '../types';
+import { TYPE_LABELS, type Passage, type Question } from '../types';
 
 interface Props {
   questions: Question[];
+  passages: Passage[];
+  onExit: () => void;
+  /** Called once per answered question, so the home screen can track coverage. */
+  onAnswered: (question: Question, correct: boolean) => void;
 }
 
 /**
  * The shared practice engine: question -> answers -> explanation.
  *
- * Every practice type in the app runs through this structure, so keep it
- * type-agnostic — a reading passage or a listening clip mounts above the
- * prompt, it doesn't get its own screen.
+ * Every practice type runs through this. A reading or listening passage mounts
+ * ABOVE the prompt rather than getting its own screen — that's the whole point
+ * of one shared structure.
  */
-export function PracticeScreen({ questions }: Props) {
+export function PracticeScreen({ questions, passages, onExit, onAnswered }: Props) {
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [answered, setAnswered] = useState(false);
   const [correctCount, setCorrectCount] = useState(0);
+  /**
+   * A passage is ~200 words and carries five questions. Left expanded it
+   * pushes the options below the fold on every one of them, so you end up
+   * scrolling past the whole thing five times. Collapsing is per-passage, not
+   * per-question — read it once, fold it, answer the rest.
+   */
+  const [passageCollapsed, setPassageCollapsed] = useState(false);
 
   const question = questions[index];
   const finished = index >= questions.length;
 
-  // Shuffle per session so a repeat run isn't the same answer positions.
-  const order = useMemo(
-    () => question?.options.map((_, i) => i) ?? [],
-    [question?.id],
+  const passage = useMemo(
+    () =>
+      question?.passageId
+        ? passages.find((p) => p.id === question.passageId)
+        : undefined,
+    [question?.passageId, passages],
   );
+
+  // A passage carries several questions. Only show it fresh at the top of its
+  // run — but keep it on screen throughout, since the exam lets you re-read.
+  const passageQuestionNumber = useMemo(() => {
+    if (!question?.passageId) return 0;
+    return (
+      questions
+        .slice(0, index + 1)
+        .filter((q) => q.passageId === question.passageId).length
+    );
+  }, [question?.passageId, index, questions]);
 
   if (finished) {
     return (
@@ -39,16 +63,8 @@ export function PracticeScreen({ questions }: Props) {
         <Text style={styles.doneBody}>
           ענית על {questions.length} שאלות, {correctCount} מהן נכונות.
         </Text>
-        <Pressable
-          style={styles.primaryButton}
-          onPress={() => {
-            setIndex(0);
-            setSelected(null);
-            setAnswered(false);
-            setCorrectCount(0);
-          }}
-        >
-          <Text style={styles.primaryButtonText}>להתחיל מחדש</Text>
+        <Pressable style={styles.primaryButton} onPress={onExit}>
+          <Text style={styles.primaryButtonText}>חזרה למסך הראשי</Text>
         </Pressable>
       </View>
     );
@@ -59,7 +75,9 @@ export function PracticeScreen({ questions }: Props) {
   function check() {
     if (selected === null) return;
     setAnswered(true);
-    if (selected === question.correctIndex) setCorrectCount((n) => n + 1);
+    const right = selected === question.correctIndex;
+    if (right) setCorrectCount((n) => n + 1);
+    onAnswered(question, right);
   }
 
   function next() {
@@ -70,26 +88,53 @@ export function PracticeScreen({ questions }: Props) {
 
   return (
     <View style={styles.screen}>
+      <View style={styles.topBar}>
+        <Pressable onPress={onExit} hitSlop={12} style={styles.backButton}>
+          <Text style={styles.backText}>← יציאה</Text>
+        </Pressable>
+        <Text style={styles.progress}>
+          שאלה {index + 1} מתוך {questions.length}
+        </Text>
+      </View>
+
       <ScrollView
         contentContainerStyle={styles.scroll}
         showsVerticalScrollIndicator={false}
       >
-        <View style={styles.header}>
-          <Text style={styles.typeLabel}>{TYPE_LABELS[question.type]}</Text>
-          <Text style={styles.progress}>
-            שאלה {index + 1} מתוך {questions.length}
-          </Text>
-        </View>
+        <Text style={styles.typeLabel}>{TYPE_LABELS[question.type]}</Text>
+
+        {passage && (
+          <View style={styles.passageCard}>
+            <Pressable
+              style={styles.passageHeader}
+              onPress={() => setPassageCollapsed((c) => !c)}
+              hitSlop={8}
+            >
+              <Text style={styles.passageMeta}>
+                קטע · שאלה {passageQuestionNumber} מתוך 5
+              </Text>
+              <Text style={styles.passageToggle}>
+                {passageCollapsed ? 'להצגת הקטע' : 'לצמצום הקטע'}
+              </Text>
+            </Pressable>
+            <Text
+              style={styles.passageText}
+              numberOfLines={passageCollapsed ? 2 : undefined}
+            >
+              {passage.body}
+            </Text>
+          </View>
+        )}
 
         <View style={styles.card}>
           <Text style={styles.prompt}>{question.prompt}</Text>
         </View>
 
         <View style={styles.options}>
-          {order.map((optionIndex) => (
+          {question.options.map((text, optionIndex) => (
             <AnswerOption
               key={optionIndex}
-              text={question.options[optionIndex]}
+              text={text}
               selected={selected === optionIndex}
               answered={answered}
               isCorrect={optionIndex === question.correctIndex}
@@ -133,10 +178,7 @@ export function PracticeScreen({ questions }: Props) {
 }
 
 const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    backgroundColor: colors.page,
-  },
+  screen: { flex: 1, backgroundColor: colors.page },
   scroll: {
     padding: spacing.lg,
     gap: spacing.lg,
@@ -151,18 +193,43 @@ const styles = StyleSheet.create({
     gap: spacing.md,
   },
 
-  header: {
+  topBar: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: spacing.lg,
+    paddingTop: spacing.md,
   },
-  typeLabel: {
-    ...type.heading,
+  backButton: { paddingVertical: spacing.xs },
+  backText: {
+    ...type.label,
     ...hebrew,
+    color: colors.brand,
   },
-  progress: {
-    ...type.caption,
-    ...hebrew,
+  progress: { ...type.caption, ...hebrew },
+
+  typeLabel: { ...type.heading, ...hebrew },
+
+  passageCard: {
+    backgroundColor: colors.surface,
+    borderRadius: radii.card,
+    borderWidth: 1,
+    borderColor: colors.border,
+    padding: spacing.lg,
+    gap: spacing.sm,
+  },
+  passageHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  passageMeta: { ...type.caption, ...hebrew },
+  passageToggle: { ...type.caption, ...hebrew, color: colors.brand },
+  passageText: {
+    fontSize: 16,
+    lineHeight: 26,
+    color: colors.textPrimary,
+    ...english,
   },
 
   card: {
@@ -179,9 +246,7 @@ const styles = StyleSheet.create({
     ...english,
   },
 
-  options: {
-    gap: spacing.md,
-  },
+  options: { gap: spacing.md },
 
   explanationCard: {
     backgroundColor: colors.accentSoft,
@@ -189,11 +254,7 @@ const styles = StyleSheet.create({
     padding: spacing.lg,
     gap: spacing.sm,
   },
-  verdict: {
-    ...type.label,
-    color: colors.textPrimary,
-    ...hebrew,
-  },
+  verdict: { ...type.label, color: colors.textPrimary, ...hebrew },
   explanation: {
     fontSize: 15,
     lineHeight: 22,
@@ -211,11 +272,10 @@ const styles = StyleSheet.create({
     backgroundColor: colors.brand,
     borderRadius: radii.button,
     paddingVertical: spacing.lg,
+    paddingHorizontal: spacing.xl,
     alignItems: 'center',
   },
-  buttonDisabled: {
-    opacity: 0.4,
-  },
+  buttonDisabled: { opacity: 0.4 },
   primaryButtonText: {
     color: colors.surface,
     fontSize: 17,
@@ -224,11 +284,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 
-  doneTitle: {
-    ...type.title,
-    ...hebrew,
-    textAlign: 'center',
-  },
+  doneTitle: { ...type.title, ...hebrew, textAlign: 'center' },
   doneBody: {
     ...type.body,
     ...hebrew,
