@@ -33,6 +33,7 @@ interface Props {
   onPractice: (type: QuestionType) => void;
   onSimulation: () => void;
   onVocab: () => void;
+  onReminders: () => void;
   onAccount: () => void;
 }
 
@@ -64,6 +65,7 @@ export function HomeScreen({
   onPractice,
   onSimulation,
   onVocab,
+  onReminders,
   onAccount,
 }: Props) {
   const days = daysUntil(examDate);
@@ -182,6 +184,22 @@ export function HomeScreen({
           <Text style={styles.cardBlurb}>
             {EXAM_SECTIONS.length} פרקים · {EXAM_TOTAL_QUESTIONS} שאלות ·{' '}
             {EXAM_TOTAL_MINUTES} דקות
+          </Text>
+        </View>
+      </Pressable>
+
+      <Text style={styles.sectionHeading}>תזכורות</Text>
+      <Pressable
+        style={({ pressed }) => [styles.card, pressed && styles.cardPressed]}
+        onPress={onReminders}
+      >
+        <View style={[styles.glyphBox, styles.glyphUnmet]}>
+          <Text style={[styles.glyph, styles.glyphTextUnmet]}>◔</Text>
+        </View>
+        <View style={styles.cardBody}>
+          <Text style={styles.cardTitle}>תזכורת תרגול</Text>
+          <Text style={styles.cardBlurb}>
+            התראה שנפתחת ישר לשאלה, בשעות שתבחר
           </Text>
         </View>
       </Pressable>

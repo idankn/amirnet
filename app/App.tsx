@@ -17,13 +17,20 @@ import {
   requestSimulation,
   type Usage,
 } from './src/lib/bank';
+import {
+  configureAndroidChannel,
+  configureHandler,
+  onReminderTap,
+} from './src/lib/reminders';
 import { isConfigured } from './src/lib/supabase';
 import { HomeScreen } from './src/screens/HomeScreen';
 import { PracticeScreen } from './src/screens/PracticeScreen';
+import { RemindersScreen } from './src/screens/RemindersScreen';
 import { SignInScreen } from './src/screens/SignInScreen';
 import { SimulationScreen } from './src/screens/SimulationScreen';
 import { VocabScreen } from './src/screens/VocabScreen';
 import { colors, hebrew, radii, spacing, type } from './src/theme';
+import { IMPLEMENTED_TYPES } from './src/types';
 import type { Passage, Question, QuestionBank, QuestionType, VocabEntry } from './src/types';
 
 /**
@@ -42,7 +49,8 @@ type Screen =
   | { name: 'home' }
   | { name: 'practice'; questions: Question[]; passages: Passage[] }
   | { name: 'simulation'; bank: QuestionBank }
-  | { name: 'vocab' };
+  | { name: 'vocab' }
+  | { name: 'reminders' };
 
 function AppContent() {
   const { session, profile, loading: authLoading, signOut } = useAuth();
@@ -143,6 +151,12 @@ function AppContent() {
     );
   }
 
+  // A reminder promises a question, so tapping it must land on one rather
+  // than on the home screen the user was trying to skip past.
+  useEffect(() => onReminderTap(() => {
+    void startPractice(IMPLEMENTED_TYPES[0]);
+  }), []);
+
   const goHome = () => {
     setScreen({ name: 'home' });
     refreshUsage();
@@ -159,6 +173,7 @@ function AppContent() {
           onPractice={startPractice}
           onSimulation={startSimulation}
           onVocab={() => setScreen({ name: 'vocab' })}
+          onReminders={() => setScreen({ name: 'reminders' })}
           onAccount={() =>
             session ? signOut() : setScreen({ name: 'signin' })
           }
@@ -190,6 +205,8 @@ function AppContent() {
       {screen.name === 'simulation' && (
         <SimulationScreen bank={screen.bank} onExit={goHome} />
       )}
+
+      {screen.name === 'reminders' && <RemindersScreen onExit={goHome} />}
 
       {screen.name === 'vocab' && (
         <VocabScreen
@@ -238,6 +255,9 @@ function AppContent() {
     </>
   );
 }
+
+configureHandler();
+void configureAndroidChannel();
 
 export default function App() {
   return (
