@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Local secrets — never commit an API key
+.env
+.env.*
+
+# Generated question bank (rebuildable; keep the schema, not the data)
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Generation run logs / raw API dumps
+runs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

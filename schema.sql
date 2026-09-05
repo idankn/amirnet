@@ -45,6 +45,8 @@ CREATE TABLE questions (
     passage_id      INTEGER REFERENCES passages(id) ON DELETE CASCADE,  -- NULL unless reading/listening
     prompt          TEXT NOT NULL,        -- the sentence / question stem
     correct_answer  TEXT NOT NULL,
+    explanation     TEXT,                 -- shown after answering; the third screen
+                                          -- in question -> answers -> explanation
 
     -- generation metadata
     target_word     TEXT,                 -- for completion / vocab / word_formation
