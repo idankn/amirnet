@@ -118,6 +118,14 @@ def _load_reading(conn, raw: dict, seen: list[str], dry: bool) -> int:
         problems.append(f"each of the five kinds must appear once, got {kinds}")
     if item.body in seen:
         problems.append("duplicate passage")
+    # Check the bank too, not just this run. Without this, re-running a file
+    # after fixing one item silently duplicates every item that already
+    # loaded — which is exactly what happened with reading_002.
+    already = conn.execute(
+        "SELECT 1 FROM passages WHERE body = ? LIMIT 1", (item.body,)
+    ).fetchone()
+    if already:
+        problems.append("passage already in the bank")
     if problems:
         raise Rejected(problems)
 
