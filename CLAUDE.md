@@ -201,15 +201,71 @@ uploaders, scraping is against ToS). **Format is not protected, only wording.** 
 generate original questions that mirror the official structure, sentence length and
 difficulty; use official simulations ONLY to calibrate level, never as a source to copy.
 
-**Vocabulary:** don't scrape a word list. Use open frequency lists (e.g. COCA-style —
-check each list's licence) and the Academic Word List, filtered to the frequency band
-the official sims sit in. Generate definitions and example sentences yourself (a
-commercial dictionary is copyrighted; a generated example is yours). Aim for a
-defensible **800–1,200 words**, not a giant bank.
+**Vocabulary — licensing checked 5 September 2026. Read this before adding a word list.**
+
+⚠️ **Correction to earlier guidance in this file:** the Academic Word List (Coxhead)
+was previously recommended here. It is licensed **CC BY-NC-ND 3.0 — non-commercial**,
+so it cannot ship in a paid app. Do not use it. The same caution applies to the
+Oxford 3000/5000, which are free to read on OUP's site but remain OUP's property.
+
+Sources verified as usable in a commercial product:
+
+| Source | Licence | Commercial | Notes |
+|---|---|---|---|
+| **CEFR-J Wordlist v1.5** | Free w/ citation | ✅ Yes | CEFR-labelled A1–B2. Tono Lab, Tokyo Univ. of Foreign Studies. **Primary source.** |
+| **Words-CEFR-Dataset** | MIT | ✅ Yes | CEFR-J + Google N-Gram, A1–C2, lemmatised |
+| **Octanove Vocabulary Profile C1/C2** | CC BY-SA 4.0 | ✅ Yes | Fills the C1/C2 gap above CEFR-J |
+| Project Gutenberg frequency lists | Public domain | ✅ Yes | Pre-1929 corpus — dated usage, use only as a cross-check |
+| Academic Word List (Coxhead) | CC BY-NC-ND 3.0 | ❌ **No** | Non-commercial. Do not use. |
+| Oxford 3000 / 5000 | OUP proprietary | ❌ No | Viewable, not licensable |
+| English Vocabulary Profile | Non-commercial | ❌ No | Free for teaching only |
+
+Attribution is required for CEFR-J and Octanove — put it in the app's about screen
+and in `wordlists/README.md`. That is the whole cost of using them.
+
+Generate definitions and example sentences yourself (a commercial dictionary is
+copyrighted; a generated example is yours). Aim for a defensible **800–1,200 words**,
+not a giant bank.
+
+**MALO's own materials remain off-limits.** nite.org.il carries a bare
+"© All rights reserved" with no licensing pathway of any kind. There is no way to
+buy, licence, or reuse their questions. Use their free practice test to calibrate
+level by hand as a test-taker; never as a source.
 
 **Target volume for launch:** ~850 questions + ~1,000 words. Roughly:
 sentence completion ~400 · restatement ~250 · reading ~40 passages · listening ~40
 passages · writing prompts ~30.
+
+### Difficulty levels — anchor to CEFR, never to invented labels
+
+Hebrew University publishes the official mapping from AMIRNET score to level, which
+gives difficulty an **objective anchor** instead of a made-up easy/medium/hard scale:
+
+| AMIRNET score | Level | CEFR |
+|---|---|---|
+| 50–69 | Pre-Basic A | — |
+| 70–84 | Pre-Basic B | — |
+| 85–99 | Basic | **A2** |
+| 100–119 | Lower Advanced | **B1** |
+| 120–133 | Upper Advanced | **B2** |
+| 134+ | **Exemption** | **C1** |
+
+This matters for honesty as much as for engineering. Telling a user a question is
+"hard" is a claim the app cannot support; telling them it is **B2** is a claim
+traceable to the CEFR level of its target word, which comes from a cited dataset.
+Label by CEFR and the claim is defensible.
+
+Two consequences for the pipeline:
+
+- **Difficulty is a controlled input, not a guess.** Generation is already built
+  around a target word; taking that word from a CEFR-labelled list makes the level
+  a property of the input rather than something the model estimates.
+- **`difficulty_est` stays an estimate until attempts prove otherwise.** The schema
+  already separates it from `difficulty_actual`. Do not present estimated difficulty
+  to users as though it were measured — that is exactly the misleading claim the
+  CEFR anchor exists to avoid.
+
+C1 is the level users actually care about: it is the exemption threshold.
 
 ### Six-stage generation process
 1. **Manual gold set** — hand-write ~40 questions AFTER studying official sims for
