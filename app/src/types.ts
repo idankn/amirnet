@@ -75,6 +75,20 @@ export const ALL_TYPES: QuestionType[] = [
   'writing',
 ];
 
+/**
+ * Types that actually work today.
+ *
+ * This is NOT a free/member distinction — those look identical everywhere in
+ * the app, and the only place tier becomes visible is the paywall. These three
+ * are simply the ones with content and a screen; the rest need work beyond
+ * questions (listening needs an audio player, writing needs feedback).
+ */
+export const IMPLEMENTED_TYPES: QuestionType[] = [
+  'sentence_completion',
+  'restatement',
+  'reading',
+];
+
 export interface ExamSection {
   type: QuestionType;
   questionCount: number;

@@ -1,5 +1,6 @@
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
+import type { Usage } from '../lib/bank';
 import { colors, hebrew, radii, spacing, type } from '../theme';
 import {
   ALL_TYPES,
@@ -7,9 +8,9 @@ import {
   EXAM_TOTAL_MINUTES,
   EXAM_TOTAL_QUESTIONS,
   EXPERIMENTAL_TYPES,
+  IMPLEMENTED_TYPES,
   TYPE_BLURBS,
   TYPE_LABELS,
-  type QuestionBank,
   type QuestionType,
 } from '../types';
 
@@ -24,11 +25,10 @@ const TYPE_GLYPHS: Record<QuestionType, string> = {
 };
 
 interface Props {
-  bank: QuestionBank;
   /** How many questions the user has answered, per type. */
   progress: Record<string, number>;
   examDate: Date;
-  isMember: boolean;
+  usage: Usage | null;
   signedIn: boolean;
   onPractice: (type: QuestionType) => void;
   onSimulation: () => void;
@@ -51,29 +51,25 @@ function daysUntil(date: Date): number {
  * predicted score. A numeric score anchor was considered and rejected; don't
  * reintroduce one here.
  *
- * Below it, every question type with the ones not yet met highlighted. That
- * list is the app's real answer to "what should I do now" — it's information,
- * and it leads straight to an action.
+ * Nothing on this screen is locked, badged, or greyed out by tier. A free user
+ * and a member see exactly the same list, and the simulation card looks the
+ * same to both. The boundary is only met by walking into it — see Paywall.
  */
 export function HomeScreen({
-  bank,
   progress,
   examDate,
-  isMember,
+  usage,
   signedIn,
   onPractice,
   onSimulation,
   onAccount,
 }: Props) {
   const days = daysUntil(examDate);
-
-  const countFor = (t: QuestionType) =>
-    bank.questions.filter((q) => q.type === t).length;
-
-  // The type to push today: the first one with content that hasn't been met.
-  const nextUnmet =
-    ALL_TYPES.find((t) => countFor(t) > 0 && !progress[t]) ??
-    ALL_TYPES.find((t) => countFor(t) > 0);
+  const isMember = usage?.member === true;
+  const remaining =
+    usage && !isMember && usage.limit != null
+      ? Math.max(0, usage.limit - (usage.used ?? 0))
+      : null;
 
   return (
     <ScrollView
@@ -97,38 +93,38 @@ export function HomeScreen({
         </Text>
       </View>
 
-      {!isMember && (
-        <View style={styles.demoBanner}>
-          <Text style={styles.demoTitle}>אתה מתרגל על מאגר ההתנסות</Text>
-          <Text style={styles.demoBody}>
-            ההתנסות פתוחה לכולם וכוללת דוגמאות מכל סוגי השאלות. המאגר המלא
-            נפתח למנויים.
-          </Text>
-        </View>
+      {/* Quiet, factual, and only for free accounts. Not a lock — just a count. */}
+      {remaining !== null && (
+        <Text style={styles.remaining}>
+          {remaining > 0
+            ? `נותרו ${remaining} שאלות בתרגול של היום`
+            : 'סיימת את התרגול של היום'}
+        </Text>
       )}
 
-      {nextUnmet && (
-        <Pressable style={styles.primaryButton} onPress={() => onPractice(nextUnmet)}>
-          <Text style={styles.primaryButtonText}>התרגול של היום</Text>
-        </Pressable>
-      )}
+      <Pressable
+        style={styles.primaryButton}
+        onPress={() => onPractice(IMPLEMENTED_TYPES[0])}
+      >
+        <Text style={styles.primaryButtonText}>התרגול של היום</Text>
+      </Pressable>
 
       <Text style={styles.sectionHeading}>סוגי שאלות</Text>
       <View style={styles.list}>
         {ALL_TYPES.map((t) => {
-          const available = countFor(t);
+          const live = IMPLEMENTED_TYPES.includes(t);
           const done = progress[t] ?? 0;
           const met = done > 0;
 
           return (
             <Pressable
               key={t}
-              disabled={available === 0}
+              disabled={!live}
               onPress={() => onPractice(t)}
               style={({ pressed }) => [
                 styles.card,
-                available === 0 && styles.cardDisabled,
-                pressed && available > 0 && styles.cardPressed,
+                !live && styles.cardDisabled,
+                pressed && live && styles.cardPressed,
               ]}
             >
               <View style={[styles.glyphBox, met ? styles.glyphMet : styles.glyphUnmet]}>
@@ -148,7 +144,7 @@ export function HomeScreen({
               </View>
 
               <Text style={styles.cardMeta}>
-                {!available ? 'בקרוב' : met ? `${done} נענו` : 'טרם תרגלת'}
+                {!live ? 'בקרוב' : met ? `${done} נענו` : 'טרם תרגלת'}
               </Text>
             </Pressable>
           );
@@ -199,24 +195,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
 
-  demoBanner: {
-    backgroundColor: colors.accentSoft,
-    borderRadius: radii.card,
-    padding: spacing.lg,
-    gap: spacing.xs,
-  },
-  demoTitle: {
-    fontSize: 15,
-    fontWeight: '600',
-    color: colors.textPrimary,
-    ...hebrew,
-  },
-  demoBody: { ...type.caption, ...hebrew, color: colors.textBody },
-
-  countdown: {
-    alignItems: 'center',
-    paddingVertical: spacing.xl,
-  },
+  countdown: { alignItems: 'center', paddingVertical: spacing.xl },
   countdownNumber: {
     fontSize: 64,
     lineHeight: 72,
@@ -228,6 +207,13 @@ const styles = StyleSheet.create({
     ...hebrew,
     textAlign: 'center',
     color: colors.textSecondary,
+  },
+
+  remaining: {
+    ...type.caption,
+    ...hebrew,
+    textAlign: 'center',
+    marginTop: -spacing.md,
   },
 
   primaryButton: {
@@ -298,20 +284,8 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     overflow: 'hidden',
   },
-  cardBlurb: {
-    ...type.caption,
-    ...hebrew,
-  },
-  cardMeta: {
-    ...type.caption,
-    ...hebrew,
-    color: colors.textSecondary,
-  },
+  cardBlurb: { ...type.caption, ...hebrew },
+  cardMeta: { ...type.caption, ...hebrew, color: colors.textSecondary },
 
-  footnote: {
-    ...type.caption,
-    ...hebrew,
-    textAlign: 'center',
-    marginTop: spacing.sm,
-  },
+  footnote: { ...type.caption, ...hebrew, textAlign: 'center', marginTop: spacing.sm },
 });
