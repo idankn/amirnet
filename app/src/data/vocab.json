@@ -72,6 +72,14 @@
     "cefr": "A2"
   },
   {
+    "word": "academic",
+    "pos": "adjective",
+    "definition": "Relating to study, teaching and research at a university or school.",
+    "example": "Her academic record was strong enough for any programme she chose.",
+    "translation": "אקדמי, לימודי",
+    "cefr": "B1"
+  },
+  {
     "word": "acknowledge",
     "pos": "verb",
     "definition": "To admit that something is true, or to show you have noticed someone.",
@@ -96,11 +104,35 @@
     "cefr": "B1"
   },
   {
+    "word": "aware",
+    "pos": "adjective",
+    "definition": "Knowing that something exists or is happening.",
+    "example": "Few passengers were aware that the route had changed that morning.",
+    "translation": "מודע",
+    "cefr": "B1"
+  },
+  {
     "word": "benefit",
     "pos": "noun",
     "definition": "An advantage gained from something.",
     "example": "One benefit of the new schedule is that nobody travels during rush hour.",
     "translation": "תועלת, יתרון",
+    "cefr": "B1"
+  },
+  {
+    "word": "breakthrough",
+    "pos": "noun",
+    "definition": "A sudden important discovery or advance after a period of little progress.",
+    "example": "The breakthrough came from a technique borrowed from another field.",
+    "translation": "פריצת דרך",
+    "cefr": "B1"
+  },
+  {
+    "word": "classify",
+    "pos": "verb",
+    "definition": "To put things into groups according to what they have in common.",
+    "example": "Librarians classify each new title before it reaches the shelves.",
+    "translation": "לסווג",
     "cefr": "B1"
   },
   {
@@ -120,11 +152,43 @@
     "cefr": "B1"
   },
   {
+    "word": "curious",
+    "pos": "adjective",
+    "definition": "Wanting to know more about something, or strange in an interesting way.",
+    "example": "A curious detail in the report went unnoticed for months.",
+    "translation": "סקרן; מוזר",
+    "cefr": "B1"
+  },
+  {
+    "word": "deny",
+    "pos": "verb",
+    "definition": "To say that something is not true, or to refuse someone what they ask for.",
+    "example": "The company denied that any customer data had been exposed.",
+    "translation": "להכחיש; לשלול",
+    "cefr": "B1"
+  },
+  {
+    "word": "deprive",
+    "pos": "verb",
+    "definition": "To take something away from someone, or to prevent them from having it.",
+    "example": "The new rules deprive part-time staff of the same travel allowance.",
+    "translation": "לשלול מ-, למנוע מ-",
+    "cefr": "B1"
+  },
+  {
     "word": "determine",
     "pos": "verb",
     "definition": "To decide something officially, or to be the factor that decides an outcome.",
     "example": "Rainfall in early spring largely determines the size of the harvest.",
     "translation": "לקבוע, להכריע",
+    "cefr": "B1"
+  },
+  {
+    "word": "guilty",
+    "pos": "adjective",
+    "definition": "Having done something wrong, or feeling bad about having done it.",
+    "example": "He felt guilty about leaving the work to everyone else.",
+    "translation": "אשם; מרגיש אשמה",
     "cefr": "B1"
   },
   {
@@ -176,6 +240,14 @@
     "cefr": "B1"
   },
   {
+    "word": "proposal",
+    "pos": "noun",
+    "definition": "A plan or suggestion put forward for others to consider.",
+    "example": "The proposal was rejected twice before anyone read it properly.",
+    "translation": "הצעה",
+    "cefr": "B1"
+  },
+  {
     "word": "reduce",
     "pos": "verb",
     "definition": "To make something smaller in size, amount or degree.",
@@ -184,11 +256,43 @@
     "cefr": "B1"
   },
   {
+    "word": "regain",
+    "pos": "verb",
+    "definition": "To get back something you had lost.",
+    "example": "It took the airline three years to regain the trust of its passengers.",
+    "translation": "להשיב, לרכוש מחדש",
+    "cefr": "B1"
+  },
+  {
+    "word": "remedy",
+    "pos": "noun",
+    "definition": "Something that solves a problem or cures an illness.",
+    "example": "There is no simple remedy for a shortage that took decades to build.",
+    "translation": "תרופה; פתרון",
+    "cefr": "B1"
+  },
+  {
     "word": "require",
     "pos": "verb",
     "definition": "To need something, or to officially demand it.",
     "example": "The course requires no previous knowledge of statistics.",
     "translation": "לדרוש, להזדקק ל-",
+    "cefr": "B1"
+  },
+  {
+    "word": "strengthen",
+    "pos": "verb",
+    "definition": "To make something more powerful, more solid or harder to break.",
+    "example": "Steel cables were added to strengthen the roof before winter.",
+    "translation": "לחזק",
+    "cefr": "B1"
+  },
+  {
+    "word": "struggle",
+    "pos": "noun",
+    "definition": "A long effort against something difficult.",
+    "example": "Keeping the clinic open has been a struggle since the funding was cut.",
+    "translation": "מאבק, מאמץ",
     "cefr": "B1"
   },
   {
@@ -208,6 +312,22 @@
     "cefr": "B1"
   },
   {
+    "word": "valuable",
+    "pos": "adjective",
+    "definition": "Worth a lot of money, or very useful and important.",
+    "example": "The interviews turned out to be the most valuable part of the study.",
+    "translation": "בעל ערך, יקר",
+    "cefr": "B1"
+  },
+  {
+    "word": "vary",
+    "pos": "verb",
+    "definition": "To be different from one another, or to change over time.",
+    "example": "Prices vary considerably between the coast and the interior.",
+    "translation": "להשתנות; לגוון",
+    "cefr": "B1"
+  },
+  {
     "word": "widespread",
     "pos": "adjective",
     "definition": "Found over a large area or among many people.",
@@ -216,11 +336,27 @@
     "cefr": "B1"
   },
   {
+    "word": "absurd",
+    "pos": "adjective",
+    "definition": "So unreasonable that it seems ridiculous.",
+    "example": "It seemed absurd to close the only library in a town of ten thousand.",
+    "translation": "אבסורדי, מגוחך",
+    "cefr": "B2"
+  },
+  {
     "word": "adequate",
     "pos": "adjective",
     "definition": "Enough for what is needed, though not more than that.",
     "example": "The lighting was adequate for reading but too dim for detailed work.",
     "translation": "מספיק, הולם",
+    "cefr": "B2"
+  },
+  {
+    "word": "certify",
+    "pos": "verb",
+    "definition": "To state officially, usually in writing, that something is true or meets a standard.",
+    "example": "Only an approved inspector can certify that the wiring is safe.",
+    "translation": "לאשר רשמית, להסמיך",
     "cefr": "B2"
   },
   {
@@ -237,6 +373,54 @@
     "definition": "To say or show the opposite of something else, so both cannot be true.",
     "example": "The new figures contradict everything the earlier study concluded.",
     "translation": "לסתור, להכחיש",
+    "cefr": "B2"
+  },
+  {
+    "word": "decent",
+    "pos": "adjective",
+    "definition": "Good enough to be acceptable, or honest and fair in behaviour.",
+    "example": "They finally found a decent flat within walking distance of campus.",
+    "translation": "הגון; סביר",
+    "cefr": "B2"
+  },
+  {
+    "word": "detach",
+    "pos": "verb",
+    "definition": "To separate one thing from another it was joined to.",
+    "example": "You can detach the keyboard and use the screen on its own.",
+    "translation": "לנתק, להפריד",
+    "cefr": "B2"
+  },
+  {
+    "word": "downfall",
+    "pos": "noun",
+    "definition": "The cause of someone losing their power, position or success.",
+    "example": "Overexpansion into markets it did not understand proved the chain's downfall.",
+    "translation": "נפילה, מפלה",
+    "cefr": "B2"
+  },
+  {
+    "word": "entitle",
+    "pos": "verb",
+    "definition": "To give someone the right to have or do something.",
+    "example": "The ticket entitles you to one free refill during the performance.",
+    "translation": "להקנות זכות, לזכות ב-",
+    "cefr": "B2"
+  },
+  {
+    "word": "equip",
+    "pos": "verb",
+    "definition": "To provide someone or something with what is needed for a task.",
+    "example": "The course is meant to equip graduates for work in a laboratory.",
+    "translation": "לצייד, להכשיר",
+    "cefr": "B2"
+  },
+  {
+    "word": "evolve",
+    "pos": "verb",
+    "definition": "To develop gradually into something different.",
+    "example": "What began as a student project evolved into a national service.",
+    "translation": "להתפתח, להתגלגל",
     "cefr": "B2"
   },
   {
@@ -264,11 +448,35 @@
     "cefr": "B2"
   },
   {
+    "word": "margin",
+    "pos": "noun",
+    "definition": "The amount by which one thing exceeds another, or the empty space at the edge of a page.",
+    "example": "The motion passed by a margin of just four votes.",
+    "translation": "מרווח, הפרש; שוליים",
+    "cefr": "B2"
+  },
+  {
+    "word": "mediocre",
+    "pos": "adjective",
+    "definition": "Not bad, but clearly not good either.",
+    "example": "The reviews were mediocre and ticket sales fell within a fortnight.",
+    "translation": "בינוני, לא מרשים",
+    "cefr": "B2"
+  },
+  {
     "word": "perceive",
     "pos": "verb",
     "definition": "To notice something, or to understand it in a particular way.",
     "example": "Younger customers perceive the brand quite differently from older ones.",
     "translation": "לתפוס, להבחין, לראות כ-",
+    "cefr": "B2"
+  },
+  {
+    "word": "permeate",
+    "pos": "verb",
+    "definition": "To spread through every part of something.",
+    "example": "A quiet distrust of management had permeated the whole department.",
+    "translation": "לחלחל, לפעפע",
     "cefr": "B2"
   },
   {
@@ -278,5 +486,189 @@
     "example": "Investors remain reluctant to fund projects with no clear return.",
     "translation": "מהסס, לא ששׂ",
     "cefr": "B2"
+  },
+  {
+    "word": "successive",
+    "pos": "adjective",
+    "definition": "Following one after another without a break.",
+    "example": "Three successive governments promised the railway and none built it.",
+    "translation": "עוקב, רצוף",
+    "cefr": "B2"
+  },
+  {
+    "word": "therapy",
+    "pos": "noun",
+    "definition": "Treatment intended to help someone recover from illness or difficulty, usually without surgery.",
+    "example": "Physical therapy restored most of the movement in his shoulder.",
+    "translation": "טיפול",
+    "cefr": "B2"
+  },
+  {
+    "word": "valid",
+    "pos": "adjective",
+    "definition": "Legally or logically acceptable, and therefore able to be used or relied on.",
+    "example": "Your ticket is valid for travel on any day except public holidays.",
+    "translation": "תקף, בר-תוקף",
+    "cefr": "B2"
+  },
+  {
+    "word": "alienate",
+    "pos": "verb",
+    "definition": "To make someone feel distant or unwelcome, so that support is lost.",
+    "example": "The pricing change alienated many of the firm's oldest customers.",
+    "translation": "לנכר, להרחיק",
+    "cefr": "C1"
+  },
+  {
+    "word": "continuity",
+    "pos": "noun",
+    "definition": "The quality of going on without interruption or sudden change.",
+    "example": "Keeping the same manager gave the department badly needed continuity.",
+    "translation": "רציפות",
+    "cefr": "C1"
+  },
+  {
+    "word": "coverage",
+    "pos": "noun",
+    "definition": "The extent to which something is reported, included or protected.",
+    "example": "Rural areas still have poor mobile coverage despite years of investment.",
+    "translation": "כיסוי; סיקור",
+    "cefr": "C1"
+  },
+  {
+    "word": "discard",
+    "pos": "verb",
+    "definition": "To get rid of something because it is no longer wanted or useful.",
+    "example": "The team discarded its first three designs before finding one that worked.",
+    "translation": "להשליך, לזנוח",
+    "cefr": "C1"
+  },
+  {
+    "word": "divergent",
+    "pos": "adjective",
+    "definition": "Moving apart, or differing from one another.",
+    "example": "The two studies reached sharply divergent conclusions from the same data.",
+    "translation": "מתפצל, שונה בתכלית",
+    "cefr": "C1"
+  },
+  {
+    "word": "expedite",
+    "pos": "verb",
+    "definition": "To make a process happen faster than it otherwise would.",
+    "example": "A second reviewer was hired to expedite the approval process.",
+    "translation": "לזרז",
+    "cefr": "C1"
+  },
+  {
+    "word": "ingenious",
+    "pos": "adjective",
+    "definition": "Clever in an original and surprising way.",
+    "example": "Her solution was ingenious: two problems solved by removing one wall.",
+    "translation": "מחוכם, גאוני",
+    "cefr": "C1"
+  },
+  {
+    "word": "integral",
+    "pos": "adjective",
+    "definition": "Forming a necessary part of something, so that it cannot be removed.",
+    "example": "Feedback from users became integral to how the product was designed.",
+    "translation": "בלתי נפרד, חיוני",
+    "cefr": "C1"
+  },
+  {
+    "word": "intellect",
+    "pos": "noun",
+    "definition": "The ability to think, reason and understand difficult ideas.",
+    "example": "The role demands judgement and patience as much as intellect.",
+    "translation": "שכל, כושר חשיבה",
+    "cefr": "C1"
+  },
+  {
+    "word": "jurisdiction",
+    "pos": "noun",
+    "definition": "The official power to make legal decisions, or the area where that power applies.",
+    "example": "The dispute fell outside the jurisdiction of the local court.",
+    "translation": "סמכות שיפוט",
+    "cefr": "C1"
+  },
+  {
+    "word": "portray",
+    "pos": "verb",
+    "definition": "To describe or represent someone in a particular way.",
+    "example": "The article portrays him as a reformer, which his colleagues dispute.",
+    "translation": "לתאר, להציג כ-",
+    "cefr": "C1"
+  },
+  {
+    "word": "predecessor",
+    "pos": "noun",
+    "definition": "The person who held a job or position before the current one.",
+    "example": "Unlike her predecessor, she published the budget in full each year.",
+    "translation": "קודם בתפקיד",
+    "cefr": "C1"
+  },
+  {
+    "word": "prohibitive",
+    "pos": "adjective",
+    "definition": "So expensive or difficult that it prevents something from happening.",
+    "example": "The cost of storage was prohibitive until batteries became cheaper.",
+    "translation": "מונע, יקר מכדי",
+    "cefr": "C1"
+  },
+  {
+    "word": "relinquish",
+    "pos": "verb",
+    "definition": "To give up something you hold, such as power, a claim or control.",
+    "example": "She relinquished her seat on the board after twelve years.",
+    "translation": "לוותר על, למסור",
+    "cefr": "C1"
+  },
+  {
+    "word": "remorse",
+    "pos": "noun",
+    "definition": "Deep regret for something wrong that you have done.",
+    "example": "He showed no remorse when the full extent of the damage emerged.",
+    "translation": "חרטה, נקיפות מצפון",
+    "cefr": "C1"
+  },
+  {
+    "word": "robust",
+    "pos": "adjective",
+    "definition": "Strong enough to withstand pressure, difficulty or criticism.",
+    "example": "The findings held up under a robust review by outside experts.",
+    "translation": "איתן, חסון",
+    "cefr": "C1"
+  },
+  {
+    "word": "salvage",
+    "pos": "verb",
+    "definition": "To save something from a situation in which the rest is lost.",
+    "example": "Little could be salvaged from the archive after the flood.",
+    "translation": "לחלץ, להציל",
+    "cefr": "C1"
+  },
+  {
+    "word": "scorn",
+    "pos": "noun",
+    "definition": "Strong feeling that someone or something deserves no respect at all.",
+    "example": "The proposal was met with scorn by almost everyone in the room.",
+    "translation": "בוז, זלזול",
+    "cefr": "C1"
+  },
+  {
+    "word": "sustainable",
+    "pos": "adjective",
+    "definition": "Able to continue over a long period without using up resources or causing lasting damage.",
+    "example": "Fishing at this rate is not sustainable for more than a decade.",
+    "translation": "בר-קיימא",
+    "cefr": "C1"
+  },
+  {
+    "word": "versatile",
+    "pos": "adjective",
+    "definition": "Able to be used for many purposes, or able to do many things well.",
+    "example": "The material is versatile enough for both packaging and insulation.",
+    "translation": "רב-תכליתי",
+    "cefr": "C1"
   }
 ]

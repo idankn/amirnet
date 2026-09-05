@@ -24,16 +24,19 @@ VOCAB_OUT_PATH = config.ROOT / "app" / "src" / "data" / "vocab.json"
 SHUFFLE_SEED = 20260905
 
 
-def export_vocab() -> int:
+def export_vocab(include_drafts: bool = False) -> int:
     """Write the vocab list for the app. Returns how many entries were written."""
+    statuses = ("draft", "validated", "live") if include_drafts else ("validated", "live")
     conn = db.connect()
     rows = conn.execute(
-        """
+        f"""
         SELECT word, pos, definition_en, example, translation_he, cefr_level
           FROM vocab
          WHERE cefr_level IS NOT NULL
+           AND status IN ({",".join("?" * len(statuses))})
          ORDER BY cefr_level, word
-        """
+        """,
+        statuses,
     ).fetchall()
     conn.close()
 
@@ -111,14 +114,16 @@ def from_gold(rng: random.Random) -> tuple[list[dict], list[dict]]:
     return passages, questions
 
 
-def from_db(rng: random.Random) -> tuple[list[dict], list[dict]]:
+def from_db(rng: random.Random, include_drafts: bool = False) -> tuple[list[dict], list[dict]]:
+    statuses = ("draft", "validated", "live") if include_drafts else ("validated", "live")
     conn = db.connect()
     rows = conn.execute(
-        """
+        f"""
         SELECT * FROM questions
-         WHERE status IN ('validated', 'live')
+         WHERE status IN ({",".join("?" * len(statuses))})
          ORDER BY type, passage_id, id
-        """
+        """,
+        statuses,
     ).fetchall()
 
     passages: list[dict] = []
@@ -155,11 +160,17 @@ def from_db(rng: random.Random) -> tuple[list[dict], list[dict]]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--from-db", action="store_true",
-                        help="export validated items from the bank instead of the gold set")
+                        help="export items from the bank instead of the gold set")
+    parser.add_argument("--include-drafts", action="store_true",
+                        help="ALSO export drafts that have not passed the blind check. "
+                             "For previewing your own writing only — never for a build "
+                             "that reaches users.")
     args = parser.parse_args()
 
     rng = random.Random(SHUFFLE_SEED)
-    passages, questions = from_db(rng) if args.from_db else from_gold(rng)
+    passages, questions = (
+        from_db(rng, args.include_drafts) if args.from_db else from_gold(rng)
+    )
 
     if not questions:
         raise SystemExit("Nothing to export.")
@@ -181,8 +192,14 @@ def main() -> None:
     for qtype, n in sorted(by_type.items()):
         print(f"  {qtype:<22} {n:>4}")
 
-    n_vocab = export_vocab()
+    n_vocab = export_vocab(args.include_drafts)
     print(f"Exported {n_vocab} vocab entries to {VOCAB_OUT_PATH}")
+
+    if args.include_drafts:
+        print(
+            "\n*** Includes UNVERIFIED drafts. No second model has solved these\n"
+            "    blind, so some may have two defensible answers. Preview only."
+        )
 
 
 if __name__ == "__main__":
