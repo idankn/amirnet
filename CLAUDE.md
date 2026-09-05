@@ -24,30 +24,102 @@ Hebrew (RTL); the practice content is English (LTR).
 
 ---
 
-## 2. Verified exam facts (confirm at nite.org.il before shipping content)
+## 2. Verified exam facts
 
-Facts below were checked against MALO; treat prep-institute numbers as unverified.
+**Verified 5 September 2026 against nite.org.il** (the AMIRNET overview, FAQ,
+examinee guidelines, and the 26 March 2026 change notice). Sources are listed at
+the end of this section. Treat prep-institute numbers as unverified; where a prep
+site and MALO disagree, MALO wins.
 
-- **Structure (classic sections):** sentence completion, restatement, reading
-  comprehension. These are the core of any first version.
-- **Per-section timer, not per-question.** Unused time does NOT roll over to the
-  next section. Reading the instructions counts inside the section's time. This is a
-  real feature to simulate — it changes how people manage exam-day time.
-- **Adaptive between sections**, not after each question (differs from the
-  psychometric plan).
-- **Text-to-speech:** from **19 April 2026**, all AMIRNET test-takers can have texts
-  and questions read aloud via read-aloud software. Let users practise with this on.
-- **Experimental sections (conditional — "may include", not guaranteed):** listening
-  comprehension, in-context grammar, word formation, and a **12-minute writing task**
-  (one task). These are NOT guaranteed to appear on any given sitting. Marketing angle:
-  "you can't choose which experimental sections you'll get, so meet each type at least
-  once" — do NOT promise the writing task will appear.
-- **Bonus points / whether experimental sections are scored:** UNVERIFIED. Two prep
-  sites contradict each other. Do not build scoring logic around this until confirmed.
-- **Speaking:** not currently a section. Future direction only (came up re a Council
-  for Higher Education skills decision), not something that exists today.
-- During the real exam, no sample questions or practice are shown mid-test — so a
-  test-taker who never saw a listening section before meets it cold, on the clock.
+### The exact section structure — build the simulation to this
+
+Six fixed sections, **39 minutes, 23 questions**, in this order. The order is not
+what you would guess (reading sits third, between the sentence-completion and
+restatement blocks) — do not reorder it:
+
+| # | Section | Questions | Time |
+|---|---------------------|-----------|--------|
+| 1 | Sentence completion | 4 | 4 min |
+| 2 | Sentence completion | 4 | 4 min |
+| 3 | Reading comprehension | 5 | 15 min |
+| 4 | Restatement | 3 | 6 min |
+| 5 | Restatement | 3 | 6 min |
+| 6 | Sentence completion | 4 | 4 min |
+| 7–8 | Experimental | varies | varies |
+
+Total test is **7 or 8 sections, ~50 minutes**. The two variants differ:
+an **8-section** test ends with **two experimental sections**; a **7-section**
+test ends with **one writing task**.
+
+Note what the per-section timings imply about difficulty: 4 minutes for 4
+sentence completions is **60 seconds each**; 6 minutes for 3 restatements is
+**2 minutes each**; 15 minutes for a passage plus 5 questions. An item that takes
+a prepared test-taker three minutes is not exam-shaped, however good it is.
+
+### Timing and navigation
+
+- **Per-section timer, not per-question.** Unused time does NOT roll over —
+  MALO's wording: "there is no way to accumulate unused time during the test."
+  Finishing early buys nothing.
+- Inside a section you can move freely between questions, **mark a question for
+  review**, and change answers. (The mark-for-review affordance is a real exam
+  feature — the app should have it.)
+- You **cannot return to a previous section** once it ends; progression is
+  automatic when time expires.
+- You may advance early **only if every question in the section has an answer
+  selected.**
+
+### Adaptivity
+
+Adaptive **between sections**, not per question. The test opens with a section of
+**moderately difficult** questions, scores it, and picks the next section's
+difficulty accordingly. This makes `difficulty_est` load-bearing: sections are
+assembled from difficulty-tiered pools, so the field is part of the engine, not
+just metadata.
+
+### Scoring
+
+- Scale is **50–150**, equivalent to the English domain of the psychometric test.
+  (The 200–800 scale belongs to the psychometric test, which keeps it.)
+- **Experimental sections are scored, asymmetrically — this is now confirmed.**
+  MALO's FAQ: wrong answers in an experimental section "will not lower your
+  score, but correct answers can raise your score by one or two points." This
+  resolves the item that was previously flagged UNVERIFIED with prep sites
+  contradicting each other. It is a real, if small, upside-only bonus — worth
+  telling users about, since it changes whether it's worth guessing there.
+
+### Experimental sections
+
+Conditional — "may include", never guaranteed on a given sitting: listening
+comprehension, in-context grammar, word formation, and a **writing task**.
+Marketing angle stands: "you can't choose which experimental sections you'll
+get, so meet each type at least once." Do NOT promise the writing task appears.
+
+### Text-to-speech
+
+Confirmed: from **19 April 2026**, all AMIRNET examinees can have texts and
+questions read aloud via reading software — this is standard for everyone, not an
+accommodation. The same notice added the writing task as an experimental section.
+Let users practise with read-aloud on.
+
+### Other
+
+- **Speaking:** not a section today. Future direction only.
+- No sample questions or practice are shown mid-test, so a test-taker who never
+  met a listening section before meets it cold, on the clock.
+- From December 2026 AMIRNET becomes the sole instrument for English, taken
+  year-round with no fixed dates. Institutions start using the new format for
+  admissions in the 2027–28 academic year (opening October 2027).
+
+**Sources:** [AMIRNET overview](https://www.nite.org.il/other-tests/amirnet/?lang=en) ·
+[FAQ](https://www.nite.org.il/other-tests/amirnet/faq/?lang=en) ·
+[Guidelines for examinees](https://www.nite.org.il/other-tests/amirnet/tips/?lang=en) ·
+[Change notice, 26 Mar 2026](https://www.nite.org.il/news/notice-260326/?lang=en) ·
+[English separation notice](https://www.nite.org.il/news/notice-15022026/?lang=en)
+
+MALO also runs a free official practice test at `amirnet-practice.nite.org.il`.
+Use it to calibrate difficulty by hand. Its questions are copyrighted and are not
+a source to copy from — see section 5.
 
 ---
 
