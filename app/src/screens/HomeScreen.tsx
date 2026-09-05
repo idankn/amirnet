@@ -28,8 +28,11 @@ interface Props {
   /** How many questions the user has answered, per type. */
   progress: Record<string, number>;
   examDate: Date;
+  isMember: boolean;
+  signedIn: boolean;
   onPractice: (type: QuestionType) => void;
   onSimulation: () => void;
+  onAccount: () => void;
 }
 
 function daysUntil(date: Date): number {
@@ -56,8 +59,11 @@ export function HomeScreen({
   bank,
   progress,
   examDate,
+  isMember,
+  signedIn,
   onPractice,
   onSimulation,
+  onAccount,
 }: Props) {
   const days = daysUntil(examDate);
 
@@ -75,12 +81,31 @@ export function HomeScreen({
       contentContainerStyle={styles.content}
       showsVerticalScrollIndicator={false}
     >
+      <View style={styles.accountRow}>
+        <Pressable onPress={onAccount} hitSlop={8}>
+          <Text style={styles.accountLink}>
+            {signedIn ? 'התנתקות' : 'התחברות'}
+          </Text>
+        </Pressable>
+        {isMember && <Text style={styles.memberTag}>מנוי</Text>}
+      </View>
+
       <View style={styles.countdown}>
         <Text style={styles.countdownNumber}>{days}</Text>
         <Text style={styles.countdownLabel}>
           {days === 1 ? 'יום לבחינה' : 'ימים לבחינה'}
         </Text>
       </View>
+
+      {!isMember && (
+        <View style={styles.demoBanner}>
+          <Text style={styles.demoTitle}>אתה מתרגל על מאגר ההתנסות</Text>
+          <Text style={styles.demoBody}>
+            ההתנסות פתוחה לכולם וכוללת דוגמאות מכל סוגי השאלות. המאגר המלא
+            נפתח למנויים.
+          </Text>
+        </View>
+      )}
 
       {nextUnmet && (
         <Pressable style={styles.primaryButton} onPress={() => onPractice(nextUnmet)}>
@@ -157,6 +182,36 @@ export function HomeScreen({
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: colors.page },
   content: { padding: spacing.lg, gap: spacing.lg, paddingBottom: spacing.xxl },
+
+  accountRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  accountLink: { ...type.label, ...hebrew, color: colors.brand },
+  memberTag: {
+    ...type.caption,
+    color: colors.accent,
+    backgroundColor: colors.accentSoft,
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 6,
+    overflow: 'hidden',
+  },
+
+  demoBanner: {
+    backgroundColor: colors.accentSoft,
+    borderRadius: radii.card,
+    padding: spacing.lg,
+    gap: spacing.xs,
+  },
+  demoTitle: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: colors.textPrimary,
+    ...hebrew,
+  },
+  demoBody: { ...type.caption, ...hebrew, color: colors.textBody },
 
   countdown: {
     alignItems: 'center',

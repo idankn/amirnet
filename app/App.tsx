@@ -1,89 +1,192 @@
-import { useState } from 'react';
-import { StyleSheet } from 'react-native';
+import { useEffect, useState } from 'react';
+import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
-import bank from './src/data/questions.json';
+import bundledBank from './src/data/questions.json';
+import { AuthProvider, useAuth } from './src/lib/auth';
+import { fetchBank, recordAttempt } from './src/lib/bank';
+import { isConfigured } from './src/lib/supabase';
 import { HomeScreen } from './src/screens/HomeScreen';
 import { PracticeScreen } from './src/screens/PracticeScreen';
+import { SignInScreen } from './src/screens/SignInScreen';
 import { SimulationScreen } from './src/screens/SimulationScreen';
-import { colors } from './src/theme';
+import { colors, hebrew, radii, spacing, type } from './src/theme';
 import type { QuestionBank, QuestionType } from './src/types';
 
 /**
- * Content is bundled from the gold set for now. Once generation has run, swap
- * in the bank export:
- *
- *     python -m pipeline.export_app --from-db
+ * Fallback content, used only when Supabase isn't configured yet, so the app
+ * still runs during development. Once EXPO_PUBLIC_SUPABASE_URL is set this is
+ * never read — content comes from the API, gated by row-level security.
  */
-const BANK = bank as QuestionBank;
+const BUNDLED = bundledBank as QuestionBank;
 
-/**
- * TODO: the user picks this in settings — it's the home screen's anchor, so it
- * can't stay a constant. Defaulting ~90 days out until that screen exists.
- */
-const EXAM_DATE = new Date(Date.now() + 90 * 24 * 60 * 60 * 1000);
+const DEFAULT_EXAM_DAYS = 90;
 
 type Screen =
+  | { name: 'signin' }
   | { name: 'home' }
   | { name: 'practice'; type: QuestionType }
   | { name: 'simulation' };
 
-export default function App() {
-  const [screen, setScreen] = useState<Screen>({ name: 'home' });
+function AppContent() {
+  const { session, profile, loading: authLoading, isMember, signOut } = useAuth();
+
+  const [screen, setScreen] = useState<Screen>(
+    isConfigured ? { name: 'signin' } : { name: 'home' },
+  );
+  const [bank, setBank] = useState<QuestionBank | null>(
+    isConfigured ? null : BUNDLED,
+  );
+  const [bankError, setBankError] = useState<string | null>(null);
 
   /**
-   * Questions answered per type — what drives "types you haven't met yet".
+   * Questions answered per type, for the home screen's coverage list.
    *
-   * TODO: this lives in memory, so it resets when the app restarts. The home
-   * screen's central claim is about what you have and haven't met, which means
-   * it needs real persistence (AsyncStorage, then the attempts table) before
-   * it tells the truth across sessions.
+   * Still in memory. Signed-in users' attempts do reach the `attempts` table,
+   * so the durable record exists — but this counter isn't read back from it
+   * yet, so the list still resets on relaunch.
    */
   const [progress, setProgress] = useState<Record<string, number>>({});
+
+  // Reload content whenever the viewer changes: signing in as a member must
+  // bring the rest of the bank into view without a restart.
+  useEffect(() => {
+    if (!isConfigured) return;
+    let cancelled = false;
+    setBank(null);
+    setBankError(null);
+    fetchBank()
+      .then((b) => !cancelled && setBank(b))
+      .catch((e) => !cancelled && setBankError(e.message ?? 'שגיאה בטעינת התוכן'));
+    return () => {
+      cancelled = true;
+    };
+  }, [session?.user?.id, isMember]);
+
+  const examDate = profile?.examDate
+    ? new Date(profile.examDate)
+    : new Date(Date.now() + DEFAULT_EXAM_DAYS * 24 * 60 * 60 * 1000);
+
+  if (isConfigured && authLoading) {
+    return <Centered><ActivityIndicator color={colors.brand} /></Centered>;
+  }
+
+  if (screen.name === 'signin') {
+    return <SignInScreen onSkip={() => setScreen({ name: 'home' })} />;
+  }
+
+  if (bankError) {
+    return (
+      <Centered>
+        <Text style={styles.errorTitle}>לא הצלחנו לטעון את התוכן</Text>
+        <Text style={styles.errorBody}>{bankError}</Text>
+        <Pressable
+          style={styles.primaryButton}
+          onPress={() => {
+            setBankError(null);
+            fetchBank().then(setBank).catch((e) => setBankError(e.message));
+          }}
+        >
+          <Text style={styles.primaryButtonText}>לנסות שוב</Text>
+        </Pressable>
+      </Centered>
+    );
+  }
+
+  if (!bank) {
+    return <Centered><ActivityIndicator color={colors.brand} /></Centered>;
+  }
 
   const goHome = () => setScreen({ name: 'home' });
 
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.root} edges={['top', 'bottom']}>
-        <StatusBar style="dark" />
+    <>
+      {screen.name === 'home' && (
+        <HomeScreen
+          bank={bank}
+          progress={progress}
+          examDate={examDate}
+          isMember={isMember}
+          signedIn={Boolean(session)}
+          onPractice={(t) => setScreen({ name: 'practice', type: t })}
+          onSimulation={() => setScreen({ name: 'simulation' })}
+          onAccount={() =>
+            session ? signOut() : setScreen({ name: 'signin' })
+          }
+        />
+      )}
 
-        {screen.name === 'home' && (
-          <HomeScreen
-            bank={BANK}
-            progress={progress}
-            examDate={EXAM_DATE}
-            onPractice={(type) => setScreen({ name: 'practice', type })}
-            onSimulation={() => setScreen({ name: 'simulation' })}
-          />
-        )}
-
-        {screen.name === 'practice' && (
-          <PracticeScreen
-            questions={BANK.questions.filter((q) => q.type === screen.type)}
-            passages={BANK.passages}
-            onExit={goHome}
-            onAnswered={(question) =>
-              setProgress((p) => ({
-                ...p,
-                [question.type]: (p[question.type] ?? 0) + 1,
-              }))
+      {screen.name === 'practice' && (
+        <PracticeScreen
+          questions={bank.questions.filter((q) => q.type === screen.type)}
+          passages={bank.passages}
+          onExit={goHome}
+          onAnswered={(question, correct) => {
+            setProgress((p) => ({
+              ...p,
+              [question.type]: (p[question.type] ?? 0) + 1,
+            }));
+            if (session?.user) {
+              void recordAttempt({
+                userId: session.user.id,
+                questionId: question.id,
+                chosenIndex: question.correctIndex,
+                isCorrect: correct,
+              });
             }
-          />
-        )}
+          }}
+        />
+      )}
 
-        {screen.name === 'simulation' && (
-          <SimulationScreen bank={BANK} onExit={goHome} />
-        )}
-      </SafeAreaView>
-    </SafeAreaProvider>
+      {screen.name === 'simulation' && (
+        <SimulationScreen bank={bank} onExit={goHome} />
+      )}
+    </>
+  );
+}
+
+function Centered({ children }: { children: React.ReactNode }) {
+  return <View style={styles.centered}>{children}</View>;
+}
+
+export default function App() {
+  return (
+    <AuthProvider>
+      <SafeAreaProvider>
+        <SafeAreaView style={styles.root} edges={['top', 'bottom']}>
+          <StatusBar style="dark" />
+          <AppContent />
+        </SafeAreaView>
+      </SafeAreaProvider>
+    </AuthProvider>
   );
 }
 
 const styles = StyleSheet.create({
-  root: {
+  root: { flex: 1, backgroundColor: colors.page },
+  centered: {
     flex: 1,
     backgroundColor: colors.page,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: spacing.xl,
+    gap: spacing.md,
+  },
+  errorTitle: { ...type.heading, ...hebrew, textAlign: 'center' },
+  errorBody: { ...type.caption, ...hebrew, textAlign: 'center' },
+  primaryButton: {
+    backgroundColor: colors.brand,
+    borderRadius: radii.button,
+    paddingVertical: spacing.lg,
+    paddingHorizontal: spacing.xl,
+    alignItems: 'center',
+    marginTop: spacing.md,
+  },
+  primaryButtonText: {
+    color: colors.surface,
+    fontSize: 17,
+    fontWeight: '600',
+    ...hebrew,
   },
 });

@@ -8,6 +8,8 @@ venv/
 # Local secrets — never commit an API key
 .env
 .env.*
+# ...but the template carries no secrets and documents what's needed.
+!.env.example
 
 # Generated question bank (rebuildable; keep the schema, not the data)
 *.db
