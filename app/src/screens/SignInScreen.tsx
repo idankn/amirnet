@@ -15,13 +15,19 @@ import { useAuth } from '../lib/auth';
 import { colors, english, hebrew, radii, spacing, type } from '../theme';
 
 interface Props {
-  /** Continue without an account — the demo is open to everyone. */
+  /** Continue without an account. */
   onSkip: () => void;
+  /**
+   * Which form to open on. The paywall's "להרשמה" must land on the sign-up
+   * form — a CTA that promises registration and delivers a login box costs the
+   * user an extra tap at exactly the moment they agreed to sign up.
+   */
+  initialMode?: 'signin' | 'signup';
 }
 
-export function SignInScreen({ onSkip }: Props) {
+export function SignInScreen({ onSkip, initialMode = 'signin' }: Props) {
   const { signIn, signUp } = useAuth();
-  const [mode, setMode] = useState<'signin' | 'signup'>('signin');
+  const [mode, setMode] = useState<'signin' | 'signup'>(initialMode);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
@@ -33,18 +39,25 @@ export function SignInScreen({ onSkip }: Props) {
   async function submit() {
     setBusy(true);
     setError(null);
-    const message =
-      mode === 'signin'
-        ? await signIn(email, password)
-        : await signUp(email, password);
+
+    if (mode === 'signin') {
+      const message = await signIn(email, password);
+      setBusy(false);
+      if (message) setError(message);
+      return;
+    }
+
+    const { error: message, needsConfirmation } = await signUp(email, password);
     setBusy(false);
 
     if (message) {
       setError(message);
       return;
     }
-    // Sign-up may require an emailed confirmation before a session exists.
-    if (mode === 'signup') setSentConfirmation(true);
+    // Only show the "check your inbox" screen when there is genuinely nothing
+    // else to do. If the project has confirmation off, the user is already
+    // signed in and the auth listener will move them on by itself.
+    if (needsConfirmation) setSentConfirmation(true);
   }
 
   if (sentConfirmation) {

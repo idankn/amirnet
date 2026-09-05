@@ -35,7 +35,7 @@ const DEFAULT_EXAM_DAYS = 90;
 const PRACTICE_BATCH = 10;
 
 type Screen =
-  | { name: 'signin' }
+  | { name: 'signin'; mode?: 'signin' | 'signup' }
   | { name: 'home' }
   | { name: 'practice'; questions: Question[]; passages: Passage[] }
   | { name: 'simulation'; bank: QuestionBank };
@@ -56,6 +56,15 @@ function AppContent() {
   }, []);
 
   useEffect(refreshUsage, [refreshUsage, session?.user?.id, profile?.tier]);
+
+  // Signing in or up is never the destination — leave the form as soon as a
+  // session exists, however it arrived (fresh signup with confirmation off, a
+  // restored session, or a confirmation link).
+  useEffect(() => {
+    if (session) {
+      setScreen((s) => (s.name === 'signin' ? { name: 'home' } : s));
+    }
+  }, [session]);
 
   /** Map a thrown server error onto the right prompt. */
   function handle(e: unknown): void {
@@ -120,7 +129,12 @@ function AppContent() {
   }
 
   if (screen.name === 'signin') {
-    return <SignInScreen onSkip={() => setScreen({ name: 'home' })} />;
+    return (
+      <SignInScreen
+        initialMode={screen.mode}
+        onSkip={() => setScreen({ name: 'home' })}
+      />
+    );
   }
 
   const goHome = () => {
@@ -182,7 +196,8 @@ function AppContent() {
         onDismiss={() => setPaywall(null)}
         onAuth={() => {
           setPaywall(null);
-          setScreen({ name: 'signin' });
+          // The prompt's CTA says 'sign up', so open that form, not login.
+          setScreen({ name: 'signin', mode: 'signup' });
         }}
         onUpgrade={() => {
           setPaywall(null);

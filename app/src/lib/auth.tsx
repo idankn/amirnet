@@ -25,7 +25,19 @@ interface AuthState {
   /** True for signed-out visitors too — the demo is open to everyone. */
   isMember: boolean;
   signIn: (email: string, password: string) => Promise<string | null>;
-  signUp: (email: string, password: string) => Promise<string | null>;
+  /**
+   * Returns the error message, or null on success.
+   *
+   * `needsConfirmation` reflects the project's own setting: with email
+   * confirmation on, Supabase creates no session and the user must click a
+   * link; with it off, they are signed in immediately. The caller must branch
+   * on this rather than assume — showing "check your email" to someone who is
+   * already signed in strands them on a dead end.
+   */
+  signUp: (
+    email: string,
+    password: string,
+  ) => Promise<{ error: string | null; needsConfirmation: boolean }>;
   signOut: () => Promise<void>;
   setExamDate: (date: Date) => Promise<void>;
 }
@@ -114,11 +126,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       },
 
       async signUp(email, password) {
-        const { error } = await supabase.auth.signUp({
+        const { data, error } = await supabase.auth.signUp({
           email: email.trim(),
           password,
         });
-        return error ? friendlyError(error.message) : null;
+        if (error) {
+          return { error: friendlyError(error.message), needsConfirmation: false };
+        }
+        // No session means the project requires email confirmation.
+        return { error: null, needsConfirmation: data.session === null };
       },
 
       async signOut() {
