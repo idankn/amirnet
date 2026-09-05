@@ -32,6 +32,7 @@ interface Props {
   signedIn: boolean;
   onPractice: (type: QuestionType) => void;
   onSimulation: () => void;
+  onVocab: () => void;
   onAccount: () => void;
 }
 
@@ -62,6 +63,7 @@ export function HomeScreen({
   signedIn,
   onPractice,
   onSimulation,
+  onVocab,
   onAccount,
 }: Props) {
   const days = daysUntil(examDate);
@@ -150,6 +152,22 @@ export function HomeScreen({
           );
         })}
       </View>
+
+      <Text style={styles.sectionHeading}>אוצר מילים</Text>
+      <Pressable
+        style={({ pressed }) => [styles.card, pressed && styles.cardPressed]}
+        onPress={onVocab}
+      >
+        <View style={[styles.glyphBox, styles.glyphUnmet]}>
+          <Text style={[styles.glyph, styles.glyphTextUnmet]}>A</Text>
+        </View>
+        <View style={styles.cardBody}>
+          <Text style={styles.cardTitle}>מילים לפי רמה</Text>
+          <Text style={styles.cardBlurb}>
+            כרטיסיות ותרגול, מ-A2 עד C1
+          </Text>
+        </View>
+      </Pressable>
 
       <Text style={styles.sectionHeading}>סימולציה</Text>
       <Pressable

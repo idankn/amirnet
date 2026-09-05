@@ -20,7 +20,40 @@ from pathlib import Path
 from . import config, db, gold
 
 OUT_PATH = config.ROOT / "app" / "src" / "data" / "questions.json"
+VOCAB_OUT_PATH = config.ROOT / "app" / "src" / "data" / "vocab.json"
 SHUFFLE_SEED = 20260905
+
+
+def export_vocab() -> int:
+    """Write the vocab list for the app. Returns how many entries were written."""
+    conn = db.connect()
+    rows = conn.execute(
+        """
+        SELECT word, pos, definition_en, example, translation_he, cefr_level
+          FROM vocab
+         WHERE cefr_level IS NOT NULL
+         ORDER BY cefr_level, word
+        """
+    ).fetchall()
+    conn.close()
+
+    entries = [
+        {
+            "word": r["word"],
+            "pos": r["pos"] or "",
+            "definition": r["definition_en"],
+            "example": r["example"] or "",
+            "translation": r["translation_he"] or "",
+            "cefr": r["cefr_level"],
+        }
+        for r in rows
+    ]
+
+    VOCAB_OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    VOCAB_OUT_PATH.write_text(
+        json.dumps(entries, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    return len(entries)
 
 
 def _entry(qid: str, qtype: str, prompt: str, correct: str,
@@ -147,6 +180,9 @@ def main() -> None:
           f"and {len(passages)} passages from the {source} to {OUT_PATH}")
     for qtype, n in sorted(by_type.items()):
         print(f"  {qtype:<22} {n:>4}")
+
+    n_vocab = export_vocab()
+    print(f"Exported {n_vocab} vocab entries to {VOCAB_OUT_PATH}")
 
 
 if __name__ == "__main__":

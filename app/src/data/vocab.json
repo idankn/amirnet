@@ -1,0 +1,282 @@
+[
+  {
+    "word": "achieve",
+    "pos": "verb",
+    "definition": "To succeed in reaching a goal, usually after effort over time.",
+    "example": "She achieved a perfect score only after months of daily practice.",
+    "translation": "להשיג, להגיע ליעד",
+    "cefr": "A2"
+  },
+  {
+    "word": "attitude",
+    "pos": "noun",
+    "definition": "The way someone thinks and feels about something, shown in how they behave.",
+    "example": "His attitude towards deadlines changed once he joined a larger team.",
+    "translation": "גישה, יחס",
+    "cefr": "A2"
+  },
+  {
+    "word": "consider",
+    "pos": "verb",
+    "definition": "To think about something carefully before deciding.",
+    "example": "The council will consider three different sites before choosing one.",
+    "translation": "לשקול, לשקול בכובד ראש",
+    "cefr": "A2"
+  },
+  {
+    "word": "effect",
+    "pos": "noun",
+    "definition": "A change that happens because of something else.",
+    "example": "The medication had no measurable effect on his blood pressure.",
+    "translation": "השפעה, תוצאה",
+    "cefr": "A2"
+  },
+  {
+    "word": "establish",
+    "pos": "verb",
+    "definition": "To set something up so that it lasts, or to prove that something is true.",
+    "example": "The company established its first office abroad in 1994.",
+    "translation": "להקים, לבסס",
+    "cefr": "A2"
+  },
+  {
+    "word": "evidence",
+    "pos": "noun",
+    "definition": "Facts or signs that show whether something is true.",
+    "example": "There is little evidence that the policy reduced traffic at all.",
+    "translation": "ראיה, עדות",
+    "cefr": "A2"
+  },
+  {
+    "word": "purpose",
+    "pos": "noun",
+    "definition": "The reason something is done, or what it is meant to do.",
+    "example": "The purpose of the survey was to find out why members were leaving.",
+    "translation": "מטרה, תכלית",
+    "cefr": "A2"
+  },
+  {
+    "word": "significant",
+    "pos": "adjective",
+    "definition": "Large or important enough to be worth noticing.",
+    "example": "There was a significant drop in applications after the fee was introduced.",
+    "translation": "משמעותי, ניכר",
+    "cefr": "A2"
+  },
+  {
+    "word": "source",
+    "pos": "noun",
+    "definition": "The place, person or thing that something comes from.",
+    "example": "The report never names the source of its figures.",
+    "translation": "מקור",
+    "cefr": "A2"
+  },
+  {
+    "word": "acknowledge",
+    "pos": "verb",
+    "definition": "To admit that something is true, or to show you have noticed someone.",
+    "example": "The manufacturer finally acknowledged that the fault was its own.",
+    "translation": "להודות ב-, להכיר ב-",
+    "cefr": "B1"
+  },
+  {
+    "word": "affect",
+    "pos": "verb",
+    "definition": "To produce a change in something, or to influence how it develops.",
+    "example": "Rising fuel prices affect almost every part of the economy.",
+    "translation": "להשפיע על",
+    "cefr": "B1"
+  },
+  {
+    "word": "assume",
+    "pos": "verb",
+    "definition": "To accept that something is true without checking it.",
+    "example": "Do not assume the data is accurate simply because it was published.",
+    "translation": "להניח, לצאת מנקודת הנחה",
+    "cefr": "B1"
+  },
+  {
+    "word": "benefit",
+    "pos": "noun",
+    "definition": "An advantage gained from something.",
+    "example": "One benefit of the new schedule is that nobody travels during rush hour.",
+    "translation": "תועלת, יתרון",
+    "cefr": "B1"
+  },
+  {
+    "word": "considerable",
+    "pos": "adjective",
+    "definition": "Large in amount or degree, enough to matter.",
+    "example": "Rebuilding the archive took considerable time and money.",
+    "translation": "ניכר, רב",
+    "cefr": "B1"
+  },
+  {
+    "word": "constitute",
+    "pos": "verb",
+    "definition": "To be the parts that something is made of, or to count as something.",
+    "example": "Women constitute nearly two thirds of the workforce in this sector.",
+    "translation": "להוות, להרכיב",
+    "cefr": "B1"
+  },
+  {
+    "word": "determine",
+    "pos": "verb",
+    "definition": "To decide something officially, or to be the factor that decides an outcome.",
+    "example": "Rainfall in early spring largely determines the size of the harvest.",
+    "translation": "לקבוע, להכריע",
+    "cefr": "B1"
+  },
+  {
+    "word": "immediate",
+    "pos": "adjective",
+    "definition": "Happening at once, without any delay.",
+    "example": "The new rule had an immediate effect on how staff recorded their hours.",
+    "translation": "מיידי",
+    "cefr": "B1"
+  },
+  {
+    "word": "income",
+    "pos": "noun",
+    "definition": "Money that a person or organisation regularly receives, usually from work.",
+    "example": "Households on a low income were hit hardest by the price rise.",
+    "translation": "הכנסה",
+    "cefr": "B1"
+  },
+  {
+    "word": "inevitable",
+    "pos": "adjective",
+    "definition": "Certain to happen and impossible to prevent.",
+    "example": "Given how quickly the ice is retreating, some flooding is inevitable.",
+    "translation": "בלתי נמנע",
+    "cefr": "B1"
+  },
+  {
+    "word": "maintain",
+    "pos": "verb",
+    "definition": "To keep something in the same condition, or to keep saying something is true.",
+    "example": "The bridge is expensive to maintain but far too useful to close.",
+    "translation": "לתחזק, לשמר; לטעון בעקביות",
+    "cefr": "B1"
+  },
+  {
+    "word": "modify",
+    "pos": "verb",
+    "definition": "To change something slightly, usually to improve it or make it fit.",
+    "example": "Engineers modified the design after the first round of testing.",
+    "translation": "לשנות, להתאים",
+    "cefr": "B1"
+  },
+  {
+    "word": "obvious",
+    "pos": "adjective",
+    "definition": "Easy to see or understand, needing no explanation.",
+    "example": "The reason for the delay was obvious the moment we saw the queue.",
+    "translation": "ברור, מובן מאליו",
+    "cefr": "B1"
+  },
+  {
+    "word": "reduce",
+    "pos": "verb",
+    "definition": "To make something smaller in size, amount or degree.",
+    "example": "Switching to rail reduced the company's emissions by a third.",
+    "translation": "להפחית, לצמצם",
+    "cefr": "B1"
+  },
+  {
+    "word": "require",
+    "pos": "verb",
+    "definition": "To need something, or to officially demand it.",
+    "example": "The course requires no previous knowledge of statistics.",
+    "translation": "לדרוש, להזדקק ל-",
+    "cefr": "B1"
+  },
+  {
+    "word": "sufficient",
+    "pos": "adjective",
+    "definition": "As much as is needed.",
+    "example": "Suspicion alone is not sufficient grounds for an investigation.",
+    "translation": "מספיק, די",
+    "cefr": "B1"
+  },
+  {
+    "word": "tendency",
+    "pos": "noun",
+    "definition": "A habit of behaving in a certain way, or a general direction of change.",
+    "example": "There is a tendency to blame the software when the process is at fault.",
+    "translation": "נטייה, מגמה",
+    "cefr": "B1"
+  },
+  {
+    "word": "widespread",
+    "pos": "adjective",
+    "definition": "Found over a large area or among many people.",
+    "example": "The practice was widespread long before anyone tried to regulate it.",
+    "translation": "נפוץ, רחב היקף",
+    "cefr": "B1"
+  },
+  {
+    "word": "adequate",
+    "pos": "adjective",
+    "definition": "Enough for what is needed, though not more than that.",
+    "example": "The lighting was adequate for reading but too dim for detailed work.",
+    "translation": "מספיק, הולם",
+    "cefr": "B2"
+  },
+  {
+    "word": "comprehensive",
+    "pos": "adjective",
+    "definition": "Covering everything that is relevant, leaving nothing out.",
+    "example": "The inspectors produced a comprehensive account of what went wrong.",
+    "translation": "מקיף, כולל",
+    "cefr": "B2"
+  },
+  {
+    "word": "contradict",
+    "pos": "verb",
+    "definition": "To say or show the opposite of something else, so both cannot be true.",
+    "example": "The new figures contradict everything the earlier study concluded.",
+    "translation": "לסתור, להכחיש",
+    "cefr": "B2"
+  },
+  {
+    "word": "factor",
+    "pos": "noun",
+    "definition": "One of several things that together cause a result.",
+    "example": "Cost was only one factor in the decision to close the branch.",
+    "translation": "גורם, מרכיב",
+    "cefr": "B2"
+  },
+  {
+    "word": "imply",
+    "pos": "verb",
+    "definition": "To suggest something without stating it directly.",
+    "example": "Her silence seemed to imply that she disagreed with the plan.",
+    "translation": "לרמוז, להשתמע",
+    "cefr": "B2"
+  },
+  {
+    "word": "justify",
+    "pos": "verb",
+    "definition": "To give a good reason for something, showing it was right or necessary.",
+    "example": "The board could not justify the expense to its members.",
+    "translation": "להצדיק, לנמק",
+    "cefr": "B2"
+  },
+  {
+    "word": "perceive",
+    "pos": "verb",
+    "definition": "To notice something, or to understand it in a particular way.",
+    "example": "Younger customers perceive the brand quite differently from older ones.",
+    "translation": "לתפוס, להבחין, לראות כ-",
+    "cefr": "B2"
+  },
+  {
+    "word": "reluctant",
+    "pos": "adjective",
+    "definition": "Unwilling to do something, and slow to agree to it.",
+    "example": "Investors remain reluctant to fund projects with no clear return.",
+    "translation": "מהסס, לא ששׂ",
+    "cefr": "B2"
+  }
+]

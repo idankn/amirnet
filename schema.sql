@@ -101,9 +101,14 @@ CREATE INDEX idx_distractors_q ON distractors(question_id);
 CREATE TABLE vocab (
     id              INTEGER PRIMARY KEY,
     word            TEXT NOT NULL UNIQUE,
-    definition_en   TEXT NOT NULL,
+    pos             TEXT,                 -- noun / verb / adjective / adverb
+    definition_en   TEXT NOT NULL,        -- written by us, never lifted from a dictionary
     example         TEXT,                 -- generated example sentence
-    frequency_band  INTEGER,
+    -- Hebrew gloss. The audience reads Hebrew and is often at A2-B1, where an
+    -- English-only definition can be harder than the word being defined.
+    translation_he  TEXT,
+    cefr_level      TEXT CHECK (cefr_level IN ('A2','B1','B2','C1')),
+    frequency_band  INTEGER,              -- legacy tier; superseded by cefr_level
     source          TEXT NOT NULL,
     status          TEXT NOT NULL DEFAULT 'draft'
                         CHECK (status IN ('draft','validated','rejected','live','retired')),

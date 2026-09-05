@@ -4,6 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import bundledBank from './src/data/questions.json';
+import bundledVocab from './src/data/vocab.json';
 import { Paywall, type PaywallReason } from './src/components/Paywall';
 import { AuthProvider, useAuth } from './src/lib/auth';
 import {
@@ -21,8 +22,9 @@ import { HomeScreen } from './src/screens/HomeScreen';
 import { PracticeScreen } from './src/screens/PracticeScreen';
 import { SignInScreen } from './src/screens/SignInScreen';
 import { SimulationScreen } from './src/screens/SimulationScreen';
+import { VocabScreen } from './src/screens/VocabScreen';
 import { colors, hebrew, radii, spacing, type } from './src/theme';
-import type { Passage, Question, QuestionBank, QuestionType } from './src/types';
+import type { Passage, Question, QuestionBank, QuestionType, VocabEntry } from './src/types';
 
 /**
  * Fallback content, used only when Supabase isn't configured yet, so the app
@@ -30,6 +32,7 @@ import type { Passage, Question, QuestionBank, QuestionType } from './src/types'
  * served one request at a time and this is never read.
  */
 const BUNDLED = bundledBank as QuestionBank;
+const VOCAB = bundledVocab as VocabEntry[];
 
 const DEFAULT_EXAM_DAYS = 90;
 const PRACTICE_BATCH = 10;
@@ -38,7 +41,8 @@ type Screen =
   | { name: 'signin'; mode?: 'signin' | 'signup' }
   | { name: 'home' }
   | { name: 'practice'; questions: Question[]; passages: Passage[] }
-  | { name: 'simulation'; bank: QuestionBank };
+  | { name: 'simulation'; bank: QuestionBank }
+  | { name: 'vocab' };
 
 function AppContent() {
   const { session, profile, loading: authLoading, signOut } = useAuth();
@@ -49,6 +53,8 @@ function AppContent() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [progress, setProgress] = useState<Record<string, number>>({});
+  /** Words marked as known. In memory for now, like practice progress. */
+  const [learnedWords, setLearnedWords] = useState<Record<string, boolean>>({});
 
   const refreshUsage = useCallback(() => {
     if (!isConfigured) return;
@@ -152,6 +158,7 @@ function AppContent() {
           signedIn={Boolean(session)}
           onPractice={startPractice}
           onSimulation={startSimulation}
+          onVocab={() => setScreen({ name: 'vocab' })}
           onAccount={() =>
             session ? signOut() : setScreen({ name: 'signin' })
           }
@@ -182,6 +189,15 @@ function AppContent() {
 
       {screen.name === 'simulation' && (
         <SimulationScreen bank={screen.bank} onExit={goHome} />
+      )}
+
+      {screen.name === 'vocab' && (
+        <VocabScreen
+          words={VOCAB}
+          learned={learnedWords}
+          onMark={(w, v) => setLearnedWords((m) => ({ ...m, [w]: v }))}
+          onExit={goHome}
+        />
       )}
 
       {busy && (

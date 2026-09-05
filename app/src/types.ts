@@ -29,6 +29,17 @@ export interface Question {
   passageId?: string;
 }
 
+export interface VocabEntry {
+  word: string;
+  pos: string;
+  /** English. Written by us, never lifted from a dictionary. */
+  definition: string;
+  example: string;
+  /** Short Hebrew gloss — orients the learner; the English carries the meaning. */
+  translation: string;
+  cefr: string;
+}
+
 export interface QuestionBank {
   passages: Passage[];
   questions: Question[];
