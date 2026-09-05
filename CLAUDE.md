@@ -135,6 +135,44 @@ a source to copy from — see section 5.
   is real information and leads straight to action.
 - A single prominent **"today's practice"** button (the one a daily notification opens).
 
+### Interrupting Instagram/TikTok — checked 5 September 2026
+
+The idea: when the user opens Instagram or TikTok, a question from the app
+appears every N minutes. **As literally described this cannot be built on iOS**,
+and the reasons are permanent platform boundaries rather than difficulty:
+
+- **An app cannot know which other app is in the foreground.** There is no API,
+  deliberately — Apple treats it as a privacy breach. (Android has
+  `UsageStatsManager`; iOS has no equivalent.)
+- **An app cannot draw over another app.** There is no iOS counterpart to
+  Android's "draw over other apps" permission.
+
+What *is* possible is the **Screen Time API** (`FamilyControls` +
+`ManagedSettings` + `DeviceActivity`) — the frameworks behind Opal and one sec.
+It can shield chosen apps after a usage threshold. Three constraints shape what
+the feature can actually be:
+
+1. **The shield cannot hold a question.** `ShieldConfiguration` is a static
+   snapshot: title, subtitle, icon, two buttons, colours. No custom SwiftUI, no
+   tappable answers, no animation. So the design is necessarily *"Instagram is
+   blocked → button → opens our app → question"*, not a question rendered
+   inside Instagram.
+2. **It needs Apple's Family Controls distribution entitlement**, applied for
+   and approved, across four bundle IDs (app + three extensions). Approval is
+   slow and not guaranteed for a non-parental-control app.
+3. **Until approval, only local Xcode builds work** — no Expo Dev Client. That
+   is a hard blocker while developing on Windows.
+
+`kingstinct/react-native-device-activity` wraps this for Expo and is the right
+library if the feature is pursued. Known issue: `DeviceActivity` schedules grow
+unreliable past ~45 minutes, with callbacks delayed or dropped.
+
+**What works today with no entitlement:** scheduled local notifications
+(`expo-notifications`) at user-chosen times or intervals, opening straight into
+a question — which is already the daily-reminder behaviour specified below. It
+does not detect Instagram, but it does interrupt idle time, which is most of
+the value.
+
 ### Daily reminder
 - At a user-set time, a push notification opens **directly into a timed (1-minute)
   practice question**. Not a home screen — straight into the question.
