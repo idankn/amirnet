@@ -12,7 +12,7 @@ interface Props {
   onMark: (word: string, isLearned: boolean) => void;
 }
 
-type Mode = 'levels' | 'cards' | 'quiz';
+type Mode = 'levels' | 'choose' | 'cards' | 'quiz';
 
 const LEVELS = ['A2', 'B1', 'B2', 'C1'] as const;
 const LEVEL_BLURBS: Record<string, string> = {
@@ -87,7 +87,7 @@ export function VocabScreen({ words, onExit, learned, onMark }: Props) {
                   setLevel(lvl);
                   setIndex(0);
                   setFlipped(false);
-                  setMode('cards');
+                  setMode('choose');
                 }}
               >
                 <View style={styles.levelBadge}>
@@ -114,15 +114,61 @@ export function VocabScreen({ words, onExit, learned, onMark }: Props) {
     );
   }
 
+  // ---------------------------------------------------------------- choose
+  if (mode === 'choose') {
+    const learnedHere = pool.filter((w) => learned[w.word]).length;
+    return (
+      <View style={styles.screen}>
+        <View style={styles.topBar}>
+          <Pressable onPress={() => setMode('levels')} hitSlop={12}>
+            <Text style={styles.backText}>← לרמות</Text>
+          </Pressable>
+          <Text style={styles.progress}>{level}</Text>
+        </View>
+
+        <View style={styles.chooseBody}>
+          <Text style={styles.title}>{LEVEL_BLURBS[level]}</Text>
+          <Text style={styles.body}>
+            {pool.length} מילים · {learnedHere} סימנת שאתה יודע
+          </Text>
+
+          <Pressable
+            style={styles.chooseCard}
+            onPress={() => {
+              setIndex(0);
+              setFlipped(false);
+              setMode('cards');
+            }}
+          >
+            <Text style={styles.chooseTitle}>למידה</Text>
+            <Text style={styles.chooseBlurb}>
+              כרטיסיות עם הגדרה, תרגום ומשפט דוגמה
+            </Text>
+          </Pressable>
+
+          <Pressable style={styles.chooseCard} onPress={() => setMode('quiz')}>
+            <Text style={styles.chooseTitle}>תרגול</Text>
+            <Text style={styles.chooseBlurb}>
+              מבחן רב-ברירה על כל המילים ברמה
+            </Text>
+          </Pressable>
+        </View>
+      </View>
+    );
+  }
+
   // ---------------------------------------------------------------- quiz
   if (mode === 'quiz') {
-    const learnedHere = pool.filter((w) => learned[w.word]);
+    // Quizzes cover the whole level, not only words marked as known. Gating it
+    // on the flashcards would make "practice" unreachable for anyone who wants
+    // to test themselves first — which is exactly how a lot of people study.
+    // The learned marks stay, but as progress rather than as a gate.
     return (
       <VocabQuiz
-        words={learnedHere}
+        words={pool}
         distractorPool={pool}
         onExit={() => {
-          setMode('levels');
+          setMode('choose');
           setIndex(0);
           setFlipped(false);
         }}
@@ -142,15 +188,11 @@ export function VocabScreen({ words, onExit, learned, onMark }: Props) {
         <Text style={styles.body}>
           סימנת {learnedCount} מתוך {pool.length} מילים כידועות.
         </Text>
-        {learnedCount > 0 && (
-          <Pressable style={styles.primaryButton} onPress={() => setMode('quiz')}>
-            <Text style={styles.primaryButtonText}>
-              לתרגול על {learnedCount} המילים
-            </Text>
-          </Pressable>
-        )}
-        <Pressable style={styles.secondaryButton} onPress={() => setMode('levels')}>
-          <Text style={styles.secondaryButtonText}>חזרה לרמות</Text>
+        <Pressable style={styles.primaryButton} onPress={() => setMode('quiz')}>
+          <Text style={styles.primaryButtonText}>לתרגול על הרמה</Text>
+        </Pressable>
+        <Pressable style={styles.secondaryButton} onPress={() => setMode('choose')}>
+          <Text style={styles.secondaryButtonText}>חזרה</Text>
         </Pressable>
       </View>
     );
@@ -368,6 +410,28 @@ const styles = StyleSheet.create({
   cardBody: { flex: 1, gap: 2 },
   cardTitle: { fontSize: 16, fontWeight: '600', color: colors.textPrimary, ...hebrew },
   cardBlurb: { ...type.caption, ...hebrew },
+
+  chooseBody: {
+    flex: 1,
+    padding: spacing.lg,
+    gap: spacing.md,
+    justifyContent: 'center',
+  },
+  chooseCard: {
+    backgroundColor: colors.surface,
+    borderWidth: 1,
+    borderColor: colors.border,
+    borderRadius: radii.card,
+    padding: spacing.xl,
+    gap: spacing.xs,
+  },
+  chooseTitle: {
+    fontSize: 20,
+    fontWeight: '600',
+    color: colors.textPrimary,
+    ...hebrew,
+  },
+  chooseBlurb: { ...type.caption, ...hebrew },
 
   levelBadge: {
     width: 44,

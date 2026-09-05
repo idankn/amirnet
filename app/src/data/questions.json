@@ -275,16 +275,352 @@
       "difficulty": 3
     },
     {
+      "id": "q-103",
+      "type": "restatement",
+      "prompt": "Because the company failed to renew its licence, it was barred from bidding for public contracts last year.",
+      "options": [
+        "The company was barred from public contracts, and as a result its licence was not renewed.",
+        "An expired permit is what kept the firm out of government tenders during the previous twelve months.",
+        "The company will lose the right to bid for public contracts unless it renews its licence.",
+        "Public authorities failed to renew the company's licence, which is why it could not bid."
+      ],
+      "correctIndex": 1,
+      "explanation": "The licence lapsed first and the ban followed. The first wrong option reverses that order. The second makes the authorities responsible for the lapse when the company was. The third turns a completed exclusion into a future risk.",
+      "difficulty": 3
+    },
+    {
+      "id": "q-104",
+      "type": "restatement",
+      "prompt": "Although the museum doubled its opening hours, visitor numbers rose only slightly over the following year.",
+      "options": [
+        "Visitors persuaded the museum to double its opening hours after numbers began to fall.",
+        "Twice as much access brought in barely more people across the next twelve months.",
+        "Visitor numbers rose so slightly that the museum decided to double its opening hours.",
+        "The museum plans to double its opening hours in the hope of attracting more visitors."
+      ],
+      "correctIndex": 1,
+      "explanation": "The extra hours came first and produced almost nothing. The first wrong option makes the weak numbers the reason for extending hours. The second moves the change into the future. The third invents visitors as the cause.",
+      "difficulty": 3
+    },
+    {
+      "id": "q-105",
+      "type": "restatement",
+      "prompt": "The regulation applies to every vessel over twenty metres, regardless of where the vessel is registered.",
+      "options": [
+        "Ships longer than that measurement fall under the rule no matter which country issued their papers.",
+        "Vessels over twenty metres must register the regulation wherever they operate.",
+        "Vessels are registered according to their length, which determines whether the regulation applies.",
+        "From next year the regulation will begin to apply to vessels over twenty metres."
+      ],
+      "correctIndex": 0,
+      "explanation": "Length decides whether the rule applies; registration is explicitly irrelevant. The first wrong option makes registration depend on length. The second swaps what registers what. The third makes a current rule a future one.",
+      "difficulty": 4
+    },
+    {
+      "id": "q-106",
+      "type": "restatement",
+      "prompt": "Sales of the device collapsed once a cheaper rival appeared, despite years of favourable reviews.",
+      "options": [
+        "Sales of the device are expected to fall if a cheaper rival reaches the market.",
+        "A less expensive competitor destroyed demand for the product, even though critics had praised it for a long time.",
+        "Favourable reviews caused a cheaper rival to enter the market and take the device's sales.",
+        "Reviewers turned against the device once a cheaper rival appeared, and sales collapsed."
+      ],
+      "correctIndex": 1,
+      "explanation": "The rival caused the collapse; the good reviews are a concession that failed to prevent it. The first wrong option makes the reviews the cause. The second turns a completed collapse into a forecast. The third makes reviewers change their view, which the source denies.",
+      "difficulty": 4
+    },
+    {
+      "id": "q-107",
+      "type": "restatement",
+      "prompt": "Unless the council receives objections within thirty days, the planning application will be approved automatically.",
+      "options": [
+        "The council approved the planning application after thirty days of objections were considered.",
+        "The planning application will be rejected automatically if no objections arrive within thirty days.",
+        "The council must object within thirty days or the applicant may proceed with building.",
+        "Silence from the public for a month means the building request goes through without further review."
+      ],
+      "correctIndex": 3,
+      "explanation": "No objections means approval. The first wrong option inverts the outcome to rejection. The second reports the approval as already given after objections. The third makes the council the objector rather than the public.",
+      "difficulty": 4
+    },
+    {
+      "id": "q-108",
+      "type": "restatement",
+      "prompt": "The drug performed well in laboratory tests but showed no benefit when trialled on human patients.",
+      "options": [
+        "The drug has performed well in the laboratory and will shortly be tested on patients.",
+        "The drug helped human patients even though laboratory tests had suggested it would not.",
+        "Promising results under controlled conditions did not carry over to people.",
+        "Patients reported no benefit, which led researchers to repeat the laboratory tests."
+      ],
+      "correctIndex": 2,
+      "explanation": "It worked in the lab and failed in people. The first wrong option reverses both halves. The second puts the human trial in the future when it has happened. The third makes patient reports cause new lab work, which the source does not say.",
+      "difficulty": 3
+    },
+    {
+      "id": "q-109",
+      "type": "restatement",
+      "prompt": "Rather than closing the branch entirely, the bank reduced its hours and kept two staff on site.",
+      "options": [
+        "The office stayed open with a smaller team and shorter times instead of shutting altogether.",
+        "The bank closed the branch entirely rather than reduce its hours.",
+        "Two members of staff kept the branch open after the bank decided to close it.",
+        "The bank intends to reduce the branch's hours before deciding whether to close it."
+      ],
+      "correctIndex": 0,
+      "explanation": "The branch stayed open in reduced form. The first wrong option chooses the opposite of the two alternatives. The second makes staff act against a closure decision. The third turns a settled outcome into an undecided plan.",
+      "difficulty": 3
+    },
+    {
+      "id": "q-110",
+      "type": "restatement",
+      "prompt": "Because the report was published during the holidays, almost no journalists noticed its most serious findings.",
+      "options": [
+        "The report will be published during the holidays, when few journalists are working.",
+        "Journalists ignored the report, so it was published during the holidays.",
+        "Timing the release for a quiet period meant the gravest conclusions went largely unreported.",
+        "Journalists published the report during the holidays and overlooked its most serious findings."
+      ],
+      "correctIndex": 2,
+      "explanation": "Publishing during the holidays is why the findings were missed. The first wrong option makes being ignored the reason for the timing. The second moves publication into the future. The third makes journalists the publishers.",
+      "difficulty": 4
+    },
+    {
+      "id": "q-111",
+      "type": "restatement",
+      "prompt": "The new rule bans advertising aimed at children, though existing campaigns may continue until December.",
+      "options": [
+        "Existing campaigns must stop immediately, while new advertising aimed at children remains permitted.",
+        "From December the new rule will begin to ban advertising aimed at children.",
+        "Marketing directed at young people is now forbidden, but adverts already running have until the end of the year.",
+        "Advertisers have banned campaigns aimed at children, and the rule allows them until December."
+      ],
+      "correctIndex": 2,
+      "explanation": "New adverts are banned now; existing ones get until December. The first wrong option swaps which category is protected. The second makes December the start of the ban rather than the end of the exemption. The third makes advertisers the ones imposing the ban.",
+      "difficulty": 4
+    },
+    {
+      "id": "q-112",
+      "type": "restatement",
+      "prompt": "Farmers who switched to the new seed reported higher yields, but only in fields with good drainage.",
+      "options": [
+        "Farmers expect higher yields once they switch to the new seed next season.",
+        "Seed producers, rather than farmers, reported the higher yields from the new variety.",
+        "The variety produced bigger harvests for growers, though the gain appeared solely where water drained well.",
+        "Good drainage was the result of switching to the new seed, which raised yields."
+      ],
+      "correctIndex": 2,
+      "explanation": "Drainage is the condition under which the seed helps, not something the seed caused. The first wrong option makes drainage an effect. The second changes who reported the result. The third turns a measured outcome into an expectation.",
+      "difficulty": 4
+    },
+    {
+      "id": "q-113",
+      "type": "restatement",
+      "prompt": "The city introduced free transport on weekends, and car use in the centre fell sharply within months.",
+      "options": [
+        "Car use in the centre fell, which persuaded the city to make weekend transport free.",
+        "The city hopes that free weekend transport will eventually reduce car use in the centre.",
+        "Drivers made transport free at weekends in order to reduce congestion in the centre.",
+        "Removing fares at the end of the week quickly cut how much people drove downtown."
+      ],
+      "correctIndex": 3,
+      "explanation": "Free transport came first and driving fell after. The first wrong option reverses cause and effect. The second turns a measured fall into a hope. The third makes drivers set the fares.",
+      "difficulty": 3
+    },
+    {
+      "id": "q-114",
+      "type": "restatement",
+      "prompt": "Although both machines cost the same to buy, the older model is far more expensive to run.",
+      "options": [
+        "The older model will become more expensive to run once the new pricing takes effect.",
+        "The older machine is cheaper to run, although it costs more to buy than the newer one.",
+        "Buyers of the older machine pay more for it, though both cost the same to operate.",
+        "The two devices carry an identical purchase price, but keeping the earlier one working costs much more."
+      ],
+      "correctIndex": 3,
+      "explanation": "Same purchase price, different running cost. The first wrong option swaps which cost differs. The second makes a present fact conditional on future pricing. The third moves the difference back to the purchase price.",
+      "difficulty": 4
+    },
+    {
+      "id": "q-115",
+      "type": "restatement",
+      "prompt": "Nurses were given the training first, and doctors received the same course several months later.",
+      "options": [
+        "Doctors were trained first, and nurses took the same course months afterwards.",
+        "Because doctors had already taken the course, nurses were trained several months later.",
+        "Doctors will receive the training several months after the nurses have finished it.",
+        "The nursing staff completed the programme well before their medical colleagues were offered it."
+      ],
+      "correctIndex": 3,
+      "explanation": "Nurses went first. The first wrong option makes the doctors' training the reason for the delay. The second swaps which group went first. The third leaves the doctors' training still to come, when the source reports it as done.",
+      "difficulty": 3
+    },
+    {
+      "id": "q-116",
+      "type": "restatement",
+      "prompt": "The bridge was designed to last a century but required major repairs after only thirty years.",
+      "options": [
+        "The bridge needed repairs after thirty years, so it was redesigned to last a century.",
+        "Intended to survive a hundred years, the crossing needed serious work in less than a third of that time.",
+        "Engineers who repaired the bridge had designed it to last a hundred years.",
+        "The bridge is expected to need major repairs about thirty years from now."
+      ],
+      "correctIndex": 1,
+      "explanation": "The design intention failed well short. The first wrong option makes the repairs the reason for the design. The second puts the repairs in the future. The third claims the repairers were the designers, which the source never says.",
+      "difficulty": 4
+    },
+    {
+      "id": "q-117",
+      "type": "restatement",
+      "prompt": "Because it rained throughout the festival, organisers offered refunds to anyone who left before the final day.",
+      "options": [
+        "Organisers offered refunds, and as a result many people left before the festival's final day.",
+        "Constant wet weather led the people running the event to pay back those who departed early.",
+        "Festival-goers demanded refunds from the organisers once the rain began.",
+        "Organisers will offer refunds if it rains throughout the festival next year."
+      ],
+      "correctIndex": 1,
+      "explanation": "Rain caused the refunds. The first wrong option makes the refunds cause the early departures. The second turns a past response into a future condition. The third makes attendees demand what organisers in fact offered.",
+      "difficulty": 3
+    },
+    {
+      "id": "q-118",
+      "type": "restatement",
+      "prompt": "The law passed easily in the lower house but stalled for eighteen months in the senate.",
+      "options": [
+        "One chamber approved the bill without difficulty while the other held it up for a year and a half.",
+        "Senators introduced the law in the lower house, where it stalled for eighteen months.",
+        "The senate passed the law quickly, but the lower house delayed it for eighteen months.",
+        "The law is expected to pass the lower house before spending months in the senate."
+      ],
+      "correctIndex": 0,
+      "explanation": "Easy passage in one chamber, long delay in the other. The first wrong option swaps which chamber did which. The second makes both stages future. The third moves the delay to the wrong chamber and adds an introduction the source never mentions.",
+      "difficulty": 4
+    },
+    {
+      "id": "q-119",
+      "type": "restatement",
+      "prompt": "Although she had never studied economics formally, her analysis proved more accurate than the bank's own forecasts.",
+      "options": [
+        "Without any training in the subject she still predicted events better than the institution's professional projections did.",
+        "She is studying economics now and expects her forecasts to improve on the bank's.",
+        "The bank's economists produced a more accurate forecast than she did, despite her lack of training.",
+        "Her formal training in economics is what made her analysis better than the bank's."
+      ],
+      "correctIndex": 0,
+      "explanation": "She had no formal training and still did better. The first wrong option credits training she never had. The second swaps who was more accurate. The third makes her accuracy a future hope rather than a demonstrated result.",
+      "difficulty": 5
+    },
+    {
+      "id": "q-120",
+      "type": "restatement",
+      "prompt": "The scheme was suspended after auditors found that a quarter of the payments could not be explained.",
+      "options": [
+        "Those running the scheme suspended the auditors after a quarter of payments were questioned.",
+        "Auditors will suspend the scheme if they cannot explain a quarter of the payments.",
+        "The scheme was suspended, which is why auditors were unable to explain a quarter of the payments.",
+        "Inspectors identified twenty-five per cent of the transfers as unaccounted for, and the programme was halted."
+      ],
+      "correctIndex": 3,
+      "explanation": "The audit finding caused the suspension. The first wrong option makes the suspension the reason the payments could not be explained. The second turns it into a condition. The third swaps who suspended whom, which reverses the whole situation.",
+      "difficulty": 5
+    },
+    {
+      "id": "q-121",
+      "type": "restatement",
+      "prompt": "Even though the software was free, most schools chose the paid alternative because it came with support.",
+      "options": [
+        "Schools will switch to the paid alternative once support for the free version ends.",
+        "Software companies gave schools the paid version free of charge, along with support.",
+        "Institutions mostly bought the commercial product for its assistance, despite a version costing nothing being available.",
+        "Schools chose the free software because the paid alternative offered no support."
+      ],
+      "correctIndex": 2,
+      "explanation": "Support is why schools paid rather than took the free option. The first wrong option flips which product had support and which was chosen. The second removes the payment entirely. The third turns a completed choice into a future switch.",
+      "difficulty": 4
+    },
+    {
+      "id": "q-122",
+      "type": "restatement",
+      "prompt": "Production stopped for six weeks while the factory replaced equipment that had been in use since 1998.",
+      "options": [
+        "Equipment suppliers halted production at the factory for six weeks while carrying out replacements.",
+        "The plant halted output for a month and a half to install machinery replacing what had run for decades.",
+        "The factory will stop production for six weeks in order to replace ageing equipment.",
+        "The factory replaced its equipment because production had already stopped for six weeks."
+      ],
+      "correctIndex": 1,
+      "explanation": "The replacement is why production stopped. The first wrong option makes the stoppage the reason for replacing. The second puts a completed shutdown in the future. The third makes suppliers rather than the factory halt production.",
+      "difficulty": 4
+    },
+    {
+      "id": "q-123",
+      "type": "restatement",
+      "prompt": "The charity spends less on administration than almost any comparable organisation, according to its published accounts.",
+      "options": [
+        "An outside auditor, rather than the charity itself, published the comparison of administrative costs.",
+        "Its own financial statements show that running costs are lower there than at nearly all similar bodies.",
+        "The charity's published accounts show it spends more on administration than similar organisations.",
+        "The charity intends to reduce its administrative spending below that of comparable organisations."
+      ],
+      "correctIndex": 1,
+      "explanation": "It already spends less, on its own published figures. The first wrong option reverses the comparison. The second changes who published the accounts. The third makes an existing position into an intention.",
+      "difficulty": 5
+    },
+    {
+      "id": "q-124",
+      "type": "restatement",
+      "prompt": "Tickets sold out within an hour, although the venue had added two extra performances that morning.",
+      "options": [
+        "The venue will add two extra performances if tickets sell out within an hour.",
+        "The venue added two extra performances because tickets had not sold quickly enough.",
+        "Ticket agents added two extra performances after the venue sold out within an hour.",
+        "Even with a pair of additional shows announced earlier that day, everything was gone in sixty minutes."
+      ],
+      "correctIndex": 3,
+      "explanation": "Extra shows were added and everything still sold instantly. The first wrong option makes slow sales the reason for adding them. The second makes the additions conditional and future. The third puts the additions after the sell-out and credits agents.",
+      "difficulty": 3
+    },
+    {
+      "id": "q-125",
+      "type": "restatement",
+      "prompt": "The virus spreads easily but causes serious illness in only a small proportion of those infected.",
+      "options": [
+        "The virus rarely spreads, but almost everyone who catches it becomes seriously ill.",
+        "Those infected spread serious illness to a small proportion of the people they meet.",
+        "The virus is expected to spread easily once restrictions are lifted next month.",
+        "Transmission happens readily, though few of the people who catch it become badly unwell."
+      ],
+      "correctIndex": 3,
+      "explanation": "It spreads widely but rarely does serious harm. The first wrong option inverts both halves. The second turns a current property into a forecast. The third makes the small proportion describe who gets infected rather than who becomes seriously ill.",
+      "difficulty": 4
+    },
+    {
+      "id": "q-126",
+      "type": "restatement",
+      "prompt": "The committee rejected the proposal twice before finally accepting a version that had barely changed at all.",
+      "options": [
+        "The committee is expected to reject the proposal twice before accepting a revised version.",
+        "After two refusals the panel approved something almost identical to what it had turned down.",
+        "The committee accepted the proposal at once and rejected the later revised versions.",
+        "The person who wrote the proposal rejected the committee's changes twice before agreeing."
+      ],
+      "correctIndex": 1,
+      "explanation": "Two rejections came first, then acceptance of nearly the same thing. The first wrong option reverses the order of acceptance and rejection. The second makes it a prediction. The third swaps who rejected whom.",
+      "difficulty": 3
+    },
+    {
       "id": "q-1",
       "type": "sentence_completion",
       "prompt": "After weeks of negotiation, a compromise finally began to ______ from the discussions between both sides.",
       "options": [
         "vanish",
-        "emerge",
         "rehearse",
-        "purchase"
+        "purchase",
+        "emerge"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "explanation": "Weeks of negotiation ending in a compromise means something gradually came into view, which is what 'emerge' describes. 'Vanish' reverses that, and neither purchasing nor rehearsing is something a compromise can do.",
       "difficulty": 3
     },
@@ -293,12 +629,12 @@
       "type": "sentence_completion",
       "prompt": "The new safety procedures proved highly ______, reducing workplace injuries by almost half.",
       "options": [
-        "alphabetical",
-        "effective",
         "fictional",
-        "edible"
+        "alphabetical",
+        "edible",
+        "effective"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "explanation": "Halving injuries is evidence that the procedures worked, which is what 'effective' means. The other three describe properties a set of procedures could technically have, but none of them would be demonstrated by a drop in injuries.",
       "difficulty": 2
     },
@@ -321,12 +657,12 @@
       "type": "sentence_completion",
       "prompt": "He felt deeply ______ of his behaviour and apologised to everyone the following morning.",
       "options": [
+        "unaware",
         "fond",
-        "ashamed",
         "proud",
-        "unaware"
+        "ashamed"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "explanation": "The apology tells you he judged his own behaviour badly, which is what 'ashamed' means. 'Proud' and 'fond' would contradict the apology, and someone unaware of their behaviour would have no reason to apologise for it.",
       "difficulty": 3
     },
@@ -335,12 +671,12 @@
       "type": "sentence_completion",
       "prompt": "The report contradicts several findings published in the ______ study by the same research team.",
       "options": [
-        "circular",
         "edible",
+        "previous",
         "audible",
-        "previous"
+        "circular"
       ],
-      "correctIndex": 3,
+      "correctIndex": 1,
       "explanation": "A report can only contradict findings that already exist, so the study must be an earlier one — 'previous'. The other three are adjectives that cannot sensibly describe a research study here.",
       "difficulty": 2
     },
@@ -350,11 +686,11 @@
       "prompt": "The government was criticised for responding slowly to the housing ______ in the northern cities.",
       "options": [
         "portrait",
-        "recipe",
         "crisis",
-        "melody"
+        "melody",
+        "recipe"
       ],
-      "correctIndex": 2,
+      "correctIndex": 1,
       "explanation": "Something a government is criticised for responding slowly to must be a serious problem, which 'crisis' names. None of the others is something that would require a government response.",
       "difficulty": 2
     },
@@ -363,12 +699,12 @@
       "type": "sentence_completion",
       "prompt": "The festival was designed to ______ visitors from outside the region during the quiet winter months.",
       "options": [
-        "attract",
+        "inherit",
         "memorise",
-        "translate",
-        "inherit"
+        "attract",
+        "translate"
       ],
-      "correctIndex": 0,
+      "correctIndex": 2,
       "explanation": "A festival planned for a quiet season exists to bring people in, which is what 'attract' means. You cannot memorise, translate or inherit visitors.",
       "difficulty": 2
     },
@@ -378,11 +714,11 @@
       "prompt": "The lawyer argued that suspicion alone was not sufficient ______ of any wrongdoing by her client.",
       "options": [
         "furniture",
-        "rehearsal",
         "proof",
+        "rehearsal",
         "laughter"
       ],
-      "correctIndex": 2,
+      "correctIndex": 1,
       "explanation": "Setting suspicion against what is 'sufficient' points at evidence, which is what 'proof' means. The others cannot be 'of wrongdoing'.",
       "difficulty": 3
     },
@@ -392,11 +728,11 @@
       "prompt": "A single careless remark can ______ an evening that everyone else had been enjoying.",
       "options": [
         "measure",
-        "translate",
         "spoil",
+        "translate",
         "inherit"
       ],
-      "correctIndex": 2,
+      "correctIndex": 1,
       "explanation": "The contrast with everyone else enjoying it shows the remark ruins the evening, which is what 'spoil' means. Measuring, translating or inheriting an evening makes no sense.",
       "difficulty": 2
     },
@@ -405,12 +741,12 @@
       "type": "sentence_completion",
       "prompt": "What began as an ______ Tuesday turned into the most memorable day of her career.",
       "options": [
+        "imaginary",
         "edible",
         "electrical",
-        "ordinary",
-        "imaginary"
+        "ordinary"
       ],
-      "correctIndex": 2,
+      "correctIndex": 3,
       "explanation": "'Turned into the most memorable day' sets up a contrast with something unremarkable, which is what 'ordinary' means. A Tuesday cannot be imaginary, electrical or edible in any ordinary reading.",
       "difficulty": 3
     },
@@ -419,12 +755,12 @@
       "type": "sentence_completion",
       "prompt": "Engineers developed a small ______ that measures air quality and sends readings to a phone.",
       "options": [
-        "rumour",
         "holiday",
+        "device",
         "apology",
-        "device"
+        "rumour"
       ],
-      "correctIndex": 3,
+      "correctIndex": 1,
       "explanation": "Something engineers develop that measures and transmits is a piece of equipment — a 'device'. None of the other options can measure anything.",
       "difficulty": 2
     },
@@ -433,12 +769,12 @@
       "type": "sentence_completion",
       "prompt": "Disagreements inevitably ______ when two departments are given responsibility for the same budget.",
       "options": [
+        "arise",
         "translate",
-        "rehearse",
         "inherit",
-        "arise"
+        "rehearse"
       ],
-      "correctIndex": 3,
+      "correctIndex": 0,
       "explanation": "Overlapping responsibility causes disagreements to come about, which 'arise' describes. Disagreements are not things that rehearse, translate or inherit.",
       "difficulty": 3
     },
@@ -447,9 +783,9 @@
       "type": "sentence_completion",
       "prompt": "The decision to close every branch at once was a ______ move that surprised the industry.",
       "options": [
-        "edible",
-        "damp",
         "audible",
+        "damp",
+        "edible",
         "bold"
       ],
       "correctIndex": 3,
@@ -461,12 +797,12 @@
       "type": "sentence_completion",
       "prompt": "The charity worked for years to ______ relationships with donors in several different countries.",
       "options": [
-        "abolish",
-        "cultivate",
         "translate",
-        "memorise"
+        "abolish",
+        "memorise",
+        "cultivate"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "explanation": "Years of work on relationships means developing them carefully over time, which is what 'cultivate' means here. 'Abolish' would end them, and relationships are not memorised or translated.",
       "difficulty": 4
     },
@@ -475,12 +811,12 @@
       "type": "sentence_completion",
       "prompt": "A single ______ at the figures was enough to tell her something had gone badly wrong.",
       "options": [
-        "recipe",
         "glance",
-        "souvenir",
-        "apology"
+        "apology",
+        "recipe",
+        "souvenir"
       ],
-      "correctIndex": 1,
+      "correctIndex": 0,
       "explanation": "Something that takes only a moment and is done 'at the figures' is a quick look — a 'glance'. The other three cannot be directed at figures.",
       "difficulty": 3
     },
@@ -489,12 +825,12 @@
       "type": "sentence_completion",
       "prompt": "The nurse cleaned the ______ carefully before applying a fresh bandage to his arm.",
       "options": [
-        "wound",
-        "alphabet",
         "rumour",
-        "melody"
+        "melody",
+        "alphabet",
+        "wound"
       ],
-      "correctIndex": 0,
+      "correctIndex": 3,
       "explanation": "Something cleaned before a bandage is applied is an injury, which 'wound' names. Nothing else listed can be bandaged.",
       "difficulty": 2
     },
@@ -503,12 +839,12 @@
       "type": "sentence_completion",
       "prompt": "There has been a ______ change in how people book holidays since the pandemic ended.",
       "options": [
-        "dramatic",
-        "alphabetical",
         "audible",
-        "edible"
+        "alphabetical",
+        "edible",
+        "dramatic"
       ],
-      "correctIndex": 0,
+      "correctIndex": 3,
       "explanation": "A change worth reporting since a major event is a large and striking one, which 'dramatic' describes. A change cannot be edible, audible or alphabetical here.",
       "difficulty": 2
     },
@@ -517,8 +853,8 @@
       "type": "sentence_completion",
       "prompt": "Fewer than twenty students attended the final ______ of what had been a popular course.",
       "options": [
-        "bandage",
         "souvenir",
+        "bandage",
         "recipe",
         "lecture"
       ],
@@ -531,12 +867,12 @@
       "type": "sentence_completion",
       "prompt": "Doctors advised waiting until the swelling had begun to ______ before attempting any further treatment.",
       "options": [
-        "translate",
-        "inherit",
+        "rehearse",
         "subside",
-        "rehearse"
+        "translate",
+        "inherit"
       ],
-      "correctIndex": 2,
+      "correctIndex": 1,
       "explanation": "You wait for swelling to go down before treating further, and 'subside' means to decrease. Swelling cannot rehearse, inherit or translate.",
       "difficulty": 4
     },
@@ -545,12 +881,12 @@
       "type": "sentence_completion",
       "prompt": "Planners tend to ______ how long large infrastructure projects will actually take to complete.",
       "options": [
-        "memorise",
         "underestimate",
-        "translate",
-        "rehearse"
+        "memorise",
+        "rehearse",
+        "translate"
       ],
-      "correctIndex": 1,
+      "correctIndex": 0,
       "explanation": "The word 'actually' signals that reality exceeds the prediction, so planners judge the time as less than it is — 'underestimate'. The others describe things you cannot do to a duration.",
       "difficulty": 4
     },
@@ -560,11 +896,11 @@
       "prompt": "Her fear of bridges was entirely ______, since she knew perfectly well they were safe.",
       "options": [
         "edible",
-        "irrational",
         "audible",
-        "alphabetical"
+        "alphabetical",
+        "irrational"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "explanation": "A fear held despite knowing there is no danger is one without reason, which is what 'irrational' means. A fear cannot be audible, edible or alphabetical.",
       "difficulty": 4
     },
@@ -573,12 +909,12 @@
       "type": "sentence_completion",
       "prompt": "Language remains the greatest ______ to employment for many recently arrived immigrants.",
       "options": [
-        "souvenir",
+        "barrier",
         "recipe",
-        "melody",
-        "barrier"
+        "souvenir",
+        "melody"
       ],
-      "correctIndex": 3,
+      "correctIndex": 0,
       "explanation": "Something standing in the way of employment is an obstacle, which 'barrier' names. Nothing else listed can block access to work.",
       "difficulty": 3
     },
@@ -587,12 +923,12 @@
       "type": "sentence_completion",
       "prompt": "Adding natural light to the workspace did much to ______ both productivity and general morale.",
       "options": [
-        "abolish",
-        "memorise",
         "translate",
-        "enhance"
+        "enhance",
+        "abolish",
+        "memorise"
       ],
-      "correctIndex": 3,
+      "correctIndex": 1,
       "explanation": "Something that 'did much' for productivity and morale improved them, which is what 'enhance' means. 'Abolish' would remove them entirely, and neither can be translated or memorised.",
       "difficulty": 4
     },
@@ -602,11 +938,11 @@
       "prompt": "The inspectors were primarily concerned with the ______ of the animals kept at the facility.",
       "options": [
         "souvenir",
-        "welfare",
+        "rehearsal",
         "alphabet",
-        "rehearsal"
+        "welfare"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "explanation": "What inspectors check about animals is their health and treatment, which 'welfare' covers. Animals do not have an alphabet, souvenir or rehearsal.",
       "difficulty": 3
     },
@@ -615,12 +951,12 @@
       "type": "sentence_completion",
       "prompt": "The regime tried for decades to ______ any reporting that questioned its official version of events.",
       "options": [
-        "rehearse",
         "translate",
-        "inherit",
-        "suppress"
+        "suppress",
+        "rehearse",
+        "inherit"
       ],
-      "correctIndex": 3,
+      "correctIndex": 1,
       "explanation": "A regime acting against reporting that contradicts it is trying to stop that reporting, which 'suppress' means. Rehearsing, inheriting or translating the reporting would not serve that purpose.",
       "difficulty": 4
     },
@@ -629,9 +965,9 @@
       "type": "sentence_completion",
       "prompt": "The forecast for the region's economy remained ______ despite a small rise in exports.",
       "options": [
-        "edible",
-        "alphabetical",
         "audible",
+        "alphabetical",
+        "edible",
         "gloomy"
       ],
       "correctIndex": 3,
@@ -657,12 +993,12 @@
       "type": "sentence_completion",
       "prompt": "Only a small ______ of the funds raised actually reached the communities they were meant for.",
       "options": [
-        "souvenir",
-        "rehearsal",
         "melody",
-        "portion"
+        "rehearsal",
+        "portion",
+        "souvenir"
       ],
-      "correctIndex": 3,
+      "correctIndex": 2,
       "explanation": "'Of the funds' calls for a word meaning a part of a whole, which is 'portion'. The other three cannot be a quantity of money.",
       "difficulty": 3
     },
@@ -671,9 +1007,9 @@
       "type": "sentence_completion",
       "prompt": "The training programme produced dogs that were remarkably ______ even in crowded public spaces.",
       "options": [
-        "edible",
-        "obedient",
         "waterproof",
+        "obedient",
+        "edible",
         "alphabetical"
       ],
       "correctIndex": 1,
@@ -686,11 +1022,11 @@
       "prompt": "The university hopes to ______ access to its courses by offering more of them online.",
       "options": [
         "inherit",
-        "broaden",
         "memorise",
-        "rehearse"
+        "rehearse",
+        "broaden"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "explanation": "Putting courses online lets more people reach them, so access is widened — 'broaden'. Access is not something you rehearse, inherit or memorise.",
       "difficulty": 3
     },
@@ -699,12 +1035,12 @@
       "type": "sentence_completion",
       "prompt": "The accounting ______ cost the firm both its reputation and most of its largest clients.",
       "options": [
-        "melody",
-        "souvenir",
         "scandal",
+        "souvenir",
+        "melody",
         "rehearsal"
       ],
-      "correctIndex": 2,
+      "correctIndex": 0,
       "explanation": "Something involving accounting that destroys a firm's reputation is a public wrongdoing — a 'scandal'. None of the others would cost a firm its clients.",
       "difficulty": 3
     },
@@ -713,10 +1049,10 @@
       "type": "sentence_completion",
       "prompt": "Repeated flooding had begun to ______ the foundations of several buildings along the river.",
       "options": [
-        "translate",
-        "weaken",
         "rehearse",
-        "memorise"
+        "weaken",
+        "memorise",
+        "translate"
       ],
       "correctIndex": 1,
       "explanation": "Water damaging foundations over time makes them less strong, which 'weaken' means. Foundations cannot be rehearsed, translated or memorised.",
@@ -727,12 +1063,12 @@
       "type": "sentence_completion",
       "prompt": "She remained ______ that the original diagnosis had been wrong, despite what the specialists said.",
       "options": [
-        "edible",
         "convinced",
         "audible",
+        "edible",
         "alphabetical"
       ],
-      "correctIndex": 1,
+      "correctIndex": 0,
       "explanation": "Holding a belief against expert disagreement means being firmly certain, which 'convinced' expresses. A person cannot be edible, audible or alphabetical in this sense.",
       "difficulty": 3
     },
@@ -741,12 +1077,12 @@
       "type": "sentence_completion",
       "prompt": "Careful investigative ______ brought the practice to public attention long before regulators acted.",
       "options": [
-        "furniture",
         "laundry",
+        "journalism",
         "cutlery",
-        "journalism"
+        "furniture"
       ],
-      "correctIndex": 3,
+      "correctIndex": 1,
       "explanation": "'Investigative' and bringing something to public attention both point at reporting, which is 'journalism'. The other three are uncountable nouns that cannot investigate anything.",
       "difficulty": 3
     },
@@ -757,8 +1093,8 @@
       "options": [
         "audible",
         "prime",
-        "waterproof",
-        "edible"
+        "edible",
+        "waterproof"
       ],
       "correctIndex": 1,
       "explanation": "The consideration that mattered most when choosing a site is the chief one, which 'prime' means. A consideration cannot be edible, audible or waterproof.",
@@ -769,12 +1105,12 @@
       "type": "sentence_completion",
       "prompt": "Thousands of workers ______ into the city each morning from towns up to fifty kilometres away.",
       "options": [
-        "commute",
         "translate",
-        "memorise",
-        "rehearse"
+        "rehearse",
+        "commute",
+        "memorise"
       ],
-      "correctIndex": 0,
+      "correctIndex": 2,
       "explanation": "Travelling into a city for work each morning is exactly what 'commute' means. The other verbs do not describe movement at all.",
       "difficulty": 3
     },
@@ -783,12 +1119,12 @@
       "type": "sentence_completion",
       "prompt": "Years of small successes gradually gave her the ______ to apply for a senior post.",
       "options": [
-        "scenery",
-        "furniture",
+        "confidence",
         "luggage",
-        "confidence"
+        "furniture",
+        "scenery"
       ],
-      "correctIndex": 3,
+      "correctIndex": 0,
       "explanation": "What repeated success gives someone before they attempt something harder is self-belief, which 'confidence' names. The other three are physical things that cannot be gained from success.",
       "difficulty": 2
     },
@@ -797,12 +1133,12 @@
       "type": "sentence_completion",
       "prompt": "A persistent cough was the only ______ that appeared before the illness became serious.",
       "options": [
-        "invoice",
-        "recipe",
         "souvenir",
-        "symptom"
+        "invoice",
+        "symptom",
+        "recipe"
       ],
-      "correctIndex": 3,
+      "correctIndex": 2,
       "explanation": "A cough appearing before an illness worsens is a sign of that illness, which 'symptom' means. None of the others is something an illness produces.",
       "difficulty": 2
     },
@@ -811,12 +1147,12 @@
       "type": "sentence_completion",
       "prompt": "Small weekly targets seemed to ______ the team far better than a single distant deadline.",
       "options": [
-        "motivate",
         "photograph",
+        "inherit",
         "translate",
-        "inherit"
+        "motivate"
       ],
-      "correctIndex": 0,
+      "correctIndex": 3,
       "explanation": "Comparing two ways of getting a team to work points at encouragement, which 'motivate' means. You cannot translate, photograph or inherit a team into working harder.",
       "difficulty": 3
     },
@@ -825,8 +1161,8 @@
       "type": "sentence_completion",
       "prompt": "Very few candidates ______ both the technical skill and the patience the role requires.",
       "options": [
-        "rehearse",
         "dissolve",
+        "rehearse",
         "evaporate",
         "possess"
       ],
@@ -839,9 +1175,9 @@
       "type": "sentence_completion",
       "prompt": "What she achieved with almost no funding was genuinely ______ by any standard.",
       "options": [
+        "magnetic",
         "rectangular",
         "waterproof",
-        "magnetic",
         "remarkable"
       ],
       "correctIndex": 3,
@@ -853,12 +1189,12 @@
       "type": "sentence_completion",
       "prompt": "The patient's ______ was slower than expected but complete within six months.",
       "options": [
-        "envelope",
         "curtain",
-        "rehearsal",
-        "recovery"
+        "envelope",
+        "recovery",
+        "rehearsal"
       ],
-      "correctIndex": 3,
+      "correctIndex": 2,
       "explanation": "Something belonging to a patient that can be slow and then complete is the return to health, which 'recovery' names. The others cannot be described as complete within six months in this sense.",
       "difficulty": 2
     },
@@ -867,12 +1203,12 @@
       "type": "sentence_completion",
       "prompt": "Access to the archive is ______ to researchers who have applied at least a month ahead.",
       "options": [
-        "adhesive",
-        "limited",
         "frozen",
-        "hollow"
+        "adhesive",
+        "hollow",
+        "limited"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "explanation": "Access granted only to a particular group is restricted, which 'limited' means. Access cannot be adhesive, hollow or frozen.",
       "difficulty": 3
     },
@@ -881,12 +1217,12 @@
       "type": "sentence_completion",
       "prompt": "Critics argued that the ______ was far heavier than the offence deserved.",
       "options": [
-        "punishment",
+        "souvenir",
         "melody",
-        "saucepan",
-        "souvenir"
+        "punishment",
+        "saucepan"
       ],
-      "correctIndex": 0,
+      "correctIndex": 2,
       "explanation": "Something weighed against an offence is the penalty for it, which 'punishment' names. The other three cannot be compared to an offence at all.",
       "difficulty": 2
     },
@@ -895,12 +1231,12 @@
       "type": "sentence_completion",
       "prompt": "The threat of closure did more to ______ the staff than any management initiative had.",
       "options": [
-        "photograph",
         "laminate",
-        "memorise",
-        "unite"
+        "unite",
+        "photograph",
+        "memorise"
       ],
-      "correctIndex": 3,
+      "correctIndex": 1,
       "explanation": "A shared threat bringing people together is what 'unite' describes. Staff are not laminated, photographed or memorised by a threat.",
       "difficulty": 3
     },
@@ -909,12 +1245,12 @@
       "type": "sentence_completion",
       "prompt": "The meeting felt ______, though the minutes later showed it had lasted only an hour.",
       "options": [
+        "frozen",
         "endless",
-        "adhesive",
         "circular",
-        "frozen"
+        "adhesive"
       ],
-      "correctIndex": 0,
+      "correctIndex": 1,
       "explanation": "The contrast with 'only an hour' shows the meeting seemed to go on forever, which 'endless' means. A meeting cannot feel adhesive or frozen, and 'circular' would describe its logic rather than its length.",
       "difficulty": 3
     },
@@ -923,12 +1259,12 @@
       "type": "sentence_completion",
       "prompt": "The farm switched to ______ methods and stopped using chemical fertiliser altogether.",
       "options": [
-        "portable",
         "organic",
         "audible",
-        "alphabetical"
+        "alphabetical",
+        "portable"
       ],
-      "correctIndex": 1,
+      "correctIndex": 0,
       "explanation": "Abandoning chemical fertiliser is exactly what 'organic' farming means. Farming methods cannot be audible, portable or alphabetical.",
       "difficulty": 2
     },
@@ -937,12 +1273,12 @@
       "type": "sentence_completion",
       "prompt": "Speaking publicly against her own employer was a ______ decision that cost her the job.",
       "options": [
-        "hollow",
-        "rectangular",
+        "courageous",
         "magnetic",
-        "courageous"
+        "hollow",
+        "rectangular"
       ],
-      "correctIndex": 3,
+      "correctIndex": 0,
       "explanation": "Acting against your own interest at real personal cost is brave, which 'courageous' means. A decision cannot be magnetic or rectangular, and 'hollow' would describe a promise rather than a risk taken.",
       "difficulty": 3
     },
@@ -965,12 +1301,12 @@
       "type": "sentence_completion",
       "prompt": "Demand reaches its ______ in late August and falls sharply once schools reopen.",
       "options": [
-        "envelope",
+        "peak",
         "saucepan",
         "apology",
-        "peak"
+        "envelope"
       ],
-      "correctIndex": 3,
+      "correctIndex": 0,
       "explanation": "A high point that demand reaches before falling is its 'peak'. None of the other options is something demand can reach.",
       "difficulty": 3
     },
@@ -979,12 +1315,12 @@
       "type": "sentence_completion",
       "prompt": "Only one ______ had any experience of managing a budget of that size.",
       "options": [
+        "envelope",
         "candidate",
-        "staircase",
         "souvenir",
-        "envelope"
+        "staircase"
       ],
-      "correctIndex": 0,
+      "correctIndex": 1,
       "explanation": "Someone being assessed for experience relevant to a role is a 'candidate'. The others are objects and cannot have experience.",
       "difficulty": 2
     },
@@ -1007,9 +1343,9 @@
       "type": "sentence_completion",
       "prompt": "The company's ______ for the coming year improved considerably after it secured the government contract.",
       "options": [
-        "saucepan",
-        "outlook",
         "staircase",
+        "outlook",
+        "saucepan",
         "rehearsal"
       ],
       "correctIndex": 1,
@@ -1021,12 +1357,12 @@
       "type": "sentence_completion",
       "prompt": "Rising interest rates made the monthly ______ payments unaffordable for many households.",
       "options": [
-        "curtain",
+        "mortgage",
         "melody",
-        "rehearsal",
-        "mortgage"
+        "curtain",
+        "rehearsal"
       ],
-      "correctIndex": 3,
+      "correctIndex": 0,
       "explanation": "Monthly payments affected by interest rates are loan repayments on a home, which 'mortgage' names. Nothing else listed involves interest.",
       "difficulty": 3
     },
@@ -1035,12 +1371,12 @@
       "type": "sentence_completion",
       "prompt": "Every article is read by at least one ______ before the journal agrees to publish it.",
       "options": [
-        "peer",
-        "souvenir",
+        "staircase",
         "bandage",
-        "staircase"
+        "peer",
+        "souvenir"
       ],
-      "correctIndex": 0,
+      "correctIndex": 2,
       "explanation": "Someone of equal standing who reviews academic work before publication is a 'peer'. The other three cannot read anything.",
       "difficulty": 4
     },
@@ -1049,12 +1385,12 @@
       "type": "sentence_completion",
       "prompt": "The sudden ______ of bees from the region alarmed farmers across three counties.",
       "options": [
+        "invoice",
         "rehearsal",
-        "disappearance",
         "envelope",
-        "invoice"
+        "disappearance"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "explanation": "Bees going from a region and alarming farmers describes them vanishing, which 'disappearance' names. The others cannot happen to bees.",
       "difficulty": 3
     },
@@ -1063,12 +1399,12 @@
       "type": "sentence_completion",
       "prompt": "The park was designed for ______ rather than for sport, with no marked pitches at all.",
       "options": [
-        "recreation",
+        "cutlery",
         "bandage",
-        "invoice",
-        "cutlery"
+        "recreation",
+        "invoice"
       ],
-      "correctIndex": 0,
+      "correctIndex": 2,
       "explanation": "Set against sport, and explained by the absence of pitches, the park is for relaxed leisure — 'recreation'. A park cannot be designed for an invoice, bandage or cutlery.",
       "difficulty": 4
     },
@@ -1077,12 +1413,12 @@
       "type": "sentence_completion",
       "prompt": "The ______ river that once powered every mill in the valley is now barely a stream.",
       "options": [
+        "alphabetical",
         "portable",
         "mighty",
-        "alphabetical",
         "adhesive"
       ],
-      "correctIndex": 1,
+      "correctIndex": 2,
       "explanation": "A river that once powered every mill was powerful, and 'now barely a stream' sharpens that contrast. A river cannot be adhesive, alphabetical or portable.",
       "difficulty": 3
     },
@@ -1092,11 +1428,11 @@
       "prompt": "The firm lost its largest ______ after missing three deadlines in a single quarter.",
       "options": [
         "souvenir",
-        "client",
+        "melody",
         "staircase",
-        "melody"
+        "client"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "explanation": "Someone a firm can lose by missing deadlines is a customer it works for, which 'client' names. A firm does not lose staircases or melodies through poor delivery.",
       "difficulty": 2
     },
@@ -1105,12 +1441,12 @@
       "type": "sentence_completion",
       "prompt": "The merger caused months of ______ before anything resembling a routine returned.",
       "options": [
-        "cutlery",
-        "rehearsal",
         "upheaval",
+        "rehearsal",
+        "cutlery",
         "bandage"
       ],
-      "correctIndex": 2,
+      "correctIndex": 0,
       "explanation": "Months of disruption ending when routine returns is what 'upheaval' describes. The other three cannot last for months or be caused by a merger.",
       "difficulty": 4
     },
@@ -1119,12 +1455,12 @@
       "type": "sentence_completion",
       "prompt": "Conditions in the older wing were ______, and the inspectors ordered it closed immediately.",
       "options": [
-        "appalling",
+        "portable",
         "alphabetical",
-        "adhesive",
-        "portable"
+        "appalling",
+        "adhesive"
       ],
-      "correctIndex": 0,
+      "correctIndex": 2,
       "explanation": "Conditions bad enough to force immediate closure are shocking, which 'appalling' means. Conditions cannot be adhesive, alphabetical or portable.",
       "difficulty": 4
     },
@@ -1133,8 +1469,8 @@
       "type": "sentence_completion",
       "prompt": "The guide was unusually ______ about the building's history and answered every question.",
       "options": [
-        "waterproof",
         "rectangular",
+        "waterproof",
         "knowledgeable",
         "magnetic"
       ],
@@ -1148,11 +1484,11 @@
       "prompt": "The player faced a three-match ______ following the incident in the second half.",
       "options": [
         "envelope",
+        "suspension",
         "bandage",
-        "souvenir",
-        "suspension"
+        "souvenir"
       ],
-      "correctIndex": 3,
+      "correctIndex": 1,
       "explanation": "Being barred for three matches after an incident is a temporary ban, which 'suspension' names. None of the others can be measured in matches.",
       "difficulty": 4
     },
@@ -1161,12 +1497,12 @@
       "type": "sentence_completion",
       "prompt": "His reply was so ______ that nobody could tell whether he actually agreed.",
       "options": [
+        "sarcastic",
         "waterproof",
-        "adhesive",
         "circular",
-        "sarcastic"
+        "adhesive"
       ],
-      "correctIndex": 3,
+      "correctIndex": 0,
       "explanation": "Saying the opposite of what you mean leaves listeners unsure of your real view, which is what 'sarcastic' produces. A reply cannot be adhesive or waterproof, and 'circular' would describe faulty reasoning rather than tone.",
       "difficulty": 5
     },
@@ -1175,12 +1511,12 @@
       "type": "sentence_completion",
       "prompt": "Students tend to ______ near the entrance whenever the weather turns cold.",
       "options": [
-        "evaporate",
-        "laminate",
+        "congregate",
         "translate",
-        "congregate"
+        "laminate",
+        "evaporate"
       ],
-      "correctIndex": 3,
+      "correctIndex": 0,
       "explanation": "People gathering in one place is what 'congregate' means. Students do not evaporate, laminate or translate near an entrance.",
       "difficulty": 4
     },
@@ -1189,12 +1525,12 @@
       "type": "sentence_completion",
       "prompt": "She had nobody at work she could ______ in about how badly things were going.",
       "options": [
-        "dissolve",
         "laminate",
-        "confide",
-        "rehearse"
+        "rehearse",
+        "dissolve",
+        "confide"
       ],
-      "correctIndex": 2,
+      "correctIndex": 3,
       "explanation": "The pattern 'confide in someone' means to tell them something private, which fits having nobody to talk to. The other verbs do not take 'in' with a person in this way.",
       "difficulty": 5
     },
@@ -1203,12 +1539,12 @@
       "type": "sentence_completion",
       "prompt": "Critics called the policy ______, since the ministry had ignored the same rule for years.",
       "options": [
-        "audible",
         "adhesive",
-        "rectangular",
-        "hypocritical"
+        "hypocritical",
+        "audible",
+        "rectangular"
       ],
-      "correctIndex": 3,
+      "correctIndex": 1,
       "explanation": "Demanding of others what you have not done yourself is what 'hypocritical' names, and the second clause supplies exactly that. A policy cannot be adhesive, rectangular or audible.",
       "difficulty": 5
     },
@@ -1217,12 +1553,12 @@
       "type": "sentence_completion",
       "prompt": "Her comments on the draft were brief but unusually ______, and changed the whole argument.",
       "options": [
-        "alphabetical",
-        "magnetic",
         "insightful",
-        "waterproof"
+        "magnetic",
+        "waterproof",
+        "alphabetical"
       ],
-      "correctIndex": 2,
+      "correctIndex": 0,
       "explanation": "Brief comments that change an entire argument show deep understanding, which 'insightful' means. Comments cannot be waterproof, alphabetical or magnetic.",
       "difficulty": 4
     },
@@ -1247,8 +1583,8 @@
       "options": [
         "envelope",
         "niche",
-        "bandage",
-        "rehearsal"
+        "rehearsal",
+        "bandage"
       ],
       "correctIndex": 1,
       "explanation": "A small specialised area of a market that others overlook is a 'niche'. None of the other options can be profitable or supply parts.",
@@ -1259,12 +1595,12 @@
       "type": "sentence_completion",
       "prompt": "Only two of the twelve sites were fully ______ with the new safety regulations.",
       "options": [
-        "compliant",
-        "adhesive",
         "portable",
-        "alphabetical"
+        "alphabetical",
+        "compliant",
+        "adhesive"
       ],
-      "correctIndex": 0,
+      "correctIndex": 2,
       "explanation": "Meeting regulations in full is what 'compliant with' means. Sites can be adhesive, alphabetical or portable in other contexts, but none of those relates to regulations.",
       "difficulty": 4
     },
@@ -1274,9 +1610,9 @@
       "prompt": "Without a control group the results are essentially ______, however impressive they look.",
       "options": [
         "meaningless",
-        "waterproof",
+        "circular",
         "adhesive",
-        "circular"
+        "waterproof"
       ],
       "correctIndex": 0,
       "explanation": "Results that cannot be interpreted without a comparison carry no information, which 'meaningless' states. 'Circular' describes reasoning that assumes its conclusion, which is a different fault, and results cannot be waterproof or adhesive.",
@@ -1287,10 +1623,10 @@
       "type": "sentence_completion",
       "prompt": "The new drainage system was designed to ______ the damage caused by seasonal flooding in low-lying areas.",
       "options": [
-        "postpone",
-        "mitigate",
         "exaggerate",
-        "document"
+        "mitigate",
+        "document",
+        "postpone"
       ],
       "correctIndex": 1,
       "explanation": "A drainage system acts on the flooding itself, so the verb has to mean reducing the harm — that is 'mitigate'. 'Document' and 'exaggerate' describe how damage is reported rather than prevented, and nothing in the sentence suggests the damage is being delayed rather than lessened.",
@@ -1315,12 +1651,12 @@
       "type": "sentence_completion",
       "prompt": "Repeated delays in publishing the results began to ______ public confidence in the agency's independence.",
       "options": [
-        "postpone",
-        "undermine",
         "broadcast",
-        "inherit"
+        "inherit",
+        "postpone",
+        "undermine"
       ],
-      "correctIndex": 1,
+      "correctIndex": 3,
       "explanation": "Confidence is the thing being damaged by the delays, and 'undermine' is the verb for weakening it gradually. 'Broadcast' and 'inherit' take confidence as an object in a way that makes no sense here, and you postpone an event, not a state of trust.",
       "difficulty": 3
     },
@@ -1329,10 +1665,10 @@
       "type": "sentence_completion",
       "prompt": "The investigators dismissed the first theory but considered the second explanation entirely ______.",
       "options": [
-        "audible",
         "alphabetical",
+        "voluntary",
         "plausible",
-        "voluntary"
+        "audible"
       ],
       "correctIndex": 2,
       "explanation": "'But' sets the second explanation against a dismissed one, so the missing word must be positive about its credibility, which is what 'plausible' means. The other three describe properties an explanation can technically have but that would not contrast with being dismissed.",
@@ -1344,11 +1680,11 @@
       "prompt": "Given how quickly the glacier has retreated, some loss of coastal habitat now seems ______.",
       "options": [
         "affordable",
-        "inevitable",
         "artificial",
+        "inevitable",
         "optional"
       ],
-      "correctIndex": 1,
+      "correctIndex": 2,
       "explanation": "The opening clause gives a reason to expect the loss, so the word must express that it cannot be avoided. 'Optional' says the opposite, and neither 'affordable' nor 'artificial' is something the rate of glacial retreat would establish.",
       "difficulty": 3
     },
@@ -1357,12 +1693,12 @@
       "type": "sentence_completion",
       "prompt": "Regulators promised to ______ every claim the company had made about the safety of its batteries.",
       "options": [
+        "publicize",
         "scrutinize",
-        "memorize",
         "translate",
-        "publicize"
+        "memorize"
       ],
-      "correctIndex": 0,
+      "correctIndex": 1,
       "explanation": "Regulators examine claims closely, which is what 'scrutinize' means. 'Publicize' would mean spreading the company's claims rather than testing them, and translating or memorizing them is not a regulatory act.",
       "difficulty": 4
     },
@@ -1371,12 +1707,12 @@
       "type": "sentence_completion",
       "prompt": "The subsidy was introduced as an ______ for farmers to switch to less water-intensive crops.",
       "options": [
-        "apology",
+        "obstacle",
         "exception",
-        "incentive",
-        "obstacle"
+        "apology",
+        "incentive"
       ],
-      "correctIndex": 2,
+      "correctIndex": 3,
       "explanation": "A subsidy is money offered to encourage a change, so it functions as an 'incentive'. 'Obstacle' reverses the effect, and neither an apology nor an exception is something you would introduce 'for farmers to switch'.",
       "difficulty": 3
     },
@@ -1385,12 +1721,12 @@
       "type": "sentence_completion",
       "prompt": "If the symptoms ______ for more than a week, patients are advised to contact the clinic again.",
       "options": [
-        "evaporate",
         "subside",
-        "conclude",
-        "persist"
+        "persist",
+        "evaporate",
+        "conclude"
       ],
-      "correctIndex": 3,
+      "correctIndex": 1,
       "explanation": "Contacting the clinic again makes sense only if the symptoms continue, which is what 'persist' means. 'Subside' and 'conclude' describe symptoms going away, which would remove the reason to call, and symptoms do not evaporate.",
       "difficulty": 3
     },
@@ -1399,12 +1735,12 @@
       "type": "sentence_completion",
       "prompt": "The contract's wording was so ______ that both sides claimed it supported their position.",
       "options": [
+        "ambiguous",
         "formal",
         "legible",
-        "ambiguous",
         "concise"
       ],
-      "correctIndex": 2,
+      "correctIndex": 0,
       "explanation": "Two sides can each claim support only if the wording admits more than one reading, which is what 'ambiguous' means. Being brief, readable or formal would not by itself allow opposing interpretations.",
       "difficulty": 4
     },
@@ -1413,12 +1749,12 @@
       "type": "sentence_completion",
       "prompt": "Without regular maintenance, even well-built bridges will slowly ______ under constant traffic and weather.",
       "options": [
-        "illuminate",
-        "negotiate",
         "deteriorate",
-        "accumulate"
+        "accumulate",
+        "negotiate",
+        "illuminate"
       ],
-      "correctIndex": 2,
+      "correctIndex": 0,
       "explanation": "Lack of maintenance under constant stress causes gradual decline, which 'deteriorate' names. The other three are intransitive-looking verbs that fit the slot grammatically but describe things bridges do not do under traffic and weather.",
       "difficulty": 4
     },
@@ -1427,12 +1763,12 @@
       "type": "sentence_completion",
       "prompt": "After three failed prototypes, the team finally produced a design that seemed commercially ______.",
       "options": [
-        "edible",
-        "fictional",
+        "viable",
         "silent",
-        "viable"
+        "edible",
+        "fictional"
       ],
-      "correctIndex": 3,
+      "correctIndex": 0,
       "explanation": "'Commercially' points at whether the design could succeed as a product, and 'viable' is the adjective for that. The others are adjectives a design could in principle carry, but none of them is something 'commercially' would modify meaningfully.",
       "difficulty": 3
     },
@@ -1441,12 +1777,12 @@
       "type": "sentence_completion",
       "prompt": "Although the drug showed promise in early trials, its effect on long-term survival proved ______.",
       "options": [
+        "widespread",
         "negligible",
-        "mandatory",
         "affordable",
-        "widespread"
+        "mandatory"
       ],
-      "correctIndex": 0,
+      "correctIndex": 1,
       "explanation": "'Although' signals that the early promise was not borne out, so the effect must have been too small to matter, which is 'negligible'. 'Widespread' would describe reach rather than size and would not contrast with the promise, and an effect is not mandatory or affordable.",
       "difficulty": 4
     }
