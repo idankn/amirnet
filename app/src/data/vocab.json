@@ -336,6 +336,14 @@
     "cefr": "B1"
   },
   {
+    "word": "abolish",
+    "pos": "verb",
+    "definition": "To end a law, system or practice officially and permanently.",
+    "example": "The tax was abolished after less than two years in force.",
+    "translation": "לבטל, לחסל",
+    "cefr": "B2"
+  },
+  {
     "word": "absurd",
     "pos": "adjective",
     "definition": "So unreasonable that it seems ridiculous.",
@@ -344,11 +352,195 @@
     "cefr": "B2"
   },
   {
+    "word": "accessibility",
+    "pos": "noun",
+    "definition": "How easily something can be reached, entered or understood.",
+    "example": "The redesign improved accessibility for readers using screen readers.",
+    "translation": "נגישות",
+    "cefr": "B2"
+  },
+  {
+    "word": "accumulate",
+    "pos": "verb",
+    "definition": "To gather in increasing quantity over a period of time.",
+    "example": "Dust had accumulated on the shelves during the months the building stood empty.",
+    "translation": "להצטבר, לצבור",
+    "cefr": "B2"
+  },
+  {
+    "word": "acquisition",
+    "pos": "noun",
+    "definition": "The act of obtaining something, or the thing obtained.",
+    "example": "The museum announced its most expensive acquisition in a decade.",
+    "translation": "רכישה",
+    "cefr": "B2"
+  },
+  {
     "word": "adequate",
     "pos": "adjective",
     "definition": "Enough for what is needed, though not more than that.",
     "example": "The lighting was adequate for reading but too dim for detailed work.",
     "translation": "מספיק, הולם",
+    "cefr": "B2"
+  },
+  {
+    "word": "adjustment",
+    "pos": "noun",
+    "definition": "A small change made to improve something or make it fit better.",
+    "example": "A minor adjustment to the timetable removed most of the delays.",
+    "translation": "התאמה, תיקון קל",
+    "cefr": "B2"
+  },
+  {
+    "word": "adverse",
+    "pos": "adjective",
+    "definition": "Unfavourable, and likely to cause harm or difficulty.",
+    "example": "The trial was halted after several patients reported adverse effects.",
+    "translation": "שלילי, מזיק",
+    "cefr": "B2"
+  },
+  {
+    "word": "adversity",
+    "pos": "noun",
+    "definition": "A period of serious difficulty or misfortune.",
+    "example": "The region's recovery after such adversity surprised most observers.",
+    "translation": "מצוקה, קושי",
+    "cefr": "B2"
+  },
+  {
+    "word": "alliance",
+    "pos": "noun",
+    "definition": "An agreement between groups to work together for a shared purpose.",
+    "example": "The alliance held only as long as both sides faced the same rival.",
+    "translation": "ברית, שותפות",
+    "cefr": "B2"
+  },
+  {
+    "word": "ambiguity",
+    "pos": "noun",
+    "definition": "The state of having more than one possible meaning.",
+    "example": "The ambiguity in the wording allowed both sides to claim they had won.",
+    "translation": "דו-משמעות, עמימות",
+    "cefr": "B2"
+  },
+  {
+    "word": "amplify",
+    "pos": "verb",
+    "definition": "To make something louder, stronger or more noticeable.",
+    "example": "Social media tends to amplify the most extreme version of any argument.",
+    "translation": "להגביר, להעצים",
+    "cefr": "B2"
+  },
+  {
+    "word": "analogy",
+    "pos": "noun",
+    "definition": "A comparison that explains something unfamiliar by likening it to something known.",
+    "example": "He drew an analogy between the immune system and a standing army.",
+    "translation": "אנלוגיה, הקבלה",
+    "cefr": "B2"
+  },
+  {
+    "word": "anticipate",
+    "pos": "verb",
+    "definition": "To expect something and often to prepare for it in advance.",
+    "example": "Planners anticipated the shortage but had no budget to act on it.",
+    "translation": "לצפות, להיערך מראש",
+    "cefr": "B2"
+  },
+  {
+    "word": "approximate",
+    "pos": "adjective",
+    "definition": "Close to exact but not precisely measured.",
+    "example": "The approximate cost was given as forty million, subject to revision.",
+    "translation": "מקורב, בקירוב",
+    "cefr": "B2"
+  },
+  {
+    "word": "arrogant",
+    "pos": "adjective",
+    "definition": "Behaving as though you are more important or capable than others.",
+    "example": "His arrogant dismissal of the objection cost him the vote.",
+    "translation": "יהיר, מתנשא",
+    "cefr": "B2"
+  },
+  {
+    "word": "articulate",
+    "pos": "verb",
+    "definition": "To express an idea clearly enough for others to grasp it.",
+    "example": "She was the first to articulate what everyone in the room already sensed.",
+    "translation": "לנסח בבהירות, להביע",
+    "cefr": "B2"
+  },
+  {
+    "word": "aspiration",
+    "pos": "noun",
+    "definition": "A strong wish to achieve something, usually over the long term.",
+    "example": "Her aspiration to study medicine survived two rejected applications.",
+    "translation": "שאיפה",
+    "cefr": "B2"
+  },
+  {
+    "word": "assessment",
+    "pos": "noun",
+    "definition": "A judgement formed after examining evidence carefully.",
+    "example": "An independent assessment found the building structurally sound.",
+    "translation": "הערכה, שומה",
+    "cefr": "B2"
+  },
+  {
+    "word": "assumption",
+    "pos": "noun",
+    "definition": "Something taken to be true without being checked.",
+    "example": "The forecast rested on the assumption that fuel prices would stay flat.",
+    "translation": "הנחה, הנחת יסוד",
+    "cefr": "B2"
+  },
+  {
+    "word": "attainable",
+    "pos": "adjective",
+    "definition": "Possible to reach or achieve with the resources available.",
+    "example": "The committee set targets that were ambitious but still attainable.",
+    "translation": "בר-השגה",
+    "cefr": "B2"
+  },
+  {
+    "word": "attendance",
+    "pos": "noun",
+    "definition": "The act of being present, or the number of people present.",
+    "example": "Attendance fell every year after the fee was introduced.",
+    "translation": "נוכחות, השתתפות",
+    "cefr": "B2"
+  },
+  {
+    "word": "attentive",
+    "pos": "adjective",
+    "definition": "Paying close and continuous notice to something.",
+    "example": "An attentive reader will spot the contradiction in the second chapter.",
+    "translation": "קשוב, ערני",
+    "cefr": "B2"
+  },
+  {
+    "word": "attribute",
+    "pos": "noun",
+    "definition": "A quality or feature regarded as belonging to something.",
+    "example": "Patience is the attribute the role demands most and advertises least.",
+    "translation": "תכונה, מאפיין",
+    "cefr": "B2"
+  },
+  {
+    "word": "authoritative",
+    "pos": "adjective",
+    "definition": "Reliable because it comes from real expertise, or spoken with confident command.",
+    "example": "The volume remains the most authoritative account of the period.",
+    "translation": "סמכותי, מוסמך",
+    "cefr": "B2"
+  },
+  {
+    "word": "availability",
+    "pos": "noun",
+    "definition": "The extent to which something can be obtained or used.",
+    "example": "Poor availability of housing near the campus deters many applicants.",
+    "translation": "זמינות",
     "cefr": "B2"
   },
   {
@@ -384,6 +576,54 @@
     "cefr": "B2"
   },
   {
+    "word": "deceptive",
+    "pos": "adjective",
+    "definition": "Giving an impression that is not true.",
+    "example": "The building's plain front is deceptive; the interior is enormous.",
+    "translation": "מטעה",
+    "cefr": "B2"
+  },
+  {
+    "word": "decisive",
+    "pos": "adjective",
+    "definition": "Settling a matter, or able to make firm choices quickly.",
+    "example": "Her intervention proved decisive in a debate that had gone on for hours.",
+    "translation": "מכריע; החלטי",
+    "cefr": "B2"
+  },
+  {
+    "word": "deficit",
+    "pos": "noun",
+    "definition": "The amount by which something falls short, especially money spent over money received.",
+    "example": "The council closed its deficit by delaying repairs rather than raising taxes.",
+    "translation": "גירעון, חוסר",
+    "cefr": "B2"
+  },
+  {
+    "word": "deliberate",
+    "pos": "adjective",
+    "definition": "Done on purpose rather than by accident, or slow and careful.",
+    "example": "The omission was deliberate, and the committee later explained why.",
+    "translation": "מכוון; מדוד, שקול",
+    "cefr": "B2"
+  },
+  {
+    "word": "demanding",
+    "pos": "adjective",
+    "definition": "Requiring a lot of effort, skill or attention.",
+    "example": "The course is demanding but the drop-out rate is surprisingly low.",
+    "translation": "תובעני, מאתגר",
+    "cefr": "B2"
+  },
+  {
+    "word": "desirable",
+    "pos": "adjective",
+    "definition": "Worth having or wanting, for good reasons.",
+    "example": "A shorter commute is desirable but rarely decisive when choosing a job.",
+    "translation": "רצוי, נחשק",
+    "cefr": "B2"
+  },
+  {
     "word": "detach",
     "pos": "verb",
     "definition": "To separate one thing from another it was joined to.",
@@ -392,11 +632,179 @@
     "cefr": "B2"
   },
   {
+    "word": "dilemma",
+    "pos": "noun",
+    "definition": "A situation requiring a choice between options that are both unwelcome.",
+    "example": "The dilemma was whether to close one branch or reduce hours at every branch.",
+    "translation": "דילמה, התלבטות",
+    "cefr": "B2"
+  },
+  {
+    "word": "dimension",
+    "pos": "noun",
+    "definition": "A measurement of size, or an aspect of a situation.",
+    "example": "The report added a political dimension the researchers had not considered.",
+    "translation": "מימד; היבט",
+    "cefr": "B2"
+  },
+  {
+    "word": "discipline",
+    "pos": "noun",
+    "definition": "Controlled behaviour maintained by training, or a branch of academic study.",
+    "example": "Economics borrows methods from a discipline it once ignored entirely.",
+    "translation": "משמעת; תחום דעת",
+    "cefr": "B2"
+  },
+  {
+    "word": "discredit",
+    "pos": "verb",
+    "definition": "To damage the reputation of someone or the credibility of an idea.",
+    "example": "A single flawed study was enough to discredit two decades of work.",
+    "translation": "להכפיש, לערער אמינות",
+    "cefr": "B2"
+  },
+  {
+    "word": "discriminate",
+    "pos": "verb",
+    "definition": "To treat one group unfairly, or to recognise a difference between things.",
+    "example": "The test cannot discriminate between the two conditions at an early stage.",
+    "translation": "להפלות; להבחין בין",
+    "cefr": "B2"
+  },
+  {
+    "word": "dismiss",
+    "pos": "verb",
+    "definition": "To reject an idea without serious consideration, or to remove someone from a job.",
+    "example": "The board dismissed the objection in under a minute.",
+    "translation": "לדחות על הסף; לפטר",
+    "cefr": "B2"
+  },
+  {
+    "word": "displace",
+    "pos": "verb",
+    "definition": "To force something or someone out of their usual place.",
+    "example": "The new reservoir displaced four villages along the valley floor.",
+    "translation": "לעקור, לדחוק ממקומו",
+    "cefr": "B2"
+  },
+  {
+    "word": "disposal",
+    "pos": "noun",
+    "definition": "The act of getting rid of something, or the availability of something for use.",
+    "example": "Safe disposal of the old batteries cost more than replacing them.",
+    "translation": "סילוק, פינוי; רשות",
+    "cefr": "B2"
+  },
+  {
+    "word": "dispute",
+    "pos": "noun",
+    "definition": "A disagreement, especially one that continues for some time.",
+    "example": "The boundary dispute was settled only after both maps were re-examined.",
+    "translation": "מחלוקת, סכסוך",
+    "cefr": "B2"
+  },
+  {
+    "word": "disrupt",
+    "pos": "verb",
+    "definition": "To interrupt something so that it cannot continue normally.",
+    "example": "Roadworks disrupted deliveries across the district for a fortnight.",
+    "translation": "לשבש, להפריע",
+    "cefr": "B2"
+  },
+  {
+    "word": "distortion",
+    "pos": "noun",
+    "definition": "A change that misrepresents the true shape, sound or meaning of something.",
+    "example": "Averaging the two groups introduced a distortion nobody noticed for years.",
+    "translation": "עיוות",
+    "cefr": "B2"
+  },
+  {
+    "word": "diversion",
+    "pos": "noun",
+    "definition": "A change of route or attention away from the intended one.",
+    "example": "The announcement served as a diversion from the figures published that morning.",
+    "translation": "הסחה; מעקף",
+    "cefr": "B2"
+  },
+  {
+    "word": "domestic",
+    "pos": "adjective",
+    "definition": "Relating to the home, or to a country's own internal affairs.",
+    "example": "Domestic demand recovered long before exports did.",
+    "translation": "ביתי; פנים־מדינתי",
+    "cefr": "B2"
+  },
+  {
     "word": "downfall",
     "pos": "noun",
     "definition": "The cause of someone losing their power, position or success.",
     "example": "Overexpansion into markets it did not understand proved the chain's downfall.",
     "translation": "נפילה, מפלה",
+    "cefr": "B2"
+  },
+  {
+    "word": "drought",
+    "pos": "noun",
+    "definition": "A long period with far less rain than normal.",
+    "example": "Three years of drought emptied reservoirs that had never run low before.",
+    "translation": "בצורת",
+    "cefr": "B2"
+  },
+  {
+    "word": "effectiveness",
+    "pos": "noun",
+    "definition": "The degree to which something produces the result intended.",
+    "example": "Nobody had tested the effectiveness of the scheme before extending it.",
+    "translation": "יעילות, אפקטיביות",
+    "cefr": "B2"
+  },
+  {
+    "word": "eligible",
+    "pos": "adjective",
+    "definition": "Meeting the conditions required to qualify for something.",
+    "example": "Only households below the threshold were eligible for the grant.",
+    "translation": "זכאי, כשיר",
+    "cefr": "B2"
+  },
+  {
+    "word": "eloquent",
+    "pos": "adjective",
+    "definition": "Speaking or writing in a way that is fluent and persuasive.",
+    "example": "His eloquent defence of the proposal changed several votes.",
+    "translation": "רהוט, משכנע",
+    "cefr": "B2"
+  },
+  {
+    "word": "emergence",
+    "pos": "noun",
+    "definition": "The process of coming into existence or becoming noticed.",
+    "example": "The emergence of cheap sensors changed what could be measured at all.",
+    "translation": "הופעה, היווצרות",
+    "cefr": "B2"
+  },
+  {
+    "word": "endorse",
+    "pos": "verb",
+    "definition": "To declare public support or approval for something.",
+    "example": "Two former inspectors endorsed the new guidance in writing.",
+    "translation": "לתמוך פומבית, לאשר",
+    "cefr": "B2"
+  },
+  {
+    "word": "endurance",
+    "pos": "noun",
+    "definition": "The ability to keep going through difficulty or over a long period.",
+    "example": "The role calls for endurance more than for brilliance.",
+    "translation": "סיבולת, כוח עמידה",
+    "cefr": "B2"
+  },
+  {
+    "word": "enforce",
+    "pos": "verb",
+    "definition": "To make sure a rule or law is obeyed.",
+    "example": "The rule existed for a decade before anyone tried to enforce it.",
+    "translation": "לאכוף",
     "cefr": "B2"
   },
   {
@@ -512,11 +920,227 @@
     "cefr": "B2"
   },
   {
+    "word": "abstraction",
+    "pos": "noun",
+    "definition": "A general idea formed by removing the particular details of specific cases.",
+    "example": "Justice remains an abstraction until it is tested against a real dispute.",
+    "translation": "הפשטה, מושג מופשט",
+    "cefr": "C1"
+  },
+  {
+    "word": "accustomed",
+    "pos": "adjective",
+    "definition": "Used to something through repeated experience of it.",
+    "example": "Residents became accustomed to the noise within a few weeks.",
+    "translation": "רגיל ל-, מורגל",
+    "cefr": "C1"
+  },
+  {
+    "word": "advantageous",
+    "pos": "adjective",
+    "definition": "Giving a benefit or a better position than would otherwise be had.",
+    "example": "The location proved advantageous once the new line opened.",
+    "translation": "מועיל, כדאי",
+    "cefr": "C1"
+  },
+  {
+    "word": "adversary",
+    "pos": "noun",
+    "definition": "Someone opposed to you in a contest, argument or conflict.",
+    "example": "He treated every colleague who disagreed with him as an adversary.",
+    "translation": "יריב, מתנגד",
+    "cefr": "C1"
+  },
+  {
+    "word": "aimless",
+    "pos": "adjective",
+    "definition": "Without any clear purpose or direction.",
+    "example": "The discussion grew aimless once the chair left the room.",
+    "translation": "חסר מטרה",
+    "cefr": "C1"
+  },
+  {
     "word": "alienate",
     "pos": "verb",
     "definition": "To make someone feel distant or unwelcome, so that support is lost.",
     "example": "The pricing change alienated many of the firm's oldest customers.",
     "translation": "לנכר, להרחיק",
+    "cefr": "C1"
+  },
+  {
+    "word": "alignment",
+    "pos": "noun",
+    "definition": "The arrangement of things in a correct relative position, or agreement between aims.",
+    "example": "There was little alignment between what the survey asked and what managers needed.",
+    "translation": "יישור; התאמה, הלימה",
+    "cefr": "C1"
+  },
+  {
+    "word": "altruism",
+    "pos": "noun",
+    "definition": "Concern for the welfare of others at some cost to yourself.",
+    "example": "Economists have struggled to explain altruism among strangers.",
+    "translation": "אלטרואיזם, נדיבות",
+    "cefr": "C1"
+  },
+  {
+    "word": "antiquated",
+    "pos": "adjective",
+    "definition": "So old-fashioned that it is no longer suitable for present use.",
+    "example": "The hospital was still running on antiquated record-keeping software.",
+    "translation": "מיושן, ארכאי",
+    "cefr": "C1"
+  },
+  {
+    "word": "apprehensive",
+    "pos": "adjective",
+    "definition": "Uneasy about something that is about to happen.",
+    "example": "Staff were apprehensive about the merger long before it was announced.",
+    "translation": "חושש, מודאג",
+    "cefr": "C1"
+  },
+  {
+    "word": "assertion",
+    "pos": "noun",
+    "definition": "A confident statement made without offering proof.",
+    "example": "The assertion that costs would fall was repeated but never demonstrated.",
+    "translation": "טענה, קביעה",
+    "cefr": "C1"
+  },
+  {
+    "word": "ceaseless",
+    "pos": "adjective",
+    "definition": "Continuing without any pause.",
+    "example": "The ceaseless traffic outside made the ground-floor rooms unusable.",
+    "translation": "בלתי פוסק",
+    "cefr": "C1"
+  },
+  {
+    "word": "cessation",
+    "pos": "noun",
+    "definition": "The stopping of an activity, especially one that had continued for some time.",
+    "example": "The treaty required an immediate cessation of all testing.",
+    "translation": "הפסקה, חדילה",
+    "cefr": "C1"
+  },
+  {
+    "word": "circulate",
+    "pos": "verb",
+    "definition": "To move around a system, or to be passed from one person to another.",
+    "example": "The draft circulated among senior staff for a month before publication.",
+    "translation": "להפיץ; לזרום, להסתובב",
+    "cefr": "C1"
+  },
+  {
+    "word": "citation",
+    "pos": "noun",
+    "definition": "A reference to a source, given to show where information came from.",
+    "example": "Every claim in the report carries a citation to the underlying data.",
+    "translation": "ציטוט, מראה מקום",
+    "cefr": "C1"
+  },
+  {
+    "word": "clinical",
+    "pos": "adjective",
+    "definition": "Relating to the treatment of patients, or unemotional and detached in manner.",
+    "example": "Her clinical assessment of the failure left nobody comfortable.",
+    "translation": "קליני; ענייני, מנותק רגשית",
+    "cefr": "C1"
+  },
+  {
+    "word": "collaborate",
+    "pos": "verb",
+    "definition": "To work jointly with others on a shared piece of work.",
+    "example": "Three universities collaborated on the survey over four years.",
+    "translation": "לשתף פעולה",
+    "cefr": "C1"
+  },
+  {
+    "word": "commend",
+    "pos": "verb",
+    "definition": "To praise something formally, or to recommend it to others.",
+    "example": "The inspectors commended the school for its handling of the transition.",
+    "translation": "לשבח, להמליץ על",
+    "cefr": "C1"
+  },
+  {
+    "word": "complementary",
+    "pos": "adjective",
+    "definition": "Combining with something else in a way that improves both.",
+    "example": "The two studies use complementary methods and reach the same conclusion.",
+    "translation": "משלים",
+    "cefr": "C1"
+  },
+  {
+    "word": "compliance",
+    "pos": "noun",
+    "definition": "The act of meeting a rule, standard or request.",
+    "example": "Compliance with the safety code is checked twice a year.",
+    "translation": "ציות, עמידה בדרישות",
+    "cefr": "C1"
+  },
+  {
+    "word": "comprise",
+    "pos": "verb",
+    "definition": "To consist of, or to be made up of specified parts.",
+    "example": "The collection comprises some four thousand photographs.",
+    "translation": "להיות מורכב מ-, לכלול",
+    "cefr": "C1"
+  },
+  {
+    "word": "compulsion",
+    "pos": "noun",
+    "definition": "An urge that is very hard to resist, or the state of being forced.",
+    "example": "He described a compulsion to check the results every few minutes.",
+    "translation": "דחף כפייתי; כפייה",
+    "cefr": "C1"
+  },
+  {
+    "word": "confinement",
+    "pos": "noun",
+    "definition": "The state of being kept within limits or prevented from leaving.",
+    "example": "Long confinement indoors was found to affect sleep more than diet.",
+    "translation": "כליאה, הגבלת תנועה",
+    "cefr": "C1"
+  },
+  {
+    "word": "conform",
+    "pos": "verb",
+    "definition": "To behave according to accepted rules, or to match a required standard.",
+    "example": "Older buildings need not conform to the regulations introduced last year.",
+    "translation": "להתאים, לציית",
+    "cefr": "C1"
+  },
+  {
+    "word": "conscientious",
+    "pos": "adjective",
+    "definition": "Careful and thorough in doing what is required.",
+    "example": "A conscientious editor would have caught the error before publication.",
+    "translation": "מצפוני, יסודי",
+    "cefr": "C1"
+  },
+  {
+    "word": "conserve",
+    "pos": "verb",
+    "definition": "To use something sparingly, or to protect it from loss and damage.",
+    "example": "The scheme was designed to conserve water during the dry months.",
+    "translation": "לשמר, לחסוך ב-",
+    "cefr": "C1"
+  },
+  {
+    "word": "consultation",
+    "pos": "noun",
+    "definition": "The process of seeking opinions before a decision is made.",
+    "example": "The plan went ahead despite months of public consultation opposing it.",
+    "translation": "התייעצות, שימוע ציבורי",
+    "cefr": "C1"
+  },
+  {
+    "word": "contextual",
+    "pos": "adjective",
+    "definition": "Relating to the circumstances that surround something and give it meaning.",
+    "example": "Without contextual information the figures are almost impossible to read.",
+    "translation": "הקשרי, תלוי־הקשר",
     "cefr": "C1"
   },
   {
@@ -536,11 +1160,83 @@
     "cefr": "C1"
   },
   {
+    "word": "daunting",
+    "pos": "adjective",
+    "definition": "Intimidating because of the difficulty or size of what is involved.",
+    "example": "Rebuilding the archive from scratch was a daunting prospect.",
+    "translation": "מרתיע, מאיים",
+    "cefr": "C1"
+  },
+  {
+    "word": "degradation",
+    "pos": "noun",
+    "definition": "A decline in quality or condition, or treatment that removes someone's dignity.",
+    "example": "Soil degradation cost the region more than any single drought.",
+    "translation": "הידרדרות, שחיקה",
+    "cefr": "C1"
+  },
+  {
+    "word": "demographic",
+    "pos": "adjective",
+    "definition": "Relating to the structure of a population, such as its age or size.",
+    "example": "The demographic shift was visible in school enrolment a decade earlier.",
+    "translation": "דמוגרפי",
+    "cefr": "C1"
+  },
+  {
+    "word": "depiction",
+    "pos": "noun",
+    "definition": "The way something is shown or described in words or images.",
+    "example": "The depiction of the period in that novel is vivid but unreliable.",
+    "translation": "תיאור, ייצוג",
+    "cefr": "C1"
+  },
+  {
+    "word": "deprivation",
+    "pos": "noun",
+    "definition": "The lack of things regarded as necessary for a decent life.",
+    "example": "The study linked early deprivation to outcomes measured thirty years later.",
+    "translation": "מחסור, חסך",
+    "cefr": "C1"
+  },
+  {
+    "word": "detrimental",
+    "pos": "adjective",
+    "definition": "Causing harm or damage, often gradually.",
+    "example": "Long hours proved detrimental to exactly the productivity they were meant to raise.",
+    "translation": "מזיק, פוגעני",
+    "cefr": "C1"
+  },
+  {
     "word": "discard",
     "pos": "verb",
     "definition": "To get rid of something because it is no longer wanted or useful.",
     "example": "The team discarded its first three designs before finding one that worked.",
     "translation": "להשליך, לזנוח",
+    "cefr": "C1"
+  },
+  {
+    "word": "discourse",
+    "pos": "noun",
+    "definition": "Serious discussion of a subject, spoken or written.",
+    "example": "The term entered public discourse long before anyone defined it.",
+    "translation": "שיח",
+    "cefr": "C1"
+  },
+  {
+    "word": "disdain",
+    "pos": "noun",
+    "definition": "The feeling that something is beneath your respect.",
+    "example": "She spoke of the earlier findings with barely concealed disdain.",
+    "translation": "בוז, זלזול",
+    "cefr": "C1"
+  },
+  {
+    "word": "diverge",
+    "pos": "verb",
+    "definition": "To move or develop in different directions from a common point.",
+    "example": "The two estimates diverge sharply after the third year.",
+    "translation": "להתפצל, להתרחק זה מזה",
     "cefr": "C1"
   },
   {
@@ -552,11 +1248,139 @@
     "cefr": "C1"
   },
   {
+    "word": "dominant",
+    "pos": "adjective",
+    "definition": "Most powerful, most common or most influential.",
+    "example": "The dominant explanation went unchallenged for almost forty years.",
+    "translation": "דומיננטי, שולט",
+    "cefr": "C1"
+  },
+  {
+    "word": "drawback",
+    "pos": "noun",
+    "definition": "A disadvantage of something that is otherwise worth having.",
+    "example": "The main drawback of the method is how long it takes to run.",
+    "translation": "חיסרון",
+    "cefr": "C1"
+  },
+  {
+    "word": "duration",
+    "pos": "noun",
+    "definition": "The length of time something continues.",
+    "example": "Neither the intensity nor the duration of the effect was recorded.",
+    "translation": "משך זמן",
+    "cefr": "C1"
+  },
+  {
+    "word": "elaborate",
+    "pos": "adjective",
+    "definition": "Involving many carefully arranged parts or details.",
+    "example": "An elaborate system of checks had grown up around a very simple decision.",
+    "translation": "מורכב, מפורט",
+    "cefr": "C1"
+  },
+  {
+    "word": "elusive",
+    "pos": "adjective",
+    "definition": "Hard to find, catch or define clearly.",
+    "example": "A precise definition of the term has proved elusive for decades.",
+    "translation": "חמקמק, קשה לתפיסה",
+    "cefr": "C1"
+  },
+  {
+    "word": "envisage",
+    "pos": "verb",
+    "definition": "To picture something as a future possibility.",
+    "example": "The founders never envisaged the service being used this way.",
+    "translation": "לחזות, לדמיין מראש",
+    "cefr": "C1"
+  },
+  {
+    "word": "ethical",
+    "pos": "adjective",
+    "definition": "Concerning what is morally right, or conforming to accepted standards of conduct.",
+    "example": "The ethical objection was raised only after the data had been collected.",
+    "translation": "אתי, מוסרי",
+    "cefr": "C1"
+  },
+  {
     "word": "expedite",
     "pos": "verb",
     "definition": "To make a process happen faster than it otherwise would.",
     "example": "A second reviewer was hired to expedite the approval process.",
     "translation": "לזרז",
+    "cefr": "C1"
+  },
+  {
+    "word": "exploitation",
+    "pos": "noun",
+    "definition": "Unfair use of people for gain, or the use of a resource for profit.",
+    "example": "Commercial exploitation of the site was banned once the fossils were found.",
+    "translation": "ניצול",
+    "cefr": "C1"
+  },
+  {
+    "word": "fatigue",
+    "pos": "noun",
+    "definition": "Extreme tiredness, or weakening of a material after repeated stress.",
+    "example": "Metal fatigue rather than the storm brought the structure down.",
+    "translation": "עייפות; התעייפות חומר",
+    "cefr": "C1"
+  },
+  {
+    "word": "formulate",
+    "pos": "verb",
+    "definition": "To express an idea or plan in a clear and considered form.",
+    "example": "It took three meetings to formulate a question the survey could actually ask.",
+    "translation": "לנסח, לגבש",
+    "cefr": "C1"
+  },
+  {
+    "word": "fraction",
+    "pos": "noun",
+    "definition": "A small part of something larger.",
+    "example": "Only a fraction of the applications were read before the deadline passed.",
+    "translation": "חלק קטן, שבר",
+    "cefr": "C1"
+  },
+  {
+    "word": "heighten",
+    "pos": "verb",
+    "definition": "To make a feeling or effect stronger.",
+    "example": "The delay only heightened suspicion that something had gone wrong.",
+    "translation": "להגביר, לחדד",
+    "cefr": "C1"
+  },
+  {
+    "word": "hostile",
+    "pos": "adjective",
+    "definition": "Openly opposed or unfriendly, or unfavourable to survival and growth.",
+    "example": "The reception was hostile enough that the proposal was withdrawn.",
+    "translation": "עוין",
+    "cefr": "C1"
+  },
+  {
+    "word": "hypocrisy",
+    "pos": "noun",
+    "definition": "Claiming standards of behaviour that you do not follow yourself.",
+    "example": "Critics pointed to the hypocrisy of regulating an industry the ministry subsidised.",
+    "translation": "צביעות",
+    "cefr": "C1"
+  },
+  {
+    "word": "impediment",
+    "pos": "noun",
+    "definition": "Something that obstructs progress.",
+    "example": "Distance remained the greatest impediment to attendance at evening classes.",
+    "translation": "מכשול, מעצור",
+    "cefr": "C1"
+  },
+  {
+    "word": "impoverished",
+    "pos": "adjective",
+    "definition": "Made very poor, or stripped of something that gave richness.",
+    "example": "The region was left impoverished long after the mines had closed.",
+    "translation": "מדולדל, עני",
     "cefr": "C1"
   },
   {
