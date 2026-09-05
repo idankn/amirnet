@@ -1,38 +1,61 @@
 # Target word lists
 
-Sentence-completion items are built around a chosen target word rather than
-generated free-form. That is what keeps the bank inside the frequency band the
-real exam sits in, and what makes vocabulary coverage something you can measure
-instead of guess.
+Sentence-completion and vocab items are built around a chosen target word rather
+than generated free-form. Each word carries a **CEFR level**, which makes the
+question's difficulty a property of its input instead of something the model
+estimates — the difference between a level claim that traces to published data
+and one we invented.
 
-## Format
+## Building
 
-`targets.tsv`, one word per line:
+    python -m pipeline.build_wordlist
 
-    word<TAB>band
+Reads `sources/` and writes `targets.tsv`. **Do not edit `targets.tsv` by hand** —
+it is generated and will be overwritten.
 
-`band` is 1 (most frequent) to 5 (least). Lines starting with `#` are ignored.
+Current output: **6,538 words**
 
-A word is used at most once — `wordlist.unused()` skips anything the bank has
-already built a question around, including items that were later rejected, so a
-run doesn't keep grinding on the same vocabulary.
+| CEFR | Words | AMIRNET score | Meaning |
+|------|-------|---------------|---------|
+| A2 | 1,222 | 85–99 | Basic |
+| B1 | 2,094 | 100–119 | Lower Advanced |
+| B2 | 2,327 | 120–133 | Upper Advanced |
+| C1 | 895 | 134+ | **Exemption** |
 
-## Sourcing
+A1 and C2 are excluded: A1 sits below the exam's floor, C2 above the exemption
+threshold. Only nouns, verbs, adjectives and adverbs are kept — a blank on a
+preposition tests grammar, and the completion section is a vocabulary section.
 
-Target for launch is a defensible **800–1,200 words**, not a giant bank.
+Where a word appears at several levels, the **easiest** is kept. If a learner
+meets *issue* as a B1 noun, the word is known by B1, and generating it as C1
+would overstate the resulting question's difficulty.
 
-Use open frequency lists and the Academic Word List, filtered to the band the
-official simulations sit in. **Check each list's licence before you use it** —
-they vary, and some corpus-derived lists are published under terms that don't
-allow redistribution inside a commercial product.
+## Attribution — required
 
-Do not scrape a commercial dictionary or a prep site. Definitions and example
-sentences are generated (yours); a commercial dictionary's are not.
+Both sources permit commercial use **on condition of attribution**. This is the
+entire cost of using them, so it is not optional. It must appear in the app's
+about screen as well as here.
 
-## The starter list
+> Vocabulary levels derived from the **CEFR-J Wordlist Version 1.5**, compiled by
+> Yukio Tono, © Tono Laboratory, Tokyo University of Foreign Studies, and the
+> **Octanove Vocabulary Profile C1/C2 Version 1.0**, licensed under
+> [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
-`targets.tsv` currently holds a small set of general academic words, enough to
-exercise the pipeline end to end. Band values in it are rough guesses, not
-corpus-derived — replace the whole file once you have a properly sourced list
-with real frequency data, since the band is what the difficulty calibration
-rests on.
+Distributed via [openlanguageprofiles/olp-en-cefrj](https://github.com/openlanguageprofiles/olp-en-cefrj).
+
+## Licences checked 5 September 2026
+
+| Source | Licence | Commercial |
+|---|---|---|
+| CEFR-J Wordlist v1.5 | Free with citation | ✅ |
+| Octanove Vocabulary Profile C1/C2 | CC BY-SA 4.0 | ✅ |
+| Academic Word List (Coxhead) | CC BY-NC-ND 3.0 | ❌ **Non-commercial** |
+| Oxford 3000 / 5000 | OUP proprietary | ❌ |
+| English Vocabulary Profile | Non-commercial only | ❌ |
+
+The AWL was in an earlier version of the plan. It cannot ship in a paid app.
+Do not reintroduce it.
+
+**MALO's own materials are not a source.** nite.org.il carries a bare
+"© All rights reserved" with no licensing pathway. Use their free practice test
+to calibrate level by hand as a test-taker; never to copy from.

@@ -50,7 +50,11 @@ CREATE TABLE questions (
 
     -- generation metadata
     target_word     TEXT,                 -- for completion / vocab / word_formation
-    frequency_band  INTEGER,              -- which frequency tier the target word sits in
+    frequency_band  INTEGER,              -- legacy tier; superseded by cefr_level
+    cefr_level      TEXT CHECK (cefr_level IN ('A2','B1','B2','C1')),
+                                          -- the target word's CEFR level, from a
+                                          -- cited dataset. This is what makes a
+                                          -- level claim defensible rather than a guess.
     source          TEXT NOT NULL,
 
     -- difficulty: estimated at generation, actual learned from users

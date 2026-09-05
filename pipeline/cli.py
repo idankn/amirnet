@@ -13,7 +13,7 @@ import sys
 
 import anthropic
 
-from . import config, db, generate, gold, validate, verify
+from . import config, db, generate, gold, validate, verify, wordlist
 
 TYPES = ("sentence_completion", "restatement")
 
@@ -38,7 +38,12 @@ def cmd_init(args) -> None:
 
 
 def cmd_status(args) -> None:
-    print("Gold set (stage 1 — hand-written):")
+    print("Target words (CEFR-labelled, from CEFR-J + Octanove):")
+    for lvl, n in wordlist.counts_by_level().items():
+        lo, hi = config.CEFR_SCORE_BANDS.get(lvl, ("", ""))
+        print(f"  {lvl:<4} {n:>5}   (AMIRNET {lo}-{hi})")
+
+    print("\nGold set (stage 1 — hand-written):")
     for qtype, n in gold.status().items():
         note = "" if n >= 15 else "   <- thin; generation quality tracks this"
         print(f"  {qtype:<22} {n:>4}{note}")
@@ -71,11 +76,12 @@ def cmd_generate(args) -> None:
         conn.close()
         sys.exit(f"{exc}")
 
-    print(f"Generating {args.count} {args.type} drafts at difficulty {args.difficulty}...")
+    level_note = f" at CEFR {args.level}" if args.type == "sentence_completion" else ""
+    print(f"Generating {args.count} {args.type} drafts{level_note}...")
     generator = generate.GENERATORS[args.type]
     kwargs = {"count": args.count, "difficulty": args.difficulty}
     if args.type == "sentence_completion":
-        kwargs["band"] = args.band
+        kwargs["level"] = args.level
 
     try:
         ids = generator(client, conn, **kwargs)
@@ -220,7 +226,8 @@ def main(argv=None) -> None:
     p_gen.add_argument("--type", choices=TYPES, required=True)
     p_gen.add_argument("--count", type=int, default=8, help="questions per batch")
     p_gen.add_argument("--difficulty", type=int, choices=range(1, 6), default=3)
-    p_gen.add_argument("--band", type=int, choices=range(1, 6), help="frequency band to draw target words from")
+    p_gen.add_argument("--level", choices=config.CEFR_LEVELS, default=config.DEFAULT_LEVEL,
+                       help="CEFR level to generate at (target words are drawn from this level)")
     p_gen.set_defaults(func=cmd_generate)
 
     p_rev = sub.add_parser("review", help="stage 5 manual sampling")

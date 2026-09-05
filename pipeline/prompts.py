@@ -94,25 +94,43 @@ def _render_examples(items: list) -> str:
 
 def sentence_completion_user(
     examples: list[SentenceCompletionItem],
-    targets: list[tuple[str, int]],
+    targets: list,
     difficulty: int,
+    level: str = config.DEFAULT_LEVEL,
 ) -> str:
     """User turn for a sentence-completion batch.
 
-    `targets` is a list of (word, frequency_band) — one question per word.
+    `targets` is a list of wordlist.Target — one question per word.
+
+    The CEFR level is stated explicitly because it constrains the WHOLE item,
+    not just the answer. A C1 target word inside an A2 sentence produces a
+    question a weak reader can solve by elimination, which would make the level
+    label a lie.
     """
-    target_lines = "\n".join(f"- {word}" for word, _ in targets)
+    target_lines = "\n".join(f"- {t.word} ({t.pos})" for t in targets)
+    band = config.CEFR_SCORE_BANDS.get(level)
+    band_note = (
+        f" On the AMIRNET scale this is roughly {band[0]}–{band[1]}."
+        if band else ""
+    )
     return f"""\
 Here are {len(examples)} hand-written examples of the exact style and difficulty to match:
 
 {_render_examples(examples)}
 
-Write {len(targets)} new questions at difficulty {difficulty} of 5, one for each of \
-these target words, in this order:
+Write {len(targets)} new questions at CEFR level {level}.{band_note}
+
+The level constrains the entire question, not only the target word. The rest of \
+the sentence, and all three distractors, must sit at or below {level} — a reader \
+at {level} should find the sentence readable and the choice decidable. Do not \
+reach above the level for vocabulary elsewhere in the sentence.
+
+One question for each of these target words, in this order:
 
 {target_lines}
 
-Each question's correct_answer must be the target word for that position."""
+Each question's correct_answer must be the target word for that position, in the \
+part of speech shown."""
 
 
 def restatement_user(

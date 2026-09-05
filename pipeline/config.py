@@ -41,6 +41,25 @@ READING_QUESTIONS_PER_PASSAGE = 5
 # Every question is 1 correct answer + 3 distractors.
 N_DISTRACTORS = 3
 
+# ---------------------------------------------------------------- levels
+
+# CEFR levels the app generates for, and what they mean on the AMIRNET scale.
+# Verified against Hebrew University's published mapping — see CLAUDE.md
+# section 5. Anchoring difficulty here rather than to an invented easy/medium/
+# hard scale is what makes a level claim defensible: it traces to the CEFR
+# level of the target word, from a cited dataset.
+CEFR_LEVELS = ("A2", "B1", "B2", "C1")
+
+# Score band each level corresponds to, for display.
+CEFR_SCORE_BANDS = {
+    "A2": (85, 99),    # Basic
+    "B1": (100, 119),  # Lower Advanced
+    "B2": (120, 133),  # Upper Advanced
+    "C1": (134, 150),  # Exemption — the level users actually care about
+}
+
+DEFAULT_LEVEL = "B1"
+
 # Few-shot examples pulled from the gold set per generation request.
 GOLD_EXAMPLES_PER_REQUEST = 4
 

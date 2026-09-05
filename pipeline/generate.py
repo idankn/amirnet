@@ -51,29 +51,33 @@ def sentence_completion(
     *,
     count: int,
     difficulty: int,
-    band: int | None = None,
+    level: str = config.DEFAULT_LEVEL,
 ) -> list[int]:
-    """Generate `count` sentence-completion drafts, one per unused target word."""
-    targets = wordlist.unused(conn, count, band=band)
+    """Generate `count` sentence-completion drafts, one per unused target word.
+
+    `level` is a CEFR level. It is the real difficulty control: the target
+    word carries that level from a cited dataset, so the resulting question
+    inherits it rather than being labelled by guesswork.
+    """
+    targets = wordlist.unused(conn, count, level=level)
     if not targets:
         raise GenerationError(
-            "No unused target words left"
-            + (f" in band {band}." if band else ".")
-            + " Add more words to wordlists/targets.tsv."
+            f"No unused target words left at level {level}. "
+            "Rebuild the list with: python -m pipeline.build_wordlist"
         )
 
     examples = gold.sample("sentence_completion")
     batch = _parse_batch(
         client,
         prompts.SENTENCE_COMPLETION_SYSTEM,
-        prompts.sentence_completion_user(examples, targets, difficulty),
+        prompts.sentence_completion_user(examples, targets, difficulty, level),
         SentenceCompletionBatch,
     )
 
     ids = []
     # The model is asked for one item per target word, in order — but zip
     # rather than index so a short response degrades instead of crashing.
-    for item, (word, freq_band) in zip(batch.items, targets):
+    for item, target in zip(batch.items, targets):
         ids.append(
             db.insert_question(
                 conn,
@@ -82,8 +86,8 @@ def sentence_completion(
                 correct_answer=item.correct_answer,
                 explanation=item.explanation,
                 distractors=[(d, None) for d in item.distractors],
-                target_word=word,
-                frequency_band=freq_band,
+                target_word=target.word,
+                cefr_level=target.cefr,
                 difficulty_est=item.difficulty_est,
             )
         )

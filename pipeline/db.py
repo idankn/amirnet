@@ -37,6 +37,7 @@ def insert_question(
     distractors: list[tuple[str, str | None]],
     target_word: str | None = None,
     frequency_band: int | None = None,
+    cefr_level: str | None = None,
     difficulty_est: int | None = None,
     source: str = config.SOURCE_AI,
     status: str = "draft",
@@ -51,8 +52,8 @@ def insert_question(
         """
         INSERT INTO questions (
             type, passage_id, prompt, correct_answer, explanation,
-            target_word, frequency_band, difficulty_est, source, status
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            target_word, frequency_band, cefr_level, difficulty_est, source, status
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         (
             qtype,
@@ -62,6 +63,7 @@ def insert_question(
             explanation,
             target_word,
             frequency_band,
+            cefr_level,
             difficulty_est,
             source,
             status,
