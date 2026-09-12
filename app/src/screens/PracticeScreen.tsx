@@ -9,8 +9,13 @@ interface Props {
   questions: Question[];
   passages: Passage[];
   onExit: () => void;
-  /** Called once per answered question, so the home screen can track coverage. */
-  onAnswered: (question: Question, correct: boolean) => void;
+  /**
+   * Called once per answered question, so the home screen can track coverage
+   * and the attempt can be recorded. The chosen index is passed because it is
+   * the whole point of the row — an attempt that stores the correct answer
+   * rather than what the user picked tells you nothing about the question.
+   */
+  onAnswered: (question: Question, correct: boolean, chosenIndex: number) => void;
 }
 
 /**
@@ -77,7 +82,7 @@ export function PracticeScreen({ questions, passages, onExit, onAnswered }: Prop
     setAnswered(true);
     const right = selected === question.correctIndex;
     if (right) setCorrectCount((n) => n + 1);
-    onAnswered(question, right);
+    onAnswered(question, right, selected);
   }
 
   function next() {
