@@ -20,14 +20,17 @@ import {
 import {
   configureAndroidChannel,
   configureHandler,
-  onReminderTap,
+  onReminderResponse,
 } from './src/lib/reminders';
 import { isConfigured } from './src/lib/supabase';
 import { HomeScreen } from './src/screens/HomeScreen';
 import { PracticeScreen } from './src/screens/PracticeScreen';
 import { RemindersScreen } from './src/screens/RemindersScreen';
 import { SignInScreen } from './src/screens/SignInScreen';
-import { SimulationScreen } from './src/screens/SimulationScreen';
+import {
+  SimulationScreen,
+  type SimulationAnswer,
+} from './src/screens/SimulationScreen';
 import { VocabScreen } from './src/screens/VocabScreen';
 import { colors, hebrew, radii, spacing, type } from './src/theme';
 import { IMPLEMENTED_TYPES } from './src/types';
@@ -80,6 +83,32 @@ function AppContent() {
     }
   }, [session]);
 
+  // A reminder now carries its question, so there are two ways to respond to
+  // one: answer it in place from the notification's buttons, or tap the body
+  // and land on practice rather than on the home screen the user was trying to
+  // skip past.
+  useEffect(
+    () =>
+      onReminderResponse({
+        onPractice: () => {
+          void startPractice(IMPLEMENTED_TYPES[0]);
+        },
+        onAnswer: (answer) => {
+          // Answered without opening the app, so there is no screen to update —
+          // only the attempt, which is the part that matters for calibration.
+          if (!session?.user) return;
+          void recordAttempt({
+            userId: session.user.id,
+            questionId: answer.questionId,
+            chosenIndex: answer.chosenIndex,
+            isCorrect: answer.correct,
+          });
+        },
+      }),
+    [session?.user?.id],
+  );
+
+
   /** Map a thrown server error onto the right prompt. */
   function handle(e: unknown): void {
     if (e instanceof DailyLimitError) return setPaywall('daily_limit');
@@ -130,6 +159,35 @@ function AppContent() {
     }
   }
 
+  /**
+   * A sitting ends with 23 answers that would otherwise go unrecorded — the
+   * rows that turn difficulty_est into difficulty_actual, and later feed
+   * between-section adaptivity. Fire-and-forget, like practice: a failed write
+   * must never come between the user and their results.
+   */
+  function recordSimulation(results: SimulationAnswer[]): void {
+    const answered = results.filter((r) => r.chosenIndex !== null);
+
+    setProgress((p) => {
+      const next = { ...p };
+      for (const r of answered) {
+        next[r.question.type] = (next[r.question.type] ?? 0) + 1;
+      }
+      return next;
+    });
+
+    const userId = session?.user?.id;
+    if (!userId) return;
+    for (const r of answered) {
+      void recordAttempt({
+        userId,
+        questionId: r.question.id,
+        chosenIndex: r.chosenIndex as number,
+        isCorrect: r.correct,
+      });
+    }
+  }
+
   const examDate = profile?.examDate
     ? new Date(profile.examDate)
     : new Date(Date.now() + DEFAULT_EXAM_DAYS * 24 * 60 * 60 * 1000);
@@ -150,12 +208,6 @@ function AppContent() {
       />
     );
   }
-
-  // A reminder promises a question, so tapping it must land on one rather
-  // than on the home screen the user was trying to skip past.
-  useEffect(() => onReminderTap(() => {
-    void startPractice(IMPLEMENTED_TYPES[0]);
-  }), []);
 
   const goHome = () => {
     setScreen({ name: 'home' });
@@ -185,7 +237,7 @@ function AppContent() {
           questions={screen.questions}
           passages={screen.passages}
           onExit={goHome}
-          onAnswered={(question, correct) => {
+          onAnswered={(question, correct, chosenIndex) => {
             setProgress((p) => ({
               ...p,
               [question.type]: (p[question.type] ?? 0) + 1,
@@ -194,7 +246,7 @@ function AppContent() {
               void recordAttempt({
                 userId: session.user.id,
                 questionId: question.id,
-                chosenIndex: question.correctIndex,
+                chosenIndex,
                 isCorrect: correct,
               });
             }
@@ -203,10 +255,16 @@ function AppContent() {
       )}
 
       {screen.name === 'simulation' && (
-        <SimulationScreen bank={screen.bank} onExit={goHome} />
+        <SimulationScreen
+          bank={screen.bank}
+          onExit={goHome}
+          onFinish={recordSimulation}
+        />
       )}
 
-      {screen.name === 'reminders' && <RemindersScreen onExit={goHome} />}
+      {screen.name === 'reminders' && (
+        <RemindersScreen onExit={goHome} bank={BUNDLED.questions} />
+      )}
 
       {screen.name === 'vocab' && (
         <VocabScreen

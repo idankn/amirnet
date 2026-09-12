@@ -2,6 +2,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Notifications from 'expo-notifications';
 import { Platform } from 'react-native';
 
+import type { Question } from '../types';
+
 /**
  * Practice reminders.
  *
@@ -14,6 +16,18 @@ import { Platform } from 'react-native';
  * Notifications are scheduled as one repeating daily entry per slot rather
  * than a single repeating interval, because an interval that repeats forever
  * also fires at 04:00. The window is the point.
+ *
+ * The reminder CARRIES the question rather than advertising one. Its four
+ * options are the notification's action buttons, so the whole exchange —
+ * question, answer, verdict — happens without opening the app. That is as
+ * close to "a question appears and I must answer it" as iOS permits: the
+ * system reserves taking over the screen for calls and alarms, and the
+ * Screen Time shield that can block another app cannot hold a question
+ * (ShieldConfiguration is a static title/subtitle/two buttons).
+ *
+ * Known limitation, and it is iOS's: action buttons are revealed by expanding
+ * or long-pressing the notification. They are not visible in the collapsed
+ * banner.
  */
 
 const STORAGE_KEY = 'reminders.settings.v1';
@@ -25,6 +39,20 @@ const STORAGE_KEY = 'reminders.settings.v1';
  * stop partway through the day.
  */
 export const MAX_SLOTS = 60;
+
+/**
+ * Only sentence completion goes into a notification.
+ *
+ * This is a data constraint, not a preference: an action button shows a short
+ * label, and in the bank sentence-completion options run 8-14 characters while
+ * restatement options run 94-130. A restatement in a notification would be
+ * four truncated buttons, which is worse than no question at all.
+ */
+export const NOTIFICATION_QUESTION_TYPE = 'sentence_completion';
+
+/** Answer actions are `answer-<option index>` within a per-question category. */
+const ANSWER_PREFIX = 'answer-';
+const CATEGORY_PREFIX = 'practice-q-';
 
 export interface ReminderSettings {
   enabled: boolean;
@@ -100,33 +128,80 @@ export async function ensurePermission(): Promise<boolean> {
   return asked.granted;
 }
 
-const BODIES = [
-  'שאלה אחת. דקה אחת.',
-  'רגע — שאלה מהירה?',
-  'שאלה אחת לפני שממשיכים.',
-  'דקה של תרגול?',
-];
+/** Questions usable in a notification, shuffled, capped at `count`. */
+export function pickReminderQuestions(bank: Question[], count: number): Question[] {
+  const usable = bank.filter(
+    (q) => q.type === NOTIFICATION_QUESTION_TYPE && q.options.length > 0,
+  );
+  const out = [...usable];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  // Fewer questions than slots is fine — the list wraps, so a long window
+  // repeats rather than scheduling empty reminders.
+  if (out.length === 0) return [];
+  const picked: Question[] = [];
+  for (let i = 0; i < count; i++) picked.push(out[i % out.length]);
+  return picked;
+}
 
 /**
  * Replace the whole schedule with one built from `settings`.
  *
  * Always clears first: scheduling on top of an existing schedule is how people
  * end up with notifications from a setting they changed a week ago.
+ *
+ * Each slot gets its own category, because a category's buttons are fixed at
+ * registration and every question needs its own four.
  */
-export async function reschedule(settings: ReminderSettings): Promise<number> {
+export async function reschedule(
+  settings: ReminderSettings,
+  bank: Question[] = [],
+): Promise<number> {
   if (!isSupported) return 0;
   await Notifications.cancelAllScheduledNotificationsAsync();
   if (!settings.enabled) return 0;
 
   const slots = slotsFor(settings);
+  const questions = pickReminderQuestions(bank, slots.length);
+
   for (let i = 0; i < slots.length; i++) {
     const { hour, minute } = slots[i];
+    const question: Question | undefined = questions[i];
+
+    let categoryIdentifier: string | undefined;
+    if (question) {
+      categoryIdentifier = CATEGORY_PREFIX + i;
+      await Notifications.setNotificationCategoryAsync(
+        categoryIdentifier,
+        question.options.map((text, optionIndex) => ({
+          identifier: ANSWER_PREFIX + optionIndex,
+          buttonTitle: text,
+          // Answering must not drag the user into the app — that is the whole
+          // point. The verdict comes back as its own notification.
+          options: { opensAppToForeground: false },
+        })),
+      );
+    }
+
     await Notifications.scheduleNotificationAsync({
       content: {
         title: 'אמירנט',
-        body: BODIES[i % BODIES.length],
-        // Read on tap so the app opens into practice rather than the home screen.
-        data: { action: 'practice' },
+        body: question ? question.prompt : 'שאלה אחת. דקה אחת.',
+        categoryIdentifier,
+        // Cuts through Focus and Do Not Disturb. Not 'critical', which needs a
+        // separate Apple entitlement and is meant for genuine emergencies.
+        interruptionLevel: 'timeSensitive',
+        data: question
+          ? {
+              action: 'answer',
+              questionId: question.id,
+              correctIndex: question.correctIndex,
+              explanation: question.explanation,
+              correctText: question.options[question.correctIndex],
+            }
+          : { action: 'practice' },
       },
       trigger: {
         type: Notifications.SchedulableTriggerInputTypes.DAILY,
@@ -154,35 +229,93 @@ export function configureHandler(): void {
   });
 }
 
+/** The verdict, delivered the same way the question was. */
+async function sendVerdict(
+  correct: boolean,
+  correctText: string,
+  explanation: string,
+): Promise<void> {
+  if (!isSupported) return;
+  await Notifications.scheduleNotificationAsync({
+    content: {
+      title: correct ? '✓ נכון' : '✗ לא נכון',
+      body: correct
+        ? explanation || 'תשובה נכונה.'
+        : `התשובה הנכונה: ${correctText}${explanation ? '\n' + explanation : ''}`,
+      interruptionLevel: 'passive',
+    },
+    // null fires it immediately rather than scheduling it.
+    trigger: null,
+  });
+}
+
+export interface ReminderAnswer {
+  questionId: string;
+  chosenIndex: number;
+  correct: boolean;
+}
+
 /**
- * Call `onPractice` when the user opens the app by tapping a reminder.
+ * Respond to a reminder the user acted on.
  *
- * Covers both routes: a cold start, where the tap launched the app, and a tap
- * while it was already running. Returns a cleanup function.
+ * Two routes, both covered: a cold start where the tap launched the app, and a
+ * response while it was already running. Returns a cleanup function.
  *
  * Guarded by platform because the underlying native module does not exist on
  * web — the hook version of this throws there and takes the whole app down,
  * which is exactly what happened the first time.
  */
-export function onReminderTap(onPractice: () => void): () => void {
+export function onReminderResponse(handlers: {
+  /** The notification body was tapped — open into practice. */
+  onPractice: () => void;
+  /** An answer button was used. The app may still be in the background. */
+  onAnswer?: (answer: ReminderAnswer) => void;
+}): () => void {
   if (!isSupported) return () => {};
 
   let cancelled = false;
 
-  // Cold start: the tap that launched the app.
-  void Notifications.getLastNotificationResponseAsync().then((response) => {
+  const handle = (response: Notifications.NotificationResponse) => {
     if (cancelled) return;
-    if (response?.notification.request.content.data?.action === 'practice') {
-      onPractice();
+    const data = response.notification.request.content.data as
+      | Record<string, unknown>
+      | undefined;
+    if (!data) return;
+
+    const actionId = response.actionIdentifier;
+
+    if (actionId.startsWith(ANSWER_PREFIX)) {
+      const chosenIndex = Number(actionId.slice(ANSWER_PREFIX.length));
+      const correctIndex = Number(data.correctIndex);
+      if (!Number.isInteger(chosenIndex) || !Number.isInteger(correctIndex)) return;
+      const correct = chosenIndex === correctIndex;
+
+      void sendVerdict(
+        correct,
+        String(data.correctText ?? ''),
+        String(data.explanation ?? ''),
+      );
+      handlers.onAnswer?.({
+        questionId: String(data.questionId ?? ''),
+        chosenIndex,
+        correct,
+      });
+      return;
     }
+
+    // Anything else — including DEFAULT_ACTION_IDENTIFIER, the plain tap.
+    if (data.action === 'practice' || data.action === 'answer') {
+      handlers.onPractice();
+    }
+  };
+
+  // Cold start: the response that launched the app.
+  void Notifications.getLastNotificationResponseAsync().then((response) => {
+    if (response) handle(response);
   });
 
   // Already running.
-  const sub = Notifications.addNotificationResponseReceivedListener((response) => {
-    if (response.notification.request.content.data?.action === 'practice') {
-      onPractice();
-    }
-  });
+  const sub = Notifications.addNotificationResponseReceivedListener(handle);
 
   return () => {
     cancelled = true;

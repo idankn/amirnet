@@ -173,9 +173,44 @@ a question — which is already the daily-reminder behaviour specified below. It
 does not detect Instagram, but it does interrupt idle time, which is most of
 the value.
 
-### Daily reminder
-- At a user-set time, a push notification opens **directly into a timed (1-minute)
-  practice question**. Not a home screen — straight into the question.
+### Daily reminder — the reminder CARRIES the question
+
+- At user-set times, a local notification **holds a question**, with its four
+  options as the notification's action buttons. The user answers from the
+  notification; a second notification returns the verdict and the explanation.
+  The app is never opened, and the attempt is still recorded.
+- Tapping the notification body instead of a button opens straight into
+  practice — not the home screen the user was trying to skip past.
+- `interruptionLevel: 'timeSensitive'` so it cuts through Focus and Do Not
+  Disturb. NOT `'critical'`, which needs a separate Apple entitlement and is
+  meant for genuine emergencies.
+
+**Only sentence completion goes into a notification**, and that is a data
+constraint rather than a preference: an action button shows a short label, and
+in the bank sentence-completion options run 8–14 characters while restatement
+options run 94–130. A restatement in a notification is four truncated buttons,
+which is worse than no question at all.
+
+**Checked 12 September 2026 — how close this gets to "a question just appears
+and I have to answer it":** as close as iOS allows, and the remaining gap is
+the platform's, not ours.
+
+- iOS reserves taking over the screen for the system (calls, alarms). No
+  third-party app can do it — this is the same boundary as section 3's
+  Instagram finding, reached from the other direction.
+- The Screen Time shield CAN block another app, but `ShieldConfiguration` is a
+  static title/subtitle/icon/two buttons. **It cannot hold a question**, so
+  "block Instagram, show a question there" remains unbuildable regardless of
+  entitlement.
+- `sticky` (a notification that cannot be swiped away) is **Android only**.
+  There is no iOS equivalent; a notification can always be dismissed.
+- **The one real limitation of what we built:** iOS reveals action buttons only
+  when the notification is expanded or long-pressed. They are not visible in
+  the collapsed banner.
+- Closer still, if it is ever worth native code: an **interactive widget**
+  (iOS 17+, WidgetKit + App Intents) can put a question with working answer
+  buttons on the Home or Lock Screen, answered in place. That needs Swift and
+  an EAS build, so it cannot be tested in Expo Go.
 
 ### Screen structure
 - All practice types share one structure: **question → answers → explanation.**

@@ -14,10 +14,17 @@ import {
   isSupported,
   type ReminderSettings,
 } from '../lib/reminders';
+import type { Question } from '../types';
 import { colors, hebrew, radii, spacing, type } from '../theme';
 
 interface Props {
   onExit: () => void;
+  /**
+   * Questions the reminder can carry. A reminder holds its question rather
+   * than advertising one, so the schedule needs the bank at the moment it is
+   * built.
+   */
+  bank: Question[];
 }
 
 const HOURS = [6, 8, 10, 12, 14, 16, 18, 20, 22, 23];
@@ -32,7 +39,7 @@ function clock(h: number, m: number): string {
   return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
 }
 
-export function RemindersScreen({ onExit }: Props) {
+export function RemindersScreen({ onExit, bank }: Props) {
   const [settings, setSettings] = useState<ReminderSettings>(DEFAULT_SETTINGS);
   const [denied, setDenied] = useState(false);
   const [scheduled, setScheduled] = useState<number | null>(null);
@@ -55,7 +62,7 @@ export function RemindersScreen({ onExit }: Props) {
       }
       setDenied(false);
     }
-    setScheduled(await reschedule(next));
+    setScheduled(await reschedule(next, bank));
   }
 
   const slots = slotsFor(settings);
