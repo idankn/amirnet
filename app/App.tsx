@@ -34,6 +34,13 @@ import {
   reschedule as rescheduleReminders,
   syncBadge,
 } from './src/lib/reminders';
+import {
+  loadSlotStates,
+  markSlotCompleted,
+  markSlotStarted,
+  partitionBank,
+  type SimulationSlotState,
+} from './src/lib/simulations';
 import { isConfigured } from './src/lib/supabase';
 import { HomeScreen } from './src/screens/HomeScreen';
 import { PracticeScreen } from './src/screens/PracticeScreen';
@@ -43,6 +50,7 @@ import {
   SimulationScreen,
   type SimulationAnswer,
 } from './src/screens/SimulationScreen';
+import { SimulationsScreen } from './src/screens/SimulationsScreen';
 import { VocabScreen } from './src/screens/VocabScreen';
 import { colors, hebrew, radii, spacing, type } from './src/theme';
 import { IMPLEMENTED_TYPES } from './src/types';
@@ -63,7 +71,8 @@ type Screen =
   | { name: 'signin'; mode?: 'signin' | 'signup' }
   | { name: 'home' }
   | { name: 'practice'; questions: Question[]; passages: Passage[] }
-  | { name: 'simulation'; bank: QuestionBank }
+  | { name: 'simulations' }
+  | { name: 'simulation'; slot: number; bank: QuestionBank }
   | { name: 'vocab' }
   | { name: 'reminders' };
 
@@ -78,6 +87,12 @@ function AppContent() {
   const [progress, setProgress] = useState<Record<string, number>>({});
   /** Words marked as known. In memory for now, like practice progress. */
   const [learnedWords, setLearnedWords] = useState<Record<string, boolean>>({});
+  /** The five simulation slots' status/result, persisted — see src/lib/simulations.ts. */
+  const [simSlots, setSimSlots] = useState<Record<number, SimulationSlotState>>({});
+
+  useEffect(() => {
+    void loadSlotStates().then(setSimSlots);
+  }, []);
 
   const refreshUsage = useCallback(() => {
     if (!isConfigured) return;
@@ -179,15 +194,26 @@ function AppContent() {
     }
   }
 
-  async function startSimulation() {
+  /**
+   * Start one of the five simulation slots. Each slot draws from its own
+   * partition of the bank (see partitionBank) so the five stay largely
+   * distinct from one another, then runs through the same adaptive engine as
+   * before. Marked in_progress up front — before the sitting has even
+   * assembled its first section — so a slot that never reaches its results
+   * screen still shows honestly as started rather than reverting to
+   * not_started.
+   */
+  async function startSimulation(slot: number) {
+    setSimSlots(await markSlotStarted(slot));
+
     if (!isConfigured) {
-      setScreen({ name: 'simulation', bank: BUNDLED });
+      setScreen({ name: 'simulation', slot, bank: partitionBank(BUNDLED, slot) });
       return;
     }
     setBusy(true);
     try {
       const bank = await requestSimulation();
-      setScreen({ name: 'simulation', bank });
+      setScreen({ name: 'simulation', slot, bank: partitionBank(bank, slot) });
     } catch (e) {
       handle(e);
     } finally {
@@ -201,7 +227,7 @@ function AppContent() {
    * between-section adaptivity. Fire-and-forget, like practice: a failed write
    * must never come between the user and their results.
    */
-  function recordSimulation(results: SimulationAnswer[]): void {
+  function recordSimulation(slot: number, results: SimulationAnswer[]): void {
     const answered = results.filter((r) => r.chosenIndex !== null);
 
     setProgress((p) => {
@@ -211,6 +237,13 @@ function AppContent() {
       }
       return next;
     });
+
+    void markSlotCompleted(slot, {
+      total: results.length,
+      answered: answered.length,
+      correct: answered.filter((r) => r.correct).length,
+      finishedAt: Date.now(),
+    }).then(setSimSlots);
 
     const userId = session?.user?.id;
     if (!userId) return;
@@ -259,7 +292,7 @@ function AppContent() {
           usage={usage}
           signedIn={Boolean(session)}
           onPractice={startPractice}
-          onSimulation={startSimulation}
+          onSimulations={() => setScreen({ name: 'simulations' })}
           onVocab={() => setScreen({ name: 'vocab' })}
           onReminders={() => setScreen({ name: 'reminders' })}
           onAccount={() =>
@@ -300,11 +333,19 @@ function AppContent() {
         />
       )}
 
+      {screen.name === 'simulations' && (
+        <SimulationsScreen
+          slots={simSlots}
+          onStart={(slot) => void startSimulation(slot)}
+          onExit={goHome}
+        />
+      )}
+
       {screen.name === 'simulation' && (
         <SimulationScreen
           bank={screen.bank}
           onExit={goHome}
-          onFinish={recordSimulation}
+          onFinish={(results) => recordSimulation(screen.slot, results)}
         />
       )}
 

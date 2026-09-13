@@ -31,7 +31,7 @@ interface Props {
   usage: Usage | null;
   signedIn: boolean;
   onPractice: (type: QuestionType) => void;
-  onSimulation: () => void;
+  onSimulations: () => void;
   onVocab: () => void;
   onReminders: () => void;
   onAccount: () => void;
@@ -63,7 +63,7 @@ export function HomeScreen({
   usage,
   signedIn,
   onPractice,
-  onSimulation,
+  onSimulations,
   onVocab,
   onReminders,
   onAccount,
@@ -174,7 +174,7 @@ export function HomeScreen({
       <Text style={styles.sectionHeading}>סימולציה</Text>
       <Pressable
         style={({ pressed }) => [styles.card, pressed && styles.cardPressed]}
-        onPress={onSimulation}
+        onPress={onSimulations}
       >
         <View style={[styles.glyphBox, styles.glyphUnmet]}>
           <Text style={[styles.glyph, styles.glyphTextUnmet]}>⏱</Text>
@@ -183,7 +183,7 @@ export function HomeScreen({
           <Text style={styles.cardTitle}>סימולציה מלאה</Text>
           <Text style={styles.cardBlurb}>
             {EXAM_SECTIONS.length} פרקים · {EXAM_TOTAL_QUESTIONS} שאלות ·{' '}
-            {EXAM_TOTAL_MINUTES} דקות
+            {EXAM_TOTAL_MINUTES} דקות · 5 סימולציות נפרדות
           </Text>
         </View>
       </Pressable>
