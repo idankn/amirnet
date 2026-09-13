@@ -8,11 +8,43 @@
     "cefr": "A2"
   },
   {
+    "word": "abroad",
+    "pos": "adverb",
+    "definition": "In or to a foreign country.",
+    "example": "She spent a year studying abroad before starting university.",
+    "translation": "בחו\"ל",
+    "cefr": "A2"
+  },
+  {
+    "word": "accept",
+    "pos": "verb",
+    "definition": "To agree to take or receive something offered.",
+    "example": "He finally accepted the job offer after two weeks of thinking.",
+    "translation": "לקבל, להסכים",
+    "cefr": "A2"
+  },
+  {
+    "word": "acceptable",
+    "pos": "adjective",
+    "definition": "Good enough to be allowed or approved of.",
+    "example": "A short delay is acceptable, but a full week is not.",
+    "translation": "מקובל, קביל",
+    "cefr": "A2"
+  },
+  {
     "word": "accident",
     "pos": "noun",
     "definition": "An unplanned event that causes damage or injury.",
     "example": "Two cars collided in an accident near the roundabout this morning.",
     "translation": "תאונה",
+    "cefr": "A2"
+  },
+  {
+    "word": "account",
+    "pos": "noun",
+    "definition": "A written or spoken report of an event, or an arrangement to keep money at a bank.",
+    "example": "He gave a detailed account of what happened during the storm.",
+    "translation": "דיווח; חשבון (בנק)",
     "cefr": "A2"
   },
   {
@@ -24,11 +56,35 @@
     "cefr": "A2"
   },
   {
+    "word": "actually",
+    "pos": "adverb",
+    "definition": "Used to say what is really true, especially when it is surprising.",
+    "example": "He looks strict, but he is actually quite easygoing.",
+    "translation": "למעשה, בעצם",
+    "cefr": "A2"
+  },
+  {
+    "word": "addition",
+    "pos": "noun",
+    "definition": "The act of adding something to what already exists.",
+    "example": "The new library is a welcome addition to the campus.",
+    "translation": "תוספת",
+    "cefr": "A2"
+  },
+  {
     "word": "additional",
     "pos": "adjective",
     "definition": "Extra, beyond what is already present.",
     "example": "The airline charges an additional fee for a second suitcase.",
     "translation": "נוסף",
+    "cefr": "A2"
+  },
+  {
+    "word": "adjust",
+    "pos": "verb",
+    "definition": "To change something slightly to make it fit or work better.",
+    "example": "You may need to adjust the seat before starting the car.",
+    "translation": "לכוונן, להתאים",
     "cefr": "A2"
   },
   {
@@ -40,6 +96,22 @@
     "cefr": "A2"
   },
   {
+    "word": "admit",
+    "pos": "verb",
+    "definition": "To agree, often reluctantly, that something is true.",
+    "example": "She admitted that she had forgotten about the deadline.",
+    "translation": "להודות",
+    "cefr": "A2"
+  },
+  {
+    "word": "advanced",
+    "pos": "adjective",
+    "definition": "At a high or complex level, beyond the basics.",
+    "example": "Only students who finish the first course can join the advanced class.",
+    "translation": "מתקדם",
+    "cefr": "A2"
+  },
+  {
     "word": "advantage",
     "pos": "noun",
     "definition": "Something that makes a person or plan more likely to succeed.",
@@ -48,11 +120,155 @@
     "cefr": "A2"
   },
   {
+    "word": "adventure",
+    "pos": "noun",
+    "definition": "An exciting or unusual experience, often involving some risk.",
+    "example": "Backpacking across the mountains was the adventure of a lifetime.",
+    "translation": "הרפתקה",
+    "cefr": "A2"
+  },
+  {
+    "word": "advertisement",
+    "pos": "noun",
+    "definition": "A public notice designed to promote a product or service.",
+    "example": "The advertisement for the new phone played before every video.",
+    "translation": "מודעת פרסומת",
+    "cefr": "A2"
+  },
+  {
+    "word": "advice",
+    "pos": "noun",
+    "definition": "A suggestion about what someone should do.",
+    "example": "Her advice was to save the email before replying to it.",
+    "translation": "עצה",
+    "cefr": "A2"
+  },
+  {
+    "word": "advise",
+    "pos": "verb",
+    "definition": "To suggest what someone should do.",
+    "example": "The doctor advised him to rest for a full week.",
+    "translation": "לייעץ",
+    "cefr": "A2"
+  },
+  {
+    "word": "agency",
+    "pos": "noun",
+    "definition": "A business or organisation that provides a particular service.",
+    "example": "The travel agency booked the whole trip in a single afternoon.",
+    "translation": "סוכנות",
+    "cefr": "A2"
+  },
+  {
+    "word": "alarm",
+    "pos": "noun",
+    "definition": "A device or signal that warns people of danger, or a feeling of fear.",
+    "example": "The fire alarm went off in the middle of the lecture.",
+    "translation": "אזעקה; חשש",
+    "cefr": "A2"
+  },
+  {
+    "word": "allow",
+    "pos": "verb",
+    "definition": "To give permission for something to happen.",
+    "example": "The school does not allow phones during exams.",
+    "translation": "להתיר, לאפשר",
+    "cefr": "A2"
+  },
+  {
+    "word": "ambition",
+    "pos": "noun",
+    "definition": "A strong desire to achieve something.",
+    "example": "Her ambition was to open her own restaurant by thirty.",
+    "translation": "שאיפה",
+    "cefr": "A2"
+  },
+  {
+    "word": "ancient",
+    "pos": "adjective",
+    "definition": "Belonging to a time long ago in history.",
+    "example": "The museum's ancient coins date back over two thousand years.",
+    "translation": "עתיק",
+    "cefr": "A2"
+  },
+  {
+    "word": "anniversary",
+    "pos": "noun",
+    "definition": "A date that marks the exact time something happened in a previous year.",
+    "example": "They celebrated their tenth anniversary with a small trip abroad.",
+    "translation": "יום השנה",
+    "cefr": "A2"
+  },
+  {
+    "word": "annoy",
+    "pos": "verb",
+    "definition": "To make someone slightly angry.",
+    "example": "The constant noise from the street began to annoy the neighbours.",
+    "translation": "להרגיז",
+    "cefr": "A2"
+  },
+  {
+    "word": "annoying",
+    "pos": "adjective",
+    "definition": "Causing mild anger or irritation.",
+    "example": "It's annoying when the printer runs out of paper mid-page.",
+    "translation": "מעצבן",
+    "cefr": "A2"
+  },
+  {
+    "word": "anxious",
+    "pos": "adjective",
+    "definition": "Feeling worried or nervous about something.",
+    "example": "She felt anxious the night before the driving test.",
+    "translation": "חרד, מודאג",
+    "cefr": "A2"
+  },
+  {
+    "word": "apartment",
+    "pos": "noun",
+    "definition": "A set of rooms used as a home, usually in a larger building.",
+    "example": "They rented a small apartment near the university.",
+    "translation": "דירה",
+    "cefr": "A2"
+  },
+  {
+    "word": "apparently",
+    "pos": "adverb",
+    "definition": "According to what people say or what seems to be true.",
+    "example": "Apparently, the shop is closing down at the end of the month.",
+    "translation": "כנראה",
+    "cefr": "A2"
+  },
+  {
+    "word": "appear",
+    "pos": "verb",
+    "definition": "To become visible, or to seem to be a certain way.",
+    "example": "A strange light appeared on the horizon just after sunset.",
+    "translation": "להופיע, להיראות",
+    "cefr": "A2"
+  },
+  {
     "word": "appearance",
     "pos": "noun",
     "definition": "The way someone or something looks from the outside.",
     "example": "The building's appearance changed completely after the renovation.",
     "translation": "מראה חיצוני",
+    "cefr": "A2"
+  },
+  {
+    "word": "apply",
+    "pos": "verb",
+    "definition": "To formally request something, such as a job or place at a school.",
+    "example": "She plans to apply for the scholarship before the deadline.",
+    "translation": "להגיש בקשה, לפנות",
+    "cefr": "A2"
+  },
+  {
+    "word": "appointment",
+    "pos": "noun",
+    "definition": "An arrangement to meet someone or be somewhere at a fixed time.",
+    "example": "He booked a dentist appointment for early next week.",
+    "translation": "פגישה, תור",
     "cefr": "A2"
   },
   {
@@ -72,11 +288,67 @@
     "cefr": "A2"
   },
   {
+    "word": "architecture",
+    "pos": "noun",
+    "definition": "The art and practice of designing buildings.",
+    "example": "The city is famous for its striking modern architecture.",
+    "translation": "אדריכלות",
+    "cefr": "A2"
+  },
+  {
+    "word": "area",
+    "pos": "noun",
+    "definition": "A particular part of a place, region, or subject.",
+    "example": "The old harbour area has been turned into a park.",
+    "translation": "אזור",
+    "cefr": "A2"
+  },
+  {
+    "word": "argue",
+    "pos": "verb",
+    "definition": "To disagree with someone, often loudly or with strong feeling.",
+    "example": "The two brothers argued for an hour about who would drive.",
+    "translation": "להתווכח",
+    "cefr": "A2"
+  },
+  {
     "word": "argument",
     "pos": "noun",
     "definition": "A disagreement, or a set of reasons given to support a claim.",
     "example": "The lawyer's closing argument convinced most of the jury.",
     "translation": "ויכוח, טיעון",
+    "cefr": "A2"
+  },
+  {
+    "word": "artificial",
+    "pos": "adjective",
+    "definition": "Made by people rather than occurring naturally.",
+    "example": "The lake was created using artificial materials to hold the water.",
+    "translation": "מלאכותי",
+    "cefr": "A2"
+  },
+  {
+    "word": "association",
+    "pos": "noun",
+    "definition": "An organised group of people with a shared purpose or interest.",
+    "example": "The local business association meets on the first Monday of each month.",
+    "translation": "עמותה, איגוד",
+    "cefr": "A2"
+  },
+  {
+    "word": "athlete",
+    "pos": "noun",
+    "definition": "A person who is trained in or good at sports.",
+    "example": "The young athlete trained twice a day before the championship.",
+    "translation": "ספורטאי",
+    "cefr": "A2"
+  },
+  {
+    "word": "attack",
+    "pos": "noun",
+    "definition": "A violent or aggressive act intended to harm someone or something.",
+    "example": "The village suffered a sudden attack during the night.",
+    "translation": "התקפה",
     "cefr": "A2"
   },
   {
@@ -88,11 +360,379 @@
     "cefr": "A2"
   },
   {
+    "word": "attention",
+    "pos": "noun",
+    "definition": "Careful notice or concentration directed at something.",
+    "example": "The teacher asked for the class's full attention before the test.",
+    "translation": "תשומת לב",
+    "cefr": "A2"
+  },
+  {
     "word": "attitude",
     "pos": "noun",
     "definition": "The way someone thinks and feels about something, shown in how they behave.",
     "example": "His attitude towards deadlines changed once he joined a larger team.",
     "translation": "גישה, יחס",
+    "cefr": "A2"
+  },
+  {
+    "word": "attractive",
+    "pos": "adjective",
+    "definition": "Pleasing in appearance, or appealing as an offer.",
+    "example": "The company made her a very attractive offer to stay.",
+    "translation": "אטרקטיבי, מושך",
+    "cefr": "A2"
+  },
+  {
+    "word": "audience",
+    "pos": "noun",
+    "definition": "The people gathered to watch or listen to a performance.",
+    "example": "The audience stood and applauded for almost a minute.",
+    "translation": "קהל",
+    "cefr": "A2"
+  },
+  {
+    "word": "author",
+    "pos": "noun",
+    "definition": "A person who writes a book, article, or other text.",
+    "example": "The author signed copies of her new novel at the bookshop.",
+    "translation": "מחבר, סופר",
+    "cefr": "A2"
+  },
+  {
+    "word": "automatic",
+    "pos": "adjective",
+    "definition": "Operating by itself, without a person controlling each step.",
+    "example": "The doors are automatic, so they open as you approach.",
+    "translation": "אוטומטי",
+    "cefr": "A2"
+  },
+  {
+    "word": "automatically",
+    "pos": "adverb",
+    "definition": "Without needing a person to control it directly.",
+    "example": "The lights automatically switch off after ten minutes.",
+    "translation": "באופן אוטומטי",
+    "cefr": "A2"
+  },
+  {
+    "word": "average",
+    "pos": "adjective",
+    "definition": "Typical, or calculated by adding values together and dividing by their number.",
+    "example": "The average temperature in July here is around thirty degrees.",
+    "translation": "ממוצע",
+    "cefr": "A2"
+  },
+  {
+    "word": "avoid",
+    "pos": "verb",
+    "definition": "To keep away from something or prevent it from happening.",
+    "example": "Leave early to avoid the worst of the traffic.",
+    "translation": "להימנע מ",
+    "cefr": "A2"
+  },
+  {
+    "word": "award",
+    "pos": "noun",
+    "definition": "A prize given for an achievement.",
+    "example": "The film received an award for its screenplay.",
+    "translation": "פרס",
+    "cefr": "A2"
+  },
+  {
+    "word": "background",
+    "pos": "noun",
+    "definition": "A person's education and experience, or the area behind the main subject.",
+    "example": "Her background in engineering helped her understand the design flaw quickly.",
+    "translation": "רקע",
+    "cefr": "A2"
+  },
+  {
+    "word": "bargain",
+    "pos": "noun",
+    "definition": "Something bought for less than its usual or expected price.",
+    "example": "The winter coat was a real bargain at half price.",
+    "translation": "מציאה",
+    "cefr": "A2"
+  },
+  {
+    "word": "basic",
+    "pos": "adjective",
+    "definition": "Forming the essential foundation of something, without extra detail.",
+    "example": "The course covers only the basic rules of grammar.",
+    "translation": "בסיסי",
+    "cefr": "A2"
+  },
+  {
+    "word": "beauty",
+    "pos": "noun",
+    "definition": "The quality of being pleasing to look at.",
+    "example": "Visitors come from far away to see the beauty of the coastline.",
+    "translation": "יופי",
+    "cefr": "A2"
+  },
+  {
+    "word": "beginner",
+    "pos": "noun",
+    "definition": "A person who has just started learning or doing something.",
+    "example": "The class is designed for complete beginners with no prior experience.",
+    "translation": "מתחיל",
+    "cefr": "A2"
+  },
+  {
+    "word": "beginning",
+    "pos": "noun",
+    "definition": "The point in time or space at which something starts.",
+    "example": "The story's beginning explains why the family moved abroad.",
+    "translation": "התחלה",
+    "cefr": "A2"
+  },
+  {
+    "word": "belong",
+    "pos": "verb",
+    "definition": "To be a member of a group, or to be the rightful property of someone.",
+    "example": "This old jacket used to belong to my grandfather.",
+    "translation": "להשתייך",
+    "cefr": "A2"
+  },
+  {
+    "word": "bend",
+    "pos": "verb",
+    "definition": "To move something so that it is no longer straight.",
+    "example": "She had to bend the wire to fit it through the gap.",
+    "translation": "לכופף",
+    "cefr": "A2"
+  },
+  {
+    "word": "bill",
+    "pos": "noun",
+    "definition": "A printed statement of money owed for goods or services.",
+    "example": "The electricity bill was much higher than expected this month.",
+    "translation": "חשבון (לתשלום)",
+    "cefr": "A2"
+  },
+  {
+    "word": "blame",
+    "pos": "verb",
+    "definition": "To say that someone is responsible for something bad.",
+    "example": "The manager blamed the delay on a supplier, not the team.",
+    "translation": "להאשים",
+    "cefr": "A2"
+  },
+  {
+    "word": "bonus",
+    "pos": "noun",
+    "definition": "An extra amount of money or benefit added to what is expected.",
+    "example": "Staff received a small bonus after a successful year.",
+    "translation": "בונוס",
+    "cefr": "A2"
+  },
+  {
+    "word": "bored",
+    "pos": "adjective",
+    "definition": "Feeling tired and uninterested because there is nothing to do.",
+    "example": "The children got bored after an hour in the waiting room.",
+    "translation": "משועמם",
+    "cefr": "A2"
+  },
+  {
+    "word": "boss",
+    "pos": "noun",
+    "definition": "A person who is in charge of employees at work.",
+    "example": "Her boss approved the request within the hour.",
+    "translation": "בוס, מנהל",
+    "cefr": "A2"
+  },
+  {
+    "word": "bother",
+    "pos": "verb",
+    "definition": "To make the effort to do something, or to cause someone slight trouble.",
+    "example": "She didn't bother to reply to the message.",
+    "translation": "לטרוח; להטריד",
+    "cefr": "A2"
+  },
+  {
+    "word": "brand",
+    "pos": "noun",
+    "definition": "A type of product made by a particular company under a particular name.",
+    "example": "He only buys one brand of running shoes.",
+    "translation": "מותג",
+    "cefr": "A2"
+  },
+  {
+    "word": "brave",
+    "pos": "adjective",
+    "definition": "Willing to face danger or pain without showing fear.",
+    "example": "The brave firefighter ran back into the building to check for survivors.",
+    "translation": "אמיץ",
+    "cefr": "A2"
+  },
+  {
+    "word": "budget",
+    "pos": "noun",
+    "definition": "A plan for how money will be spent over a period of time.",
+    "example": "The school had to cut its budget for new books this year.",
+    "translation": "תקציב",
+    "cefr": "A2"
+  },
+  {
+    "word": "bury",
+    "pos": "verb",
+    "definition": "To put something in the ground and cover it.",
+    "example": "The dog buried the bone under the tree in the garden.",
+    "translation": "לקבור",
+    "cefr": "A2"
+  },
+  {
+    "word": "calendar",
+    "pos": "noun",
+    "definition": "A chart or system showing the days, weeks, and months of a year.",
+    "example": "She marked the exam date on the kitchen calendar.",
+    "translation": "לוח שנה",
+    "cefr": "A2"
+  },
+  {
+    "word": "campus",
+    "pos": "noun",
+    "definition": "The grounds and buildings of a university or college.",
+    "example": "Most first-year students live on campus.",
+    "translation": "קמפוס",
+    "cefr": "A2"
+  },
+  {
+    "word": "capital",
+    "pos": "noun",
+    "definition": "The city where a country's government is based, or a large sum of money used to start a business.",
+    "example": "The company needed more capital before it could expand abroad.",
+    "translation": "בירה; הון",
+    "cefr": "A2"
+  },
+  {
+    "word": "cause",
+    "pos": "verb",
+    "definition": "To make something happen, usually something bad.",
+    "example": "The heavy rain caused flooding across several streets.",
+    "translation": "לגרום ל",
+    "cefr": "A2"
+  },
+  {
+    "word": "century",
+    "pos": "noun",
+    "definition": "A period of one hundred years.",
+    "example": "The bridge was built at the start of the last century.",
+    "translation": "מאה (שנה)",
+    "cefr": "A2"
+  },
+  {
+    "word": "certain",
+    "pos": "adjective",
+    "definition": "Sure and confident that something is true.",
+    "example": "She was certain she had locked the door before leaving.",
+    "translation": "בטוח, וודאי",
+    "cefr": "A2"
+  },
+  {
+    "word": "certainly",
+    "pos": "adverb",
+    "definition": "Without any doubt.",
+    "example": "The plan will certainly cost more than we first thought.",
+    "translation": "בהחלט",
+    "cefr": "A2"
+  },
+  {
+    "word": "challenge",
+    "pos": "noun",
+    "definition": "A task or situation that tests someone's ability.",
+    "example": "Learning a new language later in life is a real challenge.",
+    "translation": "אתגר",
+    "cefr": "A2"
+  },
+  {
+    "word": "championship",
+    "pos": "noun",
+    "definition": "A competition to find the best team or player in a sport.",
+    "example": "The team won the national championship for the first time in years.",
+    "translation": "אליפות",
+    "cefr": "A2"
+  },
+  {
+    "word": "chance",
+    "pos": "noun",
+    "definition": "An opportunity to do something, or the possibility that something will happen.",
+    "example": "This might be her only chance to study overseas.",
+    "translation": "הזדמנות; סיכוי",
+    "cefr": "A2"
+  },
+  {
+    "word": "chapter",
+    "pos": "noun",
+    "definition": "A separate section of a book, usually with its own number or title.",
+    "example": "The final chapter reveals who sent the letter.",
+    "translation": "פרק (בספר)",
+    "cefr": "A2"
+  },
+  {
+    "word": "cheap",
+    "pos": "adjective",
+    "definition": "Costing very little money.",
+    "example": "The market sells cheap fruit early in the morning.",
+    "translation": "זול",
+    "cefr": "A2"
+  },
+  {
+    "word": "check",
+    "pos": "verb",
+    "definition": "To examine something to make sure it is correct or safe.",
+    "example": "Always check the tyres before a long drive.",
+    "translation": "לבדוק",
+    "cefr": "A2"
+  },
+  {
+    "word": "cheer",
+    "pos": "verb",
+    "definition": "To shout with joy or approval, usually to support someone.",
+    "example": "The crowd cheered loudly as the runner crossed the finish line.",
+    "translation": "לעודד בקריאות",
+    "cefr": "A2"
+  },
+  {
+    "word": "childhood",
+    "pos": "noun",
+    "definition": "The period of a person's life when they are a child.",
+    "example": "He spent most of his childhood in a small coastal town.",
+    "translation": "ילדות",
+    "cefr": "A2"
+  },
+  {
+    "word": "choice",
+    "pos": "noun",
+    "definition": "An act of choosing between two or more possibilities.",
+    "example": "She had to make a difficult choice between two job offers.",
+    "translation": "בחירה",
+    "cefr": "A2"
+  },
+  {
+    "word": "citizen",
+    "pos": "noun",
+    "definition": "A legally recognised member of a particular country.",
+    "example": "He became a citizen of the country after living there for a decade.",
+    "translation": "אזרח",
+    "cefr": "A2"
+  },
+  {
+    "word": "claim",
+    "pos": "verb",
+    "definition": "To say that something is true without offering proof.",
+    "example": "The company claims its product lasts for ten years.",
+    "translation": "לטעון",
+    "cefr": "A2"
+  },
+  {
+    "word": "classic",
+    "pos": "adjective",
+    "definition": "Widely recognised as excellent and having lasting value.",
+    "example": "The film is considered a classic of its genre.",
+    "translation": "קלאסי",
     "cefr": "A2"
   },
   {
@@ -160,11 +800,51 @@
     "cefr": "B1"
   },
   {
+    "word": "able",
+    "pos": "adjective",
+    "definition": "Having the skill, means, or opportunity to do something.",
+    "example": "After months of practice, she was finally able to swim across the lake.",
+    "translation": "מסוגל",
+    "cefr": "B1"
+  },
+  {
     "word": "absence",
     "pos": "noun",
     "definition": "The state of not being present somewhere.",
     "example": "Her absence from the meeting was noticed immediately by the whole team.",
     "translation": "היעדרות",
+    "cefr": "B1"
+  },
+  {
+    "word": "absolute",
+    "pos": "adjective",
+    "definition": "Complete and total, without any exceptions or limits.",
+    "example": "The manager gave the team absolute freedom to design the project.",
+    "translation": "מוחלט",
+    "cefr": "B1"
+  },
+  {
+    "word": "absorb",
+    "pos": "verb",
+    "definition": "To take in a substance or information gradually.",
+    "example": "Dry soil absorbs water slowly during the first heavy rain.",
+    "translation": "לספוג",
+    "cefr": "B1"
+  },
+  {
+    "word": "abstract",
+    "pos": "adjective",
+    "definition": "Existing as an idea rather than as a physical or concrete thing.",
+    "example": "Justice is an abstract concept that is hard to define precisely.",
+    "translation": "מופשט",
+    "cefr": "B1"
+  },
+  {
+    "word": "abundance",
+    "pos": "noun",
+    "definition": "A very large quantity of something.",
+    "example": "The market had an abundance of fresh vegetables that week.",
+    "translation": "שפע",
     "cefr": "B1"
   },
   {
@@ -184,6 +864,62 @@
     "cefr": "B1"
   },
   {
+    "word": "academy",
+    "pos": "noun",
+    "definition": "A school or college that provides specialised training.",
+    "example": "He trained at a football academy from the age of ten.",
+    "translation": "אקדמיה, מכללה",
+    "cefr": "B1"
+  },
+  {
+    "word": "accent",
+    "pos": "noun",
+    "definition": "A distinctive way of pronouncing words associated with a place or group.",
+    "example": "Her accent made it clear she had grown up near the coast.",
+    "translation": "מבטא",
+    "cefr": "B1"
+  },
+  {
+    "word": "acceptance",
+    "pos": "noun",
+    "definition": "The act of agreeing to receive or approve of something.",
+    "example": "Her acceptance into the programme arrived by email on Friday.",
+    "translation": "קבלה, אישור",
+    "cefr": "B1"
+  },
+  {
+    "word": "access",
+    "pos": "noun",
+    "definition": "The means or right to enter, use, or obtain something.",
+    "example": "Only staff have access to the storage room.",
+    "translation": "גישה",
+    "cefr": "B1"
+  },
+  {
+    "word": "accessible",
+    "pos": "adjective",
+    "definition": "Able to be easily reached, entered, or understood.",
+    "example": "The new building is fully accessible for wheelchair users.",
+    "translation": "נגיש",
+    "cefr": "B1"
+  },
+  {
+    "word": "accidental",
+    "pos": "adjective",
+    "definition": "Happening by chance rather than being planned.",
+    "example": "The fire was ruled accidental after the investigation.",
+    "translation": "מקרי, לא מכוון",
+    "cefr": "B1"
+  },
+  {
+    "word": "accidentally",
+    "pos": "adverb",
+    "definition": "By chance, without intending to.",
+    "example": "He accidentally deleted the file before saving a copy.",
+    "translation": "בטעות",
+    "cefr": "B1"
+  },
+  {
     "word": "accompany",
     "pos": "verb",
     "definition": "To go somewhere together with another person.",
@@ -200,11 +936,51 @@
     "cefr": "B1"
   },
   {
+    "word": "accountant",
+    "pos": "noun",
+    "definition": "A person whose job is to manage financial records.",
+    "example": "The accountant reviewed every invoice before the audit.",
+    "translation": "רואה חשבון",
+    "cefr": "B1"
+  },
+  {
+    "word": "accuracy",
+    "pos": "noun",
+    "definition": "The quality of being correct and exact.",
+    "example": "The device measures temperature with impressive accuracy.",
+    "translation": "דיוק",
+    "cefr": "B1"
+  },
+  {
     "word": "accurate",
     "pos": "adjective",
     "definition": "Free from mistakes; exactly correct.",
     "example": "The weather forecast turned out to be accurate for once.",
     "translation": "מדויק",
+    "cefr": "B1"
+  },
+  {
+    "word": "accurately",
+    "pos": "adverb",
+    "definition": "In a way that is exact and free from error.",
+    "example": "The witness described the car accurately, down to its colour.",
+    "translation": "בדייקנות",
+    "cefr": "B1"
+  },
+  {
+    "word": "accuse",
+    "pos": "verb",
+    "definition": "To say that someone has done something wrong.",
+    "example": "The neighbour accused the boy of breaking the window.",
+    "translation": "להאשים",
+    "cefr": "B1"
+  },
+  {
+    "word": "achievement",
+    "pos": "noun",
+    "definition": "Something successfully done, especially through effort or skill.",
+    "example": "Finishing the marathon was her proudest achievement that year.",
+    "translation": "הישג",
     "cefr": "B1"
   },
   {
@@ -216,6 +992,14 @@
     "cefr": "B1"
   },
   {
+    "word": "acquaintance",
+    "pos": "noun",
+    "definition": "A person one knows slightly, but who is not a close friend.",
+    "example": "He met an old acquaintance from school at the conference.",
+    "translation": "מכר",
+    "cefr": "B1"
+  },
+  {
     "word": "acquire",
     "pos": "verb",
     "definition": "To obtain or gain something, often gradually.",
@@ -224,11 +1008,27 @@
     "cefr": "B1"
   },
   {
+    "word": "active",
+    "pos": "adjective",
+    "definition": "Involved in doing things with energy, especially physical movement or exercise.",
+    "example": "She stays active by cycling to work every day.",
+    "translation": "פעיל",
+    "cefr": "B1"
+  },
+  {
     "word": "adapt",
     "pos": "verb",
     "definition": "To change behaviour or a plan to suit new conditions.",
     "example": "New employees usually adapt to the schedule within a few weeks.",
     "translation": "להסתגל, להתאים",
+    "cefr": "B1"
+  },
+  {
+    "word": "address",
+    "pos": "verb",
+    "definition": "To deal with or speak directly about a problem or issue.",
+    "example": "The council promised to address the parking problem this year.",
+    "translation": "להתייחס אל, לטפל ב",
     "cefr": "B1"
   },
   {
@@ -248,11 +1048,75 @@
     "cefr": "B1"
   },
   {
+    "word": "admission",
+    "pos": "noun",
+    "definition": "The act of being allowed to enter a place or institution.",
+    "example": "Admission to the museum is free on Sundays.",
+    "translation": "כניסה, קבלה",
+    "cefr": "B1"
+  },
+  {
+    "word": "adopt",
+    "pos": "verb",
+    "definition": "To legally take a child as one's own, or to choose to follow a plan or method.",
+    "example": "The school decided to adopt a new reading programme this term.",
+    "translation": "לאמץ",
+    "cefr": "B1"
+  },
+  {
+    "word": "advance",
+    "pos": "verb",
+    "definition": "To move forward or make progress.",
+    "example": "Researchers hope the discovery will advance treatment for the disease.",
+    "translation": "להתקדם",
+    "cefr": "B1"
+  },
+  {
+    "word": "advertise",
+    "pos": "verb",
+    "definition": "To make a product or service known to the public.",
+    "example": "The shop advertised its sale on the radio all week.",
+    "translation": "לפרסם",
+    "cefr": "B1"
+  },
+  {
     "word": "affect",
     "pos": "verb",
     "definition": "To produce a change in something, or to influence how it develops.",
     "example": "Rising fuel prices affect almost every part of the economy.",
     "translation": "להשפיע על",
+    "cefr": "B1"
+  },
+  {
+    "word": "affection",
+    "pos": "noun",
+    "definition": "A gentle feeling of fondness or liking for someone.",
+    "example": "The old dog showed real affection for every visitor.",
+    "translation": "חיבה",
+    "cefr": "B1"
+  },
+  {
+    "word": "afford",
+    "pos": "verb",
+    "definition": "To have enough money or time to be able to do something.",
+    "example": "They finally saved enough to afford a small holiday.",
+    "translation": "להרשות לעצמו",
+    "cefr": "B1"
+  },
+  {
+    "word": "agenda",
+    "pos": "noun",
+    "definition": "A list of items to be discussed at a meeting.",
+    "example": "The budget was the first item on the agenda.",
+    "translation": "סדר יום",
+    "cefr": "B1"
+  },
+  {
+    "word": "aggressive",
+    "pos": "adjective",
+    "definition": "Showing readiness to attack or behave forcefully toward others.",
+    "example": "The dog became aggressive whenever a stranger approached the gate.",
+    "translation": "תוקפני",
     "cefr": "B1"
   },
   {
@@ -264,11 +1128,123 @@
     "cefr": "B1"
   },
   {
+    "word": "agriculture",
+    "pos": "noun",
+    "definition": "The practice of farming, including growing crops and raising animals.",
+    "example": "Agriculture remains the region's main source of income.",
+    "translation": "חקלאות",
+    "cefr": "B1"
+  },
+  {
+    "word": "aid",
+    "pos": "noun",
+    "definition": "Help given, especially money, food, or support, to those in need.",
+    "example": "International aid arrived within days of the earthquake.",
+    "translation": "סיוע",
+    "cefr": "B1"
+  },
+  {
+    "word": "aim",
+    "pos": "noun",
+    "definition": "A purpose or intention that guides one's actions.",
+    "example": "The project's main aim is to reduce waste in the factory.",
+    "translation": "מטרה",
+    "cefr": "B1"
+  },
+  {
+    "word": "alcohol",
+    "pos": "noun",
+    "definition": "A type of drink that can make a person feel drunk, or the substance in it.",
+    "example": "The restaurant does not serve alcohol before noon.",
+    "translation": "אלכוהול",
+    "cefr": "B1"
+  },
+  {
+    "word": "alternative",
+    "pos": "adjective",
+    "definition": "Available as another option instead of the usual one.",
+    "example": "The airline offered an alternative flight after the cancellation.",
+    "translation": "חלופי",
+    "cefr": "B1"
+  },
+  {
+    "word": "amazing",
+    "pos": "adjective",
+    "definition": "Causing great surprise or wonder.",
+    "example": "The view from the summit was absolutely amazing.",
+    "translation": "מדהים",
+    "cefr": "B1"
+  },
+  {
     "word": "ambitious",
     "pos": "adjective",
     "definition": "Having a strong desire to achieve success or a particular goal.",
     "example": "The city announced an ambitious plan to cut traffic by half.",
     "translation": "שאפתן",
+    "cefr": "B1"
+  },
+  {
+    "word": "ambulance",
+    "pos": "noun",
+    "definition": "A vehicle used to carry sick or injured people to hospital.",
+    "example": "An ambulance arrived within minutes of the call.",
+    "translation": "אמבולנס",
+    "cefr": "B1"
+  },
+  {
+    "word": "amount",
+    "pos": "noun",
+    "definition": "A quantity of something, especially money.",
+    "example": "A small amount of sugar is enough for the whole recipe.",
+    "translation": "כמות",
+    "cefr": "B1"
+  },
+  {
+    "word": "analysis",
+    "pos": "noun",
+    "definition": "A detailed examination of something in order to understand it.",
+    "example": "The lab's analysis confirmed what the doctors had suspected.",
+    "translation": "ניתוח, אנליזה",
+    "cefr": "B1"
+  },
+  {
+    "word": "anger",
+    "pos": "noun",
+    "definition": "A strong feeling of displeasure or hostility.",
+    "example": "His anger faded once he understood what had really happened.",
+    "translation": "כעס",
+    "cefr": "B1"
+  },
+  {
+    "word": "angle",
+    "pos": "noun",
+    "definition": "The space between two lines that meet at a point, or a way of viewing a situation.",
+    "example": "The photographer changed the angle to capture more of the skyline.",
+    "translation": "זווית",
+    "cefr": "B1"
+  },
+  {
+    "word": "announce",
+    "pos": "verb",
+    "definition": "To make something publicly known.",
+    "example": "The company will announce its new product next week.",
+    "translation": "להכריז, להודיע",
+    "cefr": "B1"
+  },
+  {
+    "word": "announcement",
+    "pos": "noun",
+    "definition": "A public statement giving information about something.",
+    "example": "The airport made an announcement about the delayed flight.",
+    "translation": "הודעה, הכרזה",
+    "cefr": "B1"
+  },
+  {
+    "word": "annual",
+    "pos": "adjective",
+    "definition": "Happening once every year.",
+    "example": "The company holds its annual meeting in March.",
+    "translation": "שנתי",
     "cefr": "B1"
   },
   {
@@ -288,6 +1264,62 @@
     "cefr": "B1"
   },
   {
+    "word": "apparent",
+    "pos": "adjective",
+    "definition": "Clearly seen or understood; obvious.",
+    "example": "It soon became apparent that the plan would not work.",
+    "translation": "ברור, גלוי",
+    "cefr": "B1"
+  },
+  {
+    "word": "appeal",
+    "pos": "noun",
+    "definition": "A quality that attracts or interests people, or a formal request for a decision to be reconsidered.",
+    "example": "The lawyer filed an appeal against the court's decision.",
+    "translation": "ערעור; קסם/משיכה",
+    "cefr": "B1"
+  },
+  {
+    "word": "appetite",
+    "pos": "noun",
+    "definition": "A desire for food, or a strong interest in something.",
+    "example": "The long walk gave everyone a huge appetite for dinner.",
+    "translation": "תיאבון; חשק",
+    "cefr": "B1"
+  },
+  {
+    "word": "applause",
+    "pos": "noun",
+    "definition": "Clapping used to show approval or enjoyment.",
+    "example": "The final note of the song was met with loud applause.",
+    "translation": "מחיאות כפיים",
+    "cefr": "B1"
+  },
+  {
+    "word": "application",
+    "pos": "noun",
+    "definition": "A formal request, or a practical use for something.",
+    "example": "She submitted her application for the scholarship last night.",
+    "translation": "בקשה; יישום",
+    "cefr": "B1"
+  },
+  {
+    "word": "appreciation",
+    "pos": "noun",
+    "definition": "A feeling of gratitude, or a recognition of the value of something.",
+    "example": "The team showed their appreciation with a small gift for their mentor.",
+    "translation": "הערכה, הוקרה",
+    "cefr": "B1"
+  },
+  {
+    "word": "approach",
+    "pos": "noun",
+    "definition": "A way of dealing with a task or problem.",
+    "example": "The new teacher's approach made grammar much easier to understand.",
+    "translation": "גישה, שיטה",
+    "cefr": "B1"
+  },
+  {
     "word": "approval",
     "pos": "noun",
     "definition": "Official agreement that something may happen or be done.",
@@ -304,11 +1336,123 @@
     "cefr": "B1"
   },
   {
+    "word": "approximately",
+    "pos": "adverb",
+    "definition": "Roughly, close to an exact number but not precise.",
+    "example": "The journey takes approximately two hours by train.",
+    "translation": "בקירוב",
+    "cefr": "B1"
+  },
+  {
+    "word": "architect",
+    "pos": "noun",
+    "definition": "A person who designs buildings.",
+    "example": "The architect presented three different designs for the new library.",
+    "translation": "אדריכל",
+    "cefr": "B1"
+  },
+  {
+    "word": "arise",
+    "pos": "verb",
+    "definition": "To begin to happen or to appear as a result of something.",
+    "example": "A problem arises whenever the shipment fails to arrive on time.",
+    "translation": "להתעורר, לצוץ",
+    "cefr": "B1"
+  },
+  {
+    "word": "army",
+    "pos": "noun",
+    "definition": "A large organised group of soldiers trained for land warfare.",
+    "example": "He served in the army for six years before studying law.",
+    "translation": "צבא",
+    "cefr": "B1"
+  },
+  {
+    "word": "arrange",
+    "pos": "verb",
+    "definition": "To plan or organise something in advance.",
+    "example": "She arranged for a taxi to meet them at the airport.",
+    "translation": "לארגן, לתאם",
+    "cefr": "B1"
+  },
+  {
     "word": "arrangement",
     "pos": "noun",
     "definition": "A plan or preparation made in advance for something to happen.",
     "example": "They made an arrangement to meet at the station before the trip.",
     "translation": "סידור, הסדר",
+    "cefr": "B1"
+  },
+  {
+    "word": "arrest",
+    "pos": "noun",
+    "definition": "The act of officially taking a person into custody by police.",
+    "example": "The arrest took place quietly, without any struggle.",
+    "translation": "מעצר",
+    "cefr": "B1"
+  },
+  {
+    "word": "arrival",
+    "pos": "noun",
+    "definition": "The act of reaching a place or coming to an end.",
+    "example": "The train's arrival was delayed by almost an hour.",
+    "translation": "הגעה",
+    "cefr": "B1"
+  },
+  {
+    "word": "artist",
+    "pos": "noun",
+    "definition": "A person who creates paintings, drawings, or other works of art.",
+    "example": "The artist spent three months painting the mural.",
+    "translation": "אמן",
+    "cefr": "B1"
+  },
+  {
+    "word": "artistic",
+    "pos": "adjective",
+    "definition": "Relating to or showing skill in art.",
+    "example": "Her artistic talent was clear from a very young age.",
+    "translation": "אמנותי",
+    "cefr": "B1"
+  },
+  {
+    "word": "ashamed",
+    "pos": "adjective",
+    "definition": "Feeling guilty or embarrassed about something one has done.",
+    "example": "He felt ashamed after forgetting his sister's birthday.",
+    "translation": "מתבייש",
+    "cefr": "B1"
+  },
+  {
+    "word": "aspect",
+    "pos": "noun",
+    "definition": "A particular part or feature of a situation or idea.",
+    "example": "Cost is only one aspect of the decision to consider.",
+    "translation": "היבט",
+    "cefr": "B1"
+  },
+  {
+    "word": "assign",
+    "pos": "verb",
+    "definition": "To give someone a particular task or responsibility.",
+    "example": "The teacher assigned each student a different chapter to summarise.",
+    "translation": "להקצות, להטיל",
+    "cefr": "B1"
+  },
+  {
+    "word": "assignment",
+    "pos": "noun",
+    "definition": "A task or piece of work given to someone.",
+    "example": "The assignment is due at the end of the week.",
+    "translation": "מטלה",
+    "cefr": "B1"
+  },
+  {
+    "word": "assist",
+    "pos": "verb",
+    "definition": "To help someone do something.",
+    "example": "A volunteer assisted the elderly visitors around the exhibition.",
+    "translation": "לסייע",
     "cefr": "B1"
   },
   {
@@ -320,11 +1464,75 @@
     "cefr": "B1"
   },
   {
+    "word": "associate",
+    "pos": "verb",
+    "definition": "To connect one idea, memory, or thing with another in one's mind.",
+    "example": "Most people associate the smell of the sea with summer holidays.",
+    "translation": "לקשר, לשייך",
+    "cefr": "B1"
+  },
+  {
     "word": "assume",
     "pos": "verb",
     "definition": "To accept that something is true without checking it.",
     "example": "Do not assume the data is accurate simply because it was published.",
     "translation": "להניח, לצאת מנקודת הנחה",
+    "cefr": "B1"
+  },
+  {
+    "word": "athletic",
+    "pos": "adjective",
+    "definition": "Physically strong, fit, and good at sport.",
+    "example": "He has always been the most athletic member of the family.",
+    "translation": "אתלטי",
+    "cefr": "B1"
+  },
+  {
+    "word": "atmosphere",
+    "pos": "noun",
+    "definition": "The mood or feeling of a place, or the layer of gas around a planet.",
+    "example": "The small café has a warm, relaxed atmosphere.",
+    "translation": "אווירה; אטמוספרה",
+    "cefr": "B1"
+  },
+  {
+    "word": "attach",
+    "pos": "verb",
+    "definition": "To fasten or connect one thing to another.",
+    "example": "Please attach the receipt to your expense form.",
+    "translation": "לצרף, לחבר",
+    "cefr": "B1"
+  },
+  {
+    "word": "attachment",
+    "pos": "noun",
+    "definition": "A file joined to an email, or a feeling of affection for someone.",
+    "example": "She forgot to include the attachment before sending the email.",
+    "translation": "קובץ מצורף; היקשרות",
+    "cefr": "B1"
+  },
+  {
+    "word": "attain",
+    "pos": "verb",
+    "definition": "To succeed in achieving something, usually after effort.",
+    "example": "It took years of study to attain that level of fluency.",
+    "translation": "להשיג",
+    "cefr": "B1"
+  },
+  {
+    "word": "attend",
+    "pos": "verb",
+    "definition": "To be present at an event or place.",
+    "example": "Almost the whole class attended the school reunion.",
+    "translation": "להשתתף, לנכוח",
+    "cefr": "B1"
+  },
+  {
+    "word": "attract",
+    "pos": "verb",
+    "definition": "To cause someone to be interested in or drawn toward something.",
+    "example": "The festival attracts thousands of visitors every summer.",
+    "translation": "למשוך",
     "cefr": "B1"
   },
   {
@@ -344,11 +1552,83 @@
     "cefr": "B1"
   },
   {
+    "word": "available",
+    "pos": "adjective",
+    "definition": "Able to be obtained, used, or reached.",
+    "example": "Tickets for the concert are still available online.",
+    "translation": "זמין",
+    "cefr": "B1"
+  },
+  {
     "word": "aware",
     "pos": "adjective",
     "definition": "Knowing that something exists or is happening.",
     "example": "Few passengers were aware that the route had changed that morning.",
     "translation": "מודע",
+    "cefr": "B1"
+  },
+  {
+    "word": "awareness",
+    "pos": "noun",
+    "definition": "Knowledge or understanding that something exists or is happening.",
+    "example": "The campaign raised awareness about the risks of the disease.",
+    "translation": "מודעות",
+    "cefr": "B1"
+  },
+  {
+    "word": "awkward",
+    "pos": "adjective",
+    "definition": "Causing embarrassment or lacking ease and grace.",
+    "example": "There was an awkward silence after the joke fell flat.",
+    "translation": "מביך, מסורבל",
+    "cefr": "B1"
+  },
+  {
+    "word": "balance",
+    "pos": "noun",
+    "definition": "A state in which different things are in the correct or equal proportions.",
+    "example": "Finding a balance between work and rest took her years.",
+    "translation": "איזון",
+    "cefr": "B1"
+  },
+  {
+    "word": "bare",
+    "pos": "adjective",
+    "definition": "Not covered by clothing or anything else.",
+    "example": "He walked across the hot sand with bare feet.",
+    "translation": "חשוף, ערום",
+    "cefr": "B1"
+  },
+  {
+    "word": "barely",
+    "pos": "adverb",
+    "definition": "Only just; almost not.",
+    "example": "She barely made it to the station before the train left.",
+    "translation": "בקושי",
+    "cefr": "B1"
+  },
+  {
+    "word": "basis",
+    "pos": "noun",
+    "definition": "The foundation or main principle on which something rests.",
+    "example": "The report forms the basis for the committee's final decision.",
+    "translation": "בסיס, יסוד",
+    "cefr": "B1"
+  },
+  {
+    "word": "beard",
+    "pos": "noun",
+    "definition": "Hair that grows on the lower part of a man's face.",
+    "example": "He grew a beard during the long expedition.",
+    "translation": "זקן",
+    "cefr": "B1"
+  },
+  {
+    "word": "beat",
+    "pos": "verb",
+    "definition": "To defeat someone in a competition, or to hit something repeatedly.",
+    "example": "The home team beat their rivals by a single point.",
+    "translation": "לנצח; להכות",
     "cefr": "B1"
   },
   {
