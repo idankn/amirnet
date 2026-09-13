@@ -59,3 +59,24 @@ Do not reintroduce it.
 **MALO's own materials are not a source.** nite.org.il carries a bare
 "© All rights reserved" with no licensing pathway. Use their free practice test
 to calibrate level by hand as a test-taker; never to copy from.
+
+## Known level overrides (2026-09-13)
+
+A manual audit of the shipped vocab bank found 70 words whose CEFR-J/Octanove
+level looked clearly wrong against general CEFR usage — mostly near-synonym
+pairs landing two tiers apart within the bank itself (`achieve` A2 vs `attain`
+B1; `cooperate` B2 vs `collaborate` C1), plus a handful of common
+Hebrew-cognate words sitting at C1 (`diversity`, `sustainable`, `naive`,
+`criteria`) and one outright miscall (`multiply` at B2 — primary-school
+arithmetic). `app/src/data/vocab.json`'s `cefr` field was corrected by hand for
+these words; the same correction was written directly into `bank.db`'s `vocab`
+table so it survives a re-export.
+
+**This is a deliberate divergence from `wordlists/targets.tsv` for these
+specific words only** — `targets.tsv` itself was NOT edited (it stays a
+faithful, regeneratable mirror of the licensed source lists) and
+`pipeline/load_vocab.py`'s validator still checks new entries against it as
+usual. If any of these 70 words is ever re-authored in a future
+`authored/vocab_0NN.jsonl` batch, the validator will accept only the
+`targets.tsv`-original level, which would silently re-introduce the mismatch
+this override fixed — check this list first before re-adding one of them.
