@@ -28,9 +28,26 @@ import type { Question } from '../types';
  * Known limitation, and it is iOS's: action buttons are revealed by expanding
  * or long-pressing the notification. They are not visible in the collapsed
  * banner.
+ *
+ * A slot that goes unanswered keeps its question rather than moving on. The
+ * schedule is built from `pending` (below): a slot already holding an
+ * unanswered question is left alone on the next `reschedule()`, so the same
+ * question comes back at the same time tomorrow, and the day after, for as
+ * long as it takes. Only a genuinely answered slot is handed a new one. This
+ * is enforced without ever touching the OS's own delivery — the unanswered
+ * notification simply never gets cancelled or replaced, which is the one
+ * lever iOS actually gives an app over its own local notifications.
+ *
+ * The app icon's badge count is the other half: it is the number of
+ * currently-pending (unanswered) slots, so the debt is visible without
+ * opening Notification Center. It moves in exactly two places — here, when a
+ * slot is answered or the schedule is rebuilt, and on app foreground via
+ * `syncBadge`, since a background notification-action response is not
+ * guaranteed to run.
  */
 
 const STORAGE_KEY = 'reminders.settings.v1';
+const PENDING_KEY = 'reminders.pending.v1';
 
 /**
  * iOS keeps at most 64 pending local notifications per app and silently drops
@@ -71,6 +88,74 @@ export const DEFAULT_SETTINGS: ReminderSettings = {
 };
 
 export const INTERVAL_CHOICES = [5, 15, 30, 60, 120] as const;
+
+/** A slot's question, persisted so an unanswered one survives a reschedule. */
+interface PendingQuestion {
+  questionId: string;
+  prompt: string;
+  options: string[];
+  correctIndex: number;
+  explanation: string;
+}
+
+function toPendingQuestion(q: Question): PendingQuestion {
+  return {
+    questionId: q.id,
+    prompt: q.prompt,
+    options: q.options,
+    correctIndex: q.correctIndex,
+    explanation: q.explanation,
+  };
+}
+
+async function loadPending(): Promise<Record<number, PendingQuestion>> {
+  try {
+    const raw = await AsyncStorage.getItem(PENDING_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+}
+
+async function savePending(p: Record<number, PendingQuestion>): Promise<void> {
+  try {
+    await AsyncStorage.setItem(PENDING_KEY, JSON.stringify(p));
+  } catch {
+    // A failed write costs the nagging, not the session.
+  }
+}
+
+/**
+ * The app icon's badge, synced from what is actually still pending.
+ *
+ * Call this whenever pending state changes, and once on app foreground —
+ * a background notification-action response is not guaranteed to run to
+ * completion on iOS, so foreground is the backstop that keeps the badge
+ * honest even if that happened.
+ */
+export async function syncBadge(): Promise<void> {
+  if (!isSupported) return;
+  const pending = await loadPending();
+  await Notifications.setBadgeCountAsync(Object.keys(pending).length).catch(
+    () => {},
+  );
+}
+
+/**
+ * A slot's question was actually answered — stop nagging about it and shrink
+ * the badge. This is the only thing that lets a slot rotate to a new question
+ * on the next reschedule; short of this, it repeats forever.
+ */
+export async function markAnswered(slot: number): Promise<void> {
+  if (!isSupported) return;
+  const pending = await loadPending();
+  if (!(slot in pending)) return;
+  delete pending[slot];
+  await savePending(pending);
+  await Notifications.setBadgeCountAsync(Object.keys(pending).length).catch(
+    () => {},
+  );
+}
 
 /** The clock times reminders would fire at, given a setting. */
 export function slotsFor(s: ReminderSettings): { hour: number; minute: number }[] {
@@ -150,7 +235,10 @@ export function pickReminderQuestions(bank: Question[], count: number): Question
  * Replace the whole schedule with one built from `settings`.
  *
  * Always clears first: scheduling on top of an existing schedule is how people
- * end up with notifications from a setting they changed a week ago.
+ * end up with notifications from a setting they changed a week ago. Clearing
+ * the OS schedule is not the same as forgetting what is pending, though — an
+ * unanswered slot's question is carried over rather than reshuffled, so
+ * cancel-and-rebuild never accidentally lets someone off the hook.
  *
  * Each slot gets its own category, because a category's buttons are fixed at
  * registration and every question needs its own four.
@@ -161,14 +249,37 @@ export async function reschedule(
 ): Promise<number> {
   if (!isSupported) return 0;
   await Notifications.cancelAllScheduledNotificationsAsync();
-  if (!settings.enabled) return 0;
+
+  if (!settings.enabled) {
+    await savePending({});
+    await Notifications.setBadgeCountAsync(0).catch(() => {});
+    return 0;
+  }
 
   const slots = slotsFor(settings);
-  const questions = pickReminderQuestions(bank, slots.length);
+  const pending = await loadPending();
+
+  // A shorter window than before leaves orphaned slot numbers behind.
+  for (const key of Object.keys(pending)) {
+    if (Number(key) >= slots.length) delete pending[Number(key)];
+  }
+
+  // Only a slot with nothing outstanding gets a freshly picked question —
+  // this is the whole mechanism. An unanswered slot is left exactly as it
+  // was, so it keeps firing the same question instead of quietly moving on.
+  const freshQuestions = pickReminderQuestions(bank, slots.length);
+  for (let i = 0; i < slots.length; i++) {
+    if (!pending[i] && freshQuestions[i]) {
+      pending[i] = toPendingQuestion(freshQuestions[i]);
+    }
+  }
+  await savePending(pending);
+
+  const pendingCount = Object.keys(pending).length;
 
   for (let i = 0; i < slots.length; i++) {
     const { hour, minute } = slots[i];
-    const question: Question | undefined = questions[i];
+    const question = pending[i];
 
     let categoryIdentifier: string | undefined;
     if (question) {
@@ -193,10 +304,15 @@ export async function reschedule(
         // Cuts through Focus and Do Not Disturb. Not 'critical', which needs a
         // separate Apple entitlement and is meant for genuine emergencies.
         interruptionLevel: 'timeSensitive',
+        // Baked in at schedule time, since a local notification can't ask us
+        // for a live count when it fires — only markAnswered/syncBadge can
+        // correct it in between reschedules.
+        badge: pendingCount || undefined,
         data: question
           ? {
               action: 'answer',
-              questionId: question.id,
+              slot: i,
+              questionId: question.questionId,
               correctIndex: question.correctIndex,
               explanation: question.explanation,
               correctText: question.options[question.correctIndex],
@@ -222,7 +338,9 @@ export function configureHandler(): void {
   Notifications.setNotificationHandler({
     handleNotification: async () => ({
       shouldPlaySound: false,
-      shouldSetBadge: false,
+      // The badge is the one part of this that should still land even while
+      // the app is open — it is the record of what is still unanswered.
+      shouldSetBadge: true,
       shouldShowBanner: false,
       shouldShowList: true,
     }),
@@ -295,6 +413,11 @@ export function onReminderResponse(handlers: {
         String(data.correctText ?? ''),
         String(data.explanation ?? ''),
       );
+      // Answered — this slot stops nagging and the badge shrinks. Any answer
+      // counts, right or wrong; the obligation was to solve it, not to get it
+      // right.
+      const slot = Number(data.slot);
+      if (Number.isInteger(slot)) void markAnswered(slot);
       handlers.onAnswer?.({
         questionId: String(data.questionId ?? ''),
         chosenIndex,

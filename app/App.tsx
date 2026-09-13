@@ -1,5 +1,12 @@
 import { useCallback, useEffect, useState } from 'react';
-import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native';
+import {
+  ActivityIndicator,
+  AppState,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
@@ -20,7 +27,11 @@ import {
 import {
   configureAndroidChannel,
   configureHandler,
+  isSupported as remindersSupported,
+  loadSettings as loadReminderSettings,
   onReminderResponse,
+  reschedule as rescheduleReminders,
+  syncBadge,
 } from './src/lib/reminders';
 import { isConfigured } from './src/lib/supabase';
 import { HomeScreen } from './src/screens/HomeScreen';
@@ -108,6 +119,30 @@ function AppContent() {
     [session?.user?.id],
   );
 
+  // A reminder slot that goes unanswered is meant to keep firing the exact
+  // same question — that's the nagging. The only place a slot gets to rotate
+  // to a fresh one after being answered is a reschedule, and nothing else
+  // triggers one automatically, so foreground is what makes that happen in
+  // practice rather than only the next visit to the reminders settings
+  // screen. syncBadge is the backstop for the badge specifically: an answer
+  // given from the background is not guaranteed to finish running.
+  useEffect(() => {
+    if (!remindersSupported) return;
+    const refresh = () => {
+      void loadReminderSettings().then((settings) => {
+        if (settings.enabled) {
+          void rescheduleReminders(settings, BUNDLED.questions);
+        } else {
+          void syncBadge();
+        }
+      });
+    };
+    refresh();
+    const sub = AppState.addEventListener('change', (state) => {
+      if (state === 'active') refresh();
+    });
+    return () => sub.remove();
+  }, []);
 
   /** Map a thrown server error onto the right prompt. */
   function handle(e: unknown): void {
