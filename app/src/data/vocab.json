@@ -56,6 +56,14 @@
     "cefr": "A2"
   },
   {
+    "word": "across",
+    "pos": "adverb",
+    "definition": "From one side of something to the other.",
+    "example": "They walked across the bridge to reach the old town.",
+    "translation": "לרוחב, מצד לצד",
+    "cefr": "A2"
+  },
+  {
     "word": "actually",
     "pos": "adverb",
     "definition": "Used to say what is really true, especially when it is surprising.",
@@ -152,6 +160,14 @@
     "cefr": "A2"
   },
   {
+    "word": "affair",
+    "pos": "noun",
+    "definition": "An event or a matter that people are dealing with.",
+    "example": "The wedding was a large affair with hundreds of guests.",
+    "translation": "עניין, פרשה",
+    "cefr": "A2"
+  },
+  {
     "word": "agency",
     "pos": "noun",
     "definition": "A business or organisation that provides a particular service.",
@@ -160,11 +176,27 @@
     "cefr": "A2"
   },
   {
+    "word": "agent",
+    "pos": "noun",
+    "definition": "A person who acts or arranges things on behalf of someone else.",
+    "example": "Her travel agent booked the flights and the hotel together.",
+    "translation": "סוכן",
+    "cefr": "A2"
+  },
+  {
     "word": "alarm",
     "pos": "noun",
     "definition": "A device or signal that warns people of danger, or a feeling of fear.",
     "example": "The fire alarm went off in the middle of the lecture.",
     "translation": "אזעקה; חשש",
+    "cefr": "A2"
+  },
+  {
+    "word": "alive",
+    "pos": "adjective",
+    "definition": "Living, not dead.",
+    "example": "The old tree is still alive despite the harsh winter.",
+    "translation": "בחיים, חי",
     "cefr": "A2"
   },
   {
@@ -181,6 +213,14 @@
     "definition": "A strong desire to achieve something.",
     "example": "Her ambition was to open her own restaurant by thirty.",
     "translation": "שאיפה",
+    "cefr": "A2"
+  },
+  {
+    "word": "ancestor",
+    "pos": "noun",
+    "definition": "A family member who lived a long time before you.",
+    "example": "Her ancestors came from a small village in the mountains.",
+    "translation": "אב קדמון",
     "cefr": "A2"
   },
   {
@@ -736,6 +776,94 @@
     "cefr": "A2"
   },
   {
+    "word": "communicate",
+    "pos": "verb",
+    "definition": "To share information, thoughts, or feelings with someone.",
+    "example": "The two teams communicate by phone every morning before work starts.",
+    "translation": "לתקשר",
+    "cefr": "A2"
+  },
+  {
+    "word": "communication",
+    "pos": "noun",
+    "definition": "The act of sharing information or ideas with others.",
+    "example": "Good communication between managers and staff prevents many misunderstandings.",
+    "translation": "תקשורת",
+    "cefr": "A2"
+  },
+  {
+    "word": "compare",
+    "pos": "verb",
+    "definition": "To look at two or more things to see how they are similar or different.",
+    "example": "The teacher asked us to compare the two short stories.",
+    "translation": "להשוות",
+    "cefr": "A2"
+  },
+  {
+    "word": "competition",
+    "pos": "noun",
+    "definition": "An event in which people try to win, or a struggle between rivals.",
+    "example": "She entered the singing competition and reached the final round.",
+    "translation": "תחרות",
+    "cefr": "A2"
+  },
+  {
+    "word": "complain",
+    "pos": "verb",
+    "definition": "To say that something is wrong or that you are unhappy about it.",
+    "example": "Several passengers complained about the delayed train this morning.",
+    "translation": "להתלונן",
+    "cefr": "A2"
+  },
+  {
+    "word": "complaint",
+    "pos": "noun",
+    "definition": "A statement that something is wrong or unsatisfactory.",
+    "example": "The hotel manager took the complaint seriously and offered a refund.",
+    "translation": "תלונה",
+    "cefr": "A2"
+  },
+  {
+    "word": "concentrate",
+    "pos": "verb",
+    "definition": "To give all your attention to one thing.",
+    "example": "It is hard to concentrate when the room is so noisy.",
+    "translation": "להתרכז",
+    "cefr": "A2"
+  },
+  {
+    "word": "confident",
+    "pos": "adjective",
+    "definition": "Feeling sure about your own abilities or about an outcome.",
+    "example": "She felt confident about the exam after weeks of steady practice.",
+    "translation": "בטוח בעצמו",
+    "cefr": "A2"
+  },
+  {
+    "word": "confuse",
+    "pos": "verb",
+    "definition": "To make someone unable to understand or think clearly.",
+    "example": "The two similar road signs confuse a lot of new drivers.",
+    "translation": "לבלבל",
+    "cefr": "A2"
+  },
+  {
+    "word": "confused",
+    "pos": "adjective",
+    "definition": "Unable to think clearly or understand something.",
+    "example": "He looked confused when the instructions suddenly changed.",
+    "translation": "מבולבל",
+    "cefr": "A2"
+  },
+  {
+    "word": "consequence",
+    "pos": "noun",
+    "definition": "A result that follows from an earlier action or decision.",
+    "example": "Missing the deadline had serious consequences for the whole project.",
+    "translation": "תוצאה",
+    "cefr": "A2"
+  },
+  {
     "word": "consider",
     "pos": "verb",
     "definition": "To think about something carefully before deciding.",
@@ -744,11 +872,203 @@
     "cefr": "A2"
   },
   {
+    "word": "contrast",
+    "pos": "noun",
+    "definition": "A clear difference between two things that are compared.",
+    "example": "There is a sharp contrast between the busy city and the quiet countryside.",
+    "translation": "ניגוד",
+    "cefr": "A2"
+  },
+  {
+    "word": "convenient",
+    "pos": "adjective",
+    "definition": "Suitable, easy, or useful for a particular purpose.",
+    "example": "The new station makes it far more convenient to travel downtown.",
+    "translation": "נוח",
+    "cefr": "A2"
+  },
+  {
+    "word": "creativity",
+    "pos": "noun",
+    "definition": "The ability to produce new and imaginative ideas.",
+    "example": "The art class is designed to encourage creativity in young children.",
+    "translation": "יצירתיות",
+    "cefr": "A2"
+  },
+  {
+    "word": "creature",
+    "pos": "noun",
+    "definition": "A living being, especially an animal.",
+    "example": "Deep in the ocean, scientists found a strange glowing creature.",
+    "translation": "יצור",
+    "cefr": "A2"
+  },
+  {
+    "word": "crowded",
+    "pos": "adjective",
+    "definition": "Full of people, with little space to move.",
+    "example": "The market was so crowded that we could barely walk through it.",
+    "translation": "צפוף",
+    "cefr": "A2"
+  },
+  {
+    "word": "dangerous",
+    "pos": "adjective",
+    "definition": "Likely to cause harm or injury.",
+    "example": "Swimming alone in that river is extremely dangerous.",
+    "translation": "מסוכן",
+    "cefr": "A2"
+  },
+  {
+    "word": "depend",
+    "pos": "verb",
+    "definition": "To rely on someone or something, or to be decided by something.",
+    "example": "Whether we go hiking will depend on tomorrow's weather.",
+    "translation": "להיות תלוי ב",
+    "cefr": "A2"
+  },
+  {
+    "word": "description",
+    "pos": "noun",
+    "definition": "Words that say what someone or something is like.",
+    "example": "The witness gave the police a detailed description of the car.",
+    "translation": "תיאור",
+    "cefr": "A2"
+  },
+  {
+    "word": "destroy",
+    "pos": "verb",
+    "definition": "To damage something so badly that it no longer exists or works.",
+    "example": "The fire destroyed most of the old wooden barn.",
+    "translation": "להשמיד",
+    "cefr": "A2"
+  },
+  {
+    "word": "difficulty",
+    "pos": "noun",
+    "definition": "A problem, or the state of finding something hard to do.",
+    "example": "He had difficulty reading the map in the dark.",
+    "translation": "קושי",
+    "cefr": "A2"
+  },
+  {
+    "word": "disagree",
+    "pos": "verb",
+    "definition": "To have a different opinion from someone else.",
+    "example": "The two scientists disagree about what caused the results.",
+    "translation": "לחלוק דעה",
+    "cefr": "A2"
+  },
+  {
+    "word": "disappear",
+    "pos": "verb",
+    "definition": "To stop being visible, or to stop existing.",
+    "example": "The rabbit seemed to disappear behind the bushes in an instant.",
+    "translation": "להיעלם",
+    "cefr": "A2"
+  },
+  {
+    "word": "disappointed",
+    "pos": "adjective",
+    "definition": "Sad because something did not happen as hoped, or was not as good as expected.",
+    "example": "She was disappointed when the concert was cancelled at the last minute.",
+    "translation": "מאוכזב",
+    "cefr": "A2"
+  },
+  {
+    "word": "discover",
+    "pos": "verb",
+    "definition": "To find something for the first time, or to learn something new.",
+    "example": "Scientists recently discovered a new species of frog in the forest.",
+    "translation": "לגלות",
+    "cefr": "A2"
+  },
+  {
+    "word": "discussion",
+    "pos": "noun",
+    "definition": "A conversation in which people talk about a subject in detail.",
+    "example": "The class had a long discussion about climate change.",
+    "translation": "דיון",
+    "cefr": "A2"
+  },
+  {
+    "word": "divide",
+    "pos": "verb",
+    "definition": "To separate something into two or more parts.",
+    "example": "The teacher asked us to divide the students into small groups.",
+    "translation": "לחלק",
+    "cefr": "A2"
+  },
+  {
+    "word": "doubt",
+    "pos": "noun",
+    "definition": "A feeling of not being sure or of not believing something.",
+    "example": "There is no doubt that the new bridge has improved traffic.",
+    "translation": "ספק",
+    "cefr": "A2"
+  },
+  {
+    "word": "education",
+    "pos": "noun",
+    "definition": "The process of teaching and learning, especially in schools.",
+    "example": "A good education can open many doors later in life.",
+    "translation": "חינוך",
+    "cefr": "A2"
+  },
+  {
     "word": "effect",
     "pos": "noun",
     "definition": "A change that happens because of something else.",
     "example": "The medication had no measurable effect on his blood pressure.",
     "translation": "השפעה, תוצאה",
+    "cefr": "A2"
+  },
+  {
+    "word": "effort",
+    "pos": "noun",
+    "definition": "The physical or mental energy needed to do something.",
+    "example": "It took a lot of effort to finish the marathon.",
+    "translation": "מאמץ",
+    "cefr": "A2"
+  },
+  {
+    "word": "embarrassing",
+    "pos": "adjective",
+    "definition": "Making you feel awkward, ashamed, or uncomfortable.",
+    "example": "Forgetting his lines on stage was deeply embarrassing for the actor.",
+    "translation": "מביך",
+    "cefr": "A2"
+  },
+  {
+    "word": "emergency",
+    "pos": "noun",
+    "definition": "A sudden, serious situation that needs immediate action.",
+    "example": "Call this number only in case of a real emergency.",
+    "translation": "מקרה חירום",
+    "cefr": "A2"
+  },
+  {
+    "word": "encourage",
+    "pos": "verb",
+    "definition": "To give someone support or confidence to do something.",
+    "example": "Her parents always encourage her to try new hobbies.",
+    "translation": "לעודד",
+    "cefr": "A2"
+  },
+  {
+    "word": "enormous",
+    "pos": "adjective",
+    "definition": "Extremely large in size or amount.",
+    "example": "An enormous crowd gathered outside the stadium before the match.",
+    "translation": "עצום",
+    "cefr": "A2"
+  },
+  {
+    "word": "essay",
+    "pos": "noun",
+    "definition": "A short piece of writing on a particular subject.",
+    "example": "She spent the whole weekend writing her history essay.",
+    "translation": "חיבור",
     "cefr": "A2"
   },
   {
@@ -792,6 +1112,14 @@
     "cefr": "A2"
   },
   {
+    "word": "suggest",
+    "pos": "verb",
+    "definition": "To put forward an idea or plan for someone to consider.",
+    "example": "The doctor suggested that he rest for a few more days.",
+    "translation": "להציע",
+    "cefr": "A2"
+  },
+  {
     "word": "abandon",
     "pos": "verb",
     "definition": "To leave a place, person, or plan completely and permanently.",
@@ -813,6 +1141,14 @@
     "definition": "The state of not being present somewhere.",
     "example": "Her absence from the meeting was noticed immediately by the whole team.",
     "translation": "היעדרות",
+    "cefr": "B1"
+  },
+  {
+    "word": "absent",
+    "pos": "adjective",
+    "definition": "Not present in a place where you are expected to be.",
+    "example": "Three students were absent from class due to the flu.",
+    "translation": "נעדר",
     "cefr": "B1"
   },
   {
@@ -901,6 +1237,14 @@
     "definition": "Able to be easily reached, entered, or understood.",
     "example": "The new building is fully accessible for wheelchair users.",
     "translation": "נגיש",
+    "cefr": "B1"
+  },
+  {
+    "word": "accessory",
+    "pos": "noun",
+    "definition": "A small item added to an outfit or object to make it more useful or attractive.",
+    "example": "She chose a silver necklace as the final accessory for her dress.",
+    "translation": "אביזר",
     "cefr": "B1"
   },
   {
@@ -1168,6 +1512,14 @@
     "cefr": "B1"
   },
   {
+    "word": "amazed",
+    "pos": "adjective",
+    "definition": "Filled with great surprise or wonder.",
+    "example": "We were amazed by how quickly the builders finished the house.",
+    "translation": "המום, מופתע",
+    "cefr": "B1"
+  },
+  {
     "word": "amazing",
     "pos": "adjective",
     "definition": "Causing great surprise or wonder.",
@@ -1240,6 +1592,14 @@
     "cefr": "B1"
   },
   {
+    "word": "annoyed",
+    "pos": "adjective",
+    "definition": "Slightly angry about something irritating.",
+    "example": "He was annoyed when the meeting started thirty minutes late.",
+    "translation": "מוטרד, כועס",
+    "cefr": "B1"
+  },
+  {
     "word": "annual",
     "pos": "adjective",
     "definition": "Happening once every year.",
@@ -1301,6 +1661,14 @@
     "definition": "A formal request, or a practical use for something.",
     "example": "She submitted her application for the scholarship last night.",
     "translation": "בקשה; יישום",
+    "cefr": "B1"
+  },
+  {
+    "word": "appoint",
+    "pos": "verb",
+    "definition": "To choose someone officially for a job or position.",
+    "example": "The board decided to appoint her as the new director.",
+    "translation": "למנות",
     "cefr": "B1"
   },
   {
@@ -1632,11 +2000,43 @@
     "cefr": "B1"
   },
   {
+    "word": "behave",
+    "pos": "verb",
+    "definition": "To act in a particular way, especially in terms of manners.",
+    "example": "The children behaved very well during the long flight.",
+    "translation": "להתנהג",
+    "cefr": "B1"
+  },
+  {
+    "word": "belief",
+    "pos": "noun",
+    "definition": "A feeling that something is true or real, without proof.",
+    "example": "It is her strong belief that hard work always pays off.",
+    "translation": "אמונה",
+    "cefr": "B1"
+  },
+  {
     "word": "benefit",
     "pos": "noun",
     "definition": "An advantage gained from something.",
     "example": "One benefit of the new schedule is that nobody travels during rush hour.",
     "translation": "תועלת, יתרון",
+    "cefr": "B1"
+  },
+  {
+    "word": "bitter",
+    "pos": "adjective",
+    "definition": "Having a sharp, unpleasant taste, or feeling angry and resentful.",
+    "example": "The coffee was too bitter for her to drink without sugar.",
+    "translation": "מריר",
+    "cefr": "B1"
+  },
+  {
+    "word": "blend",
+    "pos": "verb",
+    "definition": "To mix two or more things together smoothly.",
+    "example": "The chef blended fresh herbs into the sauce before serving it.",
+    "translation": "למזג, לערבב",
     "cefr": "B1"
   },
   {
@@ -1648,11 +2048,171 @@
     "cefr": "B1"
   },
   {
+    "word": "capable",
+    "pos": "adjective",
+    "definition": "Having the ability or skill to do something.",
+    "example": "He is fully capable of managing the project on his own.",
+    "translation": "מסוגל",
+    "cefr": "B1"
+  },
+  {
+    "word": "capacity",
+    "pos": "noun",
+    "definition": "The maximum amount that something can hold or produce.",
+    "example": "The new stadium has a seating capacity of sixty thousand people.",
+    "translation": "קיבולת",
+    "cefr": "B1"
+  },
+  {
+    "word": "career",
+    "pos": "noun",
+    "definition": "The series of jobs a person has in a particular field over time.",
+    "example": "She built a successful career in international journalism.",
+    "translation": "קריירה",
+    "cefr": "B1"
+  },
+  {
+    "word": "category",
+    "pos": "noun",
+    "definition": "A group of things that share particular features.",
+    "example": "The books in the library are sorted into different categories.",
+    "translation": "קטגוריה",
+    "cefr": "B1"
+  },
+  {
+    "word": "characteristic",
+    "pos": "noun",
+    "definition": "A quality that is typical of a person or thing.",
+    "example": "Patience is one of the main characteristics of a good teacher.",
+    "translation": "תכונה אופיינית",
+    "cefr": "B1"
+  },
+  {
     "word": "classify",
     "pos": "verb",
     "definition": "To put things into groups according to what they have in common.",
     "example": "Librarians classify each new title before it reaches the shelves.",
     "translation": "לסווג",
+    "cefr": "B1"
+  },
+  {
+    "word": "combine",
+    "pos": "verb",
+    "definition": "To join two or more things together.",
+    "example": "The recipe asks you to combine the flour, sugar, and eggs first.",
+    "translation": "לשלב",
+    "cefr": "B1"
+  },
+  {
+    "word": "commit",
+    "pos": "verb",
+    "definition": "To promise firmly to do something, or to carry out an act.",
+    "example": "The company committed to reducing its waste by half this year.",
+    "translation": "להתחייב",
+    "cefr": "B1"
+  },
+  {
+    "word": "companion",
+    "pos": "noun",
+    "definition": "A person who spends time with you or accompanies you.",
+    "example": "The old dog had been her constant companion for twelve years.",
+    "translation": "בן לוויה",
+    "cefr": "B1"
+  },
+  {
+    "word": "comparison",
+    "pos": "noun",
+    "definition": "The act of examining how two or more things are alike or different.",
+    "example": "In comparison with last year, sales have grown considerably.",
+    "translation": "השוואה",
+    "cefr": "B1"
+  },
+  {
+    "word": "compete",
+    "pos": "verb",
+    "definition": "To try to win against others in a contest or market.",
+    "example": "Dozens of runners competed in the city marathon on Sunday.",
+    "translation": "להתחרות",
+    "cefr": "B1"
+  },
+  {
+    "word": "competitive",
+    "pos": "adjective",
+    "definition": "Eager to win, or involving strong rivalry.",
+    "example": "The job market for young graduates has become very competitive.",
+    "translation": "תחרותי",
+    "cefr": "B1"
+  },
+  {
+    "word": "complex",
+    "pos": "adjective",
+    "definition": "Made up of many connected parts and therefore hard to understand.",
+    "example": "The tax system in that country is notoriously complex.",
+    "translation": "מורכב",
+    "cefr": "B1"
+  },
+  {
+    "word": "complicated",
+    "pos": "adjective",
+    "definition": "Difficult to understand or deal with because of many parts.",
+    "example": "The instructions for the new printer were far too complicated.",
+    "translation": "מסובך",
+    "cefr": "B1"
+  },
+  {
+    "word": "concept",
+    "pos": "noun",
+    "definition": "A general idea or principle behind something.",
+    "example": "Students found the concept of gravity easy to grasp with the demonstration.",
+    "translation": "מושג, רעיון",
+    "cefr": "B1"
+  },
+  {
+    "word": "conclude",
+    "pos": "verb",
+    "definition": "To decide something after considering all the facts, or to finish.",
+    "example": "The judges concluded that the evidence was not strong enough.",
+    "translation": "להסיק, לסיים",
+    "cefr": "B1"
+  },
+  {
+    "word": "conclusion",
+    "pos": "noun",
+    "definition": "A final decision or judgement reached after thinking something through.",
+    "example": "After the debate, the class reached a clear conclusion.",
+    "translation": "מסקנה",
+    "cefr": "B1"
+  },
+  {
+    "word": "confidence",
+    "pos": "noun",
+    "definition": "A feeling of trust in your own abilities or in someone else.",
+    "example": "Winning the first match gave the team a lot of confidence.",
+    "translation": "ביטחון עצמי",
+    "cefr": "B1"
+  },
+  {
+    "word": "confirm",
+    "pos": "verb",
+    "definition": "To state or show that something is definitely true or correct.",
+    "example": "Please confirm your appointment by replying to this message.",
+    "translation": "לאשר",
+    "cefr": "B1"
+  },
+  {
+    "word": "conflict",
+    "pos": "noun",
+    "definition": "A serious disagreement or a state of open fighting.",
+    "example": "The two neighboring countries have been in conflict for decades.",
+    "translation": "סכסוך",
+    "cefr": "B1"
+  },
+  {
+    "word": "conscious",
+    "pos": "adjective",
+    "definition": "Aware of something, or awake and able to think.",
+    "example": "She was fully conscious of the risks before she signed the contract.",
+    "translation": "מודע",
     "cefr": "B1"
   },
   {
@@ -1664,6 +2224,14 @@
     "cefr": "B1"
   },
   {
+    "word": "constantly",
+    "pos": "adverb",
+    "definition": "Happening all the time, without stopping.",
+    "example": "The phone rang constantly throughout the entire afternoon.",
+    "translation": "ללא הרף",
+    "cefr": "B1"
+  },
+  {
     "word": "constitute",
     "pos": "verb",
     "definition": "To be the parts that something is made of, or to count as something.",
@@ -1672,11 +2240,123 @@
     "cefr": "B1"
   },
   {
+    "word": "construct",
+    "pos": "verb",
+    "definition": "To build something, or to put ideas together to form a theory.",
+    "example": "Workers plan to construct a new bridge across the river by next year.",
+    "translation": "לבנות",
+    "cefr": "B1"
+  },
+  {
+    "word": "consume",
+    "pos": "verb",
+    "definition": "To eat, drink, or use up something.",
+    "example": "The factory consumes a huge amount of electricity every day.",
+    "translation": "לצרוך",
+    "cefr": "B1"
+  },
+  {
+    "word": "contain",
+    "pos": "verb",
+    "definition": "To have something inside, or to include as a part.",
+    "example": "This bottle contains enough water for the whole hike.",
+    "translation": "להכיל",
+    "cefr": "B1"
+  },
+  {
+    "word": "contribute",
+    "pos": "verb",
+    "definition": "To give something, such as money, help, or ideas, as your share.",
+    "example": "Every member of the team contributed ideas to the final design.",
+    "translation": "לתרום",
+    "cefr": "B1"
+  },
+  {
+    "word": "controversial",
+    "pos": "adjective",
+    "definition": "Causing a lot of public disagreement or argument.",
+    "example": "The new law proved to be highly controversial among voters.",
+    "translation": "שנוי במחלוקת",
+    "cefr": "B1"
+  },
+  {
+    "word": "convince",
+    "pos": "verb",
+    "definition": "To make someone believe that something is true, or persuade them.",
+    "example": "It took a long conversation to convince her to join the trip.",
+    "translation": "לשכנע",
+    "cefr": "B1"
+  },
+  {
+    "word": "crisis",
+    "pos": "noun",
+    "definition": "A time of great danger, difficulty, or uncertainty.",
+    "example": "The company survived the financial crisis by cutting costs quickly.",
+    "translation": "משבר",
+    "cefr": "B1"
+  },
+  {
+    "word": "critical",
+    "pos": "adjective",
+    "definition": "Extremely important, or expressing disapproval and judgement.",
+    "example": "Clean water is critical for the survival of the whole village.",
+    "translation": "קריטי",
+    "cefr": "B1"
+  },
+  {
     "word": "curious",
     "pos": "adjective",
     "definition": "Wanting to know more about something, or strange in an interesting way.",
     "example": "A curious detail in the report went unnoticed for months.",
     "translation": "סקרן; מוזר",
+    "cefr": "B1"
+  },
+  {
+    "word": "currency",
+    "pos": "noun",
+    "definition": "The system of money used in a particular country.",
+    "example": "You will need to exchange your currency before travelling abroad.",
+    "translation": "מטבע",
+    "cefr": "B1"
+  },
+  {
+    "word": "define",
+    "pos": "verb",
+    "definition": "To explain the exact meaning of a word, or to describe clearly.",
+    "example": "The dictionary defines the word in three different ways.",
+    "translation": "להגדיר",
+    "cefr": "B1"
+  },
+  {
+    "word": "definite",
+    "pos": "adjective",
+    "definition": "Clear, certain, and not likely to change.",
+    "example": "We still don't have a definite date for the wedding.",
+    "translation": "ודאי, מוגדר",
+    "cefr": "B1"
+  },
+  {
+    "word": "deliver",
+    "pos": "verb",
+    "definition": "To bring something to a place or person, or to give a speech.",
+    "example": "The company promises to deliver every order within two days.",
+    "translation": "למסור, לספק",
+    "cefr": "B1"
+  },
+  {
+    "word": "demand",
+    "pos": "noun",
+    "definition": "A strong request, or the desire of customers for a product.",
+    "example": "Demand for the new phone was far higher than the factory expected.",
+    "translation": "ביקוש, דרישה",
+    "cefr": "B1"
+  },
+  {
+    "word": "demonstrate",
+    "pos": "verb",
+    "definition": "To show clearly that something is true, or to explain by example.",
+    "example": "The coach demonstrated the correct technique before letting us try it.",
+    "translation": "להדגים",
     "cefr": "B1"
   },
   {
@@ -1693,6 +2373,14 @@
     "definition": "To take something away from someone, or to prevent them from having it.",
     "example": "The new rules deprive part-time staff of the same travel allowance.",
     "translation": "לשלול מ-, למנוע מ-",
+    "cefr": "B1"
+  },
+  {
+    "word": "deserve",
+    "pos": "verb",
+    "definition": "To have earned something because of your actions or qualities.",
+    "example": "After such hard work, the whole team deserves a break.",
+    "translation": "להיות ראוי ל",
     "cefr": "B1"
   },
   {
@@ -1856,6 +2544,14 @@
     "cefr": "B1"
   },
   {
+    "word": "abandoned",
+    "pos": "adjective",
+    "definition": "Left behind and no longer used or cared for.",
+    "example": "The old abandoned factory has been empty for over twenty years.",
+    "translation": "נטוש",
+    "cefr": "B2"
+  },
+  {
     "word": "abolish",
     "pos": "verb",
     "definition": "To end a law, system or practice officially and permanently.",
@@ -1864,11 +2560,27 @@
     "cefr": "B2"
   },
   {
+    "word": "abruptly",
+    "pos": "adverb",
+    "definition": "Suddenly and without warning.",
+    "example": "The meeting ended abruptly when the fire alarm went off.",
+    "translation": "בפתאומיות",
+    "cefr": "B2"
+  },
+  {
     "word": "absurd",
     "pos": "adjective",
     "definition": "So unreasonable that it seems ridiculous.",
     "example": "It seemed absurd to close the only library in a town of ten thousand.",
     "translation": "אבסורדי, מגוחך",
+    "cefr": "B2"
+  },
+  {
+    "word": "abuse",
+    "pos": "noun",
+    "definition": "Cruel or unfair treatment, or the wrong use of something.",
+    "example": "The report exposed years of abuse within the organization.",
+    "translation": "התעללות, ניצול לרעה",
     "cefr": "B2"
   },
   {
@@ -1928,6 +2640,14 @@
     "cefr": "B2"
   },
   {
+    "word": "actual",
+    "pos": "adjective",
+    "definition": "Real and existing, rather than expected or imagined.",
+    "example": "The actual cost of the trip was far lower than we had planned.",
+    "translation": "ממשי",
+    "cefr": "B2"
+  },
+  {
     "word": "acute",
     "pos": "adjective",
     "definition": "Severe and sharp, or showing quick and accurate understanding.",
@@ -1941,6 +2661,14 @@
     "definition": "Able to change in order to suit new conditions.",
     "example": "An adaptable method survives the arrival of better data.",
     "translation": "מסתגל, גמיש",
+    "cefr": "B2"
+  },
+  {
+    "word": "addiction",
+    "pos": "noun",
+    "definition": "A strong, harmful need to keep doing or using something.",
+    "example": "His addiction to caffeine meant he drank six cups of coffee a day.",
+    "translation": "התמכרות",
     "cefr": "B2"
   },
   {
@@ -2608,6 +3336,14 @@
     "cefr": "B2"
   },
   {
+    "word": "colleague",
+    "pos": "noun",
+    "definition": "A person you work with, especially in a profession.",
+    "example": "She asked a colleague to cover her shift on Friday.",
+    "translation": "עמית לעבודה",
+    "cefr": "B2"
+  },
+  {
     "word": "commemorate",
     "pos": "verb",
     "definition": "To honour the memory of a person or event.",
@@ -2616,11 +3352,27 @@
     "cefr": "B2"
   },
   {
+    "word": "commerce",
+    "pos": "noun",
+    "definition": "The activity of buying and selling goods and services.",
+    "example": "The port has been a center of commerce for centuries.",
+    "translation": "מסחר",
+    "cefr": "B2"
+  },
+  {
     "word": "commission",
     "pos": "noun",
     "definition": "A group of people officially given a task, or payment for a sale made.",
     "example": "The commission will publish its findings on the accident next month.",
     "translation": "ועדה; עמלה",
+    "cefr": "B2"
+  },
+  {
+    "word": "community",
+    "pos": "noun",
+    "definition": "A group of people living in the same area or sharing interests.",
+    "example": "The whole community came together to rebuild the damaged school.",
+    "translation": "קהילה",
     "cefr": "B2"
   },
   {
@@ -2704,6 +3456,14 @@
     "cefr": "B2"
   },
   {
+    "word": "component",
+    "pos": "noun",
+    "definition": "One part of something larger, especially a machine or system.",
+    "example": "Each component of the engine is tested before it leaves the factory.",
+    "translation": "רכיב",
+    "cefr": "B2"
+  },
+  {
     "word": "comprehension",
     "pos": "noun",
     "definition": "The ability to understand something, especially written or spoken language.",
@@ -2784,6 +3544,14 @@
     "cefr": "B2"
   },
   {
+    "word": "conference",
+    "pos": "noun",
+    "definition": "A large meeting where people discuss ideas, often in a particular field.",
+    "example": "Researchers from around the world attended the science conference.",
+    "translation": "כנס",
+    "cefr": "B2"
+  },
+  {
     "word": "confess",
     "pos": "verb",
     "definition": "To admit something one is reluctant to reveal.",
@@ -2824,6 +3592,14 @@
     "cefr": "B2"
   },
   {
+    "word": "conquest",
+    "pos": "noun",
+    "definition": "The act of taking control of a place or people by force.",
+    "example": "The empire expanded rapidly through military conquest.",
+    "translation": "כיבוש",
+    "cefr": "B2"
+  },
+  {
     "word": "conscience",
     "pos": "noun",
     "definition": "An inner sense of right and wrong that guides behaviour.",
@@ -2845,6 +3621,14 @@
     "definition": "A general agreement reached among a group of people.",
     "example": "After hours of debate, the committee finally reached a consensus.",
     "translation": "קונצנזוס, הסכמה כללית",
+    "cefr": "B2"
+  },
+  {
+    "word": "consent",
+    "pos": "noun",
+    "definition": "Permission for something to happen, given willingly.",
+    "example": "The doctor cannot begin the treatment without the patient's consent.",
+    "translation": "הסכמה",
     "cefr": "B2"
   },
   {
@@ -2880,6 +3664,14 @@
     "cefr": "B2"
   },
   {
+    "word": "consultant",
+    "pos": "noun",
+    "definition": "A person who gives expert advice to a business or individual.",
+    "example": "The company hired a consultant to redesign its marketing strategy.",
+    "translation": "יועץ",
+    "cefr": "B2"
+  },
+  {
     "word": "contaminate",
     "pos": "verb",
     "definition": "To make something impure by adding a harmful substance.",
@@ -2901,6 +3693,14 @@
     "definition": "A strong feeling that someone or something deserves no respect.",
     "example": "He spoke about the decision with open contempt.",
     "translation": "בוז",
+    "cefr": "B2"
+  },
+  {
+    "word": "contract",
+    "pos": "noun",
+    "definition": "A written or spoken agreement that is legally binding.",
+    "example": "Both companies signed the contract after months of negotiation.",
+    "translation": "חוזה",
     "cefr": "B2"
   },
   {
@@ -2944,6 +3744,14 @@
     "cefr": "B2"
   },
   {
+    "word": "convention",
+    "pos": "noun",
+    "definition": "An accepted way of behaving, or a large formal meeting.",
+    "example": "According to social convention, guests should arrive on time.",
+    "translation": "מוסכמה, כנס",
+    "cefr": "B2"
+  },
+  {
     "word": "conventional",
     "pos": "adjective",
     "definition": "Following what is usually done, rather than being original.",
@@ -2957,6 +3765,14 @@
     "definition": "Used to introduce a fact or idea that is the opposite of one just stated.",
     "example": "Sales rose in the north; conversely, they fell sharply in the south.",
     "translation": "לעומת זאת, מנגד",
+    "cefr": "B2"
+  },
+  {
+    "word": "conversion",
+    "pos": "noun",
+    "definition": "The process of changing something from one form to another.",
+    "example": "The conversion of the old warehouse into apartments took two years.",
+    "translation": "המרה",
     "cefr": "B2"
   },
   {
@@ -2984,6 +3800,14 @@
     "cefr": "B2"
   },
   {
+    "word": "cooperative",
+    "pos": "adjective",
+    "definition": "Willing to work together with others, or based on shared effort.",
+    "example": "The two departments have been very cooperative during the merger.",
+    "translation": "שיתופי",
+    "cefr": "B2"
+  },
+  {
     "word": "cope",
     "pos": "verb",
     "definition": "To deal successfully with a difficult situation.",
@@ -2992,11 +3816,51 @@
     "cefr": "B2"
   },
   {
+    "word": "corporate",
+    "pos": "adjective",
+    "definition": "Relating to a large company or business organization.",
+    "example": "The new policy applies to all corporate offices worldwide.",
+    "translation": "תאגידי",
+    "cefr": "B2"
+  },
+  {
+    "word": "corporation",
+    "pos": "noun",
+    "definition": "A large company or group of companies acting as a single legal body.",
+    "example": "The corporation employs over ten thousand people globally.",
+    "translation": "תאגיד",
+    "cefr": "B2"
+  },
+  {
     "word": "correspond",
     "pos": "verb",
     "definition": "To match or be equivalent to something, or to exchange letters.",
     "example": "Each score band corresponds to a published CEFR level.",
     "translation": "להתאים, להתכתב",
+    "cefr": "B2"
+  },
+  {
+    "word": "correspondence",
+    "pos": "noun",
+    "definition": "Letters or messages exchanged between people, or a close similarity.",
+    "example": "Their correspondence continued for years after the conference.",
+    "translation": "התכתבות",
+    "cefr": "B2"
+  },
+  {
+    "word": "correspondent",
+    "pos": "noun",
+    "definition": "A journalist who reports news from a particular place or subject.",
+    "example": "The foreign correspondent reported live from the disaster zone.",
+    "translation": "כתב",
+    "cefr": "B2"
+  },
+  {
+    "word": "corresponding",
+    "pos": "adjective",
+    "definition": "Matching or related to something else in a similar way.",
+    "example": "Each chart has a corresponding table with the exact numbers.",
+    "translation": "מקביל, תואם",
     "cefr": "B2"
   },
   {
@@ -3024,11 +3888,67 @@
     "cefr": "B2"
   },
   {
+    "word": "courtesy",
+    "pos": "noun",
+    "definition": "Polite behavior and respect shown toward other people.",
+    "example": "He held the door open out of simple courtesy.",
+    "translation": "נימוס",
+    "cefr": "B2"
+  },
+  {
+    "word": "crawl",
+    "pos": "verb",
+    "definition": "To move slowly on hands and knees, or to move very slowly.",
+    "example": "The baby crawled across the living room floor toward the toy.",
+    "translation": "לזחול",
+    "cefr": "B2"
+  },
+  {
+    "word": "crew",
+    "pos": "noun",
+    "definition": "A group of people who work together, especially on a ship, plane, or film.",
+    "example": "The film crew worked through the night to finish the final scene.",
+    "translation": "צוות",
+    "cefr": "B2"
+  },
+  {
+    "word": "criticism",
+    "pos": "noun",
+    "definition": "Comments that point out faults or judge something negatively.",
+    "example": "The film received harsh criticism from several major reviewers.",
+    "translation": "ביקורת",
+    "cefr": "B2"
+  },
+  {
     "word": "crucial",
     "pos": "adjective",
     "definition": "Extremely important because other things depend on it.",
     "example": "Pacing is crucial: the section ends whether or not you have finished.",
     "translation": "מכריע, קריטי",
+    "cefr": "B2"
+  },
+  {
+    "word": "data",
+    "pos": "noun",
+    "definition": "Facts and figures collected for reference or analysis.",
+    "example": "The scientists gathered data from thousands of ocean samples.",
+    "translation": "נתונים",
+    "cefr": "B2"
+  },
+  {
+    "word": "database",
+    "pos": "noun",
+    "definition": "An organized collection of information stored on a computer.",
+    "example": "All customer orders are stored in a single central database.",
+    "translation": "מסד נתונים",
+    "cefr": "B2"
+  },
+  {
+    "word": "decade",
+    "pos": "noun",
+    "definition": "A period of ten years.",
+    "example": "The town has changed enormously over the past decade.",
+    "translation": "עשור",
     "cefr": "B2"
   },
   {
@@ -3064,11 +3984,27 @@
     "cefr": "B2"
   },
   {
+    "word": "dedication",
+    "pos": "noun",
+    "definition": "Great effort and loyalty given to a task, cause, or person.",
+    "example": "Her dedication to the project impressed the entire committee.",
+    "translation": "מסירות",
+    "cefr": "B2"
+  },
+  {
     "word": "deduce",
     "pos": "verb",
     "definition": "To reach a conclusion by reasoning from what is known.",
     "example": "From the wear on the steps one can deduce how the building was used.",
     "translation": "להסיק",
+    "cefr": "B2"
+  },
+  {
+    "word": "deduction",
+    "pos": "noun",
+    "definition": "A conclusion reached through reasoning, or an amount subtracted.",
+    "example": "The detective made a clever deduction from the muddy footprints.",
+    "translation": "היקש, ניכוי",
     "cefr": "B2"
   },
   {
@@ -3096,11 +4032,27 @@
     "cefr": "B2"
   },
   {
+    "word": "delegate",
+    "pos": "noun",
+    "definition": "A person chosen to represent others at a meeting or conference.",
+    "example": "Each country sent one delegate to the climate summit.",
+    "translation": "נציג",
+    "cefr": "B2"
+  },
+  {
     "word": "deliberate",
     "pos": "adjective",
     "definition": "Done on purpose rather than by accident, or slow and careful.",
     "example": "The omission was deliberate, and the committee later explained why.",
     "translation": "מכוון; מדוד, שקול",
+    "cefr": "B2"
+  },
+  {
+    "word": "deliberately",
+    "pos": "adverb",
+    "definition": "On purpose, intentionally.",
+    "example": "She deliberately arrived early to prepare the room before guests came.",
+    "translation": "בכוונה",
     "cefr": "B2"
   },
   {
@@ -3160,11 +4112,35 @@
     "cefr": "B2"
   },
   {
+    "word": "desperately",
+    "pos": "adverb",
+    "definition": "In a way that shows extreme need, fear, or urgency.",
+    "example": "The stranded hikers desperately searched for a signal on their phones.",
+    "translation": "בייאוש",
+    "cefr": "B2"
+  },
+  {
+    "word": "desperation",
+    "pos": "noun",
+    "definition": "A feeling of hopelessness that leads to extreme action.",
+    "example": "In desperation, the company sold its headquarters to pay its debts.",
+    "translation": "ייאוש",
+    "cefr": "B2"
+  },
+  {
     "word": "despise",
     "pos": "verb",
     "definition": "To dislike someone or something intensely.",
     "example": "He despised the practice but followed it for years.",
     "translation": "לבוז, לתעב",
+    "cefr": "B2"
+  },
+  {
+    "word": "destiny",
+    "pos": "noun",
+    "definition": "The events that will necessarily happen to someone in the future, as if predetermined.",
+    "example": "He believed it was his destiny to become a great musician.",
+    "translation": "גורל",
     "cefr": "B2"
   },
   {
@@ -3192,11 +4168,27 @@
     "cefr": "B2"
   },
   {
+    "word": "developing",
+    "pos": "adjective",
+    "definition": "Growing or changing, especially describing a country building its economy.",
+    "example": "The charity focuses on health projects in developing countries.",
+    "translation": "מתפתח",
+    "cefr": "B2"
+  },
+  {
     "word": "devote",
     "pos": "verb",
     "definition": "To give time or effort entirely to one purpose.",
     "example": "She devoted the last decade of her career to the question.",
     "translation": "להקדיש",
+    "cefr": "B2"
+  },
+  {
+    "word": "dignity",
+    "pos": "noun",
+    "definition": "The quality of being worthy of respect, or calm, serious behavior.",
+    "example": "Even after losing, she accepted the result with great dignity.",
+    "translation": "כבוד עצמי",
     "cefr": "B2"
   },
   {
@@ -3213,6 +4205,38 @@
     "definition": "A measurement of size, or an aspect of a situation.",
     "example": "The report added a political dimension the researchers had not considered.",
     "translation": "מימד; היבט",
+    "cefr": "B2"
+  },
+  {
+    "word": "diplomat",
+    "pos": "noun",
+    "definition": "An official who represents their country in relations with others.",
+    "example": "The diplomat spent years negotiating peace between the two nations.",
+    "translation": "דיפלומט",
+    "cefr": "B2"
+  },
+  {
+    "word": "disapproval",
+    "pos": "noun",
+    "definition": "A feeling that something is wrong or not good enough.",
+    "example": "Her parents showed clear disapproval when she quit her stable job.",
+    "translation": "אי הסכמה",
+    "cefr": "B2"
+  },
+  {
+    "word": "disapprove",
+    "pos": "verb",
+    "definition": "To have or express an unfavorable opinion of something.",
+    "example": "The committee disapproved of the plan to close the local library.",
+    "translation": "לגנות, להתנגד",
+    "cefr": "B2"
+  },
+  {
+    "word": "discharge",
+    "pos": "noun",
+    "definition": "The act of releasing someone or something, such as a patient or waste.",
+    "example": "The hospital arranged the patient's discharge for Friday morning.",
+    "translation": "שחרור",
     "cefr": "B2"
   },
   {
@@ -3245,6 +4269,14 @@
     "definition": "To reject an idea without serious consideration, or to remove someone from a job.",
     "example": "The board dismissed the objection in under a minute.",
     "translation": "לדחות על הסף; לפטר",
+    "cefr": "B2"
+  },
+  {
+    "word": "disorder",
+    "pos": "noun",
+    "definition": "A lack of order, or a medical condition affecting normal function.",
+    "example": "The doctor diagnosed him with a rare sleep disorder.",
+    "translation": "הפרעה, אי-סדר",
     "cefr": "B2"
   },
   {
@@ -3285,6 +4317,14 @@
     "definition": "To interrupt something so that it cannot continue normally.",
     "example": "Roadworks disrupted deliveries across the district for a fortnight.",
     "translation": "לשבש, להפריע",
+    "cefr": "B2"
+  },
+  {
+    "word": "dissatisfaction",
+    "pos": "noun",
+    "definition": "A feeling of being unhappy with something.",
+    "example": "Growing dissatisfaction among workers led to the strike.",
+    "translation": "אי שביעות רצון",
     "cefr": "B2"
   },
   {
@@ -5352,6 +6392,14 @@
     "cefr": "C1"
   },
   {
+    "word": "exterior",
+    "pos": "noun",
+    "definition": "The outer surface or appearance of something.",
+    "example": "Workers repainted the exterior of the old building last summer.",
+    "translation": "חיצוני, חזית",
+    "cefr": "C1"
+  },
+  {
     "word": "extravagance",
     "pos": "noun",
     "definition": "Spending or behaviour that goes well beyond what is reasonable.",
@@ -5373,6 +6421,14 @@
     "definition": "Full of energy, excitement, and cheerfulness.",
     "example": "The exuberant welcome at the airport surprised the returning team.",
     "translation": "נמרץ, עליז",
+    "cefr": "C1"
+  },
+  {
+    "word": "facilitation",
+    "pos": "noun",
+    "definition": "The act of making a process or action easier.",
+    "example": "Her role involves the facilitation of talks between the two departments.",
+    "translation": "הקלה, סיוע",
     "cefr": "C1"
   },
   {
@@ -5501,6 +6557,14 @@
     "definition": "The process of joining two or more things into a single whole.",
     "example": "The style is a fusion of two traditions that never met geographically.",
     "translation": "מיזוג, היתוך",
+    "cefr": "C1"
+  },
+  {
+    "word": "geological",
+    "pos": "adjective",
+    "definition": "Relating to the physical structure and history of the Earth.",
+    "example": "The canyon reveals millions of years of geological history.",
+    "translation": "גיאולוגי",
     "cefr": "C1"
   },
   {
@@ -5904,6 +6968,30 @@
     "cefr": "C1"
   },
   {
+    "word": "irony",
+    "pos": "noun",
+    "definition": "A situation or use of words in which the outcome is opposite to what is expected.",
+    "example": "It was a bitter irony that the fire station itself caught fire.",
+    "translation": "אירוניה",
+    "cefr": "C1"
+  },
+  {
+    "word": "isolate",
+    "pos": "verb",
+    "definition": "To separate someone or something from others.",
+    "example": "Doctors had to isolate the patient to prevent the infection from spreading.",
+    "translation": "לבודד",
+    "cefr": "C1"
+  },
+  {
+    "word": "isolated",
+    "pos": "adjective",
+    "definition": "Far away from other places or people, or kept separate.",
+    "example": "The research station is isolated from the nearest town by miles of ice.",
+    "translation": "מבודד",
+    "cefr": "C1"
+  },
+  {
     "word": "jurisdiction",
     "pos": "noun",
     "definition": "The official power to make legal decisions, or the area where that power applies.",
@@ -5944,6 +7032,14 @@
     "cefr": "C1"
   },
   {
+    "word": "likelihood",
+    "pos": "noun",
+    "definition": "The chance that something will happen.",
+    "example": "There is a strong likelihood that the meeting will be postponed.",
+    "translation": "סבירות",
+    "cefr": "C1"
+  },
+  {
     "word": "limitless",
     "pos": "adjective",
     "definition": "Having no end or boundary.",
@@ -5976,6 +7072,14 @@
     "cefr": "C1"
   },
   {
+    "word": "manipulation",
+    "pos": "noun",
+    "definition": "The act of controlling or influencing someone or something cleverly and often unfairly.",
+    "example": "The journalist accused the company of manipulation of its sales figures.",
+    "translation": "מניפולציה",
+    "cefr": "C1"
+  },
+  {
     "word": "marginal",
     "pos": "adjective",
     "definition": "So small as to be barely important, or at the edge of something.",
@@ -5984,11 +7088,27 @@
     "cefr": "C1"
   },
   {
+    "word": "marginally",
+    "pos": "adverb",
+    "definition": "To a very small degree, only slightly.",
+    "example": "The new engine is marginally more efficient than the older model.",
+    "translation": "באופן שולי",
+    "cefr": "C1"
+  },
+  {
     "word": "meaningless",
     "pos": "adjective",
     "definition": "Having no purpose or no possible interpretation.",
     "example": "Without a control group the comparison is meaningless.",
     "translation": "חסר משמעות",
+    "cefr": "C1"
+  },
+  {
+    "word": "mechanism",
+    "pos": "noun",
+    "definition": "A system of parts that work together, or a process for achieving something.",
+    "example": "The clock's mechanism had not been cleaned in over a century.",
+    "translation": "מנגנון",
     "cefr": "C1"
   },
   {
@@ -6016,11 +7136,35 @@
     "cefr": "C1"
   },
   {
+    "word": "mutually",
+    "pos": "adverb",
+    "definition": "In a way that affects or is shared by two or more parties equally.",
+    "example": "The two companies reached a mutually beneficial agreement.",
+    "translation": "באופן הדדי",
+    "cefr": "C1"
+  },
+  {
     "word": "naive",
     "pos": "adjective",
     "definition": "Lacking experience and too ready to believe things.",
     "example": "It is naive to assume the first explanation is the only one.",
     "translation": "נאיבי, תמים",
+    "cefr": "C1"
+  },
+  {
+    "word": "naively",
+    "pos": "adverb",
+    "definition": "In a way that shows a lack of experience or judgement.",
+    "example": "He naively believed the offer was too good to have any risk.",
+    "translation": "בתמימות",
+    "cefr": "C1"
+  },
+  {
+    "word": "naivety",
+    "pos": "noun",
+    "definition": "A lack of experience, wisdom, or judgement.",
+    "example": "Her naivety about the contract cost the company thousands.",
+    "translation": "תמימות",
     "cefr": "C1"
   },
   {
@@ -6040,11 +7184,43 @@
     "cefr": "C1"
   },
   {
+    "word": "niche",
+    "pos": "noun",
+    "definition": "A specialized position or market suited to a particular person or product.",
+    "example": "The small bakery found a profitable niche selling gluten-free bread.",
+    "translation": "נישה",
+    "cefr": "C1"
+  },
+  {
+    "word": "nocturnal",
+    "pos": "adjective",
+    "definition": "Active during the night rather than the day.",
+    "example": "Owls are nocturnal birds that hunt for food after dark.",
+    "translation": "לילי",
+    "cefr": "C1"
+  },
+  {
+    "word": "norms",
+    "pos": "noun",
+    "definition": "Standards of behavior that are typical or expected within a group.",
+    "example": "Wearing shoes indoors goes against the cultural norms of that country.",
+    "translation": "נורמות",
+    "cefr": "C1"
+  },
+  {
     "word": "notable",
     "pos": "adjective",
     "definition": "Deserving attention because of importance or unusual quality.",
     "example": "One notable exception undermines the whole generalisation.",
     "translation": "בולט, ראוי לציון",
+    "cefr": "C1"
+  },
+  {
+    "word": "numb",
+    "pos": "adjective",
+    "definition": "Unable to feel anything in part of the body, or emotionally unresponsive.",
+    "example": "Her fingers went numb from the freezing wind on the mountain.",
+    "translation": "קהה, חסר תחושה",
     "cefr": "C1"
   },
   {
@@ -6064,6 +7240,46 @@
     "cefr": "C1"
   },
   {
+    "word": "occupational",
+    "pos": "adjective",
+    "definition": "Relating to a person's job or profession.",
+    "example": "Builders face several occupational hazards on a construction site.",
+    "translation": "תעסוקתי",
+    "cefr": "C1"
+  },
+  {
+    "word": "offspring",
+    "pos": "noun",
+    "definition": "The young of a person, animal, or plant.",
+    "example": "Most animals protect their offspring from predators when they are young.",
+    "translation": "צאצאים",
+    "cefr": "C1"
+  },
+  {
+    "word": "ordinarily",
+    "pos": "adverb",
+    "definition": "Normally, in the usual course of events.",
+    "example": "Ordinarily, the office closes at five, but tonight everyone stayed late.",
+    "translation": "בדרך כלל",
+    "cefr": "C1"
+  },
+  {
+    "word": "organizational",
+    "pos": "adjective",
+    "definition": "Relating to the way a group or company is arranged and run.",
+    "example": "The merger created serious organizational challenges for both firms.",
+    "translation": "ארגוני",
+    "cefr": "C1"
+  },
+  {
+    "word": "outset",
+    "pos": "noun",
+    "definition": "The beginning of something.",
+    "example": "From the outset, the project was expected to take three years.",
+    "translation": "התחלה, ראשית",
+    "cefr": "C1"
+  },
+  {
     "word": "oversee",
     "pos": "verb",
     "definition": "To watch over work and be responsible for how it is done.",
@@ -6072,11 +7288,43 @@
     "cefr": "C1"
   },
   {
+    "word": "panoramic",
+    "pos": "adjective",
+    "definition": "Giving a wide view of a large area.",
+    "example": "The hotel room offered a panoramic view of the entire valley.",
+    "translation": "פנורמי",
+    "cefr": "C1"
+  },
+  {
+    "word": "parasite",
+    "pos": "noun",
+    "definition": "An organism that lives on or in another and takes nutrients from it.",
+    "example": "The vet found a parasite living inside the dog's fur.",
+    "translation": "טפיל",
+    "cefr": "C1"
+  },
+  {
+    "word": "peninsula",
+    "pos": "noun",
+    "definition": "A piece of land almost surrounded by water and connected to a larger mass.",
+    "example": "The old fishing village sits on the tip of a narrow peninsula.",
+    "translation": "חצי אי",
+    "cefr": "C1"
+  },
+  {
     "word": "perceptive",
     "pos": "adjective",
     "definition": "Quick to notice and understand things others miss.",
     "example": "A perceptive reader will see the contradiction in the second paragraph.",
     "translation": "חד-אבחנה, קולט מהר",
+    "cefr": "C1"
+  },
+  {
+    "word": "perceptively",
+    "pos": "adverb",
+    "definition": "In a way that shows a clear understanding of things not obvious to others.",
+    "example": "The reviewer perceptively noted the film's hidden political message.",
+    "translation": "בחדות תפיסה",
     "cefr": "C1"
   },
   {
@@ -6096,6 +7344,22 @@
     "cefr": "C1"
   },
   {
+    "word": "persecution",
+    "pos": "noun",
+    "definition": "Cruel and unfair treatment of a person or group, often because of their beliefs.",
+    "example": "The family fled the country to escape religious persecution.",
+    "translation": "רדיפה",
+    "cefr": "C1"
+  },
+  {
+    "word": "persuasively",
+    "pos": "adverb",
+    "definition": "In a manner that convinces others to believe or do something.",
+    "example": "She argued persuasively for more funding for public transport.",
+    "translation": "בצורה משכנעת",
+    "cefr": "C1"
+  },
+  {
     "word": "pertinent",
     "pos": "adjective",
     "definition": "Directly relevant to the matter being discussed.",
@@ -6109,6 +7373,22 @@
     "definition": "Remarkable to an extraordinary degree.",
     "example": "The growth was phenomenal and nobody expected it to last.",
     "translation": "יוצא מן הכלל, פנומנלי",
+    "cefr": "C1"
+  },
+  {
+    "word": "phenomenally",
+    "pos": "adverb",
+    "definition": "Extremely, to a remarkable degree.",
+    "example": "The small startup grew phenomenally within just two years.",
+    "translation": "באופן יוצא דופן",
+    "cefr": "C1"
+  },
+  {
+    "word": "physique",
+    "pos": "noun",
+    "definition": "The shape and size of a person's body.",
+    "example": "Years of swimming had given him an athletic physique.",
+    "translation": "מבנה גוף",
     "cefr": "C1"
   },
   {
@@ -6128,11 +7408,35 @@
     "cefr": "C1"
   },
   {
+    "word": "plausibility",
+    "pos": "noun",
+    "definition": "The quality of seeming likely to be true or reasonable.",
+    "example": "Investors questioned the plausibility of the company's growth forecast.",
+    "translation": "סבירות",
+    "cefr": "C1"
+  },
+  {
     "word": "plausible",
     "pos": "adjective",
     "definition": "Seeming reasonable enough to be believed, though possibly false.",
     "example": "Every distractor must be plausible, or the question tests nothing.",
     "translation": "סביר, מתקבל על הדעת",
+    "cefr": "C1"
+  },
+  {
+    "word": "plausibly",
+    "pos": "adverb",
+    "definition": "In a way that seems likely to be true or reasonable.",
+    "example": "The witness plausibly explained why he had left the scene early.",
+    "translation": "באופן סביר",
+    "cefr": "C1"
+  },
+  {
+    "word": "pleasurable",
+    "pos": "adjective",
+    "definition": "Giving a feeling of enjoyment or satisfaction.",
+    "example": "Reading by the fire on a cold evening is deeply pleasurable.",
+    "translation": "מהנה",
     "cefr": "C1"
   },
   {
@@ -6144,6 +7448,14 @@
     "cefr": "C1"
   },
   {
+    "word": "portable",
+    "pos": "adjective",
+    "definition": "Designed to be easily carried or moved.",
+    "example": "The new laptop is light and fully portable for travel.",
+    "translation": "נייד",
+    "cefr": "C1"
+  },
+  {
     "word": "portray",
     "pos": "verb",
     "definition": "To describe or represent someone in a particular way.",
@@ -6152,11 +7464,59 @@
     "cefr": "C1"
   },
   {
+    "word": "portrayal",
+    "pos": "noun",
+    "definition": "The way a person, character, or situation is represented in art or writing.",
+    "example": "Critics praised the actor's portrayal of the troubled scientist.",
+    "translation": "תיאור, גילום",
+    "cefr": "C1"
+  },
+  {
+    "word": "posture",
+    "pos": "noun",
+    "definition": "The position in which someone holds their body when sitting or standing.",
+    "example": "Sitting at a desk all day can damage your posture over time.",
+    "translation": "יציבה",
+    "cefr": "C1"
+  },
+  {
+    "word": "precision",
+    "pos": "noun",
+    "definition": "The quality of being exact and accurate.",
+    "example": "The surgeon performed the operation with remarkable precision.",
+    "translation": "דיוק",
+    "cefr": "C1"
+  },
+  {
     "word": "predecessor",
     "pos": "noun",
     "definition": "The person who held a job or position before the current one.",
     "example": "Unlike her predecessor, she published the budget in full each year.",
     "translation": "קודם בתפקיד",
+    "cefr": "C1"
+  },
+  {
+    "word": "premise",
+    "pos": "noun",
+    "definition": "An idea or theory that a plan or argument is based on.",
+    "example": "The whole argument rests on a single, questionable premise.",
+    "translation": "הנחת יסוד",
+    "cefr": "C1"
+  },
+  {
+    "word": "premises",
+    "pos": "noun",
+    "definition": "A building and the land it stands on, used for business or other purposes.",
+    "example": "Visitors must sign in before entering the company premises.",
+    "translation": "מתחם, שטח בית עסק",
+    "cefr": "C1"
+  },
+  {
+    "word": "principally",
+    "pos": "adverb",
+    "definition": "Mainly, mostly.",
+    "example": "The charity is funded principally by private donations.",
+    "translation": "בעיקר",
     "cefr": "C1"
   },
   {
@@ -6176,11 +7536,27 @@
     "cefr": "C1"
   },
   {
+    "word": "professionalism",
+    "pos": "noun",
+    "definition": "Skill, competence, and appropriate conduct expected in a job.",
+    "example": "The nurse handled the emergency with impressive professionalism.",
+    "translation": "מקצועיות",
+    "cefr": "C1"
+  },
+  {
     "word": "profound",
     "pos": "adjective",
     "definition": "Very great in degree, or showing deep insight.",
     "example": "The change had a profound effect on how the subject is taught.",
     "translation": "עמוק, מרחיק לכת",
+    "cefr": "C1"
+  },
+  {
+    "word": "profoundly",
+    "pos": "adverb",
+    "definition": "Very greatly or deeply.",
+    "example": "The loss of her mentor affected her profoundly for years.",
+    "translation": "עמוקות",
     "cefr": "C1"
   },
   {
@@ -6192,11 +7568,51 @@
     "cefr": "C1"
   },
   {
+    "word": "prohibitively",
+    "pos": "adverb",
+    "definition": "To such an extreme degree that something becomes impossible or impractical.",
+    "example": "Housing in the city center has become prohibitively expensive for most families.",
+    "translation": "באופן בלתי אפשרי (לרוב לגבי מחיר)",
+    "cefr": "C1"
+  },
+  {
     "word": "proliferate",
     "pos": "verb",
     "definition": "To increase rapidly in number and spread widely.",
     "example": "Unverified copies of the list proliferated faster than corrections could follow.",
     "translation": "להתרבות, להתפשט",
+    "cefr": "C1"
+  },
+  {
+    "word": "prolific",
+    "pos": "adjective",
+    "definition": "Producing a large number of works, results, or offspring.",
+    "example": "The prolific author published more than forty novels in her lifetime.",
+    "translation": "פורה, פרודוקטיבי",
+    "cefr": "C1"
+  },
+  {
+    "word": "prospective",
+    "pos": "adjective",
+    "definition": "Likely to happen or become something in the future; potential.",
+    "example": "The agency sent brochures to every prospective buyer on the list.",
+    "translation": "פוטנציאלי, עתידי",
+    "cefr": "C1"
+  },
+  {
+    "word": "protagonist",
+    "pos": "noun",
+    "definition": "The main character in a story, play, or film.",
+    "example": "The protagonist must choose between loyalty and ambition by the final chapter.",
+    "translation": "דמות ראשית",
+    "cefr": "C1"
+  },
+  {
+    "word": "provocative",
+    "pos": "adjective",
+    "definition": "Intended to cause strong feelings, discussion, or anger.",
+    "example": "The artist's provocative painting sparked debate across the country.",
+    "translation": "מעורר פולמוס",
     "cefr": "C1"
   },
   {
@@ -6208,11 +7624,27 @@
     "cefr": "C1"
   },
   {
+    "word": "psychiatric",
+    "pos": "adjective",
+    "definition": "Relating to the treatment of mental illness.",
+    "example": "She works at a psychiatric hospital that treats severe anxiety disorders.",
+    "translation": "פסיכיאטרי",
+    "cefr": "C1"
+  },
+  {
     "word": "reap",
     "pos": "verb",
     "definition": "To gain something as a result of earlier effort.",
     "example": "Students who start early reap the benefit in the final weeks.",
     "translation": "לקצור, להפיק",
+    "cefr": "C1"
+  },
+  {
+    "word": "reassurance",
+    "pos": "noun",
+    "definition": "Words or actions that remove someone's doubts or fears.",
+    "example": "The doctor's calm reassurance helped the frightened family relax.",
+    "translation": "הרגעה",
     "cefr": "C1"
   },
   {
@@ -6229,6 +7661,14 @@
     "definition": "To give up something you hold, such as power, a claim or control.",
     "example": "She relinquished her seat on the board after twelve years.",
     "translation": "לוותר על, למסור",
+    "cefr": "C1"
+  },
+  {
+    "word": "reluctantly",
+    "pos": "adverb",
+    "definition": "Unwillingly, without wanting to do something.",
+    "example": "He reluctantly agreed to give up his seat on the crowded train.",
+    "translation": "בהיסוס, בחוסר רצון",
     "cefr": "C1"
   },
   {
