@@ -133,6 +133,35 @@ def get_distractors(conn: sqlite3.Connection, question_id: int) -> list[sqlite3.
     ).fetchall()
 
 
+def get_passage(conn: sqlite3.Connection, passage_id: int) -> sqlite3.Row | None:
+    return conn.execute(
+        "SELECT * FROM passages WHERE id = ?", (passage_id,)
+    ).fetchone()
+
+
+def listening_passages(
+    conn: sqlite3.Connection, *, missing_audio_only: bool = False
+) -> list[sqlite3.Row]:
+    """Listening passages, optionally only those with no audio_path yet.
+
+    What pipeline.generate_audio iterates over.
+    """
+    where = "kind = 'listening'"
+    if missing_audio_only:
+        where += " AND audio_path IS NULL"
+    return conn.execute(
+        f"SELECT * FROM passages WHERE {where} ORDER BY id"
+    ).fetchall()
+
+
+def set_passage_audio(conn: sqlite3.Connection, passage_id: int, audio_path: str) -> None:
+    conn.execute(
+        "UPDATE passages SET audio_path = ?, updated_at = datetime('now') WHERE id = ?",
+        (audio_path, passage_id),
+    )
+    conn.commit()
+
+
 def counts_by_status(conn: sqlite3.Connection) -> list[sqlite3.Row]:
     """Bank composition — what the end-of-September checkpoint is measured against."""
     return conn.execute(
