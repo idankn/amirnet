@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { AnswerOption } from '../components/AnswerOption';
 import { colors, english, hebrew, radii, spacing, type } from '../theme';
@@ -16,7 +16,22 @@ interface Props {
    * rather than what the user picked tells you nothing about the question.
    */
   onAnswered: (question: Question, correct: boolean, chosenIndex: number) => void;
+  /** Called when the user flags a question as broken, with the reason they picked. */
+  onReport: (question: Question, reason: string) => void;
 }
+
+/**
+ * Fixed reasons rather than free text — this only has to get a question in
+ * front of a human reviewer, not collect a written report. See CLAUDE.md §5
+ * stage 6: low success rate plus reports is what flags a question as broken
+ * rather than merely hard.
+ */
+const REPORT_REASONS = [
+  'התשובה המסומנת שגויה',
+  'יש יותר מתשובה נכונה אחת',
+  'ההסבר לא ברור',
+  'משהו אחר',
+];
 
 /**
  * The shared practice engine: question -> answers -> explanation.
@@ -25,11 +40,21 @@ interface Props {
  * ABOVE the prompt rather than getting its own screen — that's the whole point
  * of one shared structure.
  */
-export function PracticeScreen({ questions, passages, onExit, onAnswered }: Props) {
+export function PracticeScreen({
+  questions,
+  passages,
+  onExit,
+  onAnswered,
+  onReport,
+}: Props) {
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [answered, setAnswered] = useState(false);
   const [correctCount, setCorrectCount] = useState(0);
+  const [reportOpen, setReportOpen] = useState(false);
+  // Kept for the whole session rather than per-question, so "thanks, reported"
+  // stays visible even though nothing else here tracks history across questions.
+  const [reportedIds, setReportedIds] = useState<Set<string>>(new Set());
   /**
    * A passage is ~200 words and carries five questions. Left expanded it
    * pushes the options below the fold on every one of them, so you end up
@@ -89,6 +114,12 @@ export function PracticeScreen({ questions, passages, onExit, onAnswered }: Prop
     setIndex((i) => i + 1);
     setSelected(null);
     setAnswered(false);
+  }
+
+  function submitReport(reason: string) {
+    onReport(question, reason);
+    setReportedIds((ids) => new Set(ids).add(question.id));
+    setReportOpen(false);
   }
 
   return (
@@ -159,7 +190,47 @@ export function PracticeScreen({ questions, passages, onExit, onAnswered }: Prop
             <Text style={styles.explanation}>{question.explanation}</Text>
           </View>
         )}
+
+        {answered &&
+          (reportedIds.has(question.id) ? (
+            <Text style={styles.reportedText}>תודה, נבדוק את השאלה הזו.</Text>
+          ) : (
+            <Pressable onPress={() => setReportOpen(true)} hitSlop={8}>
+              <Text style={styles.reportLink}>יש בעיה בשאלה הזו?</Text>
+            </Pressable>
+          ))}
       </ScrollView>
+
+      <Modal
+        visible={reportOpen}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setReportOpen(false)}
+      >
+        <Pressable
+          style={styles.reportBackdrop}
+          onPress={() => setReportOpen(false)}
+        >
+          <Pressable style={styles.reportCard} onPress={() => {}}>
+            <Text style={styles.reportTitle}>מה הבעיה?</Text>
+            {REPORT_REASONS.map((reason) => (
+              <Pressable
+                key={reason}
+                style={styles.reportOption}
+                onPress={() => submitReport(reason)}
+              >
+                <Text style={styles.reportOptionText}>{reason}</Text>
+              </Pressable>
+            ))}
+            <Pressable
+              style={styles.reportCancel}
+              onPress={() => setReportOpen(false)}
+            >
+              <Text style={styles.reportCancelText}>ביטול</Text>
+            </Pressable>
+          </Pressable>
+        </Pressable>
+      </Modal>
 
       <View style={styles.footer}>
         {answered ? (
@@ -266,6 +337,51 @@ const styles = StyleSheet.create({
     color: colors.textBody,
     ...english,
   },
+
+  reportLink: {
+    ...type.caption,
+    ...hebrew,
+    color: colors.textSecondary,
+    textAlign: 'center',
+  },
+  reportedText: {
+    ...type.caption,
+    ...hebrew,
+    color: colors.textSecondary,
+    textAlign: 'center',
+  },
+
+  reportBackdrop: {
+    flex: 1,
+    backgroundColor: 'rgba(46, 42, 61, 0.45)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: spacing.xl,
+  },
+  reportCard: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: colors.surface,
+    borderRadius: radii.screen,
+    padding: spacing.xl,
+    gap: spacing.sm,
+  },
+  reportTitle: {
+    ...type.heading,
+    ...hebrew,
+    textAlign: 'center',
+    marginBottom: spacing.xs,
+  },
+  reportOption: {
+    borderWidth: 1,
+    borderColor: colors.border,
+    borderRadius: radii.button,
+    paddingVertical: spacing.md,
+    alignItems: 'center',
+  },
+  reportOptionText: { ...type.body, ...hebrew, color: colors.textPrimary },
+  reportCancel: { paddingVertical: spacing.sm, alignItems: 'center' },
+  reportCancelText: { ...type.label, ...hebrew, color: colors.textSecondary },
 
   footer: {
     padding: spacing.lg,

@@ -20,6 +20,7 @@ import {
   MembersOnlyError,
   fetchUsage,
   recordAttempt,
+  reportQuestion,
   requestPractice,
   requestSimulation,
   type Usage,
@@ -285,6 +286,16 @@ function AppContent() {
                 isCorrect: correct,
               });
             }
+          }}
+          onReport={(question, reason) => {
+            if (!session?.user) return;
+            // Fire-and-forget, same as recordAttempt above: a failed report
+            // must never interrupt practice.
+            reportQuestion({
+              userId: session.user.id,
+              questionId: question.id,
+              reason,
+            }).catch(() => {});
           }}
         />
       )}
