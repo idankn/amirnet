@@ -151,6 +151,36 @@ class ReadingItem(BaseModel):
     )
 
 
+class ListeningItem(BaseModel):
+    """A transcript meant to be read aloud, plus its five questions.
+
+    Same shape as ReadingItem — same five question kinds, same 5-per-passage
+    count — because the passage table serves both from one row and only
+    audio_path differs (see schema.sql and CLAUDE.md section 6). The one real
+    difference is `script` instead of `body`: this text gets synthesized to
+    speech, so it needs to read naturally out loud rather than on a page.
+    """
+
+    topic: str = Field(
+        description="science / economics / society / psychology / history"
+    )
+    script: str = Field(
+        description=(
+            f"A {config.LISTENING_MIN_WORDS}–{config.LISTENING_MAX_WORDS} word "
+            "spoken monologue meant to be read aloud by a text-to-speech voice, "
+            "not read on a page. Short, natural sentences; no visual-only cues "
+            "(no 'as shown below', no numbers formatted for reading rather than "
+            "hearing). Neutral register, no named real people, no current "
+            "events, no culture-specific references."
+        )
+    )
+    questions: list[ReadingQuestion] = Field(
+        min_length=5,
+        max_length=5,
+        description="Exactly five questions, one of each kind, in the order listed.",
+    )
+
+
 class SentenceCompletionBatch(BaseModel):
     items: list[SentenceCompletionItem]
 

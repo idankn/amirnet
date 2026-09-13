@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { AnswerOption } from '../components/AnswerOption';
+import { AudioPlayer } from '../components/AudioPlayer';
 import { colors, english, hebrew, radii, spacing, type } from '../theme';
 import { TYPE_LABELS, type Passage, type Question } from '../types';
 
@@ -139,7 +140,28 @@ export function PracticeScreen({
       >
         <Text style={styles.typeLabel}>{TYPE_LABELS[question.type]}</Text>
 
-        {passage && (
+        {passage && question.type === 'listening' && (
+          <View style={styles.passageCard}>
+            <Text style={styles.passageMeta}>
+              הקלטה · שאלה {passageQuestionNumber} מתוך 5
+            </Text>
+            {passage.audioPath ? (
+              <AudioPlayer source={passage.audioPath} />
+            ) : (
+              // Real content only ships once pipeline.generate_audio has run
+              // for a passage — until then, this is the honest fallback
+              // rather than silently rendering a dead player.
+              <>
+                <Text style={styles.noAudioNote}>
+                  ההקלטה לשאלה הזו עוד לא מוכנה — מוצג תמליל לבדיקה בלבד
+                </Text>
+                <Text style={styles.passageText}>{passage.body}</Text>
+              </>
+            )}
+          </View>
+        )}
+
+        {passage && question.type !== 'listening' && (
           <View style={styles.passageCard}>
             <Pressable
               style={styles.passageHeader}
@@ -301,6 +323,7 @@ const styles = StyleSheet.create({
   },
   passageMeta: { ...type.caption, ...hebrew },
   passageToggle: { ...type.caption, ...hebrew, color: colors.brand },
+  noAudioNote: { ...type.caption, ...hebrew, color: colors.textSecondary },
   passageText: {
     fontSize: 16,
     lineHeight: 26,

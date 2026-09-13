@@ -38,6 +38,12 @@ READING_MIN_WORDS = 180
 READING_MAX_WORDS = 220
 READING_QUESTIONS_PER_PASSAGE = 5
 
+# Listening: shorter than reading, since it's heard once rather than re-read —
+# a script this long runs to roughly 60-90 seconds of natural speech.
+LISTENING_MIN_WORDS = 150
+LISTENING_MAX_WORDS = 200
+LISTENING_QUESTIONS_PER_PASSAGE = 5
+
 # Every question is 1 correct answer + 3 distractors.
 N_DISTRACTORS = 3
 

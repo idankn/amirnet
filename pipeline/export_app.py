@@ -111,6 +111,31 @@ def from_gold(rng: random.Random) -> tuple[list[dict], list[dict]]:
                 passage_id=passage_id,
             ))
 
+    # Same shape as reading, `pl-` prefix to keep passage ids distinct from
+    # reading's `p-` ones — both start counting at 1. audioPath is a filename
+    # checked into app/assets/audio (see app/src/data/audioAssets.ts) for the
+    # 3 gold items specifically, generated once by hand from the same
+    # PlaceholderProvider pipeline.generate_audio uses — not produced by
+    # running that script against this gold set, since it addresses passages
+    # by their real bank row id, which gold items don't have. A real
+    # bank-sourced item goes through from_db, not this path, and gets
+    # whatever audio_path generate_audio actually assigned it.
+    for p, item in enumerate(gold.load("listening"), 1):
+        passage_id = f"pl-{p}"
+        passages.append({
+            "id": passage_id,
+            "topic": item.topic,
+            "body": item.script,
+            "audioPath": f"listening-{p}.wav",
+        })
+        for q, question in enumerate(item.questions, 1):
+            questions.append(_entry(
+                f"ls-{p}-{q}", "listening", question.prompt,
+                question.correct_answer, list(question.distractors),
+                question.explanation, question.difficulty_est, rng,
+                passage_id=passage_id,
+            ))
+
     return passages, questions
 
 
@@ -140,11 +165,14 @@ def from_db(rng: random.Random, include_drafts: bool = False) -> tuple[list[dict
                     "SELECT * FROM passages WHERE id = ?", (row["passage_id"],)
                 ).fetchone()
                 if p is not None:
-                    passages.append({
+                    passage_entry = {
                         "id": passage_id,
                         "topic": p["topic"] or "",
                         "body": p["body"],
-                    })
+                    }
+                    if p["audio_path"]:
+                        passage_entry["audioPath"] = p["audio_path"]
+                    passages.append(passage_entry)
 
         distractors = [d["text"] for d in db.get_distractors(conn, row["id"])]
         questions.append(_entry(

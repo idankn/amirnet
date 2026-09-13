@@ -29,11 +29,15 @@
       [
         "expo-localization",
         {
-          "supportedLocales": ["he", "en"],
+          "supportedLocales": [
+            "he",
+            "en"
+          ],
           "supportsRTL": true,
           "forcesRTL": true
         }
-      ]
+      ],
+      "expo-audio"
     ]
   }
 }
