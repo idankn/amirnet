@@ -57,6 +57,22 @@ interface RawQuestion {
   difficulty: number | null;
 }
 
+interface RawPassage {
+  id: string;
+  topic: string | null;
+  body: string;
+  audio_path: string | null;
+}
+
+function toPassage(row: RawPassage): Passage {
+  return {
+    id: row.id,
+    topic: row.topic ?? '',
+    body: row.body,
+    audioPath: row.audio_path ?? undefined,
+  };
+}
+
 function toQuestion(row: RawQuestion): Question {
   const correct = row.options[row.correct_index];
   const options = [...row.options];
@@ -98,7 +114,7 @@ export async function requestPractice(
 
   return {
     questions: (data.questions as RawQuestion[]).map(toQuestion),
-    passages: (data.passages ?? []) as Passage[],
+    passages: ((data.passages ?? []) as RawPassage[]).map(toPassage),
     usage: data.usage as Usage,
   };
 }
@@ -112,7 +128,7 @@ export async function requestSimulation(): Promise<{
   if (error) throw translate(error.message);
   return {
     questions: (data.questions as RawQuestion[]).map(toQuestion),
-    passages: (data.passages ?? []) as Passage[],
+    passages: ((data.passages ?? []) as RawPassage[]).map(toPassage),
   };
 }
 

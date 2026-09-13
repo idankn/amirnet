@@ -59,6 +59,24 @@
       "id": "p-15",
       "topic": "society",
       "body": "Almost every country measures unemployment by asking whether people are working, and whether those who are not have looked for work recently. The definition sounds straightforward until it is applied. Someone who worked one paid hour in the reference week counts as employed. Someone who wants a job but stopped searching after a year of refusals does not count as unemployed, because they are classified as outside the labour force altogether. The result is a figure that can move for reasons unconnected to how many people have work. A downturn severe enough to discourage searching will push the unemployment rate down, since the discouraged leave the count entirely. Recoveries can do the opposite: as prospects improve, people resume looking, are counted again, and the rate rises even as conditions get better. Statistical agencies are well aware of this and routinely publish several broader measures alongside the headline figure. Those measures are almost never the ones quoted in a news report. The narrow rate has the advantage of being comparable across decades and countries, and a number that everyone already uses is difficult to displace, whatever its shortcomings."
+    },
+    {
+      "id": "pl-1",
+      "topic": "science",
+      "body": "For most of human history, work stopped when the sun went down. Artificial light changed that, but it didn't change how our bodies work. Every one of us carries an internal clock, run by a small cluster of cells in the brain, that expects darkness to mean rest. When we override it, with a bright screen at midnight or a shift that starts at two in the morning, the clock doesn't simply adjust. It resists. Studies of night-shift workers have found higher rates of digestive problems and disrupted mood, even years into the job, long after they'd supposedly gotten used to the schedule. The strange part is that the body never seems to fully switch over. A night-shift nurse who sleeps every day from eight in the morning until four in the afternoon is still, according to her internal clock, sleeping at the wrong time, because that clock keeps taking its cues from daylight, whether or not she's awake to see it. Some hospitals have started dimming lights gradually near the end of a night shift, hoping to ease the transition. It's a small fix for a mismatch that modern life created and hasn't solved.",
+      "audioPath": "listening-1.wav"
+    },
+    {
+      "id": "pl-2",
+      "topic": "society",
+      "body": "Ask someone what a library is for, and most will say books. But walk into a busy public library on a weekday afternoon, and books may be the smallest part of what's happening. There's a toddler story hour in one corner, a retiree using a public computer to fill out a government form, and two teenagers who came in mainly because the building is warm, quiet, and free. Public libraries were never only about lending books. From the start, they served as one of the few places a person could simply exist without being expected to buy something. What has changed is how central that second function has become. Librarians increasingly describe their job as social work as much as information work, helping visitors who have nowhere else to turn. Some library systems have responded by hiring social workers directly, rather than leaving front-desk staff to handle problems they were never trained for. Funding bodies, though, still tend to measure a library's success mainly by how many books it circulates, a number that says little about a teenager who came in only for the warmth.",
+      "audioPath": "listening-2.wav"
+    },
+    {
+      "id": "pl-3",
+      "topic": "psychology",
+      "body": "People like to imagine that habits form after a fixed number of repeats. Twenty-one days is the number that gets repeated most, though nobody seems to know where it came from. Actual research paints a messier picture. One study that tracked people trying to build a new habit, like eating fruit with lunch or running before breakfast, found the time it took to become automatic ranged from about three weeks to nearly eight months, depending on both the person and the habit itself. Simple habits, like drinking a glass of water after waking up, took hold quickly. Habits that required more planning, like exercise, took much longer, and a missed day here or there didn't reset the process the way people often assume it does. What mattered more than consistency was simply picking the habit back up. The researchers noted that participants who treated an occasional lapse as meaningless kept building the habit at roughly the same pace as those who never missed a day at all. The number that gets quoted in self-help books, in other words, describes almost nobody's actual experience.",
+      "audioPath": "listening-3.wav"
     }
   ],
   "questions": [
@@ -4125,6 +4143,231 @@
       "correctIndex": 2,
       "explanation": "An objection about how something looks is an 'aesthetic' one, which the word 'ugly' makes explicit. The bridge working perfectly rules out a technical complaint, and nothing in the sentence concerns money or law.",
       "difficulty": 5
+    },
+    {
+      "id": "ls-1-1",
+      "type": "listening",
+      "prompt": "The recording is mainly concerned with",
+      "options": [
+        "the discovery of the brain cells that control the internal clock",
+        "a comparison of sleep quality between different professions",
+        "advice for hospitals on how to schedule night shifts",
+        "why the body's internal clock resists working against natural daylight, even after years of adaptation"
+      ],
+      "correctIndex": 3,
+      "explanation": "The recording opens with the internal clock's resistance to artificial schedules and closes with hospitals only partly easing that mismatch. No discovery is described, and profession comparison and scheduling advice are not its subject.",
+      "difficulty": 3,
+      "passageId": "pl-1"
+    },
+    {
+      "id": "ls-1-2",
+      "type": "listening",
+      "prompt": "According to the recording, the internal clock is run by",
+      "options": [
+        "the digestive system",
+        "a small cluster of cells in the brain",
+        "the length of a person's shift",
+        "the level of artificial light in a room"
+      ],
+      "correctIndex": 1,
+      "explanation": "The recording states directly that a small cluster of brain cells runs the internal clock. Digestion and mood are named as effects of disruption, not as what runs the clock, and shift length is not described as the mechanism.",
+      "difficulty": 2,
+      "passageId": "pl-1"
+    },
+    {
+      "id": "ls-1-3",
+      "type": "listening",
+      "prompt": "The recording suggests that a night-shift nurse's health problems are best explained by",
+      "options": [
+        "a lack of willpower in adapting to the new schedule",
+        "a mismatch between her sleep schedule and a clock that still follows daylight, not a failure to adjust",
+        "a medical condition unrelated to her work schedule",
+        "the specific hours her hospital assigns to nurses"
+      ],
+      "correctIndex": 1,
+      "explanation": "The passage explains that her clock keeps taking cues from daylight regardless of when she actually sleeps, which is why the mismatch persists rather than resolving with time. No willpower failure or unrelated condition is suggested.",
+      "difficulty": 4,
+      "passageId": "pl-1"
+    },
+    {
+      "id": "ls-1-4",
+      "type": "listening",
+      "prompt": "As used near the end of the recording, \"mismatch\" most nearly means",
+      "options": [
+        "a lack of fit between two things",
+        "a type of artificial lighting",
+        "a scheduling error made by an employer",
+        "a medical diagnosis"
+      ],
+      "correctIndex": 0,
+      "explanation": "The word describes the disagreement between a night-shift schedule and a clock that still follows daylight, which is a lack of fit rather than an error, diagnosis, or lighting type.",
+      "difficulty": 3,
+      "passageId": "pl-1"
+    },
+    {
+      "id": "ls-1-5",
+      "type": "listening",
+      "prompt": "The speaker mentions hospitals dimming lights near the end of a night shift primarily to",
+      "options": [
+        "give an example of a partial response to the mismatch described earlier",
+        "argue that all night shifts should be eliminated",
+        "explain the biological cause of the internal clock's resistance",
+        "criticize hospitals for scheduling night shifts at all"
+      ],
+      "correctIndex": 0,
+      "explanation": "The example is introduced as \"a small fix\" right after describing the unresolved mismatch, marking it as a partial response rather than a criticism, an explanation of cause, or an argument to eliminate night shifts.",
+      "difficulty": 3,
+      "passageId": "pl-1"
+    },
+    {
+      "id": "ls-2-1",
+      "type": "listening",
+      "prompt": "The recording is primarily concerned with",
+      "options": [
+        "the reasons library funding has declined in recent years",
+        "a proposal to replace librarians with social workers",
+        "the history of how libraries came to lend books for free",
+        "how public libraries increasingly serve needs beyond lending books, and how poorly funding measures capture this"
+      ],
+      "correctIndex": 3,
+      "explanation": "The recording moves from what libraries actually do now to the mismatch with how they're funded and measured. No history of free lending, no replacement proposal, and no funding decline is discussed.",
+      "difficulty": 3,
+      "passageId": "pl-2"
+    },
+    {
+      "id": "ls-2-2",
+      "type": "listening",
+      "prompt": "According to the recording, some library systems have responded to this shift by",
+      "options": [
+        "charging a small fee for computer use",
+        "training librarians as accountants",
+        "hiring social workers directly",
+        "closing their doors to non-borrowers"
+      ],
+      "correctIndex": 2,
+      "explanation": "The recording states this directly. None of the other options are mentioned anywhere in the recording.",
+      "difficulty": 2,
+      "passageId": "pl-2"
+    },
+    {
+      "id": "ls-2-3",
+      "type": "listening",
+      "prompt": "The recording suggests that circulation numbers are an incomplete measure of a library's value because they",
+      "options": [
+        "have been declining every year regardless of use",
+        "say nothing about visitors who use the library for reasons other than borrowing books",
+        "only count children's books",
+        "are usually inflated by library staff"
+      ],
+      "correctIndex": 1,
+      "explanation": "The closing example of the teenagers who came only for warmth is used to show exactly this gap. No inflation, category restriction, or decline is mentioned.",
+      "difficulty": 4,
+      "passageId": "pl-2"
+    },
+    {
+      "id": "ls-2-4",
+      "type": "listening",
+      "prompt": "As used in the recording, \"circulation\" most nearly means",
+      "options": [
+        "the range of topics covered by its collection",
+        "the number of items borrowed",
+        "the flow of visitors through the building",
+        "the library's operating budget"
+      ],
+      "correctIndex": 1,
+      "explanation": "The recording ties circulation directly to books being lent, contrasted with visitors who never borrow anything. It is not used to mean foot traffic, collection range, or budget.",
+      "difficulty": 3,
+      "passageId": "pl-2"
+    },
+    {
+      "id": "ls-2-5",
+      "type": "listening",
+      "prompt": "The speaker mentions the two teenagers who came in for warmth primarily to",
+      "options": [
+        "argue that libraries should install more heating",
+        "criticize teenagers for misusing library resources",
+        "explain why library attendance rises in winter",
+        "illustrate a use of the library that circulation numbers would not capture"
+      ],
+      "correctIndex": 3,
+      "explanation": "The example appears right before the closing point about circulation saying little about such visitors, so it illustrates the gap rather than criticizing the teenagers or making a claim about heating or seasonal attendance.",
+      "difficulty": 3,
+      "passageId": "pl-2"
+    },
+    {
+      "id": "ls-3-1",
+      "type": "listening",
+      "prompt": "The recording mainly deals with",
+      "options": [
+        "a comparison of exercise habits versus dietary habits",
+        "a history of where the twenty-one-day claim originated",
+        "advice on which habits are easiest to start",
+        "how real habit-formation timelines vary widely and don't match the popular twenty-one-day claim"
+      ],
+      "correctIndex": 3,
+      "explanation": "The recording sets up the twenty-one-day claim and spends the rest of the time showing how actual research contradicts it with a wide range of timelines. It gives no history of the claim's origin, offers no advice, and the exercise/diet comparison is only one supporting detail.",
+      "difficulty": 3,
+      "passageId": "pl-3"
+    },
+    {
+      "id": "ls-3-2",
+      "type": "listening",
+      "prompt": "According to the recording, simple habits like drinking water after waking",
+      "options": [
+        "required more planning than exercise",
+        "took hold quickly",
+        "took nearly eight months on average",
+        "were the hardest habit type studied"
+      ],
+      "correctIndex": 1,
+      "explanation": "The recording states this directly, contrasting it with habits requiring more planning, which took much longer. The eight-month figure describes the slower end of the range, not simple habits.",
+      "difficulty": 2,
+      "passageId": "pl-3"
+    },
+    {
+      "id": "ls-3-3",
+      "type": "listening",
+      "prompt": "The recording suggests that occasionally missing a day of a new habit",
+      "options": [
+        "resets the entire process back to day one",
+        "was not something the researchers tracked",
+        "only matters for simple habits, not complex ones",
+        "does not meaningfully slow down how quickly the habit becomes automatic"
+      ],
+      "correctIndex": 3,
+      "explanation": "The recording says a missed day didn't reset the process, and that treating a lapse as meaningless led to roughly the same pace of habit formation as never missing a day. It does not restrict this finding to simple habits, and the researchers clearly did track lapses.",
+      "difficulty": 4,
+      "passageId": "pl-3"
+    },
+    {
+      "id": "ls-3-4",
+      "type": "listening",
+      "prompt": "As used in the recording, \"lapse\" most nearly means",
+      "options": [
+        "a fixed schedule",
+        "a research method",
+        "a change in motivation",
+        "a temporary failure to do something"
+      ],
+      "correctIndex": 3,
+      "explanation": "The word refers to an occasional missed day in an otherwise ongoing habit, which is a temporary failure rather than a schedule, a motivational shift, or a method.",
+      "difficulty": 3,
+      "passageId": "pl-3"
+    },
+    {
+      "id": "ls-3-5",
+      "type": "listening",
+      "prompt": "The speaker mentions the twenty-one-day claim at the start primarily to",
+      "options": [
+        "set up a popular belief that the recording goes on to complicate with actual research",
+        "credit the researcher who discovered it",
+        "endorse it as broadly accurate",
+        "explain how the number was originally calculated"
+      ],
+      "correctIndex": 0,
+      "explanation": "The claim is introduced only to be undercut by the study described immediately after, including the line that it \"describes almost nobody's actual experience.\" The recording never endorses it, credits anyone for it, or explains its calculation.",
+      "difficulty": 3,
+      "passageId": "pl-3"
     }
   ]
 }

@@ -10,7 +10,15 @@ export interface Passage {
   /** English body text — render LTR, in the serif face. */
   id: string;
   topic: string;
+  /** For reading, the passage itself. For listening, its transcript. */
   body: string;
+  /**
+   * Set only on listening passages, and only once audio has actually been
+   * generated for them (see pipeline/generate_audio.py — TTS is pre-generated
+   * once and stored, never synthesized live, per CLAUDE.md section 7).
+   * Missing means "not ready to play", not an error.
+   */
+  audioPath?: string;
 }
 
 export interface Question {
@@ -90,14 +98,16 @@ export const ALL_TYPES: QuestionType[] = [
  * Types that actually work today.
  *
  * This is NOT a free/member distinction — those look identical everywhere in
- * the app, and the only place tier becomes visible is the paywall. These three
- * are simply the ones with content and a screen; the rest need work beyond
- * questions (listening needs an audio player, writing needs feedback).
+ * the app, and the only place tier becomes visible is the paywall. These are
+ * simply the ones with content and a screen; word_formation and writing still
+ * need work beyond questions (writing needs AI feedback; word_formation has
+ * no gold set or schema shape yet).
  */
 export const IMPLEMENTED_TYPES: QuestionType[] = [
   'sentence_completion',
   'restatement',
   'reading',
+  'listening',
 ];
 
 export interface ExamSection {
