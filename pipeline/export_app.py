@@ -112,21 +112,22 @@ def from_gold(rng: random.Random) -> tuple[list[dict], list[dict]]:
             ))
 
     # Same shape as reading, `pl-` prefix to keep passage ids distinct from
-    # reading's `p-` ones — both start counting at 1. audioPath is a filename
-    # checked into app/assets/audio (see app/src/data/audioAssets.ts) for the
-    # 3 gold items specifically, generated once by hand from the same
-    # PlaceholderProvider pipeline.generate_audio uses — not produced by
-    # running that script against this gold set, since it addresses passages
-    # by their real bank row id, which gold items don't have. A real
-    # bank-sourced item goes through from_db, not this path, and gets
-    # whatever audio_path generate_audio actually assigned it.
+    # reading's `p-` ones — both start counting at 1.
+    #
+    # No audioPath here, deliberately. There is no real speech recording for
+    # any gold listening item yet — PlaceholderProvider's tone exists only to
+    # exercise the storage/playback path in dev, and its own docstring says
+    # not to ship it. Leaving audioPath unset lets the app's existing
+    # transcript fallback do its job (see PracticeScreen.tsx) instead of
+    # showing a 1.5-second beep with nothing to read. A real bank-sourced item
+    # goes through from_db, not this path, and gets whatever audio_path
+    # generate_audio actually assigned it once real audio exists.
     for p, item in enumerate(gold.load("listening"), 1):
         passage_id = f"pl-{p}"
         passages.append({
             "id": passage_id,
             "topic": item.topic,
             "body": item.script,
-            "audioPath": f"listening-{p}.wav",
         })
         for q, question in enumerate(item.questions, 1):
             questions.append(_entry(
