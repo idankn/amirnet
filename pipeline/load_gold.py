@@ -97,6 +97,42 @@ def main() -> None:
             )
             added += 1
 
+    # Same shape as reading — the passage first, its script in `body` (it's
+    # also the transcript audio gets generated from), audio_path left NULL
+    # until pipeline.generate_audio has run for it.
+    for item in gold.load("listening"):
+        existing = conn.execute(
+            "SELECT id FROM passages WHERE body = ?", (item.script,)
+        ).fetchone()
+        if existing:
+            passage_id = existing["id"]
+        else:
+            cur = conn.execute(
+                """
+                INSERT INTO passages (kind, topic, body, word_count, source, status)
+                VALUES ('listening', ?, ?, ?, 'authored', 'draft')
+                """,
+                (item.topic, item.script, len(item.script.split())),
+            )
+            passage_id = cur.lastrowid
+
+        for question in item.questions:
+            if _already_there(conn, "listening", question.prompt):
+                skipped += 1
+                continue
+            db.insert_question(
+                conn,
+                qtype="listening",
+                passage_id=passage_id,
+                prompt=question.prompt,
+                correct_answer=question.correct_answer,
+                explanation=question.explanation,
+                distractors=[(d, None) for d in question.distractors],
+                difficulty_est=question.difficulty_est,
+                source="gold",
+            )
+            added += 1
+
     conn.commit()
     rows = db.counts_by_status(conn)
     conn.close()

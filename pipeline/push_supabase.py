@@ -109,7 +109,13 @@ def main() -> None:
     mark_free(passages, questions)
 
     passage_rows = [
-        {"id": p["id"], "topic": p["topic"], "body": p["body"], "is_free": p["is_free"]}
+        {
+            "id": p["id"],
+            "topic": p["topic"],
+            "body": p["body"],
+            "audio_path": p.get("audioPath"),
+            "is_free": p["is_free"],
+        }
         for p in passages
     ]
     question_rows = [

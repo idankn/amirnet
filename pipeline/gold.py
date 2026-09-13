@@ -13,18 +13,21 @@ from pathlib import Path
 from pydantic import ValidationError
 
 from . import config
-from .schemas import ReadingItem, RestatementItem, SentenceCompletionItem
+from .schemas import ListeningItem, ReadingItem, RestatementItem, SentenceCompletionItem
 
 ITEM_MODELS = {
     "sentence_completion": SentenceCompletionItem,
     "restatement": RestatementItem,
     "reading": ReadingItem,
+    "listening": ListeningItem,
 }
 
-# A reading example is a whole passage plus five questions — four of them in one
-# prompt is a lot of tokens for little added signal, so few-shot fewer.
+# A reading or listening example is a whole passage plus five questions — four
+# of them in one prompt is a lot of tokens for little added signal, so
+# few-shot fewer.
 EXAMPLES_PER_REQUEST = {
     "reading": 2,
+    "listening": 2,
 }
 
 
@@ -36,7 +39,9 @@ def gold_path(qtype: str) -> Path:
     return config.GOLD_DIR / f"{qtype}.jsonl"
 
 
-def load(qtype: str) -> list[SentenceCompletionItem | RestatementItem]:
+def load(
+    qtype: str,
+) -> list[SentenceCompletionItem | RestatementItem | ReadingItem | ListeningItem]:
     """Read and validate the gold set for one question type.
 
     Validation is strict: a malformed gold example silently teaches the
@@ -74,7 +79,7 @@ def sample(
     qtype: str,
     n: int | None = None,
     rng: random.Random | None = None,
-) -> list[SentenceCompletionItem | RestatementItem | ReadingItem]:
+) -> list[SentenceCompletionItem | RestatementItem | ReadingItem | ListeningItem]:
     """Pick examples to few-shot one generation request.
 
     Sampled fresh per request rather than fixed, so a whole run isn't anchored
